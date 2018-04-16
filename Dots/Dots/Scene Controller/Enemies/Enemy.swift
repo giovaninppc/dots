@@ -15,7 +15,7 @@ enum EnemyType {
 
 class EnemyFactory: NSObject {
     
-    func createEnemy(with identifier: EnemyType) -> Enemy {
+    class func createEnemy(with identifier: EnemyType) -> Enemy {
         switch identifier {
         case .plane:
             return EnemyPlane()

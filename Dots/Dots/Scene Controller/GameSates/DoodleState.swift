@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class SketchState: GameSceneState {
+class DoodleState: GameSceneState {
     
     var currentState: GameStates = .doodle
     

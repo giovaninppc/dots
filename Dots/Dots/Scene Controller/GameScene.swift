@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class ChangeGameScene: SKScene {
+class GameScene: SKScene {
     
     var background: SKSpriteNode!
     var enemies: [Enemy] = [Enemy]()
@@ -23,12 +23,12 @@ class ChangeGameScene: SKScene {
         }
         self.background = background
         
-        let planeEnemy1 = Enemy()
+        let planeEnemy1 = EnemyFactory.createEnemy(with: .plane)
         planeEnemy1.position = CGPoint(x: 0, y: 0)
         self.addChild(planeEnemy1)
         enemies.append(planeEnemy1)
         
-        let planeEnemy2 = EnemyPlane(state: .blueprint)
+        let planeEnemy2 = EnemyFactory.createEnemy(with: .none)
         planeEnemy2.position = CGPoint(x: 100, y: 100)
         self.addChild(planeEnemy2)
         enemies.append(planeEnemy2)
