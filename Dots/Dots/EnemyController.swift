@@ -11,17 +11,6 @@ import Foundation
 class EnemyController {
     
     var enemies: [Enemy] = [Enemy()] //[Enemy]()
-    var currentScene: GameScene? {
-        willSet (newValue) {
-            print("WILL SET")
-            currentScene?.cleanGame()
-            newValue?.updateGame(enemies: enemies)
-        }
-        didSet {
-            print("DID SET")
-            //currentScene?.updateGame(enemies: enemies)
-        }
-    }
     
     // Create Enemy depending on the Level
     func createEnemy() -> Enemy {
