@@ -38,12 +38,12 @@ class GameScene: SKScene {
     
     func updateGame(enemies: [Enemy]) {
         if let state = self.state {
-            state.setEnemies(for: self.scene!, enemies: enemies)
+//            state.setEnemies(for: self.scene!, enemies: enemies)
         }
     }
     
 }
 
-protocol GameSceneState {
-    func setEnemies(for scene: SKScene, enemies: [Enemy])
-}
+//protocol GameSceneState {
+//    func setEnemies(for scene: SKScene, enemies: [Enemy])
+//}

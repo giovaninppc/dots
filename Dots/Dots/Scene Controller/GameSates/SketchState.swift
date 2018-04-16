@@ -10,10 +10,15 @@ import SpriteKit
 
 class SketchState: GameSceneState {
     
-    func setEnemies(for scene: SKScene, enemies: [Enemy]) {
-        
+    var currentState: GameStates = .doodle
+    
+    func setEnemies(for state: GameStates, enemies: [Enemy]) {
         for enemy in enemies {
-            scene.addChild(enemy)
+            enemy.update(for: state)
         }
+    }
+    
+    func change(background: SKSpriteNode) {
+        background.texture = SKTexture(imageNamed: "Paper")
     }
 }
