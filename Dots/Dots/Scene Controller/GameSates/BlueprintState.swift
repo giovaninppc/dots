@@ -10,11 +10,10 @@ import SpriteKit
 
 class BlueprintState: GameSceneState {
     
-    func setEnemies(for scene: SKScene) {
+    func setEnemies(for scene: SKScene, enemies: [Enemy]) {
         
-        let sprite = SKSpriteNode(color: .orange, size: CGSize(width: 10, height: 10))
-        sprite.position = CGPoint(x: 5, y: 5)
-        sprite.run(SKAction(named: "Test")!)
-        scene.addChild(sprite)
+        for enemy in enemies {
+            scene.addChild(enemy)
+        }
     }
 }

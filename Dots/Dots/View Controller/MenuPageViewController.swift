@@ -12,6 +12,7 @@ import UIKit
 
 class MenuPageViewController: UIPageViewController {
     
+    var enemyController: EnemyController = EnemyController()
     
     // Reference array to the Menu view controllers
     private(set) lazy var orderedViewControllers: [UIViewController] = {
@@ -24,7 +25,8 @@ class MenuPageViewController: UIPageViewController {
         super.viewDidLoad()
         
         // Initializing the datasource
-        dataSource = self
+        self.dataSource = self
+        self.delegate = self
         
         // Intializing the first view
         if let firstViewController = orderedViewControllers.first {
@@ -49,17 +51,6 @@ class MenuPageViewController: UIPageViewController {
         return viewController
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 // MARK: UIPageViewControllerDataSource
@@ -107,6 +98,34 @@ extension MenuPageViewController: UIPageViewControllerDataSource {
         }
         
         return orderedViewControllers[nextIndex]
+    }
+    
+}
+
+extension MenuPageViewController: UIPageViewControllerDelegate {
+    
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            willTransitionTo pendingViewControllers: [UIViewController]) {
+        
+        print("TRANSITIONING")
+        print(pageViewController)
+        print(pendingViewControllers)
+        
+//        guard let view = pendingViewControllers[0] as? GameViewController else { return }
+//        guard let skView = view.gameScene else { return }
+//        enemyController.currentScene = skView.scene as? GameScene
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            didFinishAnimating finished: Bool,
+                            previousViewControllers: [UIViewController],
+                            transitionCompleted completed: Bool) {
+        
+        if completed {
+            guard let view = pageViewController.viewControllers![0] as? GameViewController else { return }
+            guard let skView = view.gameScene else { return }
+            enemyController.currentScene = skView.scene as? GameScene
+        }
     }
     
 }

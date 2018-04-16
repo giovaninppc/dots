@@ -24,7 +24,7 @@ class GameViewController: UIViewController {
             case "Doodle":
                 scene.state = SketchState()
             default:
-                print("Error on getting game state")
+                fatalError("Error on getting game state")
             }
             scene.configureGame()
         }

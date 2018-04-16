@@ -10,5 +10,10 @@ import SpriteKit
 
 class SketchState: GameSceneState {
     
-    func setEnemies(for scene: SKScene) {}
+    func setEnemies(for scene: SKScene, enemies: [Enemy]) {
+        
+        for enemy in enemies {
+            scene.addChild(enemy)
+        }
+    }
 }

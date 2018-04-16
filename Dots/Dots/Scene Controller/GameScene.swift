@@ -17,9 +17,11 @@ class GameScene: SKScene {
     var state: GameSceneState?
     
     func configureGame() {
-        if let state = self.state {
-            state.setEnemies(for: self.scene!)
-        }
+//        if let state = self.state {
+//            state.setEnemies(for: self.scene!)
+//        }
+        
+        self.background = self.scene?.childNode(withName: "Background")
         
         let square = self.childNode(withName: "squareTest")!
         square.run(SKAction.init(named: "Test")!)
@@ -29,8 +31,19 @@ class GameScene: SKScene {
         self.scene?.addChild(sprite)
     }
     
+    func cleanGame() {
+        self.scene?.removeAllChildren()
+        self.scene?.addChild(background)
+    }
+    
+    func updateGame(enemies: [Enemy]) {
+        if let state = self.state {
+            state.setEnemies(for: self.scene!, enemies: enemies)
+        }
+    }
+    
 }
 
 protocol GameSceneState {
-    func setEnemies(for scene: SKScene)
+    func setEnemies(for scene: SKScene, enemies: [Enemy])
 }
