@@ -114,7 +114,7 @@ class ChangeGameViewController: UIViewController {
         }
     }
     
-    open func takeScreenshot() -> UIImage? {
+    func takeScreenshot() -> UIImage? {
         
         var screenshotImage: UIImage?
         let layer = UIApplication.shared.keyWindow!.layer

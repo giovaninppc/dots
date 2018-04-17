@@ -24,6 +24,7 @@
 		9B627B982083912500B0FBEE /* DoodleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B627B972083912500B0FBEE /* DoodleState.swift */; };
 		9B627BA220839A2000B0FBEE /* EnemyAction.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9B627BA120839A2000B0FBEE /* EnemyAction.sks */; };
 		9B6B160B20867660008E2D9F /* WatercolorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B160A20867660008E2D9F /* WatercolorState.swift */; };
+		9B8D5D8B20868AC70001DB35 /* RandomPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D8A20868AC70001DB35 /* RandomPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		9B627B972083912500B0FBEE /* DoodleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleState.swift; sourceTree = "<group>"; };
 		9B627BA120839A2000B0FBEE /* EnemyAction.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EnemyAction.sks; sourceTree = "<group>"; };
 		9B6B160A20867660008E2D9F /* WatercolorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatercolorState.swift; sourceTree = "<group>"; };
+		9B8D5D8A20868AC70001DB35 /* RandomPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,10 +91,11 @@
 			isa = PBXGroup;
 			children = (
 				9B627B752081305400B0FBEE /* AppDelegate.swift */,
-				9B416A892085121A00E65777 /* EnemyController.swift */,
 				9B627B8B208131C000B0FBEE /* View Controller */,
 				9B627B8E20838B1200B0FBEE /* View */,
 				9B627B9020838B7F00B0FBEE /* Game */,
+				9B8D5D87208678F90001DB35 /* Enemy Controller */,
+				9B8D5D8920868AAD0001DB35 /* Extensions */,
 				9B627B942083904100B0FBEE /* Scene Controller */,
 				9B627B8F20838B3500B0FBEE /* Assets */,
 				9B627B852081305400B0FBEE /* Info.plist */,
@@ -170,6 +173,30 @@
 				9B627BA120839A2000B0FBEE /* EnemyAction.sks */,
 			);
 			path = Actions;
+			sourceTree = "<group>";
+		};
+		9B8D5D87208678F90001DB35 /* Enemy Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9B416A892085121A00E65777 /* EnemyController.swift */,
+				9B8D5D88208679030001DB35 /* EnemyControllerState */,
+			);
+			path = "Enemy Controller";
+			sourceTree = "<group>";
+		};
+		9B8D5D88208679030001DB35 /* EnemyControllerState */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EnemyControllerState;
+			sourceTree = "<group>";
+		};
+		9B8D5D8920868AAD0001DB35 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9B8D5D8A20868AC70001DB35 /* RandomPoint.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +296,7 @@
 				9B416A942086273A00E65777 /* EnemyFactory.swift in Sources */,
 				9B627B762081305400B0FBEE /* AppDelegate.swift in Sources */,
 				9B416A9B20863DCD00E65777 /* Collision BitMask.swift in Sources */,
+				9B8D5D8B20868AC70001DB35 /* RandomPoint.swift in Sources */,
 				9B416A962086275600E65777 /* PlaneEnemy.swift in Sources */,
 				9B627B96208390FD00B0FBEE /* BlueprintState.swift in Sources */,
 				9B416A98208627A400E65777 /* EnemyDefinition.swift in Sources */,

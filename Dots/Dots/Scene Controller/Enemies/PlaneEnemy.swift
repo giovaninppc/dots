@@ -21,6 +21,7 @@ class PlaneEnemy: Enemy, EnemyProtocol {
     let stateDict: [GameStates: SKTexture] = [.doodle: SKTexture(imageNamed: "doodlePlane"),
                                               .blueprint: SKTexture(imageNamed: "paperPlane"),
                                               .watercolor: SKTexture(imageNamed: "watercolorPlane")]
+    
     let planeAnimation: SKAction = SKAction.sequence([SKAction.scaleX(to: -1, duration: 0.2),
                                                       SKAction.move(by: CGVector(dx: planeHorizontalMove,
                                                                                  dy: planeDownSpeed),
@@ -33,6 +34,7 @@ class PlaneEnemy: Enemy, EnemyProtocol {
     required init (state: GameStates) {
         let texture = stateDict[state]!
         super.init(texture: texture, size: enemySize)
+        self.position = RandomPoint.topScreenPoint()
         startAction()
         configureBody()
     }

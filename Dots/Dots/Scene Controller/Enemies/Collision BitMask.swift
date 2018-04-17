@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 //Collision Bit Masks
 struct PhysicsCategory {
     static let none: UInt32     = 0     // 0
@@ -16,10 +15,3 @@ struct PhysicsCategory {
     static let limit: UInt32    = 0b10  // 2
     static let all: UInt32      = 0b1111111111
 }
-
-
-//if let body = self.astronautNode.physicsBody{
-//    body.categoryBitMask = PhysicsCategory.astronaut
-//    body.contactTestBitMask = PhysicsCategory.exit
-//    body.collisionBitMask = PhysicsCategory.all ^ PhysicsCategory.exit
-//}

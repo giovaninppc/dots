@@ -34,6 +34,11 @@ class GameScene: SKScene {
         enemies.append(enemy)
     }
     
+    func addEnemy(_ enemy: Enemy) {
+        self.scene?.addChild(enemy)
+        enemies.append(enemy)
+    }
+    
     func cleanGame() {
         self.scene?.removeAllChildren()
         self.scene?.addChild(background)
