@@ -16,18 +16,14 @@ class GameScene: SKScene {
     // State configuration
     var state: GameSceneState?
     
-    override func didMove(to view: SKView) {
-        super.didMove(to: view)
-        self.physicsWorld.contactDelegate = self
-    }
-    
     func configureGame() {
         
-        guard let background = self.scene?.childNode(withName: "Background") as? SKSpriteNode! else {
+        guard let background = self.scene?.childNode(withName: "Background") as? SKSpriteNode else {
             fatalError("Couldnt load background as SKSpriteNode")
         }
         self.background = background
         
+        self.physicsWorld.contactDelegate = self
         //Create enemy Limit
         createLimit()
     }
@@ -54,7 +50,9 @@ class GameScene: SKScene {
         limit.position = CGPoint(x: 0, y: -1*UIScreen.main.bounds.height/2 + 30)
         let body = SKPhysicsBody(rectangleOf: CGSize(width: UIScreen.main.bounds.width, height: 10))
         body.affectedByGravity = false
-        body.collisionBitMask = PhysicsCategory.limit
+        body.allowsRotation = false
+        body.isDynamic = false
+        body.categoryBitMask = PhysicsCategory.limit
         limit.physicsBody = body
         self.scene?.addChild(limit)
     }
@@ -66,11 +64,20 @@ extension GameScene: SKPhysicsContactDelegate {
     /// Treat collision
     ///
     /// - Parameter contact: the contact object
-    public func didBegin(_ contact: SKPhysicsContact) {
+    func didBegin(_ contact: SKPhysicsContact) {
         
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        // An enemy got to the end of the level
         if collision ==  PhysicsCategory.enemy | PhysicsCategory.limit {
-            print("Collision detected")
+            
+            if let bodyA = contact.bodyA.node as? Enemy {
+                bodyA.selfDestruct()
+            } else {
+                if let bodyB = contact.bodyB.node as? Enemy {
+                    bodyB.selfDestruct()
+                }
+            }
         }
     }
 }

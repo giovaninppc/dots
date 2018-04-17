@@ -39,9 +39,9 @@ class EnemyController {
 class RandomPoint {
     
     class func getRandomStartPoint(limit: CGFloat) -> CGPoint {
-        let x: UInt32 = arc4random_uniform(UInt32(limit))
-        let x2: Int = Int(limit/2) - Int(x)
-        return CGPoint(x: CGFloat(x2), y: (UIScreen.main.bounds.size.height/2))
+        let xPoint: UInt32 = arc4random_uniform(UInt32(limit))
+        let xLimit: Int = Int(limit/2) - Int(xPoint)
+        return CGPoint(x: CGFloat(xLimit), y: (UIScreen.main.bounds.size.height/2))
     }
     
 }

@@ -12,7 +12,8 @@ import SpriteKit
 class Enemy: SKSpriteNode {
     
     let stateDictInc: [GameStates: UIColor] = [.doodle: .red,
-                                               .blueprint: .white]
+                                               .blueprint: .white,
+                                               .watercolor: .black]
     
     private init() {
         super.init(texture: nil, color: .white, size: CGSize(width: 20, height: 20))
@@ -28,5 +29,10 @@ class Enemy: SKSpriteNode {
     
     func update(for state: GameStates) {
         self.color = stateDictInc[state]!
+    }
+    
+    func selfDestruct() {
+        // Make animation
+        self.removeFromParent()
     }
 }

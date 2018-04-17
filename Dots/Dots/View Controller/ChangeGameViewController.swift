@@ -21,7 +21,7 @@ class ChangeGameViewController: UIViewController {
     @IBOutlet weak var coverImageView: UIImageView!
     
     // Variables
-    var gameStates: [GameStates] = [.blueprint, .doodle]
+    var gameStates: [GameStates] = [.blueprint, .doodle, .watercolor]
     var currentStatus: Int = 0
     
     var scene: GameScene!
@@ -38,6 +38,11 @@ class ChangeGameViewController: UIViewController {
             fatalError("Game Scene not initialized")
         }
         updateSceneState()
+        
+        // DEBUG
+        gameScene.showsFPS = true
+        gameScene.showsNodeCount = true
+        gameScene.showsPhysics = true
         
         //Initiate enemyController
         enemyController = EnemyController()
@@ -105,7 +110,7 @@ class ChangeGameViewController: UIViewController {
         case .blueprint:
             self.scene.state = BlueprintState()
         case .watercolor:
-            print("CREATE WATERCOLOR STATE")
+            self.scene.state = WatercolorState()
         }
     }
     

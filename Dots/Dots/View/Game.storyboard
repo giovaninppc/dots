@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <skView contentMode="scaleToFill" sceneName="Game.sks" translatesAutoresizingMaskIntoConstraints="NO" id="mrX-mi-ZDn">
-                                <rect key="frame" x="-10" y="-6.5" width="394" height="700"/>
+                                <rect key="frame" x="-0.5" y="10" width="375" height="667"/>
                             </skView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TZ0-Da-JTH">
                                 <rect key="frame" x="0.0" y="10" width="375" height="667"/>
@@ -29,10 +28,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mrX-mi-ZDn" firstAttribute="height" secondItem="x0j-4A-BrA" secondAttribute="height" multiplier="1.05" id="4Mq-Ca-V7f"/>
+                            <constraint firstItem="mrX-mi-ZDn" firstAttribute="height" secondItem="x0j-4A-BrA" secondAttribute="height" id="4Mq-Ca-V7f"/>
                             <constraint firstItem="mrX-mi-ZDn" firstAttribute="centerX" secondItem="YcE-bE-cwU" secondAttribute="centerX" id="AM5-ZA-e4P"/>
                             <constraint firstItem="TZ0-Da-JTH" firstAttribute="centerY" secondItem="YcE-bE-cwU" secondAttribute="centerY" id="LL3-G8-h6o"/>
-                            <constraint firstItem="mrX-mi-ZDn" firstAttribute="width" secondItem="x0j-4A-BrA" secondAttribute="width" multiplier="1.05" id="MSw-zU-xIk"/>
+                            <constraint firstItem="mrX-mi-ZDn" firstAttribute="width" secondItem="x0j-4A-BrA" secondAttribute="width" id="MSw-zU-xIk"/>
                             <constraint firstItem="TZ0-Da-JTH" firstAttribute="centerX" secondItem="YcE-bE-cwU" secondAttribute="centerX" id="eyh-5R-CVY"/>
                             <constraint firstItem="mrX-mi-ZDn" firstAttribute="centerY" secondItem="YcE-bE-cwU" secondAttribute="centerY" id="wQs-aL-3Vy"/>
                             <constraint firstItem="TZ0-Da-JTH" firstAttribute="height" secondItem="x0j-4A-BrA" secondAttribute="height" id="wir-7t-b8h"/>

@@ -19,7 +19,8 @@ class PlaneEnemy: Enemy, EnemyProtocol {
     
     //Game States and positions
     let stateDict: [GameStates: SKTexture] = [.doodle: SKTexture(imageNamed: "doodlePlane"),
-                                              .blueprint: SKTexture(imageNamed: "paperPlane")]
+                                              .blueprint: SKTexture(imageNamed: "paperPlane"),
+                                              .watercolor: SKTexture(imageNamed: "watercolorPlane")]
     let planeAnimation: SKAction = SKAction.sequence([SKAction.scaleX(to: -1, duration: 0.2),
                                                       SKAction.move(by: CGVector(dx: planeHorizontalMove,
                                                                                  dy: planeDownSpeed),
@@ -49,13 +50,18 @@ class PlaneEnemy: Enemy, EnemyProtocol {
     }
     
     func configureBody() {
-        let body = SKPhysicsBody(rectangleOf: enemySize)
+        let body = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 50))
         body.categoryBitMask = PhysicsCategory.enemy
         body.affectedByGravity = false
         body.allowsRotation = false
         body.contactTestBitMask = PhysicsCategory.limit
         body.collisionBitMask = PhysicsCategory.none
         self.physicsBody = body
+    }
+    
+    override func selfDestruct() {
+        // Make animation
+        self.removeFromParent()
     }
     
 }

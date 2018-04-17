@@ -23,6 +23,7 @@
 		9B627B96208390FD00B0FBEE /* BlueprintState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B627B95208390FD00B0FBEE /* BlueprintState.swift */; };
 		9B627B982083912500B0FBEE /* DoodleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B627B972083912500B0FBEE /* DoodleState.swift */; };
 		9B627BA220839A2000B0FBEE /* EnemyAction.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9B627BA120839A2000B0FBEE /* EnemyAction.sks */; };
+		9B6B160B20867660008E2D9F /* WatercolorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B160A20867660008E2D9F /* WatercolorState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		9B627B95208390FD00B0FBEE /* BlueprintState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintState.swift; sourceTree = "<group>"; };
 		9B627B972083912500B0FBEE /* DoodleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleState.swift; sourceTree = "<group>"; };
 		9B627BA120839A2000B0FBEE /* EnemyAction.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EnemyAction.sks; sourceTree = "<group>"; };
+		9B6B160A20867660008E2D9F /* WatercolorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatercolorState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				9B627B95208390FD00B0FBEE /* BlueprintState.swift */,
 				9B627B972083912500B0FBEE /* DoodleState.swift */,
+				9B6B160A20867660008E2D9F /* WatercolorState.swift */,
 			);
 			path = "Scene States";
 			sourceTree = "<group>";
@@ -197,7 +200,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Giovani Nascimento Pereira";
 				TargetAttributes = {
 					9B627B712081305400B0FBEE = {
@@ -271,6 +274,7 @@
 				9B416A98208627A400E65777 /* EnemyDefinition.swift in Sources */,
 				9B416A9220852A4500E65777 /* GameScene.swift in Sources */,
 				9B416A8A2085121A00E65777 /* EnemyController.swift in Sources */,
+				9B6B160B20867660008E2D9F /* WatercolorState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +306,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -309,6 +314,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -359,6 +365,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -366,6 +373,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
