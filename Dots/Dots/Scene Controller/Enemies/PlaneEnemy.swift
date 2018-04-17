@@ -8,20 +8,32 @@
 
 import SpriteKit
 
+// Change these constants to alter the PlaneEnemy Behaviour
+let planeDownSpeed: Double = -10.0
+let planeHorizontalMove: Double = 50.0
+
+// Plane Enemy
 class PlaneEnemy: Enemy, EnemyProtocol {
     
-    var enemySize: CGSize = CGSize(width: 50, height: 50)
+    var enemySize: CGSize = CGSize(width: 80, height: 80)
     
     //Game States and positions
-    let stateDict: [GameStates: SKTexture] = [.doodle: SKTexture(imageNamed: "inkPlane"),
+    let stateDict: [GameStates: SKTexture] = [.doodle: SKTexture(imageNamed: "doodlePlane"),
                                               .blueprint: SKTexture(imageNamed: "paperPlane")]
-    let planeAnimation: SKAction = SKAction.sequence([SKAction.move(by: CGVector(dx: 50, dy: -10), duration: 2.3),
-                                                      SKAction.move(by: CGVector(dx: -50, dy: -10), duration: 2.3)])
+    let planeAnimation: SKAction = SKAction.sequence([SKAction.scaleX(to: -1, duration: 0.2),
+                                                      SKAction.move(by: CGVector(dx: planeHorizontalMove,
+                                                                                 dy: planeDownSpeed),
+                                                                    duration: 2.0+Double(arc4random_uniform(10))*0.1),
+                                                      SKAction.scaleX(to: 1, duration: 0.2),
+                                                      SKAction.move(by: CGVector(dx: -1*planeHorizontalMove,
+                                                                                 dy: planeDownSpeed),
+                                                                    duration: 2.0+Double(arc4random_uniform(10))*0.1)])
     
     required init (state: GameStates) {
         let texture = stateDict[state]!
         super.init(texture: texture, size: enemySize)
         startAction()
+        configureBody()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -34,6 +46,16 @@ class PlaneEnemy: Enemy, EnemyProtocol {
     
     func startAction() {
         self.run(SKAction.repeatForever(planeAnimation))
+    }
+    
+    func configureBody() {
+        let body = SKPhysicsBody(rectangleOf: enemySize)
+        body.categoryBitMask = PhysicsCategory.enemy
+        body.affectedByGravity = false
+        body.allowsRotation = false
+        body.contactTestBitMask = PhysicsCategory.limit
+        body.collisionBitMask = PhysicsCategory.none
+        self.physicsBody = body
     }
     
 }

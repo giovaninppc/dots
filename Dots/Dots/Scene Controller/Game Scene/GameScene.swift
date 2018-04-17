@@ -16,12 +16,20 @@ class GameScene: SKScene {
     // State configuration
     var state: GameSceneState?
     
+    override func didMove(to view: SKView) {
+        super.didMove(to: view)
+        self.physicsWorld.contactDelegate = self
+    }
+    
     func configureGame() {
         
         guard let background = self.scene?.childNode(withName: "Background") as? SKSpriteNode! else {
             fatalError("Couldnt load background as SKSpriteNode")
         }
         self.background = background
+        
+        //Create enemy Limit
+        createLimit()
     }
     
     func addEnemy(_ enemy: Enemy, at position: CGPoint) {
@@ -40,6 +48,31 @@ class GameScene: SKScene {
         state?.setEnemies(for: (self.state?.currentState)!, enemies: enemies)
     }
     
+    func createLimit() {
+        
+        let limit = SKSpriteNode(color: .red, size: CGSize(width: UIScreen.main.bounds.width, height: 10))
+        limit.position = CGPoint(x: 0, y: -1*UIScreen.main.bounds.height/2 + 30)
+        let body = SKPhysicsBody(rectangleOf: CGSize(width: UIScreen.main.bounds.width, height: 10))
+        body.affectedByGravity = false
+        body.collisionBitMask = PhysicsCategory.limit
+        limit.physicsBody = body
+        self.scene?.addChild(limit)
+    }
+    
+}
+
+extension GameScene: SKPhysicsContactDelegate {
+    
+    /// Treat collision
+    ///
+    /// - Parameter contact: the contact object
+    public func didBegin(_ contact: SKPhysicsContact) {
+        
+        let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        if collision ==  PhysicsCategory.enemy | PhysicsCategory.limit {
+            print("Collision detected")
+        }
+    }
 }
 
 protocol GameSceneState {

@@ -16,7 +16,7 @@ class EnemyController {
     var boundsWidth: CGFloat = 0
     
     init() {
-        timer = Timer.scheduledTimer(timeInterval: 2, target: self,
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self,
                                      selector: #selector(addEnemy), userInfo: nil, repeats: true)
         boundsWidth = UIScreen.main.bounds.size.width
     }
