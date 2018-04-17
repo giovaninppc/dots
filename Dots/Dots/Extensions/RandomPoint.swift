@@ -58,8 +58,7 @@ class RandomPoint {
     class func topRightSidePoint() -> CGPoint {
         let xPoint: CGFloat = boundsWidth/2
         let yPoint: UInt32 = arc4random_uniform(UInt32(boundsHeight/2))
-        let yLimit: CGFloat = CGFloat(yPoint) - boundsHeight/2
-        return CGPoint(x: xPoint, y: yLimit)
+        return CGPoint(x: xPoint, y: CGFloat(yPoint))
     }
     
     // Get a random point on the left side, top screen

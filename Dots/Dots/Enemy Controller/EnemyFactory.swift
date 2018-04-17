@@ -21,6 +21,8 @@ class EnemyFactory: NSObject {
         switch identifier {
         case .plane:
             return PlaneEnemy(state: state)
+        case .baloon:
+            return BaloonEnemy(state: state)
         default:
             fatalError("Undefined Enemy Type")
         }

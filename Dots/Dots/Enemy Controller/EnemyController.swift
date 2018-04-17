@@ -20,7 +20,7 @@ class EnemyController {
     
     // Create Enemy depending on the Level
     func createEnemy() -> Enemy {
-        return EnemyFactory.createEnemy(with: .plane, for: (scene?.state?.currentState)!)
+        return EnemyFactory.createEnemy(with: .baloon, for: (scene?.state?.currentState)!)
     }
     
     @objc func addEnemy() {
