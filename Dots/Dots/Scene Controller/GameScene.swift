@@ -22,17 +22,12 @@ class GameScene: SKScene {
             fatalError("Couldnt load background as SKSpriteNode")
         }
         self.background = background
-        
-        let planeEnemy1 = EnemyFactory.createEnemy(with: .plane)
-        planeEnemy1.position = CGPoint(x: 0, y: 0)
-        self.addChild(planeEnemy1)
-        enemies.append(planeEnemy1)
-        
-        let planeEnemy2 = EnemyFactory.createEnemy(with: .none)
-        planeEnemy2.position = CGPoint(x: 100, y: 100)
-        self.addChild(planeEnemy2)
-        enemies.append(planeEnemy2)
-        
+    }
+    
+    func addEnemy(_ enemy: Enemy, at position: CGPoint) {
+        enemy.position = position
+        self.scene?.addChild(enemy)
+        enemies.append(enemy)
     }
     
     func cleanGame() {

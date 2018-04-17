@@ -8,31 +8,13 @@
 
 import SpriteKit
 
-enum EnemyType {
-    case plane
-    case none
-}
-
-class EnemyFactory: NSObject {
-    
-    class func createEnemy(with identifier: EnemyType) -> Enemy {
-        switch identifier {
-        case .plane:
-            return EnemyPlane()
-        default:
-            return Enemy()
-        }
-    }
-    
-}
-
 /// Base Enemy Class
 class Enemy: SKSpriteNode {
     
     let stateDictInc: [GameStates: UIColor] = [.doodle: .red,
                                                .blueprint: .white]
     
-    init() {
+    private init() {
         super.init(texture: nil, color: .white, size: CGSize(width: 20, height: 20))
     }
     
@@ -47,33 +29,4 @@ class Enemy: SKSpriteNode {
     func update(for state: GameStates) {
         self.color = stateDictInc[state]!
     }
-}
-
-
-class EnemyPlane: Enemy {
-    
-    var enemySize: CGSize = CGSize(width: 50, height: 50)
-    
-    //Game States and positions
-    let stateDict: [GameStates: SKTexture] = [.doodle: SKTexture(imageNamed: "inkPlane"),
-                                              .blueprint: SKTexture(imageNamed: "paperPlane")]
-    
-    override init() {
-        super.init(texture: stateDict[.blueprint]!, size: enemySize)
-    }
-    
-    init (state: GameStates) {
-        let texture = stateDict[state]!
-        super.init(texture: texture, size: enemySize)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override func update(for state: GameStates) {
-        self.texture = stateDict[state]
-    }
-    
-    
 }

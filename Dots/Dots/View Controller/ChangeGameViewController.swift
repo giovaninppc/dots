@@ -18,12 +18,14 @@ class ChangeGameViewController: UIViewController {
 
     // Outlets
     @IBOutlet weak var gameScene: SKView!
+    @IBOutlet weak var coverImageView: UIImageView!
     
     // Variables
-    var gameStates: [GameStates] = [.doodle, .blueprint]
+    var gameStates: [GameStates] = [.blueprint, .doodle]
     var currentStatus: Int = 0
     
     var scene: GameScene!
+    var enemyController: EnemyController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,11 @@ class ChangeGameViewController: UIViewController {
         } else {
             fatalError("Game Scene not initialized")
         }
+        updateSceneState()
+        
+        //Initiate enemyController
+        enemyController = EnemyController()
+        enemyController.scene = scene
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(makeTransition(_:)))
         swipeRight.direction = .right
@@ -65,16 +72,30 @@ class ChangeGameViewController: UIViewController {
     }
     
     func transitionLeft() {
+//        coverImageView.image = takeScreenshot()
+//        self.view.bringSubview(toFront: coverImageView)
         updateSceneState()
         self.scene.updateGame(for: gameStates[currentStatus])
-        UIView.transition(with: self.view, duration: 0.5, options: .transitionCurlUp, animations: nil, completion: nil)
+//        UIView.transition(with: coverImageView, duration: 0.5, options: .transitionCurlUp,
+//                          animations: {
+//                            self.coverImageView.image = nil
+//        }, completion: { (_) -> Void in
+//            self.view.sendSubview(toBack: self.coverImageView)
+//        })
     }
     
     func transitionRight() {
         // Show animation
+//        coverImageView.image = #imageLiteral(resourceName: "test")
         updateSceneState()
         self.scene.updateGame(for: gameStates[currentStatus])
-        UIView.transition(with: self.view, duration: 0.5, options: .transitionCurlDown, animations: nil, completion: nil)
+//        self.view.bringSubview(toFront: coverImageView)
+//        UIView.transition(with: coverImageView, duration: 0.5, options: .transitionCurlDown,
+//                          animations: {
+//                            self.coverImageView.image = nil
+//        }, completion: { (_) -> Void in
+//            self.view.sendSubview(toBack: self.coverImageView)
+//        })
     }
     
     func updateSceneState() {
@@ -90,12 +111,12 @@ class ChangeGameViewController: UIViewController {
     
     open func takeScreenshot() -> UIImage? {
         
-        var screenshotImage :UIImage?
+        var screenshotImage: UIImage?
         let layer = UIApplication.shared.keyWindow!.layer
         let scale = UIScreen.main.scale
-        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale)
         guard let context = UIGraphicsGetCurrentContext() else {return nil}
-        layer.render(in:context)
+        layer.render(in: context)
         screenshotImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return screenshotImage

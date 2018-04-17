@@ -22,17 +22,26 @@
                             <skView contentMode="scaleToFill" sceneName="Game.sks" translatesAutoresizingMaskIntoConstraints="NO" id="mrX-mi-ZDn">
                                 <rect key="frame" x="-10" y="-6.5" width="394" height="700"/>
                             </skView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TZ0-Da-JTH">
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mrX-mi-ZDn" firstAttribute="height" secondItem="x0j-4A-BrA" secondAttribute="height" multiplier="1.05" id="4Mq-Ca-V7f"/>
                             <constraint firstItem="mrX-mi-ZDn" firstAttribute="centerX" secondItem="YcE-bE-cwU" secondAttribute="centerX" id="AM5-ZA-e4P"/>
+                            <constraint firstItem="TZ0-Da-JTH" firstAttribute="centerY" secondItem="YcE-bE-cwU" secondAttribute="centerY" id="LL3-G8-h6o"/>
                             <constraint firstItem="mrX-mi-ZDn" firstAttribute="width" secondItem="x0j-4A-BrA" secondAttribute="width" multiplier="1.05" id="MSw-zU-xIk"/>
+                            <constraint firstItem="TZ0-Da-JTH" firstAttribute="centerX" secondItem="YcE-bE-cwU" secondAttribute="centerX" id="eyh-5R-CVY"/>
                             <constraint firstItem="mrX-mi-ZDn" firstAttribute="centerY" secondItem="YcE-bE-cwU" secondAttribute="centerY" id="wQs-aL-3Vy"/>
+                            <constraint firstItem="TZ0-Da-JTH" firstAttribute="height" secondItem="x0j-4A-BrA" secondAttribute="height" id="wir-7t-b8h"/>
+                            <constraint firstItem="TZ0-Da-JTH" firstAttribute="width" secondItem="x0j-4A-BrA" secondAttribute="width" id="yfJ-o5-9Rq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YcE-bE-cwU"/>
                     </view>
                     <connections>
+                        <outlet property="coverImageView" destination="TZ0-Da-JTH" id="dV7-vi-M1p"/>
                         <outlet property="gameScene" destination="mrX-mi-ZDn" id="FLW-FM-bKf"/>
                     </connections>
                 </viewController>
