@@ -34,6 +34,8 @@
 		9B8D5D9C208790490001DB35 /* SorvivorGamePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D9B208790490001DB35 /* SorvivorGamePageViewController.swift */; };
 		9B8D5D9E208795280001DB35 /* References in Resources */ = {isa = PBXBuildFile; fileRef = 9B8D5D9D208795280001DB35 /* References */; };
 		9B8D5DA020879A7A0001DB35 /* Sketch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B8D5D9F20879A7A0001DB35 /* Sketch.ttf */; };
+		9B8D5DA220879CF00001DB35 /* ItsaSketch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B8D5DA120879CF00001DB35 /* ItsaSketch.ttf */; };
+		9B8D5DA420879F4D0001DB35 /* SettingsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5DA320879F4D0001DB35 /* SettingsPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		9B8D5D9B208790490001DB35 /* SorvivorGamePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorvivorGamePageViewController.swift; sourceTree = "<group>"; };
 		9B8D5D9D208795280001DB35 /* References */ = {isa = PBXFileReference; lastKnownFileType = text; path = References; sourceTree = "<group>"; };
 		9B8D5D9F20879A7A0001DB35 /* Sketch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sketch.ttf; sourceTree = "<group>"; };
+		9B8D5DA120879CF00001DB35 /* ItsaSketch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ItsaSketch.ttf; sourceTree = "<group>"; };
+		9B8D5DA320879F4D0001DB35 /* SettingsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				9B8D5D9F20879A7A0001DB35 /* Sketch.ttf */,
+				9B8D5DA120879CF00001DB35 /* ItsaSketch.ttf */,
 				9B627B802081305400B0FBEE /* Assets.xcassets */,
 				9B8D5D9D208795280001DB35 /* References */,
 			);
@@ -238,6 +243,7 @@
 			children = (
 				9B8D5D92208786550001DB35 /* MenuViewController.swift */,
 				9B8D5D9B208790490001DB35 /* SorvivorGamePageViewController.swift */,
+				9B8D5DA320879F4D0001DB35 /* SettingsPageViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 				9B8D5DA020879A7A0001DB35 /* Sketch.ttf in Resources */,
 				9B416A8E208528AF00E65777 /* Game.sks in Resources */,
 				9B627B842081305400B0FBEE /* LaunchScreen.storyboard in Resources */,
+				9B8D5DA220879CF00001DB35 /* ItsaSketch.ttf in Resources */,
 				9B416A8C2085289400E65777 /* Game.storyboard in Resources */,
 				9B8D5D9E208795280001DB35 /* References in Resources */,
 				9B8D5D912087860D0001DB35 /* Main.storyboard in Resources */,
@@ -336,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8D5DA420879F4D0001DB35 /* SettingsPageViewController.swift in Sources */,
 				9B2F50272083AD3100BD808D /* Enemy.swift in Sources */,
 				9B416A902085291100E65777 /* ChangeGameViewController.swift in Sources */,
 				9B8D5D9C208790490001DB35 /* SorvivorGamePageViewController.swift in Sources */,

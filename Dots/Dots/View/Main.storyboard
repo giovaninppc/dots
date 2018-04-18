@@ -12,6 +12,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="ItsaSketch.ttf">
+            <string>ItsaSketch</string>
+        </array>
         <array key="Sketch.ttf">
             <string>Sketch</string>
         </array>
@@ -48,7 +51,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Survivor Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WT7-qD-1eM">
-                                <rect key="frame" x="59" y="44" width="257.5" height="42.5"/>
+                                <rect key="frame" x="59" y="50" width="257.5" height="42.5"/>
                                 <fontDescription key="fontDescription" name="Sketch" family="Sketch" pointSize="50"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -74,20 +77,20 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rippedLateralPaper" translatesAutoresizingMaskIntoConstraints="NO" id="f7v-ii-wZi">
-                                <rect key="frame" x="-1" y="98.5" width="107" height="57"/>
+                                <rect key="frame" x="-1" y="112.5" width="107" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="107" id="Xqn-oQ-rV9"/>
                                     <constraint firstAttribute="height" constant="57" id="kw7-4W-lvT"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUV-0a-ldM">
-                                <rect key="frame" x="12" y="109" width="67" height="15"/>
+                                <rect key="frame" x="12" y="124.5" width="67" height="15"/>
                                 <fontDescription key="fontDescription" name="Sketch" family="Sketch" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2002304" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUS-qj-Sj1">
-                                <rect key="frame" x="21" y="126" width="48" height="12"/>
+                                <rect key="frame" x="21" y="141.5" width="48" height="12"/>
                                 <fontDescription key="fontDescription" name="Sketch" family="Sketch" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -98,7 +101,6 @@
                             <constraint firstItem="9uN-9H-bDO" firstAttribute="top" secondItem="9XP-CP-OIh" secondAttribute="bottom" constant="-99.5" id="06B-1f-4P1"/>
                             <constraint firstItem="9uN-9H-bDO" firstAttribute="centerY" secondItem="87U-5s-w3M" secondAttribute="centerY" id="6db-fd-Vm7"/>
                             <constraint firstItem="9uN-9H-bDO" firstAttribute="centerX" secondItem="87U-5s-w3M" secondAttribute="centerX" id="9Mx-MG-IXU"/>
-                            <constraint firstItem="LUV-0a-ldM" firstAttribute="top" secondItem="WT7-qD-1eM" secondAttribute="bottom" constant="22.5" id="Btl-aT-p64"/>
                             <constraint firstItem="WT7-qD-1eM" firstAttribute="centerX" secondItem="87U-5s-w3M" secondAttribute="centerX" id="H1z-vw-U85"/>
                             <constraint firstItem="tUS-qj-Sj1" firstAttribute="centerX" secondItem="LUV-0a-ldM" secondAttribute="centerX" id="HcS-3R-z1d"/>
                             <constraint firstItem="87U-5s-w3M" firstAttribute="trailing" secondItem="SqZ-dV-PP5" secondAttribute="trailing" constant="30" id="Hz8-6y-y4m"/>
@@ -107,10 +109,11 @@
                             <constraint firstItem="FMu-cH-6t0" firstAttribute="height" secondItem="W6x-AJ-iys" secondAttribute="height" id="V5E-ke-vxt"/>
                             <constraint firstItem="tUS-qj-Sj1" firstAttribute="top" secondItem="LUV-0a-ldM" secondAttribute="bottom" constant="2" id="Wvu-Ve-J8I"/>
                             <constraint firstItem="SqZ-dV-PP5" firstAttribute="top" secondItem="9uN-9H-bDO" secondAttribute="bottom" constant="-106.5" id="XW6-Ct-IS5"/>
+                            <constraint firstItem="f7v-ii-wZi" firstAttribute="top" secondItem="LUV-0a-ldM" secondAttribute="bottom" constant="-27" id="Z9D-be-wRh"/>
                             <constraint firstItem="FMu-cH-6t0" firstAttribute="centerY" secondItem="87U-5s-w3M" secondAttribute="centerY" id="ZQz-6V-CeZ"/>
                             <constraint firstItem="f7v-ii-wZi" firstAttribute="leading" secondItem="W6x-AJ-iys" secondAttribute="leading" constant="-1" id="ZrJ-l4-zfW"/>
-                            <constraint firstItem="WT7-qD-1eM" firstAttribute="top" secondItem="87U-5s-w3M" secondAttribute="top" constant="24" id="cIR-fV-URB"/>
-                            <constraint firstItem="f7v-ii-wZi" firstAttribute="top" secondItem="WT7-qD-1eM" secondAttribute="bottom" constant="12" id="hvG-JJ-0bq"/>
+                            <constraint firstItem="WT7-qD-1eM" firstAttribute="top" secondItem="87U-5s-w3M" secondAttribute="top" constant="30" id="cIR-fV-URB"/>
+                            <constraint firstItem="f7v-ii-wZi" firstAttribute="top" secondItem="WT7-qD-1eM" secondAttribute="bottom" constant="20" id="hvG-JJ-0bq"/>
                             <constraint firstItem="LUV-0a-ldM" firstAttribute="leading" secondItem="87U-5s-w3M" secondAttribute="leading" constant="12" id="j1a-w6-ugC"/>
                             <constraint firstItem="FMu-cH-6t0" firstAttribute="width" secondItem="W6x-AJ-iys" secondAttribute="width" id="o1m-Mx-Uc0"/>
                             <constraint firstItem="FMu-cH-6t0" firstAttribute="centerX" secondItem="87U-5s-w3M" secondAttribute="centerX" id="vXm-Se-nCd"/>
@@ -136,7 +139,7 @@
         <!--Settings-->
         <scene sceneID="RhN-ZN-5KD">
             <objects>
-                <viewController storyboardIdentifier="Settings" title="Settings" id="ozs-bx-zjK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Settings" title="Settings" id="ozs-bx-zjK" customClass="SettingsPageViewController" customModule="Dots" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gpd-Nl-frf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,20 +147,35 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Watercolor" translatesAutoresizingMaskIntoConstraints="NO" id="uif-hG-DmZ">
                                 <rect key="frame" x="-0.5" y="10" width="375" height="667"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stackedPaper" translatesAutoresizingMaskIntoConstraints="NO" id="bfY-0d-LFb">
+                                <rect key="frame" x="0.0" y="0.0" width="333" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asv-hn-kTd">
+                                <rect key="frame" x="167" y="55" width="191" height="56"/>
+                                <fontDescription key="fontDescription" name="ItsaSketch" family="ItsaSketch" pointSize="50"/>
+                                <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uif-hG-DmZ" firstAttribute="width" secondItem="Gpd-Nl-frf" secondAttribute="width" id="C5R-jP-YpN"/>
                             <constraint firstItem="uif-hG-DmZ" firstAttribute="height" secondItem="Gpd-Nl-frf" secondAttribute="height" id="DRj-vn-df0"/>
+                            <constraint firstItem="8Kf-3z-4pM" firstAttribute="trailing" secondItem="Asv-hn-kTd" secondAttribute="trailing" constant="17" id="TBB-Uu-bwP"/>
                             <constraint firstItem="uif-hG-DmZ" firstAttribute="centerX" secondItem="8Kf-3z-4pM" secondAttribute="centerX" id="Vca-Yw-W4q"/>
                             <constraint firstItem="uif-hG-DmZ" firstAttribute="centerY" secondItem="8Kf-3z-4pM" secondAttribute="centerY" id="h3P-84-rma"/>
+                            <constraint firstItem="Asv-hn-kTd" firstAttribute="top" secondItem="8Kf-3z-4pM" secondAttribute="top" constant="35" id="jSH-Ek-39L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Kf-3z-4pM"/>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="Asv-hn-kTd" id="wWH-by-dGD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U6v-8q-VCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="178" y="587"/>
+            <point key="canvasLocation" x="176.80000000000001" y="586.95652173913049"/>
         </scene>
     </scenes>
     <resources>
@@ -167,5 +185,6 @@
         <image name="pinPaper" width="300" height="300"/>
         <image name="plane1" width="100" height="100"/>
         <image name="rippedLateralPaper" width="166" height="67"/>
+        <image name="stackedPaper" width="375" height="152"/>
     </resources>
 </document>
