@@ -95,16 +95,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="7bT-y1-9MS">
+                                <rect key="frame" x="176" y="625" width="23" height="37"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9uN-9H-bDO" firstAttribute="top" secondItem="9XP-CP-OIh" secondAttribute="bottom" constant="-99.5" id="06B-1f-4P1"/>
                             <constraint firstItem="9uN-9H-bDO" firstAttribute="centerY" secondItem="87U-5s-w3M" secondAttribute="centerY" id="6db-fd-Vm7"/>
                             <constraint firstItem="9uN-9H-bDO" firstAttribute="centerX" secondItem="87U-5s-w3M" secondAttribute="centerX" id="9Mx-MG-IXU"/>
+                            <constraint firstItem="7bT-y1-9MS" firstAttribute="centerX" secondItem="87U-5s-w3M" secondAttribute="centerX" id="GgD-HX-3cn"/>
                             <constraint firstItem="WT7-qD-1eM" firstAttribute="centerX" secondItem="87U-5s-w3M" secondAttribute="centerX" id="H1z-vw-U85"/>
                             <constraint firstItem="tUS-qj-Sj1" firstAttribute="centerX" secondItem="LUV-0a-ldM" secondAttribute="centerX" id="HcS-3R-z1d"/>
                             <constraint firstItem="87U-5s-w3M" firstAttribute="trailing" secondItem="SqZ-dV-PP5" secondAttribute="trailing" constant="30" id="Hz8-6y-y4m"/>
                             <constraint firstItem="9uN-9H-bDO" firstAttribute="width" secondItem="W6x-AJ-iys" secondAttribute="width" multiplier="0.8" id="MyU-pk-fyZ"/>
+                            <constraint firstItem="87U-5s-w3M" firstAttribute="bottom" secondItem="7bT-y1-9MS" secondAttribute="bottom" constant="5" id="PFH-SJ-Qp8"/>
                             <constraint firstItem="9XP-CP-OIh" firstAttribute="leading" secondItem="87U-5s-w3M" secondAttribute="leading" constant="25" id="PlY-Ag-aoy"/>
                             <constraint firstItem="FMu-cH-6t0" firstAttribute="height" secondItem="W6x-AJ-iys" secondAttribute="height" id="V5E-ke-vxt"/>
                             <constraint firstItem="tUS-qj-Sj1" firstAttribute="top" secondItem="LUV-0a-ldM" secondAttribute="bottom" constant="2" id="Wvu-Ve-J8I"/>
@@ -147,6 +152,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Watercolor" translatesAutoresizingMaskIntoConstraints="NO" id="uif-hG-DmZ">
                                 <rect key="frame" x="-0.5" y="10" width="375" height="667"/>
                             </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="CX1-KH-EpJ">
+                                <rect key="frame" x="176" y="625" width="23" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stackedPaper" translatesAutoresizingMaskIntoConstraints="NO" id="bfY-0d-LFb">
                                 <rect key="frame" x="0.0" y="0.0" width="333" height="177"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -160,8 +170,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="8Kf-3z-4pM" firstAttribute="bottom" secondItem="CX1-KH-EpJ" secondAttribute="bottom" constant="5" id="4Vq-Rc-bUY"/>
                             <constraint firstItem="uif-hG-DmZ" firstAttribute="width" secondItem="Gpd-Nl-frf" secondAttribute="width" id="C5R-jP-YpN"/>
                             <constraint firstItem="uif-hG-DmZ" firstAttribute="height" secondItem="Gpd-Nl-frf" secondAttribute="height" id="DRj-vn-df0"/>
+                            <constraint firstItem="CX1-KH-EpJ" firstAttribute="centerX" secondItem="8Kf-3z-4pM" secondAttribute="centerX" id="DnX-Nd-Vga"/>
                             <constraint firstItem="8Kf-3z-4pM" firstAttribute="trailing" secondItem="Asv-hn-kTd" secondAttribute="trailing" constant="17" id="TBB-Uu-bwP"/>
                             <constraint firstItem="uif-hG-DmZ" firstAttribute="centerX" secondItem="8Kf-3z-4pM" secondAttribute="centerX" id="Vca-Yw-W4q"/>
                             <constraint firstItem="uif-hG-DmZ" firstAttribute="centerY" secondItem="8Kf-3z-4pM" secondAttribute="centerY" id="h3P-84-rma"/>

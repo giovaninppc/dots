@@ -36,6 +36,7 @@
 		9B8D5DA020879A7A0001DB35 /* Sketch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B8D5D9F20879A7A0001DB35 /* Sketch.ttf */; };
 		9B8D5DA220879CF00001DB35 /* ItsaSketch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B8D5DA120879CF00001DB35 /* ItsaSketch.ttf */; };
 		9B8D5DA420879F4D0001DB35 /* SettingsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5DA320879F4D0001DB35 /* SettingsPageViewController.swift */; };
+		9B8D5DA72087AF030001DB35 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8D5DA62087AF030001DB35 /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		9B8D5D9F20879A7A0001DB35 /* Sketch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sketch.ttf; sourceTree = "<group>"; };
 		9B8D5DA120879CF00001DB35 /* ItsaSketch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ItsaSketch.ttf; sourceTree = "<group>"; };
 		9B8D5DA320879F4D0001DB35 /* SettingsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageViewController.swift; sourceTree = "<group>"; };
+		9B8D5DA62087AF030001DB35 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8D5DA72087AF030001DB35 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +101,7 @@
 			children = (
 				9B627B742081305400B0FBEE /* Dots */,
 				9B627B732081305400B0FBEE /* Products */,
+				9B8D5DA52087AF030001DB35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -248,6 +252,14 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		9B8D5DA52087AF030001DB35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B8D5DA62087AF030001DB35 /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -282,6 +294,11 @@
 					9B627B712081305400B0FBEE = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
