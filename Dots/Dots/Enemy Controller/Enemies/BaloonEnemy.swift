@@ -14,7 +14,7 @@ let baloonHorizontalSpeed: Double = 5 // the smaller the faster
 // Plane Enemy
 class BaloonEnemy: Enemy, EnemyProtocol {
     
-    var enemySize: CGSize = CGSize(width: 100, height: 100)
+    var enemySize: CGSize = CGSize(width: 75, height: 75)
     
     //Game States and positions
     // This enemy textures for each GameState
@@ -63,6 +63,7 @@ class BaloonEnemy: Enemy, EnemyProtocol {
     /// - Parameter state: current GameState
     override func update(for state: GameStates) {
         self.texture = stateDict[state]
+        self.scale(to: enemySize)
     }
     
     /// Start enemy animation - movement
