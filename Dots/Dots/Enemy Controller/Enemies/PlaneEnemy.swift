@@ -9,7 +9,7 @@
 import SpriteKit
 
 // Change these constants to alter the PlaneEnemy Behaviour
-let planeDownSpeed: Double = -10.0
+let planeDownSpeed: Double = -30.0
 let planeHorizontalMove: Double = 50.0
 
 // Plane Enemy
@@ -24,16 +24,7 @@ class PlaneEnemy: Enemy, EnemyProtocol {
                                               .watercolor: SKTexture(imageNamed: "watercolorPlane")]
     
     // This enemy proper Animation
-    let planeAnimation: SKAction = SKAction.sequence([
-        SKAction.scaleX(to: -1, duration: 0.2),
-        SKAction.move(by: CGVector(dx: planeHorizontalMove,
-                                   dy: planeDownSpeed),
-                      duration: 2.0+Double(arc4random_uniform(10))*0.1),
-        SKAction.scaleX(to: 1, duration: 0.2),
-        SKAction.move(by: CGVector(dx: -1*planeHorizontalMove,
-                                   dy: planeDownSpeed),
-                      duration: 2.0+Double(arc4random_uniform(10))*0.1)])
-    
+    var planeAnimation: SKAction = SKAction.run {}
     /// This is the importante init
     /// It will start the enmy on the current gameState
     /// and configure animation and texture
@@ -43,6 +34,7 @@ class PlaneEnemy: Enemy, EnemyProtocol {
         let texture = stateDict[state]!
         super.init(texture: texture, size: enemySize)
         self.position = RandomPoint.topScreenPoint()
+        createAction()
         startAction()
         configureBody()
     }
@@ -59,9 +51,22 @@ class PlaneEnemy: Enemy, EnemyProtocol {
         self.texture = stateDict[state]
     }
     
+    func createAction() {
+        planeAnimation = SKAction.repeatForever(SKAction.sequence([
+            SKAction.scaleX(to: -1, duration: 0.2),
+            SKAction.move(by: CGVector(dx: planeHorizontalMove,
+                                       dy: planeDownSpeed),
+                          duration: 2.0+Double(arc4random_uniform(10))*0.1),
+            SKAction.scaleX(to: 1, duration: 0.2),
+            SKAction.move(by: CGVector(dx: -1*planeHorizontalMove,
+                                       dy: planeDownSpeed),
+                          duration: 2.0+Double(arc4random_uniform(10))*0.1)]))
+
+    }
+    
     /// Start enemy animation - movement
     func startAction() {
-        self.run(SKAction.repeatForever(planeAnimation))
+        self.run(planeAnimation)
     }
     
     /// Create the physics body for collision detection

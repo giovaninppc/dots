@@ -48,26 +48,22 @@ class ChangeGameViewController: UIViewController {
         enemyController = EnemyController()
         enemyController.scene = scene
         
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(makeTransition(_:)))
-        swipeRight.direction = .right
-        self.view.addGestureRecognizer(swipeRight)
+        // Define the current level!!!
+        enemyController.state = Level01()
         
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(makeTransition(_:)))
-        swipeLeft.direction = .left
-        self.view.addGestureRecognizer(swipeLeft)
+        // Add gesture to change game environment
+        addSwipeGestures()
     }
 
     @objc func makeTransition(_ swipe: UISwipeGestureRecognizer) {
         
         if swipe.direction == .left {
-            print("LEFT")
             currentStatus += 1
             if currentStatus == gameStates.count {
                 currentStatus = 0
             }
             transitionLeft()
         } else if swipe.direction == .right {
-            print("RIGHT")
             currentStatus -= 1
             if currentStatus < 0 {
                 currentStatus = gameStates.count - 1
@@ -112,6 +108,17 @@ class ChangeGameViewController: UIViewController {
         case .watercolor:
             self.scene.state = WatercolorState()
         }
+    }
+    
+    func addSwipeGestures() {
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(makeTransition(_:)))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(makeTransition(_:)))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
     }
     
     func takeScreenshot() -> UIImage? {

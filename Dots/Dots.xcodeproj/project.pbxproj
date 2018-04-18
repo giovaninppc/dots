@@ -26,6 +26,7 @@
 		9B6B160B20867660008E2D9F /* WatercolorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B160A20867660008E2D9F /* WatercolorState.swift */; };
 		9B8D5D8B20868AC70001DB35 /* RandomPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D8A20868AC70001DB35 /* RandomPoint.swift */; };
 		9B8D5D8D208690F20001DB35 /* BaloonEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D8C208690F20001DB35 /* BaloonEnemy.swift */; };
+		9B8D5D8F2086AA300001DB35 /* Level01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D8E2086AA300001DB35 /* Level01.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		9B6B160A20867660008E2D9F /* WatercolorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatercolorState.swift; sourceTree = "<group>"; };
 		9B8D5D8A20868AC70001DB35 /* RandomPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPoint.swift; sourceTree = "<group>"; };
 		9B8D5D8C208690F20001DB35 /* BaloonEnemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaloonEnemy.swift; sourceTree = "<group>"; };
+		9B8D5D8E2086AA300001DB35 /* Level01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level01.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,11 +180,11 @@
 			isa = PBXGroup;
 			children = (
 				9B416A892085121A00E65777 /* EnemyController.swift */,
+				9B8D5D88208679030001DB35 /* EnemyControllerState */,
 				9B416A97208627A400E65777 /* EnemyDefinition.swift */,
 				9B416A932086273A00E65777 /* EnemyFactory.swift */,
 				9B416A9A20863DCD00E65777 /* Collision BitMask.swift */,
 				9B627B9F2083978200B0FBEE /* Enemies */,
-				9B8D5D88208679030001DB35 /* EnemyControllerState */,
 			);
 			path = "Enemy Controller";
 			sourceTree = "<group>";
@@ -190,6 +192,7 @@
 		9B8D5D88208679030001DB35 /* EnemyControllerState */ = {
 			isa = PBXGroup;
 			children = (
+				9B8D5D8E2086AA300001DB35 /* Level01.swift */,
 			);
 			path = EnemyControllerState;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				9B416A9220852A4500E65777 /* GameScene.swift in Sources */,
 				9B416A8A2085121A00E65777 /* EnemyController.swift in Sources */,
 				9B6B160B20867660008E2D9F /* WatercolorState.swift in Sources */,
+				9B8D5D8F2086AA300001DB35 /* Level01.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

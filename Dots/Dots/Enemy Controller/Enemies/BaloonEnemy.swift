@@ -18,18 +18,13 @@ class BaloonEnemy: Enemy, EnemyProtocol {
     
     //Game States and positions
     // This enemy textures for each GameState
-    let stateDict: [GameStates: SKTexture] = [.doodle: SKTexture(imageNamed: "doodlePlane"),
-                                              .blueprint: SKTexture(imageNamed: "paperPlane"),
-                                              .watercolor: SKTexture(imageNamed: "watercolorPlane")]
+    let stateDict: [GameStates: SKTexture] =
+        [.doodle: SKTexture(imageNamed: "doodleBaloon"),
+         .blueprint: SKTexture(imageNamed: "blueprintBaloon"),
+         .watercolor: SKTexture(imageNamed: "watercolorBaloon\(arc4random_uniform(2))")]
     
     // This enemy proper Animation
-    let planeAnimation: SKAction = SKAction.sequence([
-        SKAction.move(by: CGVector(dx: -1*RandomPoint.boundsWidth + 50, dy: 0),
-                      duration: baloonHorizontalSpeed),
-        SKAction.move(by: .zero,
-                      duration: 1),
-        SKAction.move(by: CGVector(dx: RandomPoint.boundsWidth, dy: 0),
-                      duration: baloonHorizontalSpeed)])
+    var baloonAnimation: SKAction = SKAction.run {}
     
     /// This is the importante init
     /// It will start the enmy on the current gameState
@@ -40,12 +35,26 @@ class BaloonEnemy: Enemy, EnemyProtocol {
         let texture = stateDict[state]!
         super.init(texture: texture, size: enemySize)
         self.position = RandomPoint.topRightSidePoint()
+        createAction()
         startAction()
         configureBody()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    func createAction() {
+        baloonAnimation = SKAction.sequence([
+        SKAction.move(by: CGVector(dx: -1*RandomPoint.boundsWidth + 50, dy: 0),
+        duration: baloonHorizontalSpeed + Double(arc4random_uniform(3))),
+        SKAction.move(by: .zero,
+        duration: 1),
+        SKAction.move(by: CGVector(dx: RandomPoint.boundsWidth, dy: 0),
+        duration: baloonHorizontalSpeed + Double(arc4random_uniform(3))),
+        SKAction.run {
+            self.selfDestruct()
+            }])
     }
     
     /// Change the enemy texture and behaviour
@@ -58,7 +67,7 @@ class BaloonEnemy: Enemy, EnemyProtocol {
     
     /// Start enemy animation - movement
     func startAction() {
-        self.run(SKAction.repeatForever(planeAnimation))
+        self.run(baloonAnimation)
     }
     
     /// Create the physics body for collision detection
