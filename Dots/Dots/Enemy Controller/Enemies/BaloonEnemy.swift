@@ -26,6 +26,22 @@ class BaloonEnemy: Enemy, EnemyProtocol {
     // This enemy proper Animation
     var baloonAnimation: SKAction = SKAction.run {}
     
+    // Var state animation
+    var stateAnimation: [GameStates: SKAction] =
+        [.doodle: SKAction.repeatForever(
+            SKAction.animate(with: [SKTexture(imageNamed: "doodleBaloon-0"),
+                                    SKTexture(imageNamed: "doodleBaloon-1"),
+                                    SKTexture(imageNamed: "doodleBaloon-2"),
+                                    SKTexture(imageNamed: "doodleBaloon-3"),
+                                    SKTexture(imageNamed: "doodleBaloon-4")], timePerFrame: 0.1)),
+         .blueprint: SKAction.repeatForever(
+            SKAction.animate(with: [SKTexture(imageNamed: "blueprintBaloon-0"),
+                                    SKTexture(imageNamed: "blueprintBaloon-1"),
+                                    SKTexture(imageNamed: "blueprintBaloon-2"),
+                                    SKTexture(imageNamed: "blueprintBaloon-3")], timePerFrame: 0.04)),
+         .watercolor: SKAction.animate(with: [SKTexture(imageNamed: "watercolorBaloon\(arc4random_uniform(2))")],
+                                       timePerFrame: 50)]
+    
     /// This is the importante init
     /// It will start the enmy on the current gameState
     /// and configure animation and texture
@@ -37,7 +53,8 @@ class BaloonEnemy: Enemy, EnemyProtocol {
         self.position = RandomPoint.topRightSidePoint()
         createAction()
         startAction()
-        configureBody()
+        configureBody() //Should the baloon have a physics body?
+        runSpriteAnimaton(for: state)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -57,12 +74,19 @@ class BaloonEnemy: Enemy, EnemyProtocol {
             }])
     }
     
+    /// Run the sprite animation of the enemy
+    ///
+    /// - Parameter state: the current game state
+    func runSpriteAnimaton(for state: GameStates) {
+        self.run(stateAnimation[state]!)
+    }
+    
     /// Change the enemy texture and behaviour
     /// depending on the current game state
     ///
     /// - Parameter state: current GameState
     override func update(for state: GameStates) {
-        self.texture = stateDict[state]
+        runSpriteAnimaton(for: state)
         self.scale(to: enemySize)
     }
     
