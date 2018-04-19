@@ -42,7 +42,7 @@ class ChangeGameViewController: UIViewController {
         // DEBUG
         gameScene.showsFPS = true
         gameScene.showsNodeCount = true
-        gameScene.showsPhysics = true
+        //gameScene.showsPhysics = true
         
         //Initiate enemyController
         enemyController = EnemyController()

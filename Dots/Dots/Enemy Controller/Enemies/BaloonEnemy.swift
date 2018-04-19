@@ -115,7 +115,9 @@ class BaloonEnemy: Enemy, EnemyProtocol {
     /// Tell the ShotDelegate to handle the bomb instantiation
     func dropBomb() {
         if let delegate = shotDelegate {
-            delegate.addShot(type: .baloonBomb, at: self.position)
+            var position = self.position
+            position.y -= 20
+            delegate.addShot(type: .baloonBomb, at: position)
         }
     }
     

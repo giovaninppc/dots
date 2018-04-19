@@ -9,7 +9,7 @@
 import SpriteKit
 
 // Change these constants to alter the PlaneEnemy Behaviour
-let baloonBombSpeed: Double = 5
+let baloonBombSpeed: Double = 6
 
 // Plane Enemy
 class BaloonBomb: Enemy, EnemyProtocol {
@@ -53,7 +53,7 @@ class BaloonBomb: Enemy, EnemyProtocol {
     }
     
     func createAction() {
-        baloonBombAnimation = SKAction.move(by: CGVector(dx: 0, dy: -500.0), duration: baloonBombSpeed)
+        baloonBombAnimation = SKAction.move(by: CGVector(dx: 0, dy: -1000.0), duration: baloonBombSpeed)
     }
     
     /// Start enemy animation - movement
