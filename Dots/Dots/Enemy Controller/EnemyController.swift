@@ -13,7 +13,7 @@ protocol EnemyControllerState {
     func controlTimers()
 }
 
-// This class is resposible for creating the enemis on the scene
+// This class is resposible for creating the enemies on the scene
 // it contains the Timers, which defines when the enemies are going ot be created.
 // How the creation is gois to be - is defined by the 'state'
 // state - is the current enemy generator state - current level
@@ -21,28 +21,26 @@ protocol EnemyControllerState {
 
 class EnemyController {
     
-    // Timers
-    var planeTimer: Timer = Timer()
-    var ballonTimer: Timer = Timer()
-    
+    // Timer
     var globalTimer: Timer = Timer()
     var seconds: Int = 0
     
+    // Countdowns
+    var counters: [Int] = [1, 20]
+    var counterRef: [EnemyType] = [.plane, .baloon]
+    var respawnTime: [EnemyType: Int] = [.plane: 1, .baloon: 10]
+    
     // Scene
     var scene: GameScene?
-    var state: EnemyControllerState?
     
     init() {
-        
         // Start Global Timer
         globalTimer = Timer.scheduledTimer(timeInterval: 1, target: self,
                                            selector: #selector(updateGlobalTimer), userInfo: nil, repeats: true)
-        self.planeTimer =
-            Timer.scheduledTimer(timeInterval: 1, target: self,
-                                 selector: #selector(addPlane),
-                                 userInfo: nil, repeats: true)
-        //Start the state delegate
-        state?.controller = self
+    }
+    
+    func addEnemy(type: EnemyType) {
+        scene?.addEnemy(createEnemy(type: type))
     }
     
     // Create Enemy depending on the Level
@@ -55,35 +53,39 @@ class EnemyController {
     //THIS is the method that vary depending on the level!!!
     @objc func updateGlobalTimer() {
         self.seconds += 1
-        //state?.controlTimers()
         
-        if self.seconds == 10 {
-            self.planeTimer.invalidate()
-            self.planeTimer =
-                Timer.scheduledTimer(timeInterval: 5, target: self,
-                                     selector: #selector(addPlane),
-                                     userInfo: nil, repeats: true)
+        //Update countdown time
+        for index in 0..<counters.count {
+            counters[index] -= 1
         }
         
+        // Check if time to add Enemy - for each enemyType
+        for index in 0..<counters.count where counters[index] == 0 {
+            addEnemy(type: counterRef[index])
+            counters[index] = respawnTime[counterRef[index]]!
+        }
+        
+        // Update the respawn time - if needed
         if self.seconds == 5 {
-            self.ballonTimer.invalidate()
-            self.ballonTimer =
-                Timer.scheduledTimer(timeInterval: 15, target: self,
-                                     selector: #selector(addBaloon), userInfo: nil, repeats: true)
-        }
-        
-        if self.seconds == 120 {
-            self.ballonTimer.invalidate()
-            self.ballonTimer = Timer.scheduledTimer(timeInterval: 10, target: self,
-                                                          selector: #selector(addBaloon), userInfo: nil, repeats: true)
+            respawnTime[.plane] = 5
+        } else if self.seconds == 60 {
+            respawnTime[.baloon] = 7
         }
     }
     
-    // Enemy Creators
-    @objc func addPlane() {
-        scene?.addEnemy(createEnemy(type: .plane))
-    }
-    @objc func addBaloon() {
-        scene?.addEnemy(createEnemy(type: .baloon))
+}
+
+protocol Level: NSObjectProtocol {
+    func updateRespawnTime(for time: Int, respawnTime: inout [EnemyType: Int])
+}
+
+extension Level {
+    func updateRespawnTime(for time: Int, respawnTime: inout [EnemyType: Int]) {
+        // Update the respawn time - if needed
+        if time == 5 {
+            respawnTime[.plane] = 5
+        } else if time == 60 {
+            respawnTime[.baloon] = 7
+        }
     }
 }

@@ -48,9 +48,6 @@ class ChangeGameViewController: UIViewController {
         enemyController = EnemyController()
         enemyController.scene = scene
         
-        // Define the current level!!!
-        enemyController.state = Level01()
-        
         // Add gesture to change game environment
         addSwipeGestures()
     }
