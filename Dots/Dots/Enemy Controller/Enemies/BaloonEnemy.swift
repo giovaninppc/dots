@@ -42,6 +42,9 @@ class BaloonEnemy: Enemy, EnemyProtocol {
          .watercolor: SKAction.animate(with: [SKTexture(imageNamed: "watercolorBaloon\(arc4random_uniform(2))")],
                                        timePerFrame: 50)]
     
+    // Shots Delegate
+    var shotDelegate: ShotDelegate?
+    
     /// This is the importante init
     /// It will start the enmy on the current gameState
     /// and configure animation and texture
@@ -57,6 +60,17 @@ class BaloonEnemy: Enemy, EnemyProtocol {
         runSpriteAnimaton(for: state)
     }
     
+    init (state: GameStates, delegate: ShotDelegate) {
+        let texture = stateDict[state]!
+        super.init(texture: texture, size: enemySize)
+        self.position = RandomPoint.topRightSidePoint()
+        self.shotDelegate = delegate
+        createAction()
+        startAction()
+        configureBody() //Should the baloon have a physics body?
+        runSpriteAnimaton(for: state)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -65,8 +79,11 @@ class BaloonEnemy: Enemy, EnemyProtocol {
         baloonAnimation = SKAction.sequence([
         SKAction.move(by: CGVector(dx: -1*RandomPoint.boundsWidth + 50, dy: 0),
         duration: baloonHorizontalSpeed + Double(arc4random_uniform(3))),
-        SKAction.move(by: .zero,
-        duration: 1),
+        SKAction.move(by: .zero, duration: 0.5),
+        SKAction.run {
+            self.dropBomb()
+            },
+        SKAction.move(by: .zero, duration: 0.5),
         SKAction.move(by: CGVector(dx: RandomPoint.boundsWidth, dy: 0),
         duration: baloonHorizontalSpeed + Double(arc4random_uniform(3))),
         SKAction.run {
@@ -93,6 +110,13 @@ class BaloonEnemy: Enemy, EnemyProtocol {
     /// Start enemy animation - movement
     func startAction() {
         self.run(baloonAnimation)
+    }
+    
+    /// Tell the ShotDelegate to handle the bomb instantiation
+    func dropBomb() {
+        if let delegate = shotDelegate {
+            delegate.addShot(type: .baloonBomb, at: self.position)
+        }
     }
     
     /// Create the physics body for collision detection

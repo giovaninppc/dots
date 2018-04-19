@@ -18,8 +18,6 @@ class GameScene: SKScene {
 
     func configureGame() {
         
-    
-        
         guard let background = self.scene?.childNode(withName: "Background") as? SKSpriteNode else {
             fatalError("Couldnt load background as SKSpriteNode")
         }

@@ -8,10 +8,6 @@
 
 import SpriteKit
 
-protocol EnemyControllerState {
-    var controller: EnemyController? {get set}
-    func controlTimers()
-}
 
 // This class is resposible for creating the enemies on the scene
 // it contains the Timers, which defines when the enemies are going ot be created.
@@ -45,7 +41,7 @@ class EnemyController {
     
     // Create Enemy depending on the Level
     func createEnemy(type enemyType: EnemyType) -> Enemy {
-        return EnemyFactory.createEnemy(with: enemyType, for: (scene?.state?.currentState)!)
+        return EnemyFactory.createEnemy(with: enemyType, for: (scene?.state?.currentState)!, with: self)
     }
     
     //Update Global Timer - Defines the scene behaviour and dificult
@@ -72,20 +68,12 @@ class EnemyController {
             respawnTime[.baloon] = 7
         }
     }
-    
 }
 
-protocol Level: NSObjectProtocol {
-    func updateRespawnTime(for time: Int, respawnTime: inout [EnemyType: Int])
-}
-
-extension Level {
-    func updateRespawnTime(for time: Int, respawnTime: inout [EnemyType: Int]) {
-        // Update the respawn time - if needed
-        if time == 5 {
-            respawnTime[.plane] = 5
-        } else if time == 60 {
-            respawnTime[.baloon] = 7
-        }
+extension EnemyController: ShotDelegate {
+    func addShot(type: EnemyType, at position: CGPoint) {
+        let shot = EnemyFactory.createEnemy(with: type, for: (scene?.state?.currentState)!)
+        shot.position = position
+        scene?.addEnemy(shot)
     }
 }

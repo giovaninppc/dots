@@ -26,6 +26,7 @@ class RandomPoint {
     // Screen sizes and orientations
     static var boundsWidth: CGFloat = UIScreen.main.bounds.size.width
     static var boundsHeight: CGFloat = UIScreen.main.bounds.size.height
+    static var screenSize: CGSize = UIScreen.main.bounds.size
     
     // Get a random point on top of the screen
     //

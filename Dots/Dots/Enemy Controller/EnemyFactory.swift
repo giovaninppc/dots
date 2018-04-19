@@ -23,6 +23,21 @@ class EnemyFactory: NSObject {
             return PlaneEnemy(state: state)
         case .baloon:
             return BaloonEnemy(state: state)
+        case .baloonBomb:
+            return BaloonBomb(state: state)
+        default:
+            fatalError("Undefined Enemy Type")
+        }
+    }
+    
+    class func createEnemy(with identifier: EnemyType, for state: GameStates, with delegate: ShotDelegate) -> Enemy {
+        switch identifier {
+        case .plane:
+            return PlaneEnemy(state: state)
+        case .baloon:
+            return BaloonEnemy(state: state, delegate: delegate)
+        case .baloonBomb:
+            return BaloonBomb(state: state)
         default:
             fatalError("Undefined Enemy Type")
         }

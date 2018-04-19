@@ -11,6 +11,7 @@ import SpriteKit
 enum EnemyType {
     case plane
     case baloon
+    case baloonBomb
     case none
 }
 

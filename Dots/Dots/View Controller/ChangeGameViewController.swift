@@ -69,33 +69,19 @@ class ChangeGameViewController: UIViewController {
         }
     }
     
+    /// Create animation and transition left
     func transitionLeft() {
-//        coverImageView.image = takeScreenshot()
-//        self.view.bringSubview(toFront: coverImageView)
         updateSceneState()
         self.scene.updateGame(for: gameStates[currentStatus])
-//        UIView.transition(with: coverImageView, duration: 0.5, options: .transitionCurlUp,
-//                          animations: {
-//                            self.coverImageView.image = nil
-//        }, completion: { (_) -> Void in
-//            self.view.sendSubview(toBack: self.coverImageView)
-//        })
     }
     
+    /// Create animation and transition right
     func transitionRight() {
-        // Show animation
-//        coverImageView.image = #imageLiteral(resourceName: "test")
         updateSceneState()
         self.scene.updateGame(for: gameStates[currentStatus])
-//        self.view.bringSubview(toFront: coverImageView)
-//        UIView.transition(with: coverImageView, duration: 0.5, options: .transitionCurlDown,
-//                          animations: {
-//                            self.coverImageView.image = nil
-//        }, completion: { (_) -> Void in
-//            self.view.sendSubview(toBack: self.coverImageView)
-//        })
     }
     
+    /// Update scene with new Game State
     func updateSceneState() {
         switch gameStates[currentStatus] {
         case .doodle:
@@ -107,6 +93,7 @@ class ChangeGameViewController: UIViewController {
         }
     }
     
+    /// Create the gestures to change environment on the game
     func addSwipeGestures() {
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(makeTransition(_:)))
@@ -118,6 +105,9 @@ class ChangeGameViewController: UIViewController {
         self.view.addGestureRecognizer(swipeLeft)
     }
     
+    /// Take a screenshot to make the tansition
+    ///
+    /// - Returns: the screenshot UIImage
     func takeScreenshot() -> UIImage? {
         
         var screenshotImage: UIImage?

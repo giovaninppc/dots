@@ -8,13 +8,6 @@
 
 import SpriteKit
 
-// ---------- ENEMY MANUAL ---------
-//
-// An Enemy can Have a static texture
-//      this way it will use the stateDict dictionary to get the state texture
-//      or it can have an texture animation - so it will use the stateAnimation
-//
-
 /// Base Enemy Class
 class Enemy: SKSpriteNode {
     

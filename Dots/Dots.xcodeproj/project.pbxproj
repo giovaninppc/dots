@@ -36,6 +36,9 @@
 		9B8D5DA220879CF00001DB35 /* ItsaSketch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B8D5DA120879CF00001DB35 /* ItsaSketch.ttf */; };
 		9B8D5DA420879F4D0001DB35 /* SettingsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5DA320879F4D0001DB35 /* SettingsPageViewController.swift */; };
 		9B8D5DA72087AF030001DB35 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8D5DA62087AF030001DB35 /* GameKit.framework */; };
+		9BAD24282088BC000087B105 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAD24272088BC000087B105 /* Level.swift */; };
+		9BAD242A2088BDA60087B105 /* ShotDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAD24292088BDA60087B105 /* ShotDelegate.swift */; };
+		9BAD242C2088BEEC0087B105 /* BaloonBomb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAD242B2088BEEC0087B105 /* BaloonBomb.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		9B8D5DA120879CF00001DB35 /* ItsaSketch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ItsaSketch.ttf; sourceTree = "<group>"; };
 		9B8D5DA320879F4D0001DB35 /* SettingsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageViewController.swift; sourceTree = "<group>"; };
 		9B8D5DA62087AF030001DB35 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		9BAD24272088BC000087B105 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		9BAD24292088BDA60087B105 /* ShotDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotDelegate.swift; sourceTree = "<group>"; };
+		9BAD242B2088BEEC0087B105 /* BaloonBomb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaloonBomb.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +196,7 @@
 				9B2F50262083AD3100BD808D /* Enemy.swift */,
 				9B416A952086275600E65777 /* PlaneEnemy.swift */,
 				9B8D5D8C208690F20001DB35 /* BaloonEnemy.swift */,
+				9BAD242B2088BEEC0087B105 /* BaloonBomb.swift */,
 			);
 			path = Enemies;
 			sourceTree = "<group>";
@@ -205,6 +212,7 @@
 		9B8D5D87208678F90001DB35 /* Enemy Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9BAD24292088BDA60087B105 /* ShotDelegate.swift */,
 				9B416A892085121A00E65777 /* EnemyController.swift */,
 				9B8D5D88208679030001DB35 /* EnemyControllerState */,
 				9B416A97208627A400E65777 /* EnemyDefinition.swift */,
@@ -218,6 +226,7 @@
 		9B8D5D88208679030001DB35 /* EnemyControllerState */ = {
 			isa = PBXGroup;
 			children = (
+				9BAD24272088BC000087B105 /* Level.swift */,
 			);
 			path = EnemyControllerState;
 			sourceTree = "<group>";
@@ -359,9 +368,11 @@
 			files = (
 				9B8D5DA420879F4D0001DB35 /* SettingsPageViewController.swift in Sources */,
 				9B2F50272083AD3100BD808D /* Enemy.swift in Sources */,
+				9BAD242C2088BEEC0087B105 /* BaloonBomb.swift in Sources */,
 				9B416A902085291100E65777 /* ChangeGameViewController.swift in Sources */,
 				9B8D5D9C208790490001DB35 /* SorvivorGamePageViewController.swift in Sources */,
 				9B627B982083912500B0FBEE /* DoodleState.swift in Sources */,
+				9BAD242A2088BDA60087B105 /* ShotDelegate.swift in Sources */,
 				9B8D5D9920878FF80001DB35 /* PlaneAnimation.swift in Sources */,
 				9B8D5D8D208690F20001DB35 /* BaloonEnemy.swift in Sources */,
 				9B8D5D9720878D680001DB35 /* doodleBaloon.swift in Sources */,
@@ -373,6 +384,7 @@
 				9B416A962086275600E65777 /* PlaneEnemy.swift in Sources */,
 				9B627B96208390FD00B0FBEE /* BlueprintState.swift in Sources */,
 				9B416A98208627A400E65777 /* EnemyDefinition.swift in Sources */,
+				9BAD24282088BC000087B105 /* Level.swift in Sources */,
 				9B416A9220852A4500E65777 /* GameScene.swift in Sources */,
 				9B416A8A2085121A00E65777 /* EnemyController.swift in Sources */,
 				9B6B160B20867660008E2D9F /* WatercolorState.swift in Sources */,

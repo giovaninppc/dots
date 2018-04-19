@@ -9,22 +9,21 @@
 import SpriteKit
 
 // Change these constants to alter the PlaneEnemy Behaviour
-let planeDownSpeed: Double = -30.0
-let planeHorizontalMove: Double = 50.0
+let baloonBombSpeed: Double = 5
 
 // Plane Enemy
-class PlaneEnemy: Enemy, EnemyProtocol {
+class BaloonBomb: Enemy, EnemyProtocol {
     
-    var enemySize: CGSize = CGSize(width: 80, height: 80)
+    var enemySize: CGSize = CGSize(width: 15, height: 15)
     
     //Game States and positions
     // This enemy textures for each GameState
-    let stateDict: [GameStates: SKTexture] = [.doodle: SKTexture(imageNamed: "doodlePlane"),
-                                              .blueprint: SKTexture(imageNamed: "paperPlane"),
-                                              .watercolor: SKTexture(imageNamed: "watercolorPlane")]
+    let stateDict: [GameStates: SKTexture] = [.doodle: SKTexture(imageNamed: "doodleBaloonBomb"),
+                                              .blueprint: SKTexture(imageNamed: "blueprintBaloonBomb"),
+                                              .watercolor: SKTexture(imageNamed: "watercolorBaloonBomb")]
     
     // This enemy proper Animation
-    var planeAnimation: SKAction = SKAction.run {}
+    var baloonBombAnimation: SKAction = SKAction.run {}
     
     /// This is the importante init
     /// It will start the enmy on the current gameState
@@ -50,29 +49,22 @@ class PlaneEnemy: Enemy, EnemyProtocol {
     /// - Parameter state: current GameState
     override func update(for state: GameStates) {
         self.texture = stateDict[state]
+        self.scale(to: enemySize)
     }
     
     func createAction() {
-        planeAnimation = SKAction.repeatForever(SKAction.sequence([
-            SKAction.scaleX(to: -1, duration: 0.2),
-            SKAction.move(by: CGVector(dx: planeHorizontalMove,
-                                       dy: planeDownSpeed),
-                          duration: 2.0+Double(arc4random_uniform(10))*0.1),
-            SKAction.scaleX(to: 1, duration: 0.2),
-            SKAction.move(by: CGVector(dx: -1*planeHorizontalMove,
-                                       dy: planeDownSpeed),
-                          duration: 2.0+Double(arc4random_uniform(10))*0.1)]))
+        baloonBombAnimation = SKAction.move(by: CGVector(dx: 0, dy: -500.0), duration: baloonBombSpeed)
     }
     
     /// Start enemy animation - movement
     func startAction() {
-        self.run(planeAnimation)
+        self.run(baloonBombAnimation)
     }
     
     /// Create the physics body for collision detection
     /// for this enemy
     func configureBody() {
-        let body = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 50))
+        let body = SKPhysicsBody(circleOfRadius: enemySize.height)
         body.categoryBitMask = PhysicsCategory.enemy
         body.affectedByGravity = false
         body.allowsRotation = false
