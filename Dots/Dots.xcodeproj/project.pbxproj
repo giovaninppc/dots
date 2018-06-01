@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1449BBD586104B303EAC3208 /* Pods_Dots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E819CA57B548D989D2E4C149 /* Pods_Dots.framework */; };
 		9B2F50272083AD3100BD808D /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2F50262083AD3100BD808D /* Enemy.swift */; };
+		9B3F787B20C16EED0055FADA /* GameSceneProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3F787A20C16EED0055FADA /* GameSceneProtocol.swift */; };
 		9B416A8A2085121A00E65777 /* EnemyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B416A892085121A00E65777 /* EnemyController.swift */; };
 		9B416A8C2085289400E65777 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B416A8B2085289400E65777 /* Game.storyboard */; };
 		9B416A8E208528AF00E65777 /* Game.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9B416A8D208528AF00E65777 /* Game.sks */; };
@@ -22,7 +24,6 @@
 		9B627B842081305400B0FBEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B627B822081305400B0FBEE /* LaunchScreen.storyboard */; };
 		9B627B96208390FD00B0FBEE /* BlueprintState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B627B95208390FD00B0FBEE /* BlueprintState.swift */; };
 		9B627B982083912500B0FBEE /* DoodleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B627B972083912500B0FBEE /* DoodleState.swift */; };
-		9B627BA220839A2000B0FBEE /* EnemyAction.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9B627BA120839A2000B0FBEE /* EnemyAction.sks */; };
 		9B6B160B20867660008E2D9F /* WatercolorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B160A20867660008E2D9F /* WatercolorState.swift */; };
 		9B8D5D8B20868AC70001DB35 /* RandomPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D8A20868AC70001DB35 /* RandomPoint.swift */; };
 		9B8D5D8D208690F20001DB35 /* BaloonEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D8C208690F20001DB35 /* BaloonEnemy.swift */; };
@@ -42,7 +43,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		248FFC3A33CA9164227F7F8A /* Pods-Dots.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dots.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dots/Pods-Dots.release.xcconfig"; sourceTree = "<group>"; };
+		406223187F5EEF52D7447914 /* Pods-Dots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dots.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dots/Pods-Dots.debug.xcconfig"; sourceTree = "<group>"; };
 		9B2F50262083AD3100BD808D /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		9B3F787A20C16EED0055FADA /* GameSceneProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneProtocol.swift; sourceTree = "<group>"; };
 		9B416A892085121A00E65777 /* EnemyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyController.swift; sourceTree = "<group>"; };
 		9B416A8B2085289400E65777 /* Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
 		9B416A8D208528AF00E65777 /* Game.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Game.sks; sourceTree = "<group>"; };
@@ -59,7 +63,6 @@
 		9B627B852081305400B0FBEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B627B95208390FD00B0FBEE /* BlueprintState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintState.swift; sourceTree = "<group>"; };
 		9B627B972083912500B0FBEE /* DoodleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleState.swift; sourceTree = "<group>"; };
-		9B627BA120839A2000B0FBEE /* EnemyAction.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EnemyAction.sks; sourceTree = "<group>"; };
 		9B6B160A20867660008E2D9F /* WatercolorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatercolorState.swift; sourceTree = "<group>"; };
 		9B8D5D8A20868AC70001DB35 /* RandomPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPoint.swift; sourceTree = "<group>"; };
 		9B8D5D8C208690F20001DB35 /* BaloonEnemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaloonEnemy.swift; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 		9BAD24272088BC000087B105 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		9BAD24292088BDA60087B105 /* ShotDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotDelegate.swift; sourceTree = "<group>"; };
 		9BAD242B2088BEEC0087B105 /* BaloonBomb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaloonBomb.swift; sourceTree = "<group>"; };
+		E819CA57B548D989D2E4C149 /* Pods_Dots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B8D5DA72087AF030001DB35 /* GameKit.framework in Frameworks */,
+				1449BBD586104B303EAC3208 /* Pods_Dots.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +98,7 @@
 		9B416A9920862B3C00E65777 /* Scene States */ = {
 			isa = PBXGroup;
 			children = (
+				9B3F787A20C16EED0055FADA /* GameSceneProtocol.swift */,
 				9B627B95208390FD00B0FBEE /* BlueprintState.swift */,
 				9B627B972083912500B0FBEE /* DoodleState.swift */,
 				9B6B160A20867660008E2D9F /* WatercolorState.swift */,
@@ -106,6 +112,7 @@
 				9B627B742081305400B0FBEE /* Dots */,
 				9B627B732081305400B0FBEE /* Products */,
 				9B8D5DA52087AF030001DB35 /* Frameworks */,
+				F411C70C6D41DC3D18B6C68C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,8 +174,6 @@
 		9B627B9020838B7F00B0FBEE /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				9B627BA020839A0C00B0FBEE /* Actions */,
-				9B416A8D208528AF00E65777 /* Game.sks */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 		9B627B9E2083977A00B0FBEE /* Game Scene */ = {
 			isa = PBXGroup;
 			children = (
+				9B416A8D208528AF00E65777 /* Game.sks */,
 				9B416A9120852A4500E65777 /* GameScene.swift */,
 				9B416A9920862B3C00E65777 /* Scene States */,
 			);
@@ -199,14 +205,6 @@
 				9BAD242B2088BEEC0087B105 /* BaloonBomb.swift */,
 			);
 			path = Enemies;
-			sourceTree = "<group>";
-		};
-		9B627BA020839A0C00B0FBEE /* Actions */ = {
-			isa = PBXGroup;
-			children = (
-				9B627BA120839A2000B0FBEE /* EnemyAction.sks */,
-			);
-			path = Actions;
 			sourceTree = "<group>";
 		};
 		9B8D5D87208678F90001DB35 /* Enemy Controller */ = {
@@ -262,8 +260,18 @@
 			isa = PBXGroup;
 			children = (
 				9B8D5DA62087AF030001DB35 /* GameKit.framework */,
+				E819CA57B548D989D2E4C149 /* Pods_Dots.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F411C70C6D41DC3D18B6C68C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				406223187F5EEF52D7447914 /* Pods-Dots.debug.xcconfig */,
+				248FFC3A33CA9164227F7F8A /* Pods-Dots.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,10 +281,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B627B882081305400B0FBEE /* Build configuration list for PBXNativeTarget "Dots" */;
 			buildPhases = (
+				D3D39D7A8E6E059D9AF8CF77 /* [CP] Check Pods Manifest.lock */,
 				9B627B6E2081305400B0FBEE /* Sources */,
 				9B627B6F2081305400B0FBEE /* Frameworks */,
 				9B627B702081305400B0FBEE /* Resources */,
 				9B627B99208392C900B0FBEE /* ShellScript */,
+				0ED5CCD79939B9EECF1A421E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -339,13 +349,32 @@
 				9B8D5D9E208795280001DB35 /* References in Resources */,
 				9B8D5D912087860D0001DB35 /* Main.storyboard in Resources */,
 				9B627B812081305400B0FBEE /* Assets.xcassets in Resources */,
-				9B627BA220839A2000B0FBEE /* EnemyAction.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0ED5CCD79939B9EECF1A421E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Dots/Pods-Dots-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dots/Pods-Dots-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9B627B99208392C900B0FBEE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,6 +387,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint --config Dots/.swiftlint.yml\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		D3D39D7A8E6E059D9AF8CF77 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dots-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -378,6 +425,7 @@
 				9B8D5D9720878D680001DB35 /* doodleBaloon.swift in Sources */,
 				9B416A942086273A00E65777 /* EnemyFactory.swift in Sources */,
 				9B627B762081305400B0FBEE /* AppDelegate.swift in Sources */,
+				9B3F787B20C16EED0055FADA /* GameSceneProtocol.swift in Sources */,
 				9B416A9B20863DCD00E65777 /* Collision BitMask.swift in Sources */,
 				9B8D5D93208786550001DB35 /* MenuViewController.swift in Sources */,
 				9B8D5D8B20868AC70001DB35 /* RandomPoint.swift in Sources */,
@@ -518,6 +566,7 @@
 		};
 		9B627B892081305400B0FBEE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 406223187F5EEF52D7447914 /* Pods-Dots.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -534,6 +583,7 @@
 		};
 		9B627B8A2081305400B0FBEE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 248FFC3A33CA9164227F7F8A /* Pods-Dots.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

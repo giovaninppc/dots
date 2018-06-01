@@ -88,9 +88,3 @@ extension GameScene: SKPhysicsContactDelegate {
         }
     }
 }
-
-protocol GameSceneState {
-    var currentState: GameStates { get }
-    func setEnemies(for state: GameStates, enemies: [Enemy])
-    func change(background: SKSpriteNode)
-}
