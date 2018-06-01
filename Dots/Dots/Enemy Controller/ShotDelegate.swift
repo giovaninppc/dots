@@ -10,6 +10,6 @@ import UIKit
 
 // This protocol let the Enemies to use this class to instantiate bullets
 // or other enemies
-protocol ShotDelegate {
+protocol ShotDelegate: class {
     func addShot(type: EnemyType, at position: CGPoint)
 }

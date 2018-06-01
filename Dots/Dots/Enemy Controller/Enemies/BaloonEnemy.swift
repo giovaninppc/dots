@@ -43,7 +43,7 @@ class BaloonEnemy: Enemy, EnemyProtocol {
                                        timePerFrame: 50)]
     
     // Shots Delegate
-    var shotDelegate: ShotDelegate?
+    weak var shotDelegate: ShotDelegate?
     
     /// This is the importante init
     /// It will start the enmy on the current gameState
