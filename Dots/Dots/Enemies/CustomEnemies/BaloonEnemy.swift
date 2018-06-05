@@ -133,6 +133,11 @@ class BaloonEnemy: Enemy, EnemyProtocol {
         self.physicsBody = body
     }
     
+    /// Got to the end of the level
+    override func reachEnd() {
+        self.selfDestruct()
+    }
+    
     /// The caracter should be destroyed
     /// show animation and remove from parent
     override func selfDestruct() {

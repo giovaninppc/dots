@@ -45,13 +45,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cgN-E6-pFR">
-                                                <rect key="frame" x="21" y="9" width="24" height="13"/>
-                                                <fontDescription key="fontDescription" name="Sketch" family="Sketch" pointSize="15"/>
+                                                <rect key="frame" x="21" y="8.5" width="24" height="14.5"/>
+                                                <fontDescription key="fontDescription" name="Sketch" family="Sketch" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Mn8-zy-sVs" firstAttribute="leading" secondItem="eeB-Jg-CBn" secondAttribute="leading" constant="5" id="70J-T8-mvO"/>
                                             <constraint firstItem="cgN-E6-pFR" firstAttribute="leading" secondItem="Mn8-zy-sVs" secondAttribute="trailing" constant="1" id="LGe-zx-cg7"/>
@@ -71,13 +71,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dYz-Fd-6dZ">
-                                                <rect key="frame" x="21" y="9" width="24" height="13"/>
-                                                <fontDescription key="fontDescription" name="Sketch" family="Sketch" pointSize="15"/>
+                                                <rect key="frame" x="21" y="8.5" width="24" height="14.5"/>
+                                                <fontDescription key="fontDescription" name="Sketch" family="Sketch" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="dYz-Fd-6dZ" firstAttribute="leading" secondItem="nAj-2k-6oR" secondAttribute="trailing" constant="1" id="9K3-vv-mtb"/>
                                             <constraint firstItem="nAj-2k-6oR" firstAttribute="centerY" secondItem="pUa-12-Lgz" secondAttribute="centerY" id="Mox-47-7Kk"/>
@@ -97,13 +97,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vfX-TM-kB1">
-                                                <rect key="frame" x="21" y="9.5" width="24" height="13"/>
-                                                <fontDescription key="fontDescription" name="Sketch" family="Sketch" pointSize="15"/>
+                                                <rect key="frame" x="21" y="9" width="24" height="14.5"/>
+                                                <fontDescription key="fontDescription" name="Sketch" family="Sketch" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="vfX-TM-kB1" secondAttribute="trailing" constant="5" id="KKU-2a-ymI"/>
                                             <constraint firstItem="q18-mH-kx6" firstAttribute="centerY" secondItem="7dh-hA-ggw" secondAttribute="centerY" id="MUL-jw-cjQ"/>
@@ -137,6 +137,9 @@
                     <connections>
                         <outlet property="coverImageView" destination="TZ0-Da-JTH" id="dV7-vi-M1p"/>
                         <outlet property="gameScene" destination="mrX-mi-ZDn" id="FLW-FM-bKf"/>
+                        <outlet property="resourceALabel" destination="cgN-E6-pFR" id="NhT-Gb-Afk"/>
+                        <outlet property="resourceBLabel" destination="dYz-Fd-6dZ" id="ZSN-QF-hl7"/>
+                        <outlet property="resourceCLabel" destination="vfX-TM-kB1" id="G1t-Qj-PIW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bQ-J3-743" userLabel="First Responder" sceneMemberID="firstResponder"/>

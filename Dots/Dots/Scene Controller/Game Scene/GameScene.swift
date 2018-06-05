@@ -73,14 +73,15 @@ extension GameScene: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
         // An enemy got to the end of the level
         if collision ==  PhysicsCategory.enemy | PhysicsCategory.limit {
             
             if let bodyA = contact.bodyA.node as? Enemy {
-                bodyA.selfDestruct()
+                bodyA.reachEnd()
             } else {
                 if let bodyB = contact.bodyB.node as? Enemy {
-                    bodyB.selfDestruct()
+                    bodyB.reachEnd()
                 }
             }
         }

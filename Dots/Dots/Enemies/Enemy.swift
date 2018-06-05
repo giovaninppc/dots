@@ -31,6 +31,10 @@ class Enemy: SKSpriteNode {
         self.color = stateDictInc[state]!
     }
     
+    func reachEnd() {
+        self.selfDestruct()
+    }
+    
     func selfDestruct() {
         // Make animation
         self.removeFromParent()

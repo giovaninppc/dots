@@ -10,8 +10,10 @@ import Foundation
 
 //Collision Bit Masks
 struct PhysicsCategory {
-    static let none: UInt32     = 0     // 0
-    static let enemy: UInt32    = 0b1   // 1
-    static let limit: UInt32    = 0b10  // 2
-    static let all: UInt32      = 0b1111111111
+    static let none: UInt32          = 0      // 0
+    static let enemy: UInt32         = 0b1    // 1
+    static let limit: UInt32         = 0b10   // 2
+    static let playerBullet: UInt32  = 0b100  // 4
+    static let barrier: UInt32       = 0b1000 // 8
+    static let all: UInt32           = 0b1111111111
 }

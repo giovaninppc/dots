@@ -40,6 +40,7 @@
 		9BAD24282088BC000087B105 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAD24272088BC000087B105 /* Level.swift */; };
 		9BAD242A2088BDA60087B105 /* ShotDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAD24292088BDA60087B105 /* ShotDelegate.swift */; };
 		9BAD242C2088BEEC0087B105 /* BaloonBomb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAD242B2088BEEC0087B105 /* BaloonBomb.swift */; };
+		9BF312EC20C6F6A500E3C4D7 /* ResourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF312EB20C6F6A500E3C4D7 /* ResourceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		9BAD24272088BC000087B105 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		9BAD24292088BDA60087B105 /* ShotDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotDelegate.swift; sourceTree = "<group>"; };
 		9BAD242B2088BEEC0087B105 /* BaloonBomb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaloonBomb.swift; sourceTree = "<group>"; };
+		9BF312EB20C6F6A500E3C4D7 /* ResourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceController.swift; sourceTree = "<group>"; };
 		E819CA57B548D989D2E4C149 /* Pods_Dots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -128,10 +130,9 @@
 			isa = PBXGroup;
 			children = (
 				9B627B752081305400B0FBEE /* AppDelegate.swift */,
-				9B627B8B208131C000B0FBEE /* View Controller */,
-				9B627B8E20838B1200B0FBEE /* View */,
-				9B627B9020838B7F00B0FBEE /* Game */,
+				9BF312E820C6F5CE00E3C4D7 /* Presentation */,
 				9B8D5D87208678F90001DB35 /* Enemy Controller */,
+				9B627B9F2083978200B0FBEE /* Enemies */,
 				9B8D5D8920868AAD0001DB35 /* Extensions */,
 				9B627B942083904100B0FBEE /* Scene Controller */,
 				9B627B8F20838B3500B0FBEE /* Assets */,
@@ -140,24 +141,12 @@
 			path = Dots;
 			sourceTree = "<group>";
 		};
-		9B627B8B208131C000B0FBEE /* View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				9B416A8F2085291100E65777 /* ChangeGameViewController.swift */,
-				9B8D5D9A208790290001DB35 /* Menu */,
-			);
-			path = "View Controller";
-			sourceTree = "<group>";
-		};
-		9B627B8E20838B1200B0FBEE /* View */ = {
+		9B627B8E20838B1200B0FBEE /* Launch */ = {
 			isa = PBXGroup;
 			children = (
 				9B627B822081305400B0FBEE /* LaunchScreen.storyboard */,
-				9B416A8B2085289400E65777 /* Game.storyboard */,
-				9B8D5D902087860D0001DB35 /* Main.storyboard */,
-				9B8D5D9420878D480001DB35 /* ImageAnimations */,
 			);
-			path = View;
+			path = Launch;
 			sourceTree = "<group>";
 		};
 		9B627B8F20838B3500B0FBEE /* Assets */ = {
@@ -169,13 +158,6 @@
 				9B8D5D9D208795280001DB35 /* References */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		9B627B9020838B7F00B0FBEE /* Game */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Game;
 			sourceTree = "<group>";
 		};
 		9B627B942083904100B0FBEE /* Scene Controller */ = {
@@ -199,10 +181,10 @@
 		9B627B9F2083978200B0FBEE /* Enemies */ = {
 			isa = PBXGroup;
 			children = (
+				9B416A932086273A00E65777 /* EnemyFactory.swift */,
+				9B416A97208627A400E65777 /* EnemyDefinition.swift */,
 				9B2F50262083AD3100BD808D /* Enemy.swift */,
-				9B416A952086275600E65777 /* PlaneEnemy.swift */,
-				9B8D5D8C208690F20001DB35 /* BaloonEnemy.swift */,
-				9BAD242B2088BEEC0087B105 /* BaloonBomb.swift */,
+				9BF312ED20C6F87400E3C4D7 /* CustomEnemies */,
 			);
 			path = Enemies;
 			sourceTree = "<group>";
@@ -210,13 +192,10 @@
 		9B8D5D87208678F90001DB35 /* Enemy Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9B416A9A20863DCD00E65777 /* Collision BitMask.swift */,
 				9BAD24292088BDA60087B105 /* ShotDelegate.swift */,
 				9B416A892085121A00E65777 /* EnemyController.swift */,
 				9B8D5D88208679030001DB35 /* EnemyControllerState */,
-				9B416A97208627A400E65777 /* EnemyDefinition.swift */,
-				9B416A932086273A00E65777 /* EnemyFactory.swift */,
-				9B416A9A20863DCD00E65777 /* Collision BitMask.swift */,
-				9B627B9F2083978200B0FBEE /* Enemies */,
 			);
 			path = "Enemy Controller";
 			sourceTree = "<group>";
@@ -246,14 +225,14 @@
 			path = ImageAnimations;
 			sourceTree = "<group>";
 		};
-		9B8D5D9A208790290001DB35 /* Menu */ = {
+		9B8D5D9A208790290001DB35 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				9B8D5D92208786550001DB35 /* MenuViewController.swift */,
 				9B8D5D9B208790490001DB35 /* SorvivorGamePageViewController.swift */,
 				9B8D5DA320879F4D0001DB35 /* SettingsPageViewController.swift */,
 			);
-			path = Menu;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		9B8D5DA52087AF030001DB35 /* Frameworks */ = {
@@ -263,6 +242,46 @@
 				E819CA57B548D989D2E4C149 /* Pods_Dots.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BF312E820C6F5CE00E3C4D7 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				9B627B8E20838B1200B0FBEE /* Launch */,
+				9BF312EA20C6F5F000E3C4D7 /* Menu */,
+				9BF312E920C6F5DA00E3C4D7 /* GameViewController */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		9BF312E920C6F5DA00E3C4D7 /* GameViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9B416A8B2085289400E65777 /* Game.storyboard */,
+				9B416A8F2085291100E65777 /* ChangeGameViewController.swift */,
+				9BF312EB20C6F6A500E3C4D7 /* ResourceController.swift */,
+			);
+			path = GameViewController;
+			sourceTree = "<group>";
+		};
+		9BF312EA20C6F5F000E3C4D7 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				9B8D5D902087860D0001DB35 /* Main.storyboard */,
+				9B8D5D9A208790290001DB35 /* Controllers */,
+				9B8D5D9420878D480001DB35 /* ImageAnimations */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		9BF312ED20C6F87400E3C4D7 /* CustomEnemies */ = {
+			isa = PBXGroup;
+			children = (
+				9B416A952086275600E65777 /* PlaneEnemy.swift */,
+				9B8D5D8C208690F20001DB35 /* BaloonEnemy.swift */,
+				9BAD242B2088BEEC0087B105 /* BaloonBomb.swift */,
+			);
+			path = CustomEnemies;
 			sourceTree = "<group>";
 		};
 		F411C70C6D41DC3D18B6C68C /* Pods */ = {
@@ -436,6 +455,7 @@
 				9B416A9220852A4500E65777 /* GameScene.swift in Sources */,
 				9B416A8A2085121A00E65777 /* EnemyController.swift in Sources */,
 				9B6B160B20867660008E2D9F /* WatercolorState.swift in Sources */,
+				9BF312EC20C6F6A500E3C4D7 /* ResourceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
