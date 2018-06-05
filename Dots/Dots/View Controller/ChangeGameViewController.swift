@@ -42,7 +42,7 @@ class ChangeGameViewController: UIViewController {
         // DEBUG
         gameScene.showsFPS = true
         gameScene.showsNodeCount = true
-        //gameScene.showsPhysics = true
+        gameScene.showsPhysics = true
         
         //Initiate enemyController
         enemyController = EnemyController()
@@ -109,7 +109,6 @@ class ChangeGameViewController: UIViewController {
     ///
     /// - Returns: the screenshot UIImage
     func takeScreenshot() -> UIImage? {
-        
         var screenshotImage: UIImage?
         let layer = UIApplication.shared.keyWindow!.layer
         let scale = UIScreen.main.scale

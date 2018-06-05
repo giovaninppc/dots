@@ -50,10 +50,10 @@ class GameScene: SKScene {
     }
     
     func createLimit() {
-        
-        let limit = SKSpriteNode(texture: SKTexture(imageNamed: "blueprintBottom"),
-                                 color: .white, size: CGSize(width: UIScreen.main.bounds.width, height: 50))
-        
+        // -->  SKTexture(imageNamed: "blueprintBottom")
+        let limit = SKSpriteNode(texture: nil,
+                                 color: .clear, size: CGSize(width: UIScreen.main.bounds.width, height: 50))
+
         limit.position = CGPoint(x: 0, y: -1 * UIScreen.main.bounds.height/2 + 20)
         let body = SKPhysicsBody(rectangleOf: CGSize(width: UIScreen.main.bounds.width, height: 10))
         body.affectedByGravity = false
@@ -63,7 +63,6 @@ class GameScene: SKScene {
         limit.physicsBody = body
         self.scene?.addChild(limit)
     }
-    
 }
 
 extension GameScene: SKPhysicsContactDelegate {
@@ -74,7 +73,6 @@ extension GameScene: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
-        
         // An enemy got to the end of the level
         if collision ==  PhysicsCategory.enemy | PhysicsCategory.limit {
             
