@@ -11,6 +11,12 @@ import UIKit
 class ResourceViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.clipsToBounds = true
+        self.view.layer.cornerRadius = 10
+    }
 }
 
 extension ResourceViewController: UITableViewDataSource, UITableViewDelegate {

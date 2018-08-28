@@ -28,10 +28,21 @@ class ChangeGameViewController: UIViewController {
     // Variables
     var gameStates: [GameStates] = [.blueprint, .doodle, .watercolor]
     var currentStatus: Int = 0
+    var instaniatePosition: CGPoint = .zero
     var isShowingResources: Bool = true {
         didSet {
             if isShowingResources { showResources()
             } else { hideResources() }
+        }
+    }
+    var loadingView: UIView?
+    var isLoadingResources: Bool = false {
+        didSet {
+            if isLoadingResources {
+                loadResources()
+            } else {
+                cancelLoadingResources()
+            }
         }
     }
     
@@ -64,10 +75,11 @@ class ChangeGameViewController: UIViewController {
         
         // Start labels correctly
         updateResourceLabel()
+        self.isShowingResources = false
     }
 
     @objc func makeTransition(_ swipe: UISwipeGestureRecognizer) {
-        
+        if isShowingResources { return }
         if swipe.direction == .left {
             currentStatus += 1
             if currentStatus == gameStates.count {
