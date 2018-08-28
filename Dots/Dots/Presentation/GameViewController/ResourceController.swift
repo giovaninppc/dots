@@ -11,9 +11,7 @@ import Foundation
 extension ChangeGameViewController {
     
     func updateResourceLabel() {
-        self.resourceALabel.text = "\(resourceA)"
-        self.resourceBLabel.text = "\(resourceB)"
-        self.resourceCLabel.text = "\(resourceC)"
+        //
     }
     
 }

@@ -20,14 +20,6 @@ class ChangeGameViewController: UIViewController {
     @IBOutlet weak var gameScene: SKView!
     @IBOutlet weak var coverImageView: UIImageView!
     
-    // Resource Managers
-    @IBOutlet weak var resourceALabel: UILabel!
-    var resourceA: Int = 0
-    @IBOutlet weak var resourceBLabel: UILabel!
-    var resourceB: Int = 0
-    @IBOutlet weak var resourceCLabel: UILabel!
-    var resourceC: Int = 0
-    
     // Variables
     var gameStates: [GameStates] = [.blueprint, .doodle, .watercolor]
     var currentStatus: Int = 0

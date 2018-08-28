@@ -6,6 +6,5 @@ target 'Dots' do
   use_frameworks!
 
   # Pods for Dots
-pod 'RealmSwift'
 
 end
