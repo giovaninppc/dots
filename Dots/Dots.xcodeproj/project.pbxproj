@@ -25,6 +25,10 @@
 		9B627B96208390FD00B0FBEE /* BlueprintState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B627B95208390FD00B0FBEE /* BlueprintState.swift */; };
 		9B627B982083912500B0FBEE /* DoodleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B627B972083912500B0FBEE /* DoodleState.swift */; };
 		9B6B160B20867660008E2D9F /* WatercolorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B160A20867660008E2D9F /* WatercolorState.swift */; };
+		9B8B44D12135DB64007B8F33 /* PlayerResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B44D02135DB64007B8F33 /* PlayerResources.swift */; };
+		9B8B44D52135DC7F007B8F33 /* GameResourceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B44D42135DC7F007B8F33 /* GameResourceCollectionViewCell.swift */; };
+		9B8B44D72135DD06007B8F33 /* ResourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B44D62135DD06007B8F33 /* ResourceViewController.swift */; };
+		9B8B44D92135DD9A007B8F33 /* ResourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B44D82135DD9A007B8F33 /* ResourceTableViewCell.swift */; };
 		9B8D5D8B20868AC70001DB35 /* RandomPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D8A20868AC70001DB35 /* RandomPoint.swift */; };
 		9B8D5D8D208690F20001DB35 /* BaloonEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D8C208690F20001DB35 /* BaloonEnemy.swift */; };
 		9B8D5D912087860D0001DB35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8D5D902087860D0001DB35 /* Main.storyboard */; };
@@ -65,6 +69,10 @@
 		9B627B95208390FD00B0FBEE /* BlueprintState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintState.swift; sourceTree = "<group>"; };
 		9B627B972083912500B0FBEE /* DoodleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleState.swift; sourceTree = "<group>"; };
 		9B6B160A20867660008E2D9F /* WatercolorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatercolorState.swift; sourceTree = "<group>"; };
+		9B8B44D02135DB64007B8F33 /* PlayerResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerResources.swift; sourceTree = "<group>"; };
+		9B8B44D42135DC7F007B8F33 /* GameResourceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResourceCollectionViewCell.swift; sourceTree = "<group>"; };
+		9B8B44D62135DD06007B8F33 /* ResourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceViewController.swift; sourceTree = "<group>"; };
+		9B8B44D82135DD9A007B8F33 /* ResourceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceTableViewCell.swift; sourceTree = "<group>"; };
 		9B8D5D8A20868AC70001DB35 /* RandomPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPoint.swift; sourceTree = "<group>"; };
 		9B8D5D8C208690F20001DB35 /* BaloonEnemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaloonEnemy.swift; sourceTree = "<group>"; };
 		9B8D5D902087860D0001DB35 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				9B627B752081305400B0FBEE /* AppDelegate.swift */,
+				9B8B44CE2135DA61007B8F33 /* Model */,
 				9BF312E820C6F5CE00E3C4D7 /* Presentation */,
 				9B8D5D87208678F90001DB35 /* Enemy Controller */,
 				9B627B9F2083978200B0FBEE /* Enemies */,
@@ -187,6 +196,38 @@
 				9BF312ED20C6F87400E3C4D7 /* CustomEnemies */,
 			);
 			path = Enemies;
+			sourceTree = "<group>";
+		};
+		9B8B44CE2135DA61007B8F33 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B8B44CF2135DA6A007B8F33 /* Player Resources */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9B8B44CF2135DA6A007B8F33 /* Player Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9B8B44D02135DB64007B8F33 /* PlayerResources.swift */,
+			);
+			path = "Player Resources";
+			sourceTree = "<group>";
+		};
+		9B8B44D22135DBF0007B8F33 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				9B8B44D42135DC7F007B8F33 /* GameResourceCollectionViewCell.swift */,
+				9B8B44D82135DD9A007B8F33 /* ResourceTableViewCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		9B8B44D32135DC65007B8F33 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		9B8D5D87208678F90001DB35 /* Enemy Controller */ = {
@@ -257,9 +298,12 @@
 		9BF312E920C6F5DA00E3C4D7 /* GameViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9B8B44D22135DBF0007B8F33 /* CustomCells */,
+				9B8B44D32135DC65007B8F33 /* CustomViews */,
 				9B416A8B2085289400E65777 /* Game.storyboard */,
 				9B416A8F2085291100E65777 /* ChangeGameViewController.swift */,
 				9BF312EB20C6F6A500E3C4D7 /* ResourceController.swift */,
+				9B8B44D62135DD06007B8F33 /* ResourceViewController.swift */,
 			);
 			path = GameViewController;
 			sourceTree = "<group>";
@@ -412,12 +456,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B8D5DA420879F4D0001DB35 /* SettingsPageViewController.swift in Sources */,
+				9B8B44D92135DD9A007B8F33 /* ResourceTableViewCell.swift in Sources */,
 				9B2F50272083AD3100BD808D /* Enemy.swift in Sources */,
+				9B8B44D52135DC7F007B8F33 /* GameResourceCollectionViewCell.swift in Sources */,
 				9BAD242C2088BEEC0087B105 /* BaloonBomb.swift in Sources */,
 				9B416A902085291100E65777 /* ChangeGameViewController.swift in Sources */,
 				9B8D5D9C208790490001DB35 /* SorvivorGamePageViewController.swift in Sources */,
 				9B627B982083912500B0FBEE /* DoodleState.swift in Sources */,
 				9BAD242A2088BDA60087B105 /* ShotDelegate.swift in Sources */,
+				9B8B44D72135DD06007B8F33 /* ResourceViewController.swift in Sources */,
 				9B8D5D9920878FF80001DB35 /* PlaneAnimation.swift in Sources */,
 				9B8D5D8D208690F20001DB35 /* BaloonEnemy.swift in Sources */,
 				9B8D5D9720878D680001DB35 /* doodleBaloon.swift in Sources */,
@@ -429,6 +476,7 @@
 				9B8D5D8B20868AC70001DB35 /* RandomPoint.swift in Sources */,
 				9B416A962086275600E65777 /* PlaneEnemy.swift in Sources */,
 				9B627B96208390FD00B0FBEE /* BlueprintState.swift in Sources */,
+				9B8B44D12135DB64007B8F33 /* PlayerResources.swift in Sources */,
 				9B416A98208627A400E65777 /* EnemyDefinition.swift in Sources */,
 				9BAD24282088BC000087B105 /* Level.swift in Sources */,
 				9B416A9220852A4500E65777 /* GameScene.swift in Sources */,

@@ -19,10 +19,21 @@ class ChangeGameViewController: UIViewController {
     // Outlets
     @IBOutlet weak var gameScene: SKView!
     @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var resourceContainerView: UIView!
+    @IBOutlet weak var resourceContainerViewTopConstraint: NSLayoutConstraint!
+    
+    // Constants
+    let resourceContainerViewTopConstraintValue: CGFloat = 450.0
     
     // Variables
     var gameStates: [GameStates] = [.blueprint, .doodle, .watercolor]
     var currentStatus: Int = 0
+    var isShowingResources: Bool = true {
+        didSet {
+            if isShowingResources { showResources()
+            } else { hideResources() }
+        }
+    }
     
     var scene: GameScene!
     var enemyController: EnemyController!
