@@ -70,3 +70,6 @@ fastlane/test_output
 .DS_*
 .ds_*
 .Ds_*
+
+# SKETCH
+*.sketch
