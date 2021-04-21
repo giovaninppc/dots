@@ -11,7 +11,7 @@ import SpriteKit
 final class WatercolorState: GameSceneState {
     var currentState: GameStates = .watercolor
     
-    func setEnemies(for state: GameStates, enemies: [Enemy]) {
+    func setEnemies(for state: GameStates, enemies: [SceneUpdatable]) {
         for enemy in enemies {
             enemy.update(for: state)
         }

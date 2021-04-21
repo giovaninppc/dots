@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1449BBD586104B303EAC3208 /* Pods_Dots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E819CA57B548D989D2E4C149 /* Pods_Dots.framework */; };
+		3EB3F48926305C35003AA20F /* GameScaneUserInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F48826305C35003AA20F /* GameScaneUserInteraction.swift */; };
+		3EB3F48C26305CC3003AA20F /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F48B26305CC3003AA20F /* Weapon.swift */; };
+		3EB3F49026305D2A003AA20F /* Cannon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F48F26305D2A003AA20F /* Cannon.swift */; };
+		3EB3F49426306087003AA20F /* WeaponDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F49326306087003AA20F /* WeaponDefinition.swift */; };
+		3EB3F4992630AF2F003AA20F /* Aim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F4972630AE71003AA20F /* Aim.swift */; };
+		3EB3F49C2630B35C003AA20F /* SceneUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F49B2630B35C003AA20F /* SceneUpdatable.swift */; };
 		9B2F50272083AD3100BD808D /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2F50262083AD3100BD808D /* Enemy.swift */; };
 		9B3F787B20C16EED0055FADA /* GameSceneProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3F787A20C16EED0055FADA /* GameSceneProtocol.swift */; };
 		9B416A8A2085121A00E65777 /* EnemyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B416A892085121A00E65777 /* EnemyController.swift */; };
@@ -45,6 +51,12 @@
 
 /* Begin PBXFileReference section */
 		248FFC3A33CA9164227F7F8A /* Pods-Dots.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dots.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dots/Pods-Dots.release.xcconfig"; sourceTree = "<group>"; };
+		3EB3F48826305C35003AA20F /* GameScaneUserInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScaneUserInteraction.swift; sourceTree = "<group>"; };
+		3EB3F48B26305CC3003AA20F /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		3EB3F48F26305D2A003AA20F /* Cannon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cannon.swift; sourceTree = "<group>"; };
+		3EB3F49326306087003AA20F /* WeaponDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDefinition.swift; sourceTree = "<group>"; };
+		3EB3F4972630AE71003AA20F /* Aim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aim.swift; sourceTree = "<group>"; };
+		3EB3F49B2630B35C003AA20F /* SceneUpdatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneUpdatable.swift; sourceTree = "<group>"; };
 		406223187F5EEF52D7447914 /* Pods-Dots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dots.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dots/Pods-Dots.debug.xcconfig"; sourceTree = "<group>"; };
 		9B2F50262083AD3100BD808D /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		9B3F787A20C16EED0055FADA /* GameSceneProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneProtocol.swift; sourceTree = "<group>"; };
@@ -100,8 +112,27 @@
 		3EB3F48326305674003AA20F /* Weapons */ = {
 			isa = PBXGroup;
 			children = (
+				3EB3F48B26305CC3003AA20F /* Weapon.swift */,
+				3EB3F49326306087003AA20F /* WeaponDefinition.swift */,
+				3EB3F48E26305D1B003AA20F /* CustomWeapons */,
 			);
 			path = Weapons;
+			sourceTree = "<group>";
+		};
+		3EB3F48E26305D1B003AA20F /* CustomWeapons */ = {
+			isa = PBXGroup;
+			children = (
+				3EB3F48F26305D2A003AA20F /* Cannon.swift */,
+			);
+			path = CustomWeapons;
+			sourceTree = "<group>";
+		};
+		3EB3F4962630AE68003AA20F /* Aim */ = {
+			isa = PBXGroup;
+			children = (
+				3EB3F4972630AE71003AA20F /* Aim.swift */,
+			);
+			path = Aim;
 			sourceTree = "<group>";
 		};
 		9B416A9920862B3C00E65777 /* Scene States */ = {
@@ -141,6 +172,7 @@
 				9B8D5D87208678F90001DB35 /* EnemyController */,
 				9B627B9F2083978200B0FBEE /* Enemies */,
 				3EB3F48326305674003AA20F /* Weapons */,
+				3EB3F4962630AE68003AA20F /* Aim */,
 				9B627B942083904100B0FBEE /* SceneController */,
 				9B8D5D8920868AAD0001DB35 /* Utils */,
 				9B627B8F20838B3500B0FBEE /* Assets */,
@@ -181,6 +213,7 @@
 			children = (
 				9B416A8D208528AF00E65777 /* Game.sks */,
 				9B416A9120852A4500E65777 /* GameScene.swift */,
+				3EB3F48826305C35003AA20F /* GameScaneUserInteraction.swift */,
 				9B416A9920862B3C00E65777 /* Scene States */,
 			);
 			path = GameScene;
@@ -220,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				9B8D5D8A20868AC70001DB35 /* RandomPoint.swift */,
+				3EB3F49B2630B35C003AA20F /* SceneUpdatable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -419,9 +453,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EB3F4992630AF2F003AA20F /* Aim.swift in Sources */,
+				3EB3F49426306087003AA20F /* WeaponDefinition.swift in Sources */,
 				9B8D5DA420879F4D0001DB35 /* SettingsPageViewController.swift in Sources */,
 				9B2F50272083AD3100BD808D /* Enemy.swift in Sources */,
 				9BAD242C2088BEEC0087B105 /* BaloonBomb.swift in Sources */,
+				3EB3F48926305C35003AA20F /* GameScaneUserInteraction.swift in Sources */,
 				9B416A902085291100E65777 /* ChangeGameViewController.swift in Sources */,
 				9B8D5D9C208790490001DB35 /* SorvivorGamePageViewController.swift in Sources */,
 				9B627B982083912500B0FBEE /* DoodleState.swift in Sources */,
@@ -431,10 +468,13 @@
 				9B8D5D9720878D680001DB35 /* doodleBaloon.swift in Sources */,
 				9B416A942086273A00E65777 /* EnemyFactory.swift in Sources */,
 				9B627B762081305400B0FBEE /* AppDelegate.swift in Sources */,
+				3EB3F49026305D2A003AA20F /* Cannon.swift in Sources */,
 				9B3F787B20C16EED0055FADA /* GameSceneProtocol.swift in Sources */,
 				9B416A9B20863DCD00E65777 /* CollisionBitMask.swift in Sources */,
 				9B8D5D93208786550001DB35 /* MenuViewController.swift in Sources */,
+				3EB3F49C2630B35C003AA20F /* SceneUpdatable.swift in Sources */,
 				9B8D5D8B20868AC70001DB35 /* RandomPoint.swift in Sources */,
+				3EB3F48C26305CC3003AA20F /* Weapon.swift in Sources */,
 				9B416A962086275600E65777 /* PlaneEnemy.swift in Sources */,
 				9B627B96208390FD00B0FBEE /* BlueprintState.swift in Sources */,
 				9B416A98208627A400E65777 /* EnemyDefinition.swift in Sources */,

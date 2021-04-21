@@ -10,7 +10,11 @@ import SpriteKit
 
 final class GameScene: SKScene {
     var background: SKSpriteNode!
-    var enemies: [Enemy] = [Enemy]()
+    var enemies: [Enemy] = []
+    var weapons: [Weapon] = []
+    var aim: Aim?
+
+    var lastTouch: CGPoint = .zero
 
     // State configuration
     var state: GameSceneState?
@@ -19,8 +23,8 @@ final class GameScene: SKScene {
         guard let background = self.scene?.childNode(withName: "Background") as? SKSpriteNode else {
             fatalError("Couldnt load background as SKSpriteNode")
         }
-        self.background = background
 
+        self.background = background
         self.physicsWorld.contactDelegate = self
 
         // Create enemy Limit

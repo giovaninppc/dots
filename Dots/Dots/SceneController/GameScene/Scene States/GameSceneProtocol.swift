@@ -10,6 +10,6 @@ import SpriteKit
 
 protocol GameSceneState {
     var currentState: GameStates { get }
-    func setEnemies(for state: GameStates, enemies: [Enemy])
+    func setEnemies(for state: GameStates, enemies: [SceneUpdatable])
     func change(background: SKSpriteNode)
 }
