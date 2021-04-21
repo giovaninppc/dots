@@ -15,7 +15,7 @@ import SpriteKit
 // state - is the current enemy generator state - current level
 // The global counter updates the time, and calls the state method
 
-class EnemyController {
+final class EnemyController {
     
     // Timer
     var globalTimer: Timer = Timer()

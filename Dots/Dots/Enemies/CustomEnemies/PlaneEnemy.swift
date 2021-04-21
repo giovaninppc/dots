@@ -19,9 +19,11 @@ class PlaneEnemy: Enemy, EnemyProtocol {
     
     // Game States and positions
     // This enemy textures for each GameState
-    let stateDict: [GameStates: SKTexture] = [.doodle: SKTexture(imageNamed: "doodlePlane"),
-                                              .blueprint: SKTexture(imageNamed: "paperPlane"),
-                                              .watercolor: SKTexture(imageNamed: "watercolorPlane")]
+    let stateDict: [GameStates: SKTexture] = [
+        .doodle: SKTexture(imageNamed: "doodlePlane"),
+        .blueprint: SKTexture(imageNamed: "paperPlane"),
+        .watercolor: SKTexture(imageNamed: "watercolorPlane")
+    ]
     
     // This enemy proper Animation
     var planeAnimation: SKAction = SKAction.run {}

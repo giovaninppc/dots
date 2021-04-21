@@ -8,8 +8,7 @@
 
 import SpriteKit
 
-class BlueprintState: GameSceneState {
-    
+final class BlueprintState: GameSceneState {
     var currentState: GameStates = .blueprint
 
     func setEnemies(for state: GameStates, enemies: [Enemy]) {

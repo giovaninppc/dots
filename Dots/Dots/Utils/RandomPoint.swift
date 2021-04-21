@@ -21,13 +21,13 @@ import UIKit
 //  |          |
 //   ----------
 
-class RandomPoint {
-    
+final class RandomPoint {
+
     // Screen sizes and orientations
     static var boundsWidth: CGFloat = UIScreen.main.bounds.size.width
     static var boundsHeight: CGFloat = UIScreen.main.bounds.size.height
     static var screenSize: CGSize = UIScreen.main.bounds.size
-    
+
     // Get a random point on top of the screen
     //
     //   xxxxxxxxxx
@@ -39,12 +39,12 @@ class RandomPoint {
     //  |          |
     //  |          |
     //   ----------
-    class func topScreenPoint() -> CGPoint {
+    static func topScreenPoint() -> CGPoint {
         let xPoint: UInt32 = arc4random_uniform(UInt32(boundsWidth))
         let xLimit: Int = Int(boundsWidth/2) - Int(xPoint)
         return CGPoint(x: CGFloat(xLimit), y: (boundsHeight/2))
     }
-    
+
     // Get a random point on the right side, top screen
     //
     //   ----------
@@ -56,12 +56,12 @@ class RandomPoint {
     //  |          |
     //  |          |
     //   ----------
-    class func topRightSidePoint() -> CGPoint {
+    static func topRightSidePoint() -> CGPoint {
         let xPoint: CGFloat = boundsWidth/2
         let yPoint: UInt32 = arc4random_uniform(UInt32(boundsHeight/2))
         return CGPoint(x: xPoint, y: CGFloat(yPoint))
     }
-    
+
     // Get a random point on the left side, top screen
     //
     //   ----------
@@ -73,10 +73,9 @@ class RandomPoint {
     //  |          |
     //  |          |
     //   ----------
-    class func topLeftSidePoint() -> CGPoint {
+    static func topLeftSidePoint() -> CGPoint {
         var point: CGPoint = topRightSidePoint()
-        point.x = -1*point.x
+        point.x = -1 * point.x
         return point
     }
-    
 }

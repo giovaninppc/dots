@@ -1,5 +1,5 @@
 //
-//  BlueprintScene.swift
+//  SketchScene.swift
 //  Dots
 //
 //  Created by Giovani Nascimento Pereira on 15/04/18.
@@ -8,9 +8,8 @@
 
 import SpriteKit
 
-class WatercolorState: GameSceneState {
-    
-    var currentState: GameStates = .watercolor
+final class DoodleState: GameSceneState {
+    var currentState: GameStates = .doodle
     
     func setEnemies(for state: GameStates, enemies: [Enemy]) {
         for enemy in enemies {
@@ -19,6 +18,6 @@ class WatercolorState: GameSceneState {
     }
     
     func change(background: SKSpriteNode) {
-        background.texture = SKTexture(imageNamed: "Watercolor")
+        background.texture = SKTexture(imageNamed: "Paper")
     }
 }

@@ -11,9 +11,11 @@ import SpriteKit
 /// Base Enemy Class
 class Enemy: SKSpriteNode {
     
-    let stateDictInc: [GameStates: UIColor] = [.doodle: .red,
-                                               .blueprint: .white,
-                                               .watercolor: .black]
+    let stateDictInc: [GameStates: UIColor] = [
+        .doodle: .red,
+        .blueprint: .white,
+        .watercolor: .black
+    ]
     
     private init() {
         super.init(texture: nil, color: .white, size: CGSize(width: 20, height: 20))
