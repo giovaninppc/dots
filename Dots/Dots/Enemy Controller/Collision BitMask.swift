@@ -8,7 +8,7 @@
 
 import Foundation
 
-//Collision Bit Masks
+// Collision Bit Masks
 struct PhysicsCategory {
     static let none: UInt32          = 0      // 0
     static let enemy: UInt32         = 0b1    // 1

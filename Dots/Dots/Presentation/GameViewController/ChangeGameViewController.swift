@@ -44,7 +44,7 @@ class ChangeGameViewController: UIViewController {
         gameScene.showsNodeCount = true
         gameScene.showsPhysics = true
         
-        //Initiate enemyController
+        // Initiate enemyController
         enemyController = EnemyController()
         enemyController.scene = scene
         

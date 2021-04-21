@@ -16,7 +16,7 @@ class BaloonBomb: Enemy, EnemyProtocol {
     
     var enemySize: CGSize = CGSize(width: 15, height: 15)
     
-    //Game States and positions
+    // Game States and positions
     // This enemy textures for each GameState
     let stateDict: [GameStates: SKTexture] = [.doodle: SKTexture(imageNamed: "doodleBaloonBomb"),
                                               .blueprint: SKTexture(imageNamed: "blueprintBaloonBomb"),

@@ -16,7 +16,7 @@ class BaloonEnemy: Enemy, EnemyProtocol {
     
     var enemySize: CGSize = CGSize(width: 75, height: 75)
     
-    //Game States and positions
+    // Game States and positions
     // This enemy textures for each GameState
     let stateDict: [GameStates: SKTexture] =
         [.doodle: SKTexture(imageNamed: "doodleBaloon"),
@@ -56,7 +56,7 @@ class BaloonEnemy: Enemy, EnemyProtocol {
         self.position = RandomPoint.topRightSidePoint()
         createAction()
         startAction()
-        configureBody() //Should the baloon have a physics body?
+        configureBody() // Should the baloon have a physics body?
         runSpriteAnimaton(for: state)
     }
     
@@ -67,7 +67,7 @@ class BaloonEnemy: Enemy, EnemyProtocol {
         self.shotDelegate = delegate
         createAction()
         startAction()
-        configureBody() //Should the baloon have a physics body?
+        configureBody() // Should the baloon have a physics body?
         runSpriteAnimaton(for: state)
     }
     

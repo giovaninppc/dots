@@ -44,13 +44,13 @@ class EnemyController {
         return EnemyFactory.createEnemy(with: enemyType, for: (scene?.state?.currentState)!, with: self)
     }
     
-    //Update Global Timer - Defines the scene behaviour and dificult
-    //increment the time counter
-    //THIS is the method that vary depending on the level!!!
+    // Update Global Timer - Defines the scene behaviour and dificult
+    // increment the time counter
+    // THIS is the method that vary depending on the level!!!
     @objc func updateGlobalTimer() {
         self.seconds += 1
         
-        //Update countdown time
+        // Update countdown time
         for index in 0..<counters.count {
             counters[index] -= 1
         }

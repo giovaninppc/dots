@@ -17,7 +17,7 @@ class PlaneEnemy: Enemy, EnemyProtocol {
     
     var enemySize: CGSize = CGSize(width: 80, height: 80)
     
-    //Game States and positions
+    // Game States and positions
     // This enemy textures for each GameState
     let stateDict: [GameStates: SKTexture] = [.doodle: SKTexture(imageNamed: "doodlePlane"),
                                               .blueprint: SKTexture(imageNamed: "paperPlane"),

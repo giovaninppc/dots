@@ -8,7 +8,7 @@
 
 import Foundation
 
-//The Level protocol
+// The Level protocol
 protocol Level: NSObjectProtocol {
     func updateRespawnTime(for time: Int, respawnTime: inout [EnemyType: Int])
 }

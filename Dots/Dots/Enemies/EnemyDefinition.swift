@@ -15,7 +15,7 @@ enum EnemyType {
     case none
 }
 
-/// This protocol only helps to create better custom Enemy classes
+// This protocol only helps to create better custom Enemy classes
 // the enemies have to extend the base Enemy class and the protocol for necessary behaviour
 protocol EnemyProtocol: NSObjectProtocol {
     
