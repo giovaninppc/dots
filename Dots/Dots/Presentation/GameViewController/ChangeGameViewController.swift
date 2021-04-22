@@ -127,6 +127,7 @@ final class ChangeGameViewController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.weaponSelector.alpha = 1
         }
+        scene.run(SKAction.speed(to: 0.3, duration: 0.5))
     }
 
     private func setupWeaponSelector() {
@@ -142,6 +143,7 @@ final class ChangeGameViewController: UIViewController {
         }
         weaponSelector.onDismiss = { [weak self] in
             self?.scene.removeAim()
+            self?.scene.run(SKAction.speed(to: 1.0, duration: 0.5))
         }
         weaponSelector.isHidden = true
     }
