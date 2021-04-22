@@ -9,7 +9,6 @@ extension GameScene {
         let touchedNodes = nodes(at: location)
 
         lastTouch = location
-        aim?.selfDestruct()
 
         if let weapon = touchedNodes.first(where: { $0 is Weapon }) as? Weapon {
             print(weapon)
@@ -23,11 +22,14 @@ extension GameScene {
 
 extension GameScene {
     func addAim() {
-        aim?.selfDestruct()
         let aim = Aim(state: self.state!.currentState)
         aim.position = lastTouch
         self.scene?.addChild(aim)
         self.aim = aim
+    }
+
+    func removeAim() {
+        aim?.selfDestruct()
     }
 
     func addWeapon(_ weapon: Weapon, at position: CGPoint) {

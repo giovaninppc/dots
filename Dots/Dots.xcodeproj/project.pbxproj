@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1449BBD586104B303EAC3208 /* Pods_Dots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E819CA57B548D989D2E4C149 /* Pods_Dots.framework */; };
+		3E2D30572631062E00853550 /* WeaponSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2D30562631062E00853550 /* WeaponSelector.swift */; };
+		3E2D305A263106FC00853550 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2D3059263106FC00853550 /* Fonts.swift */; };
+		3E2D305D263107BF00853550 /* Constraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2D305C263107BF00853550 /* Constraining.swift */; };
 		3EB3F48926305C35003AA20F /* GameScaneUserInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F48826305C35003AA20F /* GameScaneUserInteraction.swift */; };
 		3EB3F48C26305CC3003AA20F /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F48B26305CC3003AA20F /* Weapon.swift */; };
 		3EB3F49026305D2A003AA20F /* Cannon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F48F26305D2A003AA20F /* Cannon.swift */; };
@@ -51,6 +54,9 @@
 
 /* Begin PBXFileReference section */
 		248FFC3A33CA9164227F7F8A /* Pods-Dots.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dots.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dots/Pods-Dots.release.xcconfig"; sourceTree = "<group>"; };
+		3E2D30562631062E00853550 /* WeaponSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponSelector.swift; sourceTree = "<group>"; };
+		3E2D3059263106FC00853550 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		3E2D305C263107BF00853550 /* Constraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraining.swift; sourceTree = "<group>"; };
 		3EB3F48826305C35003AA20F /* GameScaneUserInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScaneUserInteraction.swift; sourceTree = "<group>"; };
 		3EB3F48B26305CC3003AA20F /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		3EB3F48F26305D2A003AA20F /* Cannon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cannon.swift; sourceTree = "<group>"; };
@@ -254,6 +260,8 @@
 			children = (
 				9B8D5D8A20868AC70001DB35 /* RandomPoint.swift */,
 				3EB3F49B2630B35C003AA20F /* SceneUpdatable.swift */,
+				3E2D3059263106FC00853550 /* Fonts.swift */,
+				3E2D305C263107BF00853550 /* Constraining.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -302,6 +310,7 @@
 				9B416A8B2085289400E65777 /* Game.storyboard */,
 				9B416A8F2085291100E65777 /* ChangeGameViewController.swift */,
 				9BF312EB20C6F6A500E3C4D7 /* ResourceController.swift */,
+				3E2D30562631062E00853550 /* WeaponSelector.swift */,
 			);
 			path = GameViewController;
 			sourceTree = "<group>";
@@ -453,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E2D30572631062E00853550 /* WeaponSelector.swift in Sources */,
 				3EB3F4992630AF2F003AA20F /* Aim.swift in Sources */,
 				3EB3F49426306087003AA20F /* WeaponDefinition.swift in Sources */,
 				9B8D5DA420879F4D0001DB35 /* SettingsPageViewController.swift in Sources */,
@@ -468,9 +478,11 @@
 				9B8D5D9720878D680001DB35 /* doodleBaloon.swift in Sources */,
 				9B416A942086273A00E65777 /* EnemyFactory.swift in Sources */,
 				9B627B762081305400B0FBEE /* AppDelegate.swift in Sources */,
+				3E2D305A263106FC00853550 /* Fonts.swift in Sources */,
 				3EB3F49026305D2A003AA20F /* Cannon.swift in Sources */,
 				9B3F787B20C16EED0055FADA /* GameSceneProtocol.swift in Sources */,
 				9B416A9B20863DCD00E65777 /* CollisionBitMask.swift in Sources */,
+				3E2D305D263107BF00853550 /* Constraining.swift in Sources */,
 				9B8D5D93208786550001DB35 /* MenuViewController.swift in Sources */,
 				3EB3F49C2630B35C003AA20F /* SceneUpdatable.swift in Sources */,
 				9B8D5D8B20868AC70001DB35 /* RandomPoint.swift in Sources */,

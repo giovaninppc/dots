@@ -26,6 +26,8 @@ final class ChangeGameViewController: UIViewController {
     var scene: GameScene!
     var enemyController: EnemyController!
 
+    private let weaponSelector = WeaponSelectorView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -53,6 +55,9 @@ final class ChangeGameViewController: UIViewController {
 
         // Start labels correctly
         updateResourceLabel()
+
+        // Additional views
+        setupWeaponSelector()
     }
 
     /// Create animation and transition left
@@ -111,7 +116,34 @@ final class ChangeGameViewController: UIViewController {
     }
 
     @objc private func longPressed() {
+        guard weaponSelector.isHidden == true else { return }
         scene.addAim()
+        addWeaponSelector()
+    }
+
+    private func addWeaponSelector() {
+        weaponSelector.alpha = 0
+        weaponSelector.isHidden = false
+        UIView.animate(withDuration: 0.5) {
+            self.weaponSelector.alpha = 1
+        }
+    }
+
+    private func setupWeaponSelector() {
+        view.addSubview(weaponSelector)
+        weaponSelector.setupForManualConstraining()
+        view.constrain {
+            [
+                weaponSelector.topAnchor.constraint(equalTo: view.topAnchor),
+                weaponSelector.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                weaponSelector.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                weaponSelector.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            ]
+        }
+        weaponSelector.onDismiss = { [weak self] in
+            self?.scene.removeAim()
+        }
+        weaponSelector.isHidden = true
     }
 
     /// Take a screenshot to make the tansition
