@@ -122,6 +122,7 @@ final class ChangeGameViewController: UIViewController {
     }
 
     private func addWeaponSelector() {
+        self.view.bringSubview(toFront: weaponSelector)
         weaponSelector.alpha = 0
         weaponSelector.isHidden = false
         UIView.animate(withDuration: 0.5) {
@@ -142,8 +143,10 @@ final class ChangeGameViewController: UIViewController {
             ]
         }
         weaponSelector.onDismiss = { [weak self] in
-            self?.scene.removeAim()
-            self?.scene.run(SKAction.speed(to: 1.0, duration: 0.5))
+            guard let self = self else { return }
+            self.view.sendSubview(toBack: self.weaponSelector)
+            self.scene.removeAim()
+            self.scene.run(SKAction.speed(to: 1.0, duration: 0.5))
         }
         weaponSelector.isHidden = true
     }
