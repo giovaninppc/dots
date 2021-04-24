@@ -13,7 +13,7 @@ extension GameScene {
         if let weapon = touchedNodes.first(where: { $0 is Weapon }) as? Weapon {
             print(weapon)
         } else {
-            print(location)
+//            print(location)
         }
     }
 }

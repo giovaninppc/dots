@@ -24,6 +24,7 @@
 		3EF956C626344FA500CF3239 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956C526344FA500CF3239 /* PauseView.swift */; };
 		3EF956D12634523B00CF3239 /* ChangeGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D02634523B00CF3239 /* ChangeGameView.swift */; };
 		3EF956D926345C1B00CF3239 /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D826345C1B00CF3239 /* GameStates.swift */; };
+		3EF956E12634958700CF3239 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956E02634958700CF3239 /* SplashController.swift */; };
 		9B2F50272083AD3100BD808D /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2F50262083AD3100BD808D /* Enemy.swift */; };
 		9B3F787B20C16EED0055FADA /* GameSceneProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3F787A20C16EED0055FADA /* GameSceneProtocol.swift */; };
 		9B416A8A2085121A00E65777 /* EnemyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B416A892085121A00E65777 /* EnemyController.swift */; };
@@ -75,6 +76,7 @@
 		3EF956C526344FA500CF3239 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
 		3EF956D02634523B00CF3239 /* ChangeGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGameView.swift; sourceTree = "<group>"; };
 		3EF956D826345C1B00CF3239 /* GameStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStates.swift; sourceTree = "<group>"; };
+		3EF956E02634958700CF3239 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		406223187F5EEF52D7447914 /* Pods-Dots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dots.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dots/Pods-Dots.debug.xcconfig"; sourceTree = "<group>"; };
 		9B2F50262083AD3100BD808D /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		9B3F787A20C16EED0055FADA /* GameSceneProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneProtocol.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				9B8D5D902087860D0001DB35 /* Main.storyboard */,
 				9B8D5D9A208790290001DB35 /* Controllers */,
 				9B8D5D9420878D480001DB35 /* ImageAnimations */,
+				3EF956E02634958700CF3239 /* SplashController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				9B3F787B20C16EED0055FADA /* GameSceneProtocol.swift in Sources */,
 				9B416A9B20863DCD00E65777 /* CollisionBitMask.swift in Sources */,
 				3E2D305D263107BF00853550 /* Constraining.swift in Sources */,
+				3EF956E12634958700CF3239 /* SplashController.swift in Sources */,
 				9B8D5D93208786550001DB35 /* MenuViewController.swift in Sources */,
 				3EB3F49C2630B35C003AA20F /* SceneUpdatable.swift in Sources */,
 				9B8D5D8B20868AC70001DB35 /* RandomPoint.swift in Sources */,

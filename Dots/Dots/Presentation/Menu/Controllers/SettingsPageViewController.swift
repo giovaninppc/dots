@@ -31,6 +31,15 @@ final class SettingsPageMenuView: UIView {
         return view
     }()
 
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Settings"
+        label.font = .sketch(size: 60.0)
+        label.textColor = .black
+        label.textAlignment = .center
+        return label
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -46,10 +55,13 @@ final class SettingsPageMenuView: UIView {
     private func setupComponents() {
         background.setupForManualConstraining()
         addSubview(background)
+        titleLabel.setupForManualConstraining()
+        addSubview(titleLabel)
     }
 
     private func setupConstraints() {
         constrainBackground()
+        constrainTitle()
     }
 
     private func constrainBackground() {
@@ -59,6 +71,16 @@ final class SettingsPageMenuView: UIView {
                 background.bottomAnchor.constraint(equalTo: bottomAnchor),
                 background.leadingAnchor.constraint(equalTo: leadingAnchor),
                 background.trailingAnchor.constraint(equalTo: trailingAnchor)
+            ]
+        }
+    }
+
+    private func constrainTitle() {
+        constrain {
+            [
+                titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20.0),
+                titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+                titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
             ]
         }
     }
