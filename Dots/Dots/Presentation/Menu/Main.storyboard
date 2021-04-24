@@ -122,21 +122,10 @@
                             <constraint firstItem="FMu-cH-6t0" firstAttribute="centerX" secondItem="87U-5s-w3M" secondAttribute="centerX" id="vXm-Se-nCd"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <segue destination="OQ3-1D-eM0" kind="show" identifier="survivorGameSegue" id="9Ss-F6-qba"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4b5-UR-cWU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="178.40000000000001" y="-81.409295352323838"/>
-        </scene>
-        <!--Game-->
-        <scene sceneID="F5p-Cb-1Y2">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Game" id="OQ3-1D-eM0" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rSD-sI-CoU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="804" y="-17"/>
         </scene>
         <!--Settings-->
         <scene sceneID="RhN-ZN-5KD">
