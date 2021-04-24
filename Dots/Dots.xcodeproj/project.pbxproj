@@ -22,6 +22,7 @@
 		3EB3F4992630AF2F003AA20F /* Aim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F4972630AE71003AA20F /* Aim.swift */; };
 		3EB3F49C2630B35C003AA20F /* SceneUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F49B2630B35C003AA20F /* SceneUpdatable.swift */; };
 		3EF956C626344FA500CF3239 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956C526344FA500CF3239 /* SettingsView.swift */; };
+		3EF956D12634523B00CF3239 /* ChangeGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D02634523B00CF3239 /* ChangeGameView.swift */; };
 		9B2F50272083AD3100BD808D /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2F50262083AD3100BD808D /* Enemy.swift */; };
 		9B3F787B20C16EED0055FADA /* GameSceneProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3F787A20C16EED0055FADA /* GameSceneProtocol.swift */; };
 		9B416A8A2085121A00E65777 /* EnemyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B416A892085121A00E65777 /* EnemyController.swift */; };
@@ -73,6 +74,7 @@
 		3EB3F4972630AE71003AA20F /* Aim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aim.swift; sourceTree = "<group>"; };
 		3EB3F49B2630B35C003AA20F /* SceneUpdatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneUpdatable.swift; sourceTree = "<group>"; };
 		3EF956C526344FA500CF3239 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3EF956D02634523B00CF3239 /* ChangeGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGameView.swift; sourceTree = "<group>"; };
 		406223187F5EEF52D7447914 /* Pods-Dots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dots.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dots/Pods-Dots.debug.xcconfig"; sourceTree = "<group>"; };
 		9B2F50262083AD3100BD808D /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		9B3F787A20C16EED0055FADA /* GameSceneProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneProtocol.swift; sourceTree = "<group>"; };
@@ -180,6 +182,15 @@
 			path = GameObjects;
 			sourceTree = "<group>";
 		};
+		3EF956D4263453F900CF3239 /* GameController */ = {
+			isa = PBXGroup;
+			children = (
+				9BF312E920C6F5DA00E3C4D7 /* GameViewController */,
+				3E741BCF26343DB00003FBA5 /* WeaponSelector */,
+			);
+			path = GameController;
+			sourceTree = "<group>";
+		};
 		9B416A9920862B3C00E65777 /* Scene States */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +225,7 @@
 			children = (
 				9B627B752081305400B0FBEE /* AppDelegate.swift */,
 				9BF312E820C6F5CE00E3C4D7 /* Presentation */,
+				3EF956D4263453F900CF3239 /* GameController */,
 				9B8D5D87208678F90001DB35 /* EnemyController */,
 				3EF956C92634506800CF3239 /* GameObjects */,
 				9B627B942083904100B0FBEE /* SceneController */,
@@ -337,8 +349,6 @@
 			children = (
 				9B627B8E20838B1200B0FBEE /* Launch */,
 				9BF312EA20C6F5F000E3C4D7 /* Menu */,
-				9BF312E920C6F5DA00E3C4D7 /* GameViewController */,
-				3E741BCF26343DB00003FBA5 /* WeaponSelector */,
 				3EF956C426344F9100CF3239 /* Pause */,
 			);
 			path = Presentation;
@@ -350,6 +360,7 @@
 				9B416A8B2085289400E65777 /* Game.storyboard */,
 				9B416A8F2085291100E65777 /* ChangeGameViewController.swift */,
 				9BF312EB20C6F6A500E3C4D7 /* ResourceController.swift */,
+				3EF956D02634523B00CF3239 /* ChangeGameView.swift */,
 			);
 			path = GameViewController;
 			sourceTree = "<group>";
@@ -539,6 +550,7 @@
 				9B416A8A2085121A00E65777 /* EnemyController.swift in Sources */,
 				9B6B160B20867660008E2D9F /* WatercolorState.swift in Sources */,
 				9BF312EC20C6F6A500E3C4D7 /* ResourceController.swift in Sources */,
+				3EF956D12634523B00CF3239 /* ChangeGameView.swift in Sources */,
 				3EF956C626344FA500CF3239 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

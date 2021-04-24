@@ -8,14 +8,11 @@
 
 import UIKit
 
-class SorvivorGamePageViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
+final class SorvivorGamePageViewController: UIViewController {
     @IBAction func pressPlay(_ sender: Any) {
-        self.performSegue(withIdentifier: "survivorGameSegue", sender: self)
+        let view = ChangeGameView()
+        let gameController = ChangeGameViewController(gameView: view)
+
+        present(gameController, animated: true)
     }
-    
 }
