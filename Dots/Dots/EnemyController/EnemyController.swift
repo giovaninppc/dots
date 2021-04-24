@@ -8,7 +8,6 @@
 
 import SpriteKit
 
-
 // This class is resposible for creating the enemies on the scene
 // it contains the Timers, which defines when the enemies are going ot be created.
 // How the creation is gois to be - is defined by the 'state'
@@ -16,7 +15,6 @@ import SpriteKit
 // The global counter updates the time, and calls the state method
 
 final class EnemyController {
-    
     // Timer
     var globalTimer: Timer = Timer()
     var seconds: Int = 0
@@ -27,13 +25,9 @@ final class EnemyController {
     var respawnTime: [EnemyType: Int] = [.plane: 1, .baloon: 10]
     
     // Scene
-    var scene: GameScene?
+    weak var scene: GameScene?
     
-    init() {
-        // Start Global Timer
-        globalTimer = Timer.scheduledTimer(timeInterval: 1, target: self,
-                                           selector: #selector(updateGlobalTimer), userInfo: nil, repeats: true)
-    }
+    init() { play() }
     
     func addEnemy(type: EnemyType) {
         scene?.addEnemy(createEnemy(type: type))
@@ -67,6 +61,22 @@ final class EnemyController {
         } else if self.seconds == 60 {
             respawnTime[.baloon] = 7
         }
+    }
+}
+
+extension EnemyController {
+    func pause() {
+        globalTimer.invalidate()
+    }
+
+    func play() {
+        globalTimer = Timer.scheduledTimer(
+            timeInterval: 1,
+            target: self,
+            selector: #selector(updateGlobalTimer),
+            userInfo: nil,
+            repeats: true
+        )
     }
 }
 

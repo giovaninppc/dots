@@ -17,6 +17,8 @@ enum Swipe: Int {
 final class ChangeGameView: UIView {
     var onSwipe: ((Swipe) -> Void)?
     var onLongPress: (() -> Void)?
+    var onPause: (() -> Void)?
+    var onPlay: (() -> Void)?
     var onWeaponSelectorDismiss: (() -> Void)?
 
     // MARK: - Subviews
@@ -34,7 +36,7 @@ final class ChangeGameView: UIView {
 
     private let pauseButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Pause", for: .normal)
+        button.setImage(UIImage(named: "pause"), for: .normal)
         button.addTarget(self, action: #selector(didPause), for: .touchUpInside)
         return button
     }()
@@ -119,7 +121,9 @@ extension ChangeGameView {
         constrain {
             [
                 pauseButton.topAnchor.constraint(equalTo: topAnchor, constant: 10.0),
-                pauseButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10.0)
+                pauseButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10.0),
+                pauseButton.widthAnchor.constraint(equalToConstant: 20.0),
+                pauseButton.heightAnchor.constraint(equalToConstant: 25.0)
             ]
         }
     }
@@ -185,15 +189,17 @@ extension ChangeGameView {
             self.pause.alpha = 1
         }
         scene.run(SKAction.speed(to: 0.0, duration: 0.3))
+        onPause?()
     }
 
     func dismissPause() {
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.3) {
             self.pause.alpha = 0
         } completion: { _ in
             self.sendSubviewToBack(self.pause)
             self.pause.isHidden = true
         }
-        scene.run(SKAction.speed(to: 1.0, duration: 0.5))
+        scene.run(SKAction.speed(to: 1.0, duration: 0.3))
+        onPlay?()
     }
 }

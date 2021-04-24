@@ -10,19 +10,14 @@ import SpriteKit
 
 final class ChangeGameViewController: UIViewController {
     private let customView: ChangeGameView
+    private let enemyController: EnemyController = EnemyController()
 
-    private var gameView: SKView {
-        customView.gameView
-    }
-    private var scene: GameScene {
-        customView.scene
-    }
-    private var weaponSelector: WeaponSelectorView {
-        customView.weaponSelector
-    }
+    private var gameView: SKView { customView.gameView }
+    private var scene: GameScene { customView.scene }
+    private var weaponSelector: WeaponSelectorView { customView.weaponSelector }
 
     // Variables
-    var enemyController: EnemyController = EnemyController()
+
     var gameStates: [GameStates] = [.blueprint, .doodle, .watercolor]
     var currentStatus: Int = 0
 
@@ -35,6 +30,28 @@ final class ChangeGameViewController: UIViewController {
 
     override func loadView() {
         self.view = customView
+        setupViewActions()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        enemyController.scene = scene
+        scene.configureGame()
+        updateSceneState()
+
+        #if DEBUG
+        gameView.showsFPS = true
+        gameView.showsNodeCount = true
+        gameView.showsPhysics = true
+        #endif
+    }
+}
+
+// MARK: - View actions
+
+extension ChangeGameViewController {
+    private func setupViewActions() {
         customView.onSwipe = { [weak self] swipe in
             self?.makeTransition(swipe)
         }
@@ -47,45 +64,18 @@ final class ChangeGameViewController: UIViewController {
             self?.scene.removeAim()
             self?.scene.run(SKAction.speed(to: 1.0, duration: 0.5))
         }
+        customView.onPause = { [weak self] in
+            self?.enemyController.pause()
+        }
+        customView.onPlay = { [weak self] in
+            self?.enemyController.play()
+        }
     }
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+// MARK: - Transitions
 
-        // Initiate the GameScene
-        scene.configureGame()
-        updateSceneState()
-
-        #if DEBUG
-        gameView.showsFPS = true
-        gameView.showsNodeCount = true
-        gameView.showsPhysics = true
-        #endif
-
-        // Initiate enemyController
-        enemyController.scene = scene
-
-        // Start labels correctly
-        updateResourceLabel()
-    }
-
-    /// Create animation and transition left
-    func transitionLeft() {
-        updateSceneState()
-        self.scene.updateGame(for: gameStates[currentStatus])
-    }
-
-    /// Create animation and transition right
-    func transitionRight() {
-        updateSceneState()
-        self.scene.updateGame(for: gameStates[currentStatus])
-    }
-
-    /// Update scene with new Game State
-    func updateSceneState() {
-        self.scene.state = gameStates[currentStatus].buildState()
-    }
-
+extension ChangeGameViewController {
     private func makeTransition(_ swipe: Swipe) {
         switch swipe {
         case .left:
@@ -101,5 +91,19 @@ final class ChangeGameViewController: UIViewController {
             }
             transitionRight()
         }
+    }
+
+    private func transitionLeft() {
+        updateSceneState()
+        self.scene.updateGame(for: gameStates[currentStatus])
+    }
+
+    private func transitionRight() {
+        updateSceneState()
+        self.scene.updateGame(for: gameStates[currentStatus])
+    }
+
+    private func updateSceneState() {
+        self.scene.state = gameStates[currentStatus].buildState()
     }
 }

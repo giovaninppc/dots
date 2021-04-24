@@ -55,7 +55,6 @@
 		9BAD24282088BC000087B105 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAD24272088BC000087B105 /* Level.swift */; };
 		9BAD242A2088BDA60087B105 /* ShotDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAD24292088BDA60087B105 /* ShotDelegate.swift */; };
 		9BAD242C2088BEEC0087B105 /* BaloonBomb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAD242B2088BEEC0087B105 /* BaloonBomb.swift */; };
-		9BF312EC20C6F6A500E3C4D7 /* ResourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF312EB20C6F6A500E3C4D7 /* ResourceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,7 +109,6 @@
 		9BAD24272088BC000087B105 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		9BAD24292088BDA60087B105 /* ShotDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotDelegate.swift; sourceTree = "<group>"; };
 		9BAD242B2088BEEC0087B105 /* BaloonBomb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaloonBomb.swift; sourceTree = "<group>"; };
-		9BF312EB20C6F6A500E3C4D7 /* ResourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceController.swift; sourceTree = "<group>"; };
 		E819CA57B548D989D2E4C149 /* Pods_Dots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -360,7 +358,6 @@
 			children = (
 				3EF956D02634523B00CF3239 /* ChangeGameView.swift */,
 				9B416A8F2085291100E65777 /* ChangeGameViewController.swift */,
-				9BF312EB20C6F6A500E3C4D7 /* ResourceController.swift */,
 			);
 			path = GameViewController;
 			sourceTree = "<group>";
@@ -549,7 +546,6 @@
 				3E741BDB263442660003FBA5 /* CollectionExtensions.swift in Sources */,
 				9B416A8A2085121A00E65777 /* EnemyController.swift in Sources */,
 				9B6B160B20867660008E2D9F /* WatercolorState.swift in Sources */,
-				9BF312EC20C6F6A500E3C4D7 /* ResourceController.swift in Sources */,
 				3EF956D12634523B00CF3239 /* ChangeGameView.swift in Sources */,
 				3EF956C626344FA500CF3239 /* PauseView.swift in Sources */,
 			);
