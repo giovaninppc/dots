@@ -8,12 +8,6 @@
 
 import SpriteKit
 
-enum GameStates {
-    case doodle
-    case blueprint
-    case watercolor
-}
-
 final class ChangeGameViewController: UIViewController {
     private let customView: ChangeGameView
 
@@ -28,10 +22,9 @@ final class ChangeGameViewController: UIViewController {
     }
 
     // Variables
+    var enemyController: EnemyController = EnemyController()
     var gameStates: [GameStates] = [.blueprint, .doodle, .watercolor]
     var currentStatus: Int = 0
-
-    var enemyController: EnemyController = EnemyController()
 
     init(gameView: ChangeGameView) {
         self.customView = gameView
@@ -63,10 +56,11 @@ final class ChangeGameViewController: UIViewController {
         scene.configureGame()
         updateSceneState()
 
-        // DEBUG
+        #if DEBUG
         gameView.showsFPS = true
         gameView.showsNodeCount = true
         gameView.showsPhysics = true
+        #endif
 
         // Initiate enemyController
         enemyController.scene = scene
@@ -89,14 +83,7 @@ final class ChangeGameViewController: UIViewController {
 
     /// Update scene with new Game State
     func updateSceneState() {
-        switch gameStates[currentStatus] {
-        case .doodle:
-            self.scene.state = DoodleState()
-        case .blueprint:
-            self.scene.state = BlueprintState()
-        case .watercolor:
-            self.scene.state = WatercolorState()
-        }
+        self.scene.state = gameStates[currentStatus].buildState()
     }
 
     private func makeTransition(_ swipe: Swipe) {
@@ -114,9 +101,5 @@ final class ChangeGameViewController: UIViewController {
             }
             transitionRight()
         }
-    }
-
-    @objc private func longPressed() {
-
     }
 }

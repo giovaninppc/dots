@@ -19,6 +19,8 @@ final class ChangeGameView: UIView {
     var onLongPress: (() -> Void)?
     var onWeaponSelectorDismiss: (() -> Void)?
 
+    // MARK: - Subviews
+
     let scene: GameScene = GameScene(fileNamed: "Game.sks")!
 
     lazy var gameView: SKView = {
@@ -28,6 +30,16 @@ final class ChangeGameView: UIView {
     }()
 
     let weaponSelector = WeaponSelectorView()
+    let pause = PauseView()
+
+    private let pauseButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Pause", for: .normal)
+        button.addTarget(self, action: #selector(didPause), for: .touchUpInside)
+        return button
+    }()
+
+    // MARK: - Init
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,15 +57,21 @@ extension ChangeGameView {
     }
 
     private func setupComponents() {
-        gameView.setupForManualConstraining()
-        addSubview(gameView)
         weaponSelector.setupForManualConstraining()
         addSubview(weaponSelector)
+        pause.setupForManualConstraining()
+        addSubview(pause)
+        gameView.setupForManualConstraining()
+        addSubview(gameView)
+        pauseButton.setupForManualConstraining()
+        addSubview(pauseButton)
     }
 
     private func setupConstraints() {
         constrainGameView()
         constrainWeaponSelector()
+        constrainPause()
+        constrainPauseButton()
     }
 
     private func constrainGameView() {
@@ -82,6 +100,30 @@ extension ChangeGameView {
         weaponSelector.isHidden = true
     }
 
+    private func constrainPause() {
+        constrain {
+            [
+                pause.topAnchor.constraint(equalTo: topAnchor),
+                pause.bottomAnchor.constraint(equalTo: bottomAnchor),
+                pause.leadingAnchor.constraint(equalTo: leadingAnchor),
+                pause.trailingAnchor.constraint(equalTo: trailingAnchor)
+            ]
+        }
+        pause.onDismiss = { [weak self] in
+            self?.dismissPause()
+        }
+        pause.isHidden = true
+    }
+
+    private func constrainPauseButton() {
+        constrain {
+            [
+                pauseButton.topAnchor.constraint(equalTo: topAnchor, constant: 10.0),
+                pauseButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10.0)
+            ]
+        }
+    }
+
     private func setupGestures() {
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(didSwipeRight))
         swipeRight.direction = .right
@@ -108,6 +150,10 @@ extension ChangeGameView {
     @objc private func didLongPress() {
         onLongPress?()
     }
+
+    @objc private func didPause() {
+        showPause()
+    }
 }
 
 extension ChangeGameView {
@@ -126,8 +172,28 @@ extension ChangeGameView {
             self.weaponSelector.alpha = 0
         } completion: { _ in
             self.sendSubviewToBack(self.weaponSelector)
-            self.weaponSelector.isHidden = false
+            self.weaponSelector.isHidden = true
         }
-        scene.run(SKAction.speed(to: 0.3, duration: 0.5))
+        scene.run(SKAction.speed(to: 1.0, duration: 0.5))
+    }
+
+    func showPause() {
+        bringSubviewToFront(pause)
+        pause.alpha = 0
+        pause.isHidden = false
+        UIView.animate(withDuration: 0.3) {
+            self.pause.alpha = 1
+        }
+        scene.run(SKAction.speed(to: 0.0, duration: 0.3))
+    }
+
+    func dismissPause() {
+        UIView.animate(withDuration: 0.5) {
+            self.pause.alpha = 0
+        } completion: { _ in
+            self.sendSubviewToBack(self.pause)
+            self.pause.isHidden = true
+        }
+        scene.run(SKAction.speed(to: 1.0, duration: 0.5))
     }
 }

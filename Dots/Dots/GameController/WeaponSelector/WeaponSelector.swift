@@ -5,7 +5,7 @@ final class WeaponSelectorView: UIView {
 
     private let dimmer: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         return view
     }()
 

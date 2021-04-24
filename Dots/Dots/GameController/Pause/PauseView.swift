@@ -5,7 +5,7 @@ final class PauseView: UIView {
 
     private let dimmer: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         return view
     }()
 
@@ -88,11 +88,6 @@ extension PauseView {
 
 extension PauseView {
     @objc private func dismiss() {
-        UIView.animate(withDuration: 0.5) { [weak self] in
-            self?.alpha = 0
-        } completion: { [weak self] _ in
-            self?.isHidden = true
-            self?.onDismiss?()
-        }
+        onDismiss?()
     }
 }
