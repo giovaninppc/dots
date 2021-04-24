@@ -13,29 +13,29 @@ final class MenuPageViewController: UIPageViewController {
     // Reference array to the Menu view controllers
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         [
-            self.newMenuViewController("Game"),
+            SurvivorGamePageViewController(),
             self.newMenuViewController("Settings")
         ]
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Initializing the datasource
         dataSource = self
 
         // Intializing the first view
         if let firstViewController = orderedViewControllers.first {
-            setViewControllers([firstViewController],
-                               direction: .forward,
-                               animated: true,
-                               completion: nil)
+            setViewControllers(
+                [firstViewController],
+                direction: .forward,
+                animated: true,
+                completion: nil
+            )
         }
     }
 
     /// Instantiate a new viewController for the game
     private func newMenuViewController(_ levelName: String) -> UIViewController {
-        // Load from storyboard
         let viewController = UIStoryboard(name: "Main", bundle: nil) .
             instantiateViewController(withIdentifier: "\(levelName)")
 
@@ -45,9 +45,10 @@ final class MenuPageViewController: UIPageViewController {
 
 // MARK: UIPageViewControllerDataSource
 extension MenuPageViewController: UIPageViewControllerDataSource {
-
-    func pageViewController(_ pageViewController: UIPageViewController,
-                            viewControllerBefore viewController: UIViewController) -> UIViewController? {
+    func pageViewController(
+        _ pageViewController: UIPageViewController,
+        viewControllerBefore viewController: UIViewController
+    ) -> UIViewController? {
         guard let viewControllerIndex = orderedViewControllers.firstIndex(of: viewController) else {
             return nil
         }
@@ -67,8 +68,10 @@ extension MenuPageViewController: UIPageViewControllerDataSource {
         return orderedViewControllers[previousIndex]
     }
 
-    func pageViewController(_ pageViewController: UIPageViewController,
-                            viewControllerAfter viewController: UIViewController) -> UIViewController? {
+    func pageViewController(
+        _ pageViewController: UIPageViewController,
+        viewControllerAfter viewController: UIViewController
+    ) -> UIViewController? {
         guard let viewControllerIndex = orderedViewControllers.firstIndex(of: viewController) else {
             return nil
         }

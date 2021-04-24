@@ -21,7 +21,7 @@ final class ChangeGameViewController: UIViewController {
     var gameStates: [GameStates] = [.blueprint, .doodle, .watercolor]
     var currentStatus: Int = 0
 
-    init(gameView: ChangeGameView) {
+    init(gameView: ChangeGameView = .init()) {
         self.customView = gameView
         super.init(nibName: nil, bundle: nil)
     }

@@ -46,7 +46,7 @@
 		9B8D5D93208786550001DB35 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D92208786550001DB35 /* MenuViewController.swift */; };
 		9B8D5D9720878D680001DB35 /* doodleBaloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D9620878D680001DB35 /* doodleBaloon.swift */; };
 		9B8D5D9920878FF80001DB35 /* PlaneAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D9820878FF80001DB35 /* PlaneAnimation.swift */; };
-		9B8D5D9C208790490001DB35 /* SorvivorGamePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D9B208790490001DB35 /* SorvivorGamePageViewController.swift */; };
+		9B8D5D9C208790490001DB35 /* SurvivorGamePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D9B208790490001DB35 /* SurvivorGamePageViewController.swift */; };
 		9B8D5D9E208795280001DB35 /* References in Resources */ = {isa = PBXBuildFile; fileRef = 9B8D5D9D208795280001DB35 /* References */; };
 		9B8D5DA020879A7A0001DB35 /* Sketch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B8D5D9F20879A7A0001DB35 /* Sketch.ttf */; };
 		9B8D5DA220879CF00001DB35 /* ItsaSketch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B8D5DA120879CF00001DB35 /* ItsaSketch.ttf */; };
@@ -100,7 +100,7 @@
 		9B8D5D92208786550001DB35 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		9B8D5D9620878D680001DB35 /* doodleBaloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doodleBaloon.swift; sourceTree = "<group>"; };
 		9B8D5D9820878FF80001DB35 /* PlaneAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneAnimation.swift; sourceTree = "<group>"; };
-		9B8D5D9B208790490001DB35 /* SorvivorGamePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorvivorGamePageViewController.swift; sourceTree = "<group>"; };
+		9B8D5D9B208790490001DB35 /* SurvivorGamePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurvivorGamePageViewController.swift; sourceTree = "<group>"; };
 		9B8D5D9D208795280001DB35 /* References */ = {isa = PBXFileReference; lastKnownFileType = text; path = References; sourceTree = "<group>"; };
 		9B8D5D9F20879A7A0001DB35 /* Sketch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sketch.ttf; sourceTree = "<group>"; };
 		9B8D5DA120879CF00001DB35 /* ItsaSketch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ItsaSketch.ttf; sourceTree = "<group>"; };
@@ -328,8 +328,7 @@
 		9B8D5D9A208790290001DB35 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9B8D5D92208786550001DB35 /* MenuViewController.swift */,
-				9B8D5D9B208790490001DB35 /* SorvivorGamePageViewController.swift */,
+				9B8D5D9B208790490001DB35 /* SurvivorGamePageViewController.swift */,
 				9B8D5DA320879F4D0001DB35 /* SettingsPageViewController.swift */,
 			);
 			path = Controllers;
@@ -365,6 +364,7 @@
 		9BF312EA20C6F5F000E3C4D7 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				9B8D5D92208786550001DB35 /* MenuViewController.swift */,
 				9B8D5D902087860D0001DB35 /* Main.storyboard */,
 				9B8D5D9A208790290001DB35 /* Controllers */,
 				9B8D5D9420878D480001DB35 /* ImageAnimations */,
@@ -518,7 +518,7 @@
 				9BAD242C2088BEEC0087B105 /* BaloonBomb.swift in Sources */,
 				3EB3F48926305C35003AA20F /* GameScaneUserInteraction.swift in Sources */,
 				9B416A902085291100E65777 /* ChangeGameViewController.swift in Sources */,
-				9B8D5D9C208790490001DB35 /* SorvivorGamePageViewController.swift in Sources */,
+				9B8D5D9C208790490001DB35 /* SurvivorGamePageViewController.swift in Sources */,
 				9B627B982083912500B0FBEE /* DoodleState.swift in Sources */,
 				9BAD242A2088BDA60087B105 /* ShotDelegate.swift in Sources */,
 				9B8D5D9920878FF80001DB35 /* PlaneAnimation.swift in Sources */,

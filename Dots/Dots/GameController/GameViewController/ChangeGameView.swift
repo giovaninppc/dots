@@ -100,6 +100,7 @@ extension ChangeGameView {
             self?.onWeaponSelectorDismiss?()
         }
         weaponSelector.isHidden = true
+        sendSubviewToBack(weaponSelector)
     }
 
     private func constrainPause() {
@@ -115,6 +116,7 @@ extension ChangeGameView {
             self?.dismissPause()
         }
         pause.isHidden = true
+        sendSubviewToBack(pause)
     }
 
     private func constrainPauseButton() {
