@@ -4,14 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="ItsaSketch.ttf">
-            <string>ItsaSketch</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Menu Page View Controller-->
         <scene sceneID="nzc-sq-XnC">
@@ -21,57 +14,5 @@
             </objects>
             <point key="canvasLocation" x="-748" y="93"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="RhN-ZN-5KD">
-            <objects>
-                <viewController storyboardIdentifier="Settings" title="Settings" id="ozs-bx-zjK" customClass="SettingsPageViewController" customModule="Dots" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Gpd-Nl-frf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Watercolor" translatesAutoresizingMaskIntoConstraints="NO" id="uif-hG-DmZ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="CX1-KH-EpJ">
-                                <rect key="frame" x="136" y="634.5" width="103.5" height="27.5"/>
-                                <color key="pageIndicatorTintColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </pageControl>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stackedPaper" translatesAutoresizingMaskIntoConstraints="NO" id="bfY-0d-LFb">
-                                <rect key="frame" x="0.0" y="0.0" width="333" height="177"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asv-hn-kTd">
-                                <rect key="frame" x="167" y="35" width="191" height="56"/>
-                                <fontDescription key="fontDescription" name="ItsaSketch" family="ItsaSketch" pointSize="50"/>
-                                <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="8Kf-3z-4pM"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="8Kf-3z-4pM" firstAttribute="bottom" secondItem="CX1-KH-EpJ" secondAttribute="bottom" constant="5" id="4Vq-Rc-bUY"/>
-                            <constraint firstItem="uif-hG-DmZ" firstAttribute="width" secondItem="Gpd-Nl-frf" secondAttribute="width" id="C5R-jP-YpN"/>
-                            <constraint firstItem="uif-hG-DmZ" firstAttribute="height" secondItem="Gpd-Nl-frf" secondAttribute="height" id="DRj-vn-df0"/>
-                            <constraint firstItem="CX1-KH-EpJ" firstAttribute="centerX" secondItem="8Kf-3z-4pM" secondAttribute="centerX" id="DnX-Nd-Vga"/>
-                            <constraint firstItem="8Kf-3z-4pM" firstAttribute="trailing" secondItem="Asv-hn-kTd" secondAttribute="trailing" constant="17" id="TBB-Uu-bwP"/>
-                            <constraint firstItem="uif-hG-DmZ" firstAttribute="centerX" secondItem="8Kf-3z-4pM" secondAttribute="centerX" id="Vca-Yw-W4q"/>
-                            <constraint firstItem="uif-hG-DmZ" firstAttribute="centerY" secondItem="8Kf-3z-4pM" secondAttribute="centerY" id="h3P-84-rma"/>
-                            <constraint firstItem="Asv-hn-kTd" firstAttribute="top" secondItem="8Kf-3z-4pM" secondAttribute="top" constant="35" id="jSH-Ek-39L"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="titleLabel" destination="Asv-hn-kTd" id="wWH-by-dGD"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U6v-8q-VCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-31" y="92"/>
-        </scene>
     </scenes>
-    <resources>
-        <image name="Watercolor" width="1500" height="2100"/>
-        <image name="stackedPaper" width="375" height="152"/>
-    </resources>
 </document>

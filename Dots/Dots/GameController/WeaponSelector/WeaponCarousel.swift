@@ -61,8 +61,14 @@ extension WeaponCarousel: UICollectionViewDelegate, UICollectionViewDataSource {
         weapons.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WeaponSelectorCell.identifier, for: indexPath) as? WeaponSelectorCell else {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: WeaponSelectorCell.identifier,
+                for: indexPath
+        ) as? WeaponSelectorCell else {
             return UICollectionViewCell()
         }
 

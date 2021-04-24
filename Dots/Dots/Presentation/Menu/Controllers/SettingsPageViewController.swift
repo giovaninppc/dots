@@ -8,15 +8,58 @@
 
 import UIKit
 
-class SettingsPageViewController: UIViewController {
+final class SettingsPageViewController: UIViewController {
+    private let customView: SettingsPageMenuView
 
-    @IBOutlet weak var titleLabel: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        titleLabel.transform = CGAffineTransform(rotationAngle: 0.25)
+    init(view: SettingsPageMenuView = .init()) {
+        self.customView = view
+        super.init(nibName: nil, bundle: nil)
     }
 
+    required init?(coder: NSCoder) { nil }
+
+    override func loadView() {
+        view = customView
+    }
+}
+
+final class SettingsPageMenuView: UIView {
+    private let background: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "Watercolor")
+        view.contentMode = .scaleAspectFill
+        return view
+    }()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    required init?(coder: NSCoder) { nil }
+
+    private func setup() {
+        setupComponents()
+        setupConstraints()
+    }
+
+    private func setupComponents() {
+        background.setupForManualConstraining()
+        addSubview(background)
+    }
+
+    private func setupConstraints() {
+        constrainBackground()
+    }
+
+    private func constrainBackground() {
+        constrain {
+            [
+                background.topAnchor.constraint(equalTo: topAnchor),
+                background.bottomAnchor.constraint(equalTo: bottomAnchor),
+                background.leadingAnchor.constraint(equalTo: leadingAnchor),
+                background.trailingAnchor.constraint(equalTo: trailingAnchor)
+            ]
+        }
+    }
 }

@@ -11,19 +11,15 @@ import UIKit
 
 final class MenuPageViewController: UIPageViewController {
     // Reference array to the Menu view controllers
-    private(set) lazy var orderedViewControllers: [UIViewController] = {
-        [
-            SurvivorGamePageViewController(),
-            self.newMenuViewController("Settings")
-        ]
-    }()
+    private let orderedViewControllers: [UIViewController] = [
+        SurvivorGamePageViewController(),
+        SettingsPageViewController()
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Initializing the datasource
         dataSource = self
 
-        // Intializing the first view
         if let firstViewController = orderedViewControllers.first {
             setViewControllers(
                 [firstViewController],
@@ -32,14 +28,6 @@ final class MenuPageViewController: UIPageViewController {
                 completion: nil
             )
         }
-    }
-
-    /// Instantiate a new viewController for the game
-    private func newMenuViewController(_ levelName: String) -> UIViewController {
-        let viewController = UIStoryboard(name: "Main", bundle: nil) .
-            instantiateViewController(withIdentifier: "\(levelName)")
-
-        return viewController
     }
 }
 
@@ -93,11 +81,11 @@ extension MenuPageViewController: UIPageViewControllerDataSource {
     }
 
     // Creating the page counter
-    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return orderedViewControllers.count
+    func presentationCount(for: UIPageViewController) -> Int {
+        orderedViewControllers.count
     }
 
-    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+    func presentationIndex(for: UIPageViewController) -> Int {
         guard let firstViewController = viewControllers?.first,
             let firstViewControllerIndex = orderedViewControllers.firstIndex(of: firstViewController) else {
                 return 0
