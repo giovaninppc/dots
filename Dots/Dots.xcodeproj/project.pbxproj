@@ -21,6 +21,7 @@
 		3EB3F49426306087003AA20F /* WeaponDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F49326306087003AA20F /* WeaponDefinition.swift */; };
 		3EB3F4992630AF2F003AA20F /* Aim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F4972630AE71003AA20F /* Aim.swift */; };
 		3EB3F49C2630B35C003AA20F /* SceneUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F49B2630B35C003AA20F /* SceneUpdatable.swift */; };
+		3EF956C626344FA500CF3239 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956C526344FA500CF3239 /* SettingsView.swift */; };
 		9B2F50272083AD3100BD808D /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2F50262083AD3100BD808D /* Enemy.swift */; };
 		9B3F787B20C16EED0055FADA /* GameSceneProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3F787A20C16EED0055FADA /* GameSceneProtocol.swift */; };
 		9B416A8A2085121A00E65777 /* EnemyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B416A892085121A00E65777 /* EnemyController.swift */; };
@@ -71,6 +72,7 @@
 		3EB3F49326306087003AA20F /* WeaponDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDefinition.swift; sourceTree = "<group>"; };
 		3EB3F4972630AE71003AA20F /* Aim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aim.swift; sourceTree = "<group>"; };
 		3EB3F49B2630B35C003AA20F /* SceneUpdatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneUpdatable.swift; sourceTree = "<group>"; };
+		3EF956C526344FA500CF3239 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		406223187F5EEF52D7447914 /* Pods-Dots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dots.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dots/Pods-Dots.debug.xcconfig"; sourceTree = "<group>"; };
 		9B2F50262083AD3100BD808D /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		9B3F787A20C16EED0055FADA /* GameSceneProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneProtocol.swift; sourceTree = "<group>"; };
@@ -160,6 +162,24 @@
 			path = Aim;
 			sourceTree = "<group>";
 		};
+		3EF956C426344F9100CF3239 /* Pause */ = {
+			isa = PBXGroup;
+			children = (
+				3EF956C526344FA500CF3239 /* SettingsView.swift */,
+			);
+			path = Pause;
+			sourceTree = "<group>";
+		};
+		3EF956C92634506800CF3239 /* GameObjects */ = {
+			isa = PBXGroup;
+			children = (
+				3EB3F4962630AE68003AA20F /* Aim */,
+				9B627B9F2083978200B0FBEE /* Enemies */,
+				3EB3F48326305674003AA20F /* Weapons */,
+			);
+			path = GameObjects;
+			sourceTree = "<group>";
+		};
 		9B416A9920862B3C00E65777 /* Scene States */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,11 +214,8 @@
 			children = (
 				9B627B752081305400B0FBEE /* AppDelegate.swift */,
 				9BF312E820C6F5CE00E3C4D7 /* Presentation */,
-				3E741BCF26343DB00003FBA5 /* WeaponSelector */,
 				9B8D5D87208678F90001DB35 /* EnemyController */,
-				9B627B9F2083978200B0FBEE /* Enemies */,
-				3EB3F48326305674003AA20F /* Weapons */,
-				3EB3F4962630AE68003AA20F /* Aim */,
+				3EF956C92634506800CF3239 /* GameObjects */,
 				9B627B942083904100B0FBEE /* SceneController */,
 				9B8D5D8920868AAD0001DB35 /* Utils */,
 				9B627B8F20838B3500B0FBEE /* Assets */,
@@ -321,6 +338,8 @@
 				9B627B8E20838B1200B0FBEE /* Launch */,
 				9BF312EA20C6F5F000E3C4D7 /* Menu */,
 				9BF312E920C6F5DA00E3C4D7 /* GameViewController */,
+				3E741BCF26343DB00003FBA5 /* WeaponSelector */,
+				3EF956C426344F9100CF3239 /* Pause */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -393,11 +412,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Giovani Nascimento Pereira";
 				TargetAttributes = {
 					9B627B712081305400B0FBEE = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1220;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.GameCenter.iOS = {
@@ -519,6 +539,7 @@
 				9B416A8A2085121A00E65777 /* EnemyController.swift in Sources */,
 				9B6B160B20867660008E2D9F /* WatercolorState.swift in Sources */,
 				9BF312EC20C6F6A500E3C4D7 /* ResourceController.swift in Sources */,
+				3EF956C626344FA500CF3239 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +582,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -586,7 +608,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -620,6 +642,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -639,7 +662,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -655,12 +678,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2ECVV26Q6C;
 				INFOPLIST_FILE = Dots/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = giovani.pereira.dots;
+				PRODUCT_BUNDLE_IDENTIFIER = pereira.giovani.dots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -672,12 +695,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2ECVV26Q6C;
 				INFOPLIST_FILE = Dots/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = giovani.pereira.dots;
+				PRODUCT_BUNDLE_IDENTIFIER = pereira.giovani.dots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
