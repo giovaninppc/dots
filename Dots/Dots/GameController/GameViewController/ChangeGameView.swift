@@ -170,7 +170,7 @@ extension ChangeGameView {
         UIView.animate(withDuration: 0.5) {
             self.weaponSelector.alpha = 1
         }
-        scene.run(SKAction.speed(to: 0.3, duration: 0.5))
+        scene.run(SKAction.speed(to: 0.1, duration: 0.5))
     }
 
     func hideWeaponSelector() {
@@ -184,23 +184,11 @@ extension ChangeGameView {
     }
 
     func showPause() {
-        bringSubviewToFront(pause)
-        pause.alpha = 0
-        pause.isHidden = false
-        UIView.animate(withDuration: 0.3) {
-            self.pause.alpha = 1
-        }
         scene.run(SKAction.speed(to: 0.0, duration: 0.3))
         onPause?()
     }
 
     func dismissPause() {
-        UIView.animate(withDuration: 0.3) {
-            self.pause.alpha = 0
-        } completion: { _ in
-            self.sendSubviewToBack(self.pause)
-            self.pause.isHidden = true
-        }
         scene.run(SKAction.speed(to: 1.0, duration: 0.3))
         onPlay?()
     }

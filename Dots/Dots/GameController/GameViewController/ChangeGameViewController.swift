@@ -66,6 +66,7 @@ extension ChangeGameViewController {
         }
         customView.onPause = { [weak self] in
             self?.enemyController.pause()
+            self?.showPause()
         }
         customView.onPlay = { [weak self] in
             self?.enemyController.play()
@@ -105,5 +106,17 @@ extension ChangeGameViewController {
 
     private func updateSceneState() {
         self.scene.state = gameStates[currentStatus].buildState()
+    }
+}
+
+extension ChangeGameViewController {
+    private func showPause() {
+        let pause = PauseViewController { [weak self] in
+            self?.customView.dismissPause()
+        } onCloseGame: { [weak self] in
+            self?.dismiss(animated: true, completion: nil)
+        }
+
+        present(pause, animated: true, completion: nil)
     }
 }
