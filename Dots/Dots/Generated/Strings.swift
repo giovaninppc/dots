@@ -10,8 +10,15 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Localization {
-  /// A
-  internal static let a = Localization.tr("Strings", "A")
+
+  internal enum Pause {
+    /// Continue
+    internal static let `continue` = Localization.tr("Strings", "Pause.continue")
+    /// Exit
+    internal static let exit = Localization.tr("Strings", "Pause.exit")
+    /// Pause
+    internal static let title = Localization.tr("Strings", "Pause.title")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

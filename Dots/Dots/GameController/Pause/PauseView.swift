@@ -13,7 +13,7 @@ final class PauseView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.text = "Pause"
+        label.text = Localization.Pause.title
         label.textAlignment = .center
         label.font = .sketch(size: 30.0)
         return label
@@ -21,7 +21,7 @@ final class PauseView: UIView {
 
     private lazy var continueButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Continue", for: .normal)
+        button.setTitle(Localization.Pause.continue, for: .normal)
         button.titleLabel?.font = .sketch(size: 35.0)
         button.addTarget(self, action: #selector(dismiss), for: .touchUpInside)
         return button
@@ -29,7 +29,7 @@ final class PauseView: UIView {
 
     private lazy var endButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Exit", for: .normal)
+        button.setTitle(Localization.Pause.exit, for: .normal)
         button.titleLabel?.font = .sketch(size: 35.0)
         button.setTitleColor(.red, for: .normal)
         button.addTarget(self, action: #selector(closeGame), for: .touchUpInside)
