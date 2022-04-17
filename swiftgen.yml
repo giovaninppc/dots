@@ -1,0 +1,17 @@
+xcassets:
+  - inputs:
+        Dots/Dots/Assets/Assets.xcassets
+    outputs:
+      templateName: swift4
+      params:
+          publicAccess: true
+      output: Dots/Dots/Generated/Images.swift
+
+strings:
+  - inputs:
+        Dots/Dots/Strings/Strings.strings
+    outputs:
+      - templateName: structured-swift4
+        params:
+          enumName: Localization
+        output: Dots/Dots/Generated/Strings.swift

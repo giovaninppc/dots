@@ -19,14 +19,6 @@ final class PauseView: UIView {
         return label
     }()
 
-    private lazy var closeButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("x", for: .normal)
-        button.titleLabel?.font = .sketch(size: 30.0)
-        button.addTarget(self, action: #selector(dismiss), for: .touchUpInside)
-        return button
-    }()
-
     private lazy var continueButton: UIButton = {
         let button = UIButton()
         button.setTitle("Continue", for: .normal)
@@ -63,8 +55,6 @@ extension PauseView {
         addSubview(dimmer)
         titleLabel.setupForManualConstraining()
         addSubview(titleLabel)
-        closeButton.setupForManualConstraining()
-        addSubview(closeButton)
         continueButton.setupForManualConstraining()
         addSubview(continueButton)
         endButton.setupForManualConstraining()
@@ -74,7 +64,6 @@ extension PauseView {
     private func setupConstraints() {
         constrainDimmer()
         constrainTitle()
-        constrainCloseButton()
         constrainContinueButton()
         constrainEndButton()
     }
@@ -96,15 +85,6 @@ extension PauseView {
                 titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 25.0),
                 titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
                 titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
-            ]
-        }
-    }
-
-    private func constrainCloseButton() {
-        constrain {
-            [
-                closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10.0),
-                closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10.0)
             ]
         }
     }
