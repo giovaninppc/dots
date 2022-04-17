@@ -170,7 +170,7 @@ extension ChangeGameView {
         UIView.animate(withDuration: 0.5) {
             self.weaponSelector.alpha = 1
         }
-        scene.run(SKAction.speed(to: 0.2, duration: 0.5))
+        scene.run(SKAction.speed(to: 0.3, duration: 0.5))
     }
 
     func hideWeaponSelector() {

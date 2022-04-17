@@ -25,7 +25,7 @@ final class PlaneEnemy: Enemy, EnemyProtocol {
     // This enemy proper Animation
     var planeAnimation: SKAction = SKAction.run {}
 
-    /// This is the importante init
+    /// This is the important init
     /// It will start the enmy on the current gameState
     /// and configure animation and texture
     ///
@@ -58,7 +58,7 @@ final class PlaneEnemy: Enemy, EnemyProtocol {
                                        dy: planeDownSpeed),
                           duration: 2.0+Double(arc4random_uniform(10))*0.1),
             SKAction.scaleX(to: 1, duration: 0.2),
-            SKAction.move(by: CGVector(dx: -1*planeHorizontalMove,
+            SKAction.move(by: CGVector(dx: -1 * planeHorizontalMove,
                                        dy: planeDownSpeed),
                           duration: 2.0+Double(arc4random_uniform(10))*0.1)]))
     }

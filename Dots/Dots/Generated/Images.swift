@@ -51,6 +51,7 @@ public enum Asset {
   public static let resourceA = ImageAsset(name: "ResourceA")
   public static let resourceB = ImageAsset(name: "ResourceB")
   public static let resourceC = ImageAsset(name: "ResourceC")
+  public static let onboardingArrow = ImageAsset(name: "onboarding-arrow")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
