@@ -24,6 +24,8 @@ final class ChangeGameViewController: UIViewController {
     init(gameView: ChangeGameView = .init()) {
         self.customView = gameView
         super.init(nibName: nil, bundle: nil)
+
+        modalPresentationStyle = .overFullScreen
     }
 
     required init?(coder: NSCoder) { nil }

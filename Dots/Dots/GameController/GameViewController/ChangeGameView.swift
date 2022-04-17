@@ -36,7 +36,7 @@ final class ChangeGameView: UIView {
 
     private let pauseButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "pause"), for: .normal)
+        button.setImage(Asset.pause.image, for: .normal)
         button.addTarget(self, action: #selector(didPause), for: .touchUpInside)
         return button
     }()
@@ -122,7 +122,7 @@ extension ChangeGameView {
     private func constrainPauseButton() {
         constrain {
             [
-                pauseButton.topAnchor.constraint(equalTo: topAnchor, constant: 10.0),
+                pauseButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10.0),
                 pauseButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10.0),
                 pauseButton.widthAnchor.constraint(equalToConstant: 20.0),
                 pauseButton.heightAnchor.constraint(equalToConstant: 25.0)
@@ -170,7 +170,7 @@ extension ChangeGameView {
         UIView.animate(withDuration: 0.5) {
             self.weaponSelector.alpha = 1
         }
-        scene.run(SKAction.speed(to: 0.1, duration: 0.5))
+        scene.run(SKAction.speed(to: 0.2, duration: 0.5))
     }
 
     func hideWeaponSelector() {
