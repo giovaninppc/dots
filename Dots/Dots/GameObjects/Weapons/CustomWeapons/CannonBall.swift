@@ -8,14 +8,12 @@
 
 import SpriteKit
 
-final class CannonWeapon: Weapon, WeaponProtocol {
+final class CannonBall: WeaponShot, WeaponProtocol {
     var life: Int = 10
     weak var shotDelegate: ShotDelegate?
 
-    let weaponSize: CGSize = CGSize(width: 50, height: 50)
+    let weaponSize: CGSize = CGSize(width: 10, height: 10)
 
-    // Game States and positions
-    // This enemy textures for each GameState
     let stateDict: [GameStates: SKTexture] = [
         .doodle: SKTexture(imageNamed: "ResourceA"),
         .blueprint: SKTexture(imageNamed: "ResourceB"),
@@ -24,9 +22,10 @@ final class CannonWeapon: Weapon, WeaponProtocol {
 
     var animation: SKAction = SKAction.run {}
 
-    init(state: GameStates, delegate: ShotDelegate?) {
+    required init (state: GameStates, delegate: ShotDelegate?) {
         let texture = stateDict[state]!
         super.init(texture: texture, size: weaponSize)
+
         shotDelegate = delegate
 
         createAction()
@@ -43,10 +42,7 @@ final class CannonWeapon: Weapon, WeaponProtocol {
     }
 
     func createAction() {
-        animation = SKAction.repeatForever(SKAction.sequence([
-            SKAction.wait(forDuration: 2.0),
-            SKAction.run { [weak self] in self?.fire() }
-        ]))
+        animation = SKAction.move(by: CGVector(dx: 0, dy: 1000.0), duration: baloonBombSpeed)
     }
 
     func startAction() {
@@ -54,19 +50,11 @@ final class CannonWeapon: Weapon, WeaponProtocol {
     }
 
     func configureBody() {
-        let body = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 50))
+        let body = SKPhysicsBody(rectangleOf: weaponSize)
         body.affectedByGravity = false
         body.allowsRotation = false
-        body.collisionBitMask = PhysicsCategory.weapon
+        body.categoryBitMask = PhysicsCategory.playerBullet
+        body.collisionBitMask = collisionBitMask
         self.physicsBody = body
-    }
-}
-
-extension CannonWeapon {
-    private func fire() {
-        guard let delegate = shotDelegate else { return }
-        var position = self.position
-        position.y += 20
-        delegate.addWeaponShot(type: .canonBall, at: position)
     }
 }

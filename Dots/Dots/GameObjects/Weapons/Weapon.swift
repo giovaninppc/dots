@@ -8,9 +8,7 @@ class Weapon: SKSpriteNode, SceneUpdatable {
         .watercolor: .black
     ]
 
-    private init() {
-        super.init(texture: nil, color: .white, size: CGSize(width: 20, height: 20))
-    }
+    private init() { super.init(texture: nil, color: .white, size: CGSize(width: 20, height: 20)) }
 
     init(texture: SKTexture, size: CGSize) {
         super.init(texture: texture, color: .white, size: size)
@@ -29,7 +27,6 @@ class Weapon: SKSpriteNode, SceneUpdatable {
     }
 
     func selfDestruct() {
-        // Make animation
         self.removeFromParent()
     }
 }

@@ -72,11 +72,13 @@ final class PlaneEnemy: Enemy, EnemyProtocol {
     /// for this enemy
     func configureBody() {
         let body = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 50))
-        body.categoryBitMask = PhysicsCategory.enemy
         body.affectedByGravity = false
         body.allowsRotation = false
-        body.contactTestBitMask = PhysicsCategory.limit
-        body.collisionBitMask = PhysicsCategory.none
+
+        body.categoryBitMask = PhysicsCategory.enemy
+        body.collisionBitMask = collisionBitMask
+        body.contactTestBitMask = collisionBitMask
+
         self.physicsBody = body
     }
 

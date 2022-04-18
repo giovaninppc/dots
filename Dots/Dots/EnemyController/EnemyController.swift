@@ -86,4 +86,10 @@ extension EnemyController: ShotDelegate {
         shot.position = position
         scene?.addEnemy(shot)
     }
+
+    func addWeaponShot(type: WeaponType, at position: CGPoint) {
+        let shot = WeaponFactory.createWeapon(with: type, for: (scene?.state?.currentState)!, with: self)
+        shot.position = position
+        scene?.addWeapon(shot, at: position)
+    }
 }

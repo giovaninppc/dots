@@ -72,17 +72,14 @@ final class GameScene: SKScene {
 }
 
 extension GameScene: SKPhysicsContactDelegate {
-    /// Treat collision
-    ///
-    /// - Parameter contact: the contact object
     func didBegin(_ contact: SKPhysicsContact) {
         let collision = collisionType(contact)
 
         switch collision {
         case .enemyHitEnd:
             handleEnemyEndCollision(contact)
-        case .enemyGotHitByShot:
-            break
+        case .enemyGotHit:
+            handleEnemyShotCollision(contact)
         case .enemyHitWeapon:
             break
         case .undefinedCollision:
@@ -99,7 +96,7 @@ extension GameScene: SKPhysicsContactDelegate {
         case PhysicsCategory.enemy | PhysicsCategory.weapon:
             return .enemyHitWeapon
         case PhysicsCategory.enemy | PhysicsCategory.playerBullet:
-            return .enemyGotHitByShot
+            return .enemyGotHit
         default:
             return .undefinedCollision
         }
@@ -108,5 +105,13 @@ extension GameScene: SKPhysicsContactDelegate {
     private func handleEnemyEndCollision(_ contact: SKPhysicsContact) {
         let enemyBody = (contact.bodyA.node as? Enemy) ?? (contact.bodyB.node as? Enemy)
         enemyBody?.reachEnd()
+    }
+
+    private func handleEnemyShotCollision(_ contact: SKPhysicsContact) {
+        let bullet = (contact.bodyA.node as? WeaponShot) ?? (contact.bodyB.node as? WeaponShot)
+        let enemyBody = (contact.bodyA.node as? Enemy) ?? (contact.bodyB.node as? Enemy)
+
+        enemyBody?.gotHit(by: bullet)
+        bullet?.hitEnemy()
     }
 }

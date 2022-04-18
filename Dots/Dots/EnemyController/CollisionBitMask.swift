@@ -22,7 +22,7 @@ struct PhysicsCategory {
 enum CollisionType {
     case enemyHitEnd
     case enemyHitWeapon
-    case enemyGotHitByShot
+    case enemyGotHit
 
     case undefinedCollision
 }

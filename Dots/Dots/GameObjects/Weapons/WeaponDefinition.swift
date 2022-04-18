@@ -10,6 +10,7 @@ import SpriteKit
 
 enum WeaponType {
     case canon
+    case canonBall
 }
 
 protocol WeaponProtocol {
@@ -18,5 +19,5 @@ protocol WeaponProtocol {
     func update(for state: GameStates)
     func startAction()
 
-    init(state: GameStates)
+    init(state: GameStates, delegate: ShotDelegate?)
 }

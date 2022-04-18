@@ -12,7 +12,9 @@ enum WeaponFactory {
     static func createWeapon(with identifier: WeaponType, for state: GameStates, with delegate: ShotDelegate) -> Weapon {
         switch identifier {
         case .canon:
-            return CannonWeapon(state: state)
+            return CannonWeapon(state: state, delegate: delegate)
+        case .canonBall:
+            return CannonBall(state: state, delegate: delegate)
         }
     }
 }
