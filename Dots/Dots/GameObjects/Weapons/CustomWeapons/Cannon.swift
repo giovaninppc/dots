@@ -57,7 +57,8 @@ final class CannonWeapon: Weapon, WeaponProtocol {
         let body = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 50))
         body.affectedByGravity = false
         body.allowsRotation = false
-        body.collisionBitMask = PhysicsCategory.weapon
+        body.collisionBitMask = PhysicsCategory.none
+        body.categoryBitMask = PhysicsCategory.weapon
         self.physicsBody = body
     }
 }
