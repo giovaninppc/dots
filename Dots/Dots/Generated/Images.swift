@@ -51,6 +51,12 @@ public enum Asset {
   public static let resourceA = ImageAsset(name: "ResourceA")
   public static let resourceB = ImageAsset(name: "ResourceB")
   public static let resourceC = ImageAsset(name: "ResourceC")
+  public static let attackCircle = ImageAsset(name: "attackCircle")
+  public static let defendCircle = ImageAsset(name: "defendCircle")
+  public static let item = ImageAsset(name: "item")
+  public static let itemCircle = ImageAsset(name: "itemCircle")
+  public static let shield = ImageAsset(name: "shield")
+  public static let sword = ImageAsset(name: "sword")
   public static let onboardingArrow = ImageAsset(name: "onboarding-arrow")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

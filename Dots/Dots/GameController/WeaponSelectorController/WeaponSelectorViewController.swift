@@ -10,12 +10,51 @@ import UIKit
 
 final class WeaponSelectorViewController: UIViewController {
     private let anchor: CGPoint
+    private let onDismiss: () -> Void
 
-    init(anchor: CGPoint) {
+    private let customView: WeaponSelectorView
+
+    init(
+        anchor: CGPoint,
+        onDismiss: @escaping (() -> Void)
+    ) {
         self.anchor = anchor
+        self.onDismiss = onDismiss
+
+        customView = WeaponSelectorView(position: anchor)
+
         super.init(nibName: nil, bundle: nil)
+        customView.onDismiss = { [weak self] in  self?.didDismiss() }
+        
+        modalTransitionStyle = .crossDissolve
+        modalPresentationStyle = .overFullScreen
+    }
+
+    override func loadView() {
+        view = customView
+    }
+
+    override func viewDidLoad() {
+        customView.setupPreState()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        customView.animateIn()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        customView.animateOut()
     }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) { nil }
+}
+
+extension WeaponSelectorViewController {
+    private func didDismiss() {
+        onDismiss()
+        dismiss(animated: true, completion: nil)
+    }
 }

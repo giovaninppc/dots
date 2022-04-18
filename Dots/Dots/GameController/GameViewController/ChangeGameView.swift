@@ -16,7 +16,7 @@ enum Swipe: Int {
 
 final class ChangeGameView: UIView {
     var onSwipe: ((Swipe) -> Void)?
-    var onLongPress: (() -> Void)?
+    var onLongPress: ((CGPoint) -> Void)?
     var onPause: (() -> Void)?
     var onPlay: (() -> Void)?
     var onWeaponSelectorDismiss: (() -> Void)?
@@ -30,9 +30,6 @@ final class ChangeGameView: UIView {
         gameView.presentScene(scene)
         return gameView
     }()
-
-    let weaponSelector = WeaponSelectorView()
-    let pause = PauseView()
 
     private let pauseButton: UIButton = {
         let button = UIButton()
@@ -59,10 +56,6 @@ extension ChangeGameView {
     }
 
     private func setupComponents() {
-        weaponSelector.setupForManualConstraining()
-        addSubview(weaponSelector)
-        pause.setupForManualConstraining()
-        addSubview(pause)
         gameView.setupForManualConstraining()
         addSubview(gameView)
         pauseButton.setupForManualConstraining()
@@ -71,8 +64,6 @@ extension ChangeGameView {
 
     private func setupConstraints() {
         constrainGameView()
-        constrainWeaponSelector()
-        constrainPause()
         constrainPauseButton()
     }
 
@@ -85,38 +76,6 @@ extension ChangeGameView {
                 gameView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ]
         }
-    }
-
-    private func constrainWeaponSelector() {
-        constrain {
-            [
-                weaponSelector.topAnchor.constraint(equalTo: topAnchor),
-                weaponSelector.bottomAnchor.constraint(equalTo: bottomAnchor),
-                weaponSelector.leadingAnchor.constraint(equalTo: leadingAnchor),
-                weaponSelector.trailingAnchor.constraint(equalTo: trailingAnchor)
-            ]
-        }
-        weaponSelector.onDismiss = { [weak self] in
-            self?.onWeaponSelectorDismiss?()
-        }
-        weaponSelector.isHidden = true
-        sendSubviewToBack(weaponSelector)
-    }
-
-    private func constrainPause() {
-        constrain {
-            [
-                pause.topAnchor.constraint(equalTo: topAnchor),
-                pause.bottomAnchor.constraint(equalTo: bottomAnchor),
-                pause.leadingAnchor.constraint(equalTo: leadingAnchor),
-                pause.trailingAnchor.constraint(equalTo: trailingAnchor)
-            ]
-        }
-        pause.onDismiss = { [weak self] in
-            self?.dismissPause()
-        }
-        pause.isHidden = true
-        sendSubviewToBack(pause)
     }
 
     private func constrainPauseButton() {
@@ -153,41 +112,18 @@ extension ChangeGameView {
         onSwipe?(.left)
     }
 
-    @objc private func didLongPress() {
-        onLongPress?()
+    @objc private func didLongPress(_ recognizer: UILongPressGestureRecognizer) {
+        scene.run(SKAction.speed(to: 0.3, duration: 0.3))
+        onLongPress?(recognizer.location(in: self))
     }
 
     @objc private func didPause() {
-        showPause()
+        scene.run(SKAction.speed(to: 0.0, duration: 0.3))
+        onPause?()
     }
 }
 
 extension ChangeGameView {
-    func showWeaponSelector() {
-        bringSubviewToFront(weaponSelector)
-        weaponSelector.alpha = 0
-        weaponSelector.isHidden = false
-        UIView.animate(withDuration: 0.5) {
-            self.weaponSelector.alpha = 1
-        }
-        scene.run(SKAction.speed(to: 0.3, duration: 0.5))
-    }
-
-    func hideWeaponSelector() {
-        UIView.animate(withDuration: 0.5) {
-            self.weaponSelector.alpha = 0
-        } completion: { _ in
-            self.sendSubviewToBack(self.weaponSelector)
-            self.weaponSelector.isHidden = true
-        }
-        scene.run(SKAction.speed(to: 1.0, duration: 0.5))
-    }
-
-    func showPause() {
-        scene.run(SKAction.speed(to: 0.0, duration: 0.3))
-        onPause?()
-    }
-
     func dismissPause() {
         scene.run(SKAction.speed(to: 1.0, duration: 0.3))
         onPlay?()
