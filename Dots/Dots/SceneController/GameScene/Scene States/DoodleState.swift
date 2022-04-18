@@ -10,14 +10,8 @@ import SpriteKit
 
 final class DoodleState: GameSceneState {
     var currentState: GameStates = .doodle
-    
-    func setEnemies(for state: GameStates, enemies: [SceneUpdatable]) {
-        for enemy in enemies {
-            enemy.update(for: state)
-        }
-    }
-    
+
     func change(background: SKSpriteNode) {
-        background.texture = SKTexture(imageNamed: "Paper")
+        background.texture = SKTexture(imageNamed: Asset.paper.name)
     }
 }

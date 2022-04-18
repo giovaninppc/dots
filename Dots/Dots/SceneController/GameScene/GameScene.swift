@@ -49,7 +49,7 @@ final class GameScene: SKScene {
 
     func updateGame(for newState: GameStates) {
         self.state?.change(background: background)
-        state?.setEnemies(for: (self.state?.currentState)!, enemies: enemies)
+        state?.update(for: (self.state?.currentState)!, updatables: enemies + weapons)
     }
 
     func createLimit() {

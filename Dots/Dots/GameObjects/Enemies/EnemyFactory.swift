@@ -29,7 +29,7 @@ class EnemyFactory: NSObject {
             fatalError("Undefined Enemy Type")
         }
     }
-    
+
     class func createEnemy(with identifier: EnemyType, for state: GameStates, with delegate: ShotDelegate) -> Enemy {
         switch identifier {
         case .plane:

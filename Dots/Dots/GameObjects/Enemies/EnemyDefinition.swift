@@ -16,7 +16,7 @@ enum EnemyType {
 }
 
 // This protocol only helps to create better custom Enemy classes
-// the enemies have to extend the base Enemy class and the protocol for necessary behaviour
+// the enemies have to extend the base Enemy class and the protocol for necessary behavior
 protocol EnemyProtocol: NSObjectProtocol {
     
     var enemySize: CGSize { get }

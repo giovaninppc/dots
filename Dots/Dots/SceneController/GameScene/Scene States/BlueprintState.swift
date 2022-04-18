@@ -10,14 +10,8 @@ import SpriteKit
 
 final class BlueprintState: GameSceneState {
     var currentState: GameStates = .blueprint
-
-    func setEnemies(for state: GameStates, enemies: [SceneUpdatable]) {
-        for enemy in enemies {
-            enemy.update(for: state)
-        }
-    }
     
     func change(background: SKSpriteNode) {
-        background.texture = SKTexture(imageNamed: "Blueprint")
+        background.texture = SKTexture(imageNamed: Asset.blueprint.name)
     }
 }

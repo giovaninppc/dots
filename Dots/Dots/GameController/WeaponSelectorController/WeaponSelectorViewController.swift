@@ -11,15 +11,18 @@ import UIKit
 final class WeaponSelectorViewController: UIViewController {
     private let anchor: CGPoint
     private let onDismiss: () -> Void
+    private let addWeapon: (WeaponType) -> Void
 
     private let customView: WeaponSelectorView
 
     init(
         anchor: CGPoint,
-        onDismiss: @escaping (() -> Void)
+        onDismiss: @escaping (() -> Void),
+        addWeapon: @escaping (WeaponType) -> Void
     ) {
         self.anchor = anchor
         self.onDismiss = onDismiss
+        self.addWeapon = addWeapon
 
         customView = WeaponSelectorView(position: anchor)
 
@@ -54,6 +57,9 @@ final class WeaponSelectorViewController: UIViewController {
 
 extension WeaponSelectorViewController {
     private func didDismiss() {
+        // MOCK
+        addWeapon(.canon)
+
         onDismiss()
         dismiss(animated: true, completion: nil)
     }

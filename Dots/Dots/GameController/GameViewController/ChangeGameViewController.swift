@@ -14,6 +14,7 @@ final class ChangeGameViewController: UIViewController {
 
     private var gameView: SKView { customView.gameView }
     private var scene: GameScene { customView.scene }
+    private var currentState: GameStates { gameStates[currentStatus] }
 
     // Variables
 
@@ -57,9 +58,6 @@ extension ChangeGameViewController {
             self?.makeTransition(swipe)
         }
         customView.onLongPress = { [weak self] point in
-//            guard self?.weaponSelector.isHidden == true else { return }
-//            self?.scene.addAim()
-//            self?.customView.showWeaponSelector()
             self?.showWeaponSelector(point: point)
         }
         customView.onWeaponSelectorDismiss = { [weak self] in
@@ -125,7 +123,11 @@ extension ChangeGameViewController {
     private func showWeaponSelector(point: CGPoint) {
         let selector = WeaponSelectorViewController(anchor: point) { [weak self] in
             self?.scene.run(SKAction.speed(to: 1.0, duration: 0.5))
+        } addWeapon: { [weak self] type in
+            guard let self = self else { return }
+            self.scene.addWeapon(WeaponFactory.createWeapon(with: type, for: self.currentState, with: self.enemyController), at: self.scene.lastTouch)
         }
+
         present(selector, animated: true, completion: nil)
     }
 }

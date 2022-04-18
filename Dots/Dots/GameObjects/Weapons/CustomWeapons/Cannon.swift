@@ -11,7 +11,7 @@ import SpriteKit
 final class CannonWeapon: Weapon, WeaponProtocol {
     var life: Int = 10
 
-    let weaponSize: CGSize = CGSize(width: 80, height: 80)
+    let weaponSize: CGSize = CGSize(width: 50, height: 50)
 
     // Game States and positions
     // This enemy textures for each GameState
@@ -63,7 +63,7 @@ final class CannonWeapon: Weapon, WeaponProtocol {
     func configureBody() {
         let body = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 50))
         body.categoryBitMask = PhysicsCategory.weapon
-        body.affectedByGravity = true
+        body.affectedByGravity = false
         body.allowsRotation = false
         body.collisionBitMask = PhysicsCategory.limit
         self.physicsBody = body
