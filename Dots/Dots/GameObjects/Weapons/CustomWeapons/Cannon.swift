@@ -13,6 +13,7 @@ final class CannonWeapon: Weapon, WeaponProtocol {
     weak var shotDelegate: ShotDelegate?
 
     let weaponSize: CGSize = CGSize(width: 50, height: 50)
+    var fireDelay: TimeInterval = 3.0
 
     // Game States and positions
     // This enemy textures for each GameState
@@ -44,7 +45,7 @@ final class CannonWeapon: Weapon, WeaponProtocol {
 
     func createAction() {
         animation = SKAction.repeatForever(SKAction.sequence([
-            SKAction.wait(forDuration: 2.0),
+            SKAction.wait(forDuration: fireDelay),
             SKAction.run { [weak self] in self?.fire() }
         ]))
     }
