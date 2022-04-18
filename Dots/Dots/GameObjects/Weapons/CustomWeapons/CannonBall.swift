@@ -55,7 +55,7 @@ final class CannonBall: WeaponShot, WeaponProtocol {
         body.allowsRotation = false
         body.categoryBitMask = PhysicsCategory.playerBullet
         body.collisionBitMask = collisionBitMask
-        body.contactTestBitMask = PhysicsCategory.none
+        body.contactTestBitMask = contactBitMask
         self.physicsBody = body
     }
 }

@@ -11,7 +11,8 @@ import SpriteKit
 class WeaponShot: Weapon {
     var strength: Double { 1.0 }
     var type: WeaponShotType { .bullet }
-    var collisionBitMask: UInt32 { PhysicsCategory.limit | PhysicsCategory.enemy }
+    var collisionBitMask: UInt32 { PhysicsCategory.limit | PhysicsCategory.enemy | PhysicsCategory.outOfBounds }
+    var contactBitMask: UInt32 { PhysicsCategory.limit | PhysicsCategory.outOfBounds }
 
     func hitEnemy() {
         selfDestruct()

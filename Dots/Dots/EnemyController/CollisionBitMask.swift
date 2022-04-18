@@ -16,6 +16,7 @@ struct PhysicsCategory {
     static let playerBullet: UInt32  = 0b0000000100   // 4
     static let barrier: UInt32       = 0b0000001000   // 8
     static let weapon: UInt32        = 0b0000010000   // 16
+    static let outOfBounds: UInt32   = 0b0000100000   // 32
     static let all: UInt32           = 0b1111111111   // 1024
 }
 
@@ -23,6 +24,7 @@ enum CollisionType {
     case enemyHitEnd
     case enemyHitWeapon
     case enemyGotHit
+    case bulletGotOutOfBounds
 
     case undefinedCollision
 }

@@ -27,8 +27,8 @@ final class GameScene: SKScene {
         self.background = background
         self.physicsWorld.contactDelegate = self
 
-        // Create enemy Limit
         createLimit()
+        addTopOutOfBounds()
     }
 
     func addEnemy(_ enemy: Enemy, at position: CGPoint) {
@@ -69,6 +69,23 @@ final class GameScene: SKScene {
         limit.physicsBody = body
         self.scene?.addChild(limit)
     }
+
+    func addTopOutOfBounds() {
+        let topOutOfBounds = SKSpriteNode(
+            texture: nil,
+            color: .clear,
+            size: CGSize(width: UIScreen.main.bounds.width, height: 50)
+        )
+
+        topOutOfBounds.position = CGPoint(x: 0, y: UIScreen.main.bounds.height/2 + 20)
+        let body = SKPhysicsBody(rectangleOf: CGSize(width: UIScreen.main.bounds.width, height: 10))
+        body.affectedByGravity = false
+        body.allowsRotation = false
+        body.isDynamic = false
+        body.categoryBitMask = PhysicsCategory.outOfBounds
+        topOutOfBounds.physicsBody = body
+        self.scene?.addChild(topOutOfBounds)
+    }
 }
 
 extension GameScene: SKPhysicsContactDelegate {
@@ -82,6 +99,8 @@ extension GameScene: SKPhysicsContactDelegate {
             handleEnemyShotCollision(contact)
         case .enemyHitWeapon:
             break
+        case .bulletGotOutOfBounds:
+            handleBulletOutOfBounds(contact)
         case .undefinedCollision:
             break
         }
@@ -97,6 +116,8 @@ extension GameScene: SKPhysicsContactDelegate {
             return .enemyHitWeapon
         case PhysicsCategory.enemy | PhysicsCategory.playerBullet:
             return .enemyGotHit
+        case PhysicsCategory.outOfBounds | PhysicsCategory.playerBullet:
+            return .bulletGotOutOfBounds
         default:
             return .undefinedCollision
         }
@@ -113,5 +134,10 @@ extension GameScene: SKPhysicsContactDelegate {
 
         enemyBody?.gotHit(by: bullet)
         bullet?.hitEnemy()
+    }
+
+    private func handleBulletOutOfBounds(_ contact: SKPhysicsContact) {
+        let bullet = (contact.bodyA.node as? WeaponShot) ?? (contact.bodyB.node as? WeaponShot)
+        bullet?.selfDestruct()
     }
 }
