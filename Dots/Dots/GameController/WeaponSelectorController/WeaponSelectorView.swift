@@ -24,6 +24,13 @@ final class WeaponSelectorView: UIView {
         return view
     }()
 
+    private let aim: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = Asset.aimWhite.image
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+
     private let attackImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = Asset.attackCircle.image
@@ -85,6 +92,7 @@ final class WeaponSelectorView: UIView {
 extension WeaponSelectorView: CodeView {
     func setupComponents() {
         addSubview(dimmer)
+        addSubview(aim)
         addSubview(attackImage)
         addSubview(defendImage)
         addSubview(itemImage)
@@ -133,7 +141,12 @@ extension WeaponSelectorView: CodeView {
                 itemButton.heightAnchor.constraint(equalTo: itemButton.widthAnchor),
                 itemButton.widthAnchor.constraint(equalToConstant: Configuration.buttonSize),
                 itemButton.centerXAnchor.constraint(equalTo: itemImage.centerXAnchor),
-                itemButton.centerYAnchor.constraint(equalTo: itemImage.centerYAnchor, constant: 80.0)
+                itemButton.centerYAnchor.constraint(equalTo: itemImage.centerYAnchor, constant: 80.0),
+
+                // Aim
+                aim.centerXAnchor.constraint(equalTo: leadingAnchor, constant: position.x),
+                aim.centerYAnchor.constraint(equalTo: topAnchor, constant: position.y),
+                aim.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 2.0)
             ]
         }
     }
