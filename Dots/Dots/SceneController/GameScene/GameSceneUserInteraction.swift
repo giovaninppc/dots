@@ -21,17 +21,6 @@ extension GameScene {
 // Adding stuff
 
 extension GameScene {
-    func addAim() {
-        let aim = Aim(state: self.state!.currentState)
-        aim.position = lastTouch
-        self.scene?.addChild(aim)
-        self.aim = aim
-    }
-
-    func removeAim() {
-        aim?.selfDestruct()
-    }
-
     func addWeapon(_ weapon: Weapon, at position: CGPoint) {
         weapon.position = position
         self.scene?.addChild(weapon)

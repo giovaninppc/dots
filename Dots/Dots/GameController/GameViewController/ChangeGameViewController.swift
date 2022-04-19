@@ -61,7 +61,6 @@ extension ChangeGameViewController {
             self?.showWeaponSelector(point: point)
         }
         customView.onWeaponSelectorDismiss = { [weak self] in
-            self?.scene.removeAim()
             self?.scene.run(SKAction.speed(to: 1.0, duration: 0.5))
         }
         customView.onPause = { [weak self] in
@@ -125,7 +124,10 @@ extension ChangeGameViewController {
             self?.scene.run(SKAction.speed(to: 1.0, duration: 0.5))
         } addWeapon: { [weak self] type in
             guard let self = self else { return }
-            self.scene.addWeapon(WeaponFactory.createWeapon(with: type, for: self.currentState, with: self.enemyController), at: self.scene.lastTouch)
+            self.scene.addWeapon(
+                WeaponFactory.createWeapon(with: type, for: self.currentState, with: self.enemyController),
+                at: self.scene.lastTouch
+            )
         }
 
         present(selector, animated: true, completion: nil)

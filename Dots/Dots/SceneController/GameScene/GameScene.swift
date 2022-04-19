@@ -12,7 +12,6 @@ final class GameScene: SKScene {
     var background: SKSpriteNode!
     var enemies: [Enemy] = []
     var weapons: [Weapon] = []
-    var aim: Aim?
 
     var lastTouch: CGPoint = .zero
 
