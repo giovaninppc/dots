@@ -8,16 +8,9 @@
 
 import SpriteKit
 
-/// Allows the creation of new Enemies
-class EnemyFactory: NSObject {
-    
-    /// Create an Enemy based on type and a gamestate
-    ///
-    /// - Parameters:
-    ///   - identifier: the EnemyType being created
-    ///   - state: the current game State - it changes the enemy behaviour
-    /// - Returns: the enemy created
-    class func createEnemy(with identifier: EnemyType, for state: GameStates) -> Enemy {
+enum EnemyFactory {
+
+    static func createEnemy(with identifier: EnemyType, for state: GameStates) -> Enemy {
         switch identifier {
         case .plane:
             return PlaneEnemy(state: state)
@@ -30,7 +23,7 @@ class EnemyFactory: NSObject {
         }
     }
 
-    class func createEnemy(with identifier: EnemyType, for state: GameStates, with delegate: ShotDelegate) -> Enemy {
+    static func createEnemy(with identifier: EnemyType, for state: GameStates, with delegate: ShotDelegate) -> Enemy {
         switch identifier {
         case .plane:
             return PlaneEnemy(state: state)
@@ -40,6 +33,19 @@ class EnemyFactory: NSObject {
             return BaloonBomb(state: state)
         default:
             fatalError("Undefined Enemy Type")
+        }
+    }
+
+    static func reverse(enemy: Enemy?) -> EnemyType? {
+        switch enemy {
+        case is PlaneEnemy:
+            return .plane
+        case is BaloonEnemy:
+            return .baloon
+        case is BaloonBomb:
+            return .baloonBomb
+        default:
+            return nil
         }
     }
     

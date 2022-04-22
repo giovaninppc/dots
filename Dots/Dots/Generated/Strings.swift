@@ -11,6 +11,27 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Localization {
 
+  internal enum Baloon {
+    /// Large baloon, does not like to fight.\nWill drop more enemies into you if not destroyed fast.
+    internal static let description = Localization.tr("Strings", "Baloon.description")
+    /// Somewhat-evil Baloon
+    internal static let name = Localization.tr("Strings", "Baloon.name")
+  }
+
+  internal enum BaloonBomb {
+    /// A small bomb. Will detonate on impact.
+    internal static let description = Localization.tr("Strings", "BaloonBomb.description")
+    /// Small Bomb #2
+    internal static let name = Localization.tr("Strings", "BaloonBomb.name")
+  }
+
+  internal enum PaperPlane {
+    /// Super fragile, super slow, almost harmless.\nDangerous when in large groups.
+    internal static let description = Localization.tr("Strings", "PaperPlane.description")
+    /// Paper plane
+    internal static let name = Localization.tr("Strings", "PaperPlane.name")
+  }
+
   internal enum Pause {
     /// Continue
     internal static let `continue` = Localization.tr("Strings", "Pause.continue")

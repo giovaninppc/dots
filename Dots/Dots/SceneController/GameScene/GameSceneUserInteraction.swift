@@ -10,10 +10,12 @@ extension GameScene {
 
         lastTouch = location
 
-        if let weapon = touchedNodes.first(where: { $0 is Weapon }) as? Weapon {
-            print(weapon)
+        if let enemy = touchedNodes.first as? Enemy {
+            controllerDelegate?.show(enemy: enemy)
+        } else if let weapon = touchedNodes.first as? Weapon {
+            controllerDelegate?.show(weapon: weapon)
         } else {
-//            print(location)
+            print("none")
         }
     }
 }

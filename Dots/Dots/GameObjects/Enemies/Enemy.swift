@@ -8,7 +8,6 @@
 
 import SpriteKit
 
-/// Base Enemy Class
 class Enemy: SKSpriteNode, SceneUpdatable {
     var collisionBitMask: UInt32 { PhysicsCategory.limit | PhysicsCategory.playerBullet  }
 

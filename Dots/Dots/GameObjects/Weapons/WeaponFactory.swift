@@ -9,12 +9,27 @@
 import Foundation
 
 enum WeaponFactory {
-    static func createWeapon(with identifier: WeaponType, for state: GameStates, with delegate: ShotDelegate) -> Weapon {
+    static func createWeapon(
+        with identifier: WeaponType,
+        for state: GameStates,
+        with delegate: ShotDelegate?
+    ) -> Weapon {
         switch identifier {
         case .canon:
             return CannonWeapon(state: state, delegate: delegate)
         case .canonBall:
             return CannonBall(state: state, delegate: delegate)
+        }
+    }
+
+    static func reverse(weapon: Weapon?) -> WeaponType? {
+        switch weapon {
+        case is CannonWeapon:
+            return .canon
+        case is CannonBall:
+            return .canonBall
+        default:
+            return nil
         }
     }
 }

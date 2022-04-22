@@ -14,24 +14,17 @@ final class PlaneEnemy: Enemy, EnemyProtocol {
 
     var enemySize: CGSize = CGSize(width: 80, height: 80)
 
-    // Game States and positions
-    // This enemy textures for each GameState
-    let stateDict: [GameStates: SKTexture] = [
-        .doodle: SKTexture(imageNamed: "doodlePlane"),
-        .blueprint: SKTexture(imageNamed: "paperPlane"),
-        .watercolor: SKTexture(imageNamed: "watercolorPlane")
+    let stateDict: [GameStates: String] = [
+        .doodle: Asset.doodlePlane.name,
+        .blueprint: Asset.paperPlane.name,
+        .watercolor: Asset.watercolorPlane.name
     ]
 
     // This enemy proper Animation
     var planeAnimation: SKAction = SKAction.run {}
 
-    /// This is the important init
-    /// It will start the enmy on the current gameState
-    /// and configure animation and texture
-    ///
-    /// - Parameter state: current GameState
     required init (state: GameStates) {
-        let texture = stateDict[state]!
+        let texture = SKTexture(imageNamed: stateDict[state]!)
         super.init(texture: texture, size: enemySize)
         self.position = RandomPoint.topScreenPoint()
         createAction()
@@ -43,12 +36,8 @@ final class PlaneEnemy: Enemy, EnemyProtocol {
         super.init(coder: aDecoder)
     }
 
-    /// Change the enemy texture and behaviour
-    /// depending on the current game state
-    ///
-    /// - Parameter state: current GameState
     override func update(for state: GameStates) {
-        self.texture = stateDict[state]
+        self.texture = SKTexture(imageNamed: stateDict[state]!)
     }
 
     func createAction() {
@@ -68,8 +57,6 @@ final class PlaneEnemy: Enemy, EnemyProtocol {
         self.run(planeAnimation)
     }
 
-    /// Create the physics body for collision detection
-    /// for this enemy
     func configureBody() {
         let body = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 50))
         body.affectedByGravity = false
@@ -82,16 +69,37 @@ final class PlaneEnemy: Enemy, EnemyProtocol {
         self.physicsBody = body
     }
 
-    /// Got to the end of the level
     override func reachEnd() {
         self.selfDestruct()
     }
 
-    /// The caracter should be destroyed
-    /// show animation and remove from parent
     override func selfDestruct() {
         // Make animation
         self.removeFromParent()
     }
 
+}
+
+extension PlaneEnemy: Idle {
+    func idle() {
+        removeAllActions()
+        let idle = SKAction.repeatForever(SKAction.sequence([
+            SKAction.scaleX(to: -1, duration: 0.2),
+            SKAction.move(by: CGVector(dx: 0.0, dy: 3.0), duration: 1.0),
+            SKAction.move(by: CGVector(dx: 0.0, dy: -3.0), duration: 1.0),
+            SKAction.move(by: CGVector(dx: 0.0, dy: 3.0), duration: 1.0),
+            SKAction.move(by: CGVector(dx: 0.0, dy: -3.0), duration: 1.0),
+            SKAction.scaleX(to: 1, duration: 0.2),
+            SKAction.move(by: CGVector(dx: 0.0, dy: 3.0), duration: 1.0),
+            SKAction.move(by: CGVector(dx: 0.0, dy: -3.0), duration: 1.0),
+            SKAction.move(by: CGVector(dx: 0.0, dy: 3.0), duration: 1.0),
+            SKAction.move(by: CGVector(dx: 0.0, dy: -3.0), duration: 1.0)
+        ]))
+        run(idle)
+    }
+}
+
+extension PlaneEnemy: Describable {
+    var displayName: String { Localization.PaperPlane.name }
+    var displayDescription: String { Localization.PaperPlane.description }
 }

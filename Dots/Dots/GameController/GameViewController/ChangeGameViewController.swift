@@ -13,8 +13,8 @@ final class ChangeGameViewController: UIViewController {
     private let enemyController: EnemyController = EnemyController()
 
     private var gameView: SKView { customView.gameView }
-    private var scene: GameScene { customView.scene }
-    private var currentState: GameStates { gameStates[currentStatus] }
+    var currentState: GameStates { gameStates[currentStatus] }
+    var scene: GameScene { customView.scene }
 
     // Variables
 
@@ -33,6 +33,7 @@ final class ChangeGameViewController: UIViewController {
     override func loadView() {
         self.view = customView
         setupViewActions()
+        scene.controllerDelegate = self
     }
 
     override func viewDidLoad() {

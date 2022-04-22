@@ -15,19 +15,24 @@ final class GameScene: SKScene {
 
     var lastTouch: CGPoint = .zero
 
+    weak var controllerDelegate: SceneToControllerDelegate?
+
     // State configuration
     var state: GameSceneState?
 
     func configureGame() {
-        guard let background = self.scene?.childNode(withName: "Background") as? SKSpriteNode else {
-            fatalError("Couldnt load background as SKSpriteNode")
-        }
-
-        self.background = background
+        setupBackgroundNode()
         self.physicsWorld.contactDelegate = self
 
         createLimit()
         addTopOutOfBounds()
+    }
+
+    func setupBackgroundNode() {
+        guard let background = self.scene?.childNode(withName: "Background") as? SKSpriteNode else {
+            fatalError("Couldnt load background as SKSpriteNode")
+        }
+        self.background = background
     }
 
     func addEnemy(_ enemy: Enemy, at position: CGPoint) {

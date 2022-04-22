@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1449BBD586104B303EAC3208 /* Pods_Dots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E819CA57B548D989D2E4C149 /* Pods_Dots.framework */; };
+		3E0FB20C28131963002B948D /* DescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FB20B28131963002B948D /* DescriptionController.swift */; };
+		3E0FB20E2813199B002B948D /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FB20D2813199B002B948D /* DescriptionView.swift */; };
+		3E0FB21028131CF4002B948D /* SceneToController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FB20F28131CF4002B948D /* SceneToController.swift */; };
 		3E2D305A263106FC00853550 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2D3059263106FC00853550 /* Fonts.swift */; };
 		3E2D305D263107BF00853550 /* Constraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2D305C263107BF00853550 /* Constraining.swift */; };
 		3E741BD126343DCB0003FBA5 /* WeaponCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E741BD026343DCB0003FBA5 /* WeaponCarousel.swift */; };
@@ -29,6 +32,8 @@
 		3EB9027B280D791C003A8ED3 /* CannonBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB9027A280D791B003A8ED3 /* CannonBall.swift */; };
 		3EB9027D280D7DE0003A8ED3 /* WeaponShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB9027C280D7DE0003A8ED3 /* WeaponShot.swift */; };
 		3EB9027F280D8E61003A8ED3 /* CollisionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB9027E280D8E61003A8ED3 /* CollisionController.swift */; };
+		3EC1FA2E281364B300AC4556 /* CGPoint+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA2D281364B300AC4556 /* CGPoint+Operations.swift */; };
+		3EC1FA30281364D600AC4556 /* Idle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA2F281364D600AC4556 /* Idle.swift */; };
 		3EF956C626344FA500CF3239 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956C526344FA500CF3239 /* PauseView.swift */; };
 		3EF956D12634523B00CF3239 /* ChangeGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D02634523B00CF3239 /* ChangeGameView.swift */; };
 		3EF956D926345C1B00CF3239 /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D826345C1B00CF3239 /* GameStates.swift */; };
@@ -68,6 +73,9 @@
 
 /* Begin PBXFileReference section */
 		248FFC3A33CA9164227F7F8A /* Pods-Dots.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dots.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dots/Pods-Dots.release.xcconfig"; sourceTree = "<group>"; };
+		3E0FB20B28131963002B948D /* DescriptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionController.swift; sourceTree = "<group>"; };
+		3E0FB20D2813199B002B948D /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		3E0FB20F28131CF4002B948D /* SceneToController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneToController.swift; sourceTree = "<group>"; };
 		3E2D3059263106FC00853550 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		3E2D305C263107BF00853550 /* Constraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraining.swift; sourceTree = "<group>"; };
 		3E741BD026343DCB0003FBA5 /* WeaponCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponCarousel.swift; sourceTree = "<group>"; };
@@ -89,6 +97,8 @@
 		3EB9027A280D791B003A8ED3 /* CannonBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannonBall.swift; sourceTree = "<group>"; };
 		3EB9027C280D7DE0003A8ED3 /* WeaponShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponShot.swift; sourceTree = "<group>"; };
 		3EB9027E280D8E61003A8ED3 /* CollisionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionController.swift; sourceTree = "<group>"; };
+		3EC1FA2D281364B300AC4556 /* CGPoint+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Operations.swift"; sourceTree = "<group>"; };
+		3EC1FA2F281364D600AC4556 /* Idle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idle.swift; sourceTree = "<group>"; };
 		3EF956C526344FA500CF3239 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
 		3EF956D02634523B00CF3239 /* ChangeGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGameView.swift; sourceTree = "<group>"; };
 		3EF956D826345C1B00CF3239 /* GameStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStates.swift; sourceTree = "<group>"; };
@@ -143,6 +153,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E0FB20A2813194A002B948D /* Description */ = {
+			isa = PBXGroup;
+			children = (
+				3E0FB20B28131963002B948D /* DescriptionController.swift */,
+				3E0FB20D2813199B002B948D /* DescriptionView.swift */,
+			);
+			path = Description;
+			sourceTree = "<group>";
+		};
 		3E741BCF26343DB00003FBA5 /* WeaponSelector */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +195,7 @@
 		3EB9025E280C36C2003A8ED3 /* WeaponSelectorController */ = {
 			isa = PBXGroup;
 			children = (
+				3E741BCF26343DB00003FBA5 /* WeaponSelector */,
 				3EB9025F280C36DA003A8ED3 /* WeaponSelectorViewController.swift */,
 				3EB90261280C3747003A8ED3 /* WeaponSelectorView.swift */,
 			);
@@ -220,9 +240,9 @@
 		3EF956D4263453F900CF3239 /* GameController */ = {
 			isa = PBXGroup;
 			children = (
+				3E0FB20A2813194A002B948D /* Description */,
 				3EB9025E280C36C2003A8ED3 /* WeaponSelectorController */,
 				9BF312E920C6F5DA00E3C4D7 /* GameViewController */,
-				3E741BCF26343DB00003FBA5 /* WeaponSelector */,
 				3EF956C426344F9100CF3239 /* Pause */,
 			);
 			path = GameController;
@@ -354,6 +374,8 @@
 				3E2D305C263107BF00853550 /* Constraining.swift */,
 				3E741BDA263442660003FBA5 /* CollectionExtensions.swift */,
 				3EB90274280C4FED003A8ED3 /* CodeView.swift */,
+				3EC1FA2D281364B300AC4556 /* CGPoint+Operations.swift */,
+				3EC1FA2F281364D600AC4556 /* Idle.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -399,6 +421,7 @@
 			children = (
 				3EF956D02634523B00CF3239 /* ChangeGameView.swift */,
 				9B416A8F2085291100E65777 /* ChangeGameViewController.swift */,
+				3E0FB20F28131CF4002B948D /* SceneToController.swift */,
 			);
 			path = GameViewController;
 			sourceTree = "<group>";
@@ -560,6 +583,7 @@
 				9B8D5DA420879F4D0001DB35 /* SettingsPageViewController.swift in Sources */,
 				9B2F50272083AD3100BD808D /* Enemy.swift in Sources */,
 				9BAD242C2088BEEC0087B105 /* BaloonBomb.swift in Sources */,
+				3EC1FA30281364D600AC4556 /* Idle.swift in Sources */,
 				3EB3F48926305C35003AA20F /* GameSceneUserInteraction.swift in Sources */,
 				9B416A902085291100E65777 /* ChangeGameViewController.swift in Sources */,
 				9B8D5D9C208790490001DB35 /* SurvivorGamePageViewController.swift in Sources */,
@@ -582,12 +606,16 @@
 				3EF956E12634958700CF3239 /* SplashController.swift in Sources */,
 				3EB90262280C3747003A8ED3 /* WeaponSelectorView.swift in Sources */,
 				9B8D5D93208786550001DB35 /* MenuViewController.swift in Sources */,
+				3EC1FA2E281364B300AC4556 /* CGPoint+Operations.swift in Sources */,
+				3E0FB21028131CF4002B948D /* SceneToController.swift in Sources */,
+				3E0FB20C28131963002B948D /* DescriptionController.swift in Sources */,
 				3EB3F49C2630B35C003AA20F /* SceneUpdatable.swift in Sources */,
 				3EB90260280C36DA003A8ED3 /* WeaponSelectorViewController.swift in Sources */,
 				3EB90275280C4FED003A8ED3 /* CodeView.swift in Sources */,
 				9B8D5D8B20868AC70001DB35 /* RandomPoint.swift in Sources */,
 				3EB90264280C37C1003A8ED3 /* PauseViewController.swift in Sources */,
 				3EB3F48C26305CC3003AA20F /* Weapon.swift in Sources */,
+				3E0FB20E2813199B002B948D /* DescriptionView.swift in Sources */,
 				9B416A962086275600E65777 /* PlaneEnemy.swift in Sources */,
 				9B627B96208390FD00B0FBEE /* BlueprintState.swift in Sources */,
 				9B416A98208627A400E65777 /* EnemyDefinition.swift in Sources */,

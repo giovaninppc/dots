@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class BaloonEnemy: Enemy, EnemyProtocol {
+final class BaloonEnemy: Enemy, EnemyProtocol {
     let baloonHorizontalSpeed: Double = Double(Int.random(in: 4...6))
 
     var enemySize: CGSize = CGSize(width: 75, height: 75)
@@ -39,21 +39,15 @@ class BaloonEnemy: Enemy, EnemyProtocol {
          .watercolor: SKAction.animate(with: [SKTexture(imageNamed: "watercolorBaloon\(arc4random_uniform(2))")],
                                        timePerFrame: 50)]
 
-    // Shots Delegate
     weak var shotDelegate: ShotDelegate?
 
-    /// This is the importante init
-    /// It will start the enmy on the current gameState
-    /// and configure animation and texture
-    ///
-    /// - Parameter state: current GameState
     required init(state: GameStates) {
         let texture = stateDict[state]!
         super.init(texture: texture, size: enemySize)
         self.position = RandomPoint.topRightSidePoint()
         createAction()
         startAction()
-        configureBody() // Should the baloon have a physics body?
+        configureBody()
         runSpriteAnimaton(for: state)
     }
 
@@ -64,7 +58,7 @@ class BaloonEnemy: Enemy, EnemyProtocol {
         self.shotDelegate = delegate
         createAction()
         startAction()
-        configureBody() // Should the baloon have a physics body?
+        configureBody()
         runSpriteAnimaton(for: state)
     }
 
@@ -88,28 +82,19 @@ class BaloonEnemy: Enemy, EnemyProtocol {
             }])
     }
 
-    /// Run the sprite animation of the enemy
-    ///
-    /// - Parameter state: the current game state
     func runSpriteAnimaton(for state: GameStates) {
         self.run(stateAnimation[state]!)
     }
 
-    /// Change the enemy texture and behaviour
-    /// depending on the current game state
-    ///
-    /// - Parameter state: current GameState
     override func update(for state: GameStates) {
         runSpriteAnimaton(for: state)
         self.scale(to: enemySize)
     }
 
-    /// Start enemy animation - movement
     func startAction() {
         self.run(baloonAnimation)
     }
 
-    /// Tell the ShotDelegate to handle the bomb instantiation
     func dropBomb() {
         if let delegate = shotDelegate {
             var position = self.position
@@ -118,8 +103,6 @@ class BaloonEnemy: Enemy, EnemyProtocol {
         }
     }
 
-    /// Create the physics body for collision detection
-    /// for this enemy
     func configureBody() {
         let body = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 50))
         body.affectedByGravity = false
@@ -131,16 +114,31 @@ class BaloonEnemy: Enemy, EnemyProtocol {
         self.physicsBody = body
     }
 
-    /// Got to the end of the level
     override func reachEnd() {
         self.selfDestruct()
     }
 
-    /// The caracter should be destroyed
-    /// show animation and remove from parent
     override func selfDestruct() {
         // Make animation
         self.removeFromParent()
     }
+}
 
+extension BaloonEnemy: Idle {
+    func idle() {
+        removeAllActions()
+        run(stateAnimation[.blueprint]!)
+        let idle = SKAction.repeatForever(SKAction.sequence([
+            SKAction.move(by: CGVector(dx: 0.0, dy: 3.0), duration: 1.0),
+            SKAction.move(by: CGVector(dx: 0.0, dy: -3.0), duration: 1.0),
+            SKAction.move(by: CGVector(dx: 0.0, dy: 3.0), duration: 1.0),
+            SKAction.move(by: CGVector(dx: 0.0, dy: -3.0), duration: 1.0)
+        ]))
+        run(idle)
+    }
+}
+
+extension BaloonEnemy: Describable {
+    var displayName: String { Localization.Baloon.name }
+    var displayDescription: String { Localization.Baloon.description }
 }

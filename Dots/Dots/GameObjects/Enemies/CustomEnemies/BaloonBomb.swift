@@ -65,3 +65,14 @@ final class BaloonBomb: Enemy, EnemyProtocol {
         self.removeFromParent()
     }
 }
+
+extension BaloonBomb: Idle {
+    func idle() {
+        removeAllActions()
+    }
+}
+
+extension BaloonBomb: Describable {
+    var displayName: String { Localization.BaloonBomb.name }
+    var displayDescription: String { Localization.BaloonBomb.description }
+}

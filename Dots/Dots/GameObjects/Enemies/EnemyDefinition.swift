@@ -20,7 +20,6 @@ enum EnemyType {
 protocol EnemyProtocol: NSObjectProtocol {
     
     var enemySize: CGSize { get }
-    var stateDict: [GameStates: SKTexture] { get }
     init(state: GameStates)
     func update(for state: GameStates)
     func startAction()

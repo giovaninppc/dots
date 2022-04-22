@@ -9,3 +9,14 @@
 "Pause.title" = "Pause";
 "Pause.continue" = "Continue";
 "Pause.exit" = "Exit";
+
+// Enemy
+
+"PaperPlane.name" = "Paper plane";
+"PaperPlane.description" = "Super fragile, super slow, almost harmless.\nDangerous when in large groups.";
+
+"Baloon.name" = "Somewhat-evil Baloon";
+"Baloon.description" = "Large baloon, does not like to fight.\nWill drop more enemies into you if not destroyed fast.";
+
+"BaloonBomb.name" = "Small Bomb #2";
+"BaloonBomb.description" = "A small bomb.\nWill detonate on impact.";
