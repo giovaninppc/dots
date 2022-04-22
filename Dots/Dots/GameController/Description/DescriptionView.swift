@@ -27,6 +27,9 @@ final class DescriptionView: UIView {
     private lazy var gameView: SKView = {
         let gameView = SKView(frame: UIScreen.main.bounds)
         gameView.presentScene(scene)
+        gameView.layer.cornerRadius = 8.0
+        gameView.layer.masksToBounds = true
+        gameView.alpha = 0.0
         return gameView
     }()
 
@@ -34,6 +37,7 @@ final class DescriptionView: UIView {
         let imageView = UIImageView()
         imageView.image = Asset.corner.image
         imageView.contentMode = .scaleAspectFit
+        imageView.alpha = 0.0
         return imageView
     }()
 
@@ -43,6 +47,7 @@ final class DescriptionView: UIView {
         label.textAlignment = .center
         label.font = .sketch(size: 30.0)
         label.numberOfLines = 2
+        label.alpha = 0.0
         return label
     }()
 
@@ -51,6 +56,7 @@ final class DescriptionView: UIView {
         label.textColor = .white
         label.font = .sketch(size: 20.0)
         label.numberOfLines = 0
+        label.alpha = 0.0
         return label
     }()
 
@@ -135,6 +141,27 @@ extension DescriptionView {
         scene.setupBackgroundNode()
         scene.state = currentState.buildState()
         scene.updateGame(for: currentState)
+    }
+}
+
+extension DescriptionView {
+    func animateIn() {
+        UIView.transition(with: nameLabel, duration: 0.5, options: [.transitionCurlDown]) {
+            self.nameLabel.alpha = 1.0
+        } completion: { _ in }
+
+        UIView.transition(with: gameView, duration: 0.5, options: [.transitionCurlDown]) {
+            self.gameView.alpha = 1.0
+        } completion: { _ in }
+
+        UIView.transition(with: descriptionLabel, duration: 0.5, options: [.transitionCurlDown]) {
+            self.descriptionLabel.alpha = 1.0
+        } completion: { _ in }
+
+        UIView.animate(withDuration: 0.3, delay: 0.5, options: .curveEaseOut) {
+            self.cornerIndicator.alpha = 1.0
+        } completion: { _ in }
+
     }
 }
 

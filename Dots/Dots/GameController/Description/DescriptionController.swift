@@ -46,6 +46,11 @@ final class DescriptionController: UIViewController {
         }
         customView.set(initialState: initialState)
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        customView.animateIn()
+    }
 }
 
 extension DescriptionController {
