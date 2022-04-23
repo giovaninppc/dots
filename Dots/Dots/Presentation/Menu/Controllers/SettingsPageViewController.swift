@@ -26,18 +26,34 @@ final class SettingsPageViewController: UIViewController {
 final class SettingsPageMenuView: UIView {
     private let background: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "Watercolor")
+        view.image = Asset.watercolor.image
         view.contentMode = .scaleAspectFill
         return view
     }()
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Settings"
+        label.text = Localization.Settings.title
         label.font = .sketch(size: 60.0)
         label.textColor = .black
         label.textAlignment = .center
         return label
+    }()
+
+    private let contentStack: UIStackView = {
+        let stack = UIStackView()
+        stack.alignment = .fill
+        stack.distribution = .equalSpacing
+        return stack
+    }()
+
+    private lazy var vibrations: SwitchView = {
+        let switchView = SwitchView(
+            title: Localization.Settings.vibrations,
+            state: AccessibilitySettings.vibrationsEnabled) { newValue in
+                AccessibilitySettings.vibrationsEnabled = newValue
+            }
+        return switchView
     }()
 
     override init(frame: CGRect) {
@@ -46,41 +62,32 @@ final class SettingsPageMenuView: UIView {
     }
 
     required init?(coder: NSCoder) { nil }
+}
 
-    private func setup() {
-        setupComponents()
-        setupConstraints()
-    }
-
-    private func setupComponents() {
-        background.setupForManualConstraining()
+extension SettingsPageMenuView: CodeView {
+    func setupComponents() {
         addSubview(background)
-        titleLabel.setupForManualConstraining()
         addSubview(titleLabel)
+        addSubview(contentStack)
+
+        contentStack.addArrangedSubview(vibrations)
     }
 
-    private func setupConstraints() {
-        constrainBackground()
-        constrainTitle()
-    }
-
-    private func constrainBackground() {
+    func setupConstraints() {
         constrain {
             [
                 background.topAnchor.constraint(equalTo: topAnchor),
                 background.bottomAnchor.constraint(equalTo: bottomAnchor),
                 background.leadingAnchor.constraint(equalTo: leadingAnchor),
-                background.trailingAnchor.constraint(equalTo: trailingAnchor)
-            ]
-        }
-    }
+                background.trailingAnchor.constraint(equalTo: trailingAnchor),
 
-    private func constrainTitle() {
-        constrain {
-            [
                 titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20.0),
                 titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-                titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
+                titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+
+                contentStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20.0),
+                contentStack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
+                contentStack.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 50.0)
             ]
         }
     }

@@ -59,10 +59,7 @@ public final class HapticWorker {
     }
 
     public func fire() {
-        fireIfPossible()
-    }
-
-    private func fireIfPossible() {
+        guard AccessibilitySettings.vibrationsEnabled else { return }
         guard let feedback = feedbackGenerator as? UIFeedbackGenerator else { return }
         switch type {
         case .success, .error, .warning:

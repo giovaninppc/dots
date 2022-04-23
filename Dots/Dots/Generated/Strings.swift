@@ -12,14 +12,14 @@ import Foundation
 internal enum Localization {
 
   internal enum Baloon {
-    /// Large baloon, does not like to fight.\nWill drop more enemies into you if not destroyed fast.
+    /// Maybe a drone, maybe a baloon.\nWill drop more enemies into you if not destroyed fast.
     internal static let description = Localization.tr("Strings", "Baloon.description")
-    /// Somewhat-evil Baloon
+    /// Drone-B-loon
     internal static let name = Localization.tr("Strings", "Baloon.name")
   }
 
   internal enum BaloonBomb {
-    /// A small bomb. Will detonate on impact.
+    /// A small bomb.\nWill detonate on impact.
     internal static let description = Localization.tr("Strings", "BaloonBomb.description")
     /// Small Bomb #2
     internal static let name = Localization.tr("Strings", "BaloonBomb.name")
@@ -39,6 +39,13 @@ internal enum Localization {
     internal static let exit = Localization.tr("Strings", "Pause.exit")
     /// Pause
     internal static let title = Localization.tr("Strings", "Pause.title")
+  }
+
+  internal enum Settings {
+    /// Settings
+    internal static let title = Localization.tr("Strings", "Settings.title")
+    /// Enable vibrations
+    internal static let vibrations = Localization.tr("Strings", "Settings.vibrations")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

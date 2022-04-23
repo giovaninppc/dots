@@ -19,10 +19,12 @@ extension StorageKey where Self: RawRepresentable, RawValue == String {
 @propertyWrapper
 struct Stored<Value, Key: StorageKey> {
     let key: Key
+    let `default`: Value
+
     private let container: UserDefaults = .standard
 
-    var wrappedValue: Value? {
-        get { container.value(for: key) as? Value }
+    var wrappedValue: Value {
+        get { container.value(for: key) as? Value ?? self.default }
         set { container.setValue(newValue, for: key) }
     }
 }

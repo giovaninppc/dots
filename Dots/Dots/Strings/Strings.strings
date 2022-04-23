@@ -20,3 +20,8 @@
 
 "BaloonBomb.name" = "Small Bomb #2";
 "BaloonBomb.description" = "A small bomb.\nWill detonate on impact.";
+
+// Settings
+
+"Settings.title" = "Settings";
+"Settings.vibrations" = "Enable vibrations";

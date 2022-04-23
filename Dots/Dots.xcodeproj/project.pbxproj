@@ -43,6 +43,7 @@
 		3EC1FA41281451FF00AC4556 /* HapticWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA40281451FF00AC4556 /* HapticWorker.swift */; };
 		3EC1FA442814533E00AC4556 /* AccessibilitySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA432814533E00AC4556 /* AccessibilitySettings.swift */; };
 		3EC1FA462814534F00AC4556 /* Stored.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA452814534F00AC4556 /* Stored.swift */; };
+		3EC1FA4928145D4E00AC4556 /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA4828145D4E00AC4556 /* SwitchView.swift */; };
 		3EF956C626344FA500CF3239 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956C526344FA500CF3239 /* PauseView.swift */; };
 		3EF956D12634523B00CF3239 /* ChangeGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D02634523B00CF3239 /* ChangeGameView.swift */; };
 		3EF956D926345C1B00CF3239 /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D826345C1B00CF3239 /* GameStates.swift */; };
@@ -117,6 +118,7 @@
 		3EC1FA40281451FF00AC4556 /* HapticWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticWorker.swift; sourceTree = "<group>"; };
 		3EC1FA432814533E00AC4556 /* AccessibilitySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilitySettings.swift; sourceTree = "<group>"; };
 		3EC1FA452814534F00AC4556 /* Stored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stored.swift; sourceTree = "<group>"; };
+		3EC1FA4828145D4E00AC4556 /* SwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
 		3EF956C526344FA500CF3239 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
 		3EF956D02634523B00CF3239 /* ChangeGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGameView.swift; sourceTree = "<group>"; };
 		3EF956D826345C1B00CF3239 /* GameStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStates.swift; sourceTree = "<group>"; };
@@ -272,6 +274,17 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
+		3EC1FA4728145D3A00AC4556 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3EB90274280C4FED003A8ED3 /* CodeView.swift */,
+				3E2D305C263107BF00853550 /* Constraining.swift */,
+				3E2D3059263106FC00853550 /* Fonts.swift */,
+				3EC1FA4828145D4E00AC4556 /* SwitchView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		3EF956C426344F9100CF3239 /* Pause */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,13 +437,11 @@
 		9B8D5D8920868AAD0001DB35 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3EC1FA4728145D3A00AC4556 /* UI */,
 				3EC1FA422814533200AC4556 /* Storage */,
 				9B8D5D8A20868AC70001DB35 /* RandomPoint.swift */,
 				3EB3F49B2630B35C003AA20F /* SceneUpdatable.swift */,
-				3E2D3059263106FC00853550 /* Fonts.swift */,
-				3E2D305C263107BF00853550 /* Constraining.swift */,
 				3E741BDA263442660003FBA5 /* CollectionExtensions.swift */,
-				3EB90274280C4FED003A8ED3 /* CodeView.swift */,
 				3EC1FA2D281364B300AC4556 /* CGPoint+Operations.swift */,
 				3EC1FA2F281364D600AC4556 /* Idle.swift */,
 				3EC1FA40281451FF00AC4556 /* HapticWorker.swift */,
@@ -683,6 +694,7 @@
 				3E0FB20E2813199B002B948D /* DescriptionView.swift in Sources */,
 				9B416A962086275600E65777 /* PlaneEnemy.swift in Sources */,
 				9B627B96208390FD00B0FBEE /* BlueprintState.swift in Sources */,
+				3EC1FA4928145D4E00AC4556 /* SwitchView.swift in Sources */,
 				3EC1FA462814534F00AC4556 /* Stored.swift in Sources */,
 				9B416A98208627A400E65777 /* EnemyDefinition.swift in Sources */,
 				9BAD24282088BC000087B105 /* Level.swift in Sources */,

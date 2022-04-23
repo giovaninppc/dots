@@ -37,11 +37,13 @@ final class PauseViewController: UIViewController {
 
 extension PauseViewController {
     private func dismiss() {
+        HapticWorker(type: .selection).fire()
         self.onDismiss()
         dismiss(animated: true, completion: nil)
     }
 
     private func closeGame() {
+        HapticWorker(type: .selection).fire()
         dismiss(animated: true) {
             self.onCloseGame()
         }

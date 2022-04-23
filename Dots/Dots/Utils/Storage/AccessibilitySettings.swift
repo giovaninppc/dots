@@ -13,6 +13,6 @@ enum AccessibilitySettings {
         case vibrations
     }
 
-    @Stored(key: Keys.vibrations)
-    static var vibrationsEnabled: Bool?
+    @Stored(key: Keys.vibrations, default: true)
+    static var vibrationsEnabled: Bool
 }
