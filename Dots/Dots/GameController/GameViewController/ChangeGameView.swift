@@ -38,6 +38,14 @@ final class ChangeGameView: UIView {
         return button
     }()
 
+    let moneyLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = .sketch(size: 30.0)
+        return label
+    }()
+
     // MARK: - Init
 
     override init(frame: CGRect) {
@@ -60,31 +68,25 @@ extension ChangeGameView {
         addSubview(gameView)
         pauseButton.setupForManualConstraining()
         addSubview(pauseButton)
+        moneyLabel.setupForManualConstraining()
+        addSubview(moneyLabel)
     }
 
     private func setupConstraints() {
-        constrainGameView()
-        constrainPauseButton()
-    }
-
-    private func constrainGameView() {
         constrain {
             [
                 gameView.topAnchor.constraint(equalTo: topAnchor),
                 gameView.leadingAnchor.constraint(equalTo: leadingAnchor),
                 gameView.trailingAnchor.constraint(equalTo: trailingAnchor),
-                gameView.bottomAnchor.constraint(equalTo: bottomAnchor)
-            ]
-        }
-    }
+                gameView.bottomAnchor.constraint(equalTo: bottomAnchor),
 
-    private func constrainPauseButton() {
-        constrain {
-            [
                 pauseButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10.0),
                 pauseButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10.0),
                 pauseButton.widthAnchor.constraint(equalToConstant: 20.0),
-                pauseButton.heightAnchor.constraint(equalToConstant: 25.0)
+                pauseButton.heightAnchor.constraint(equalToConstant: 25.0),
+
+                moneyLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10.0),
+                moneyLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10.0)
             ]
         }
     }

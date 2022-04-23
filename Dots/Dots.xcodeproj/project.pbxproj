@@ -34,6 +34,8 @@
 		3EB9027F280D8E61003A8ED3 /* CollisionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB9027E280D8E61003A8ED3 /* CollisionController.swift */; };
 		3EC1FA2E281364B300AC4556 /* CGPoint+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA2D281364B300AC4556 /* CGPoint+Operations.swift */; };
 		3EC1FA30281364D600AC4556 /* Idle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA2F281364D600AC4556 /* Idle.swift */; };
+		3EC1FA3328141F2A00AC4556 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA3228141F2A00AC4556 /* Money.swift */; };
+		3EC1FA3528141F8A00AC4556 /* Pricing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA3428141F8A00AC4556 /* Pricing.swift */; };
 		3EF956C626344FA500CF3239 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956C526344FA500CF3239 /* PauseView.swift */; };
 		3EF956D12634523B00CF3239 /* ChangeGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D02634523B00CF3239 /* ChangeGameView.swift */; };
 		3EF956D926345C1B00CF3239 /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D826345C1B00CF3239 /* GameStates.swift */; };
@@ -99,6 +101,8 @@
 		3EB9027E280D8E61003A8ED3 /* CollisionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionController.swift; sourceTree = "<group>"; };
 		3EC1FA2D281364B300AC4556 /* CGPoint+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Operations.swift"; sourceTree = "<group>"; };
 		3EC1FA2F281364D600AC4556 /* Idle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idle.swift; sourceTree = "<group>"; };
+		3EC1FA3228141F2A00AC4556 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		3EC1FA3428141F8A00AC4556 /* Pricing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pricing.swift; sourceTree = "<group>"; };
 		3EF956C526344FA500CF3239 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
 		3EF956D02634523B00CF3239 /* ChangeGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGameView.swift; sourceTree = "<group>"; };
 		3EF956D826345C1B00CF3239 /* GameStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStates.swift; sourceTree = "<group>"; };
@@ -219,6 +223,15 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		3EC1FA3128141F0800AC4556 /* Economy */ = {
+			isa = PBXGroup;
+			children = (
+				3EC1FA3228141F2A00AC4556 /* Money.swift */,
+				3EC1FA3428141F8A00AC4556 /* Pricing.swift */,
+			);
+			path = Economy;
+			sourceTree = "<group>";
+		};
 		3EF956C426344F9100CF3239 /* Pause */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +253,7 @@
 		3EF956D4263453F900CF3239 /* GameController */ = {
 			isa = PBXGroup;
 			children = (
+				3EC1FA3128141F0800AC4556 /* Economy */,
 				3E0FB20A2813194A002B948D /* Description */,
 				3EB9025E280C36C2003A8ED3 /* WeaponSelectorController */,
 				9BF312E920C6F5DA00E3C4D7 /* GameViewController */,
@@ -587,6 +601,7 @@
 				3EB3F48926305C35003AA20F /* GameSceneUserInteraction.swift in Sources */,
 				9B416A902085291100E65777 /* ChangeGameViewController.swift in Sources */,
 				9B8D5D9C208790490001DB35 /* SurvivorGamePageViewController.swift in Sources */,
+				3EC1FA3328141F2A00AC4556 /* Money.swift in Sources */,
 				9B627B982083912500B0FBEE /* DoodleState.swift in Sources */,
 				9BAD242A2088BDA60087B105 /* ShotDelegate.swift in Sources */,
 				9B8D5D9920878FF80001DB35 /* PlaneAnimation.swift in Sources */,
@@ -605,6 +620,7 @@
 				3E2D305D263107BF00853550 /* Constraining.swift in Sources */,
 				3EF956E12634958700CF3239 /* SplashController.swift in Sources */,
 				3EB90262280C3747003A8ED3 /* WeaponSelectorView.swift in Sources */,
+				3EC1FA3528141F8A00AC4556 /* Pricing.swift in Sources */,
 				9B8D5D93208786550001DB35 /* MenuViewController.swift in Sources */,
 				3EC1FA2E281364B300AC4556 /* CGPoint+Operations.swift in Sources */,
 				3E0FB21028131CF4002B948D /* SceneToController.swift in Sources */,

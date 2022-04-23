@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-enum WeaponType {
+enum WeaponType: CaseIterable {
     case canon
     case canonBall
 }

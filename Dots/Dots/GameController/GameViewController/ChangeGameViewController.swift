@@ -34,6 +34,9 @@ final class ChangeGameViewController: UIViewController {
         self.view = customView
         setupViewActions()
         scene.controllerDelegate = self
+
+        MoneyController.moneyLabel = customView.moneyLabel
+        MoneyController.set()
     }
 
     override func viewDidLoad() {

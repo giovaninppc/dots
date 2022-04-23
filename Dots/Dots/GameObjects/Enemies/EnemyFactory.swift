@@ -23,7 +23,7 @@ enum EnemyFactory {
         }
     }
 
-    static func createEnemy(with identifier: EnemyType, for state: GameStates, with delegate: ShotDelegate) -> Enemy {
+    static func createEnemy(with identifier: EnemyType, for state: GameStates, with delegate: ShotDelegate?) -> Enemy {
         switch identifier {
         case .plane:
             return PlaneEnemy(state: state)
