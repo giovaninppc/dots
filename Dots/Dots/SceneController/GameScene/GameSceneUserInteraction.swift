@@ -14,13 +14,9 @@ extension GameScene {
             controllerDelegate?.show(enemy: enemy)
         } else if let weapon = touchedNodes.first as? Weapon {
             controllerDelegate?.show(weapon: weapon)
-        } else {
-            print("none")
         }
     }
 }
-
-// Adding stuff
 
 extension GameScene {
     func addWeapon(_ weapon: Weapon, at position: CGPoint) {

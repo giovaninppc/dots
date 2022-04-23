@@ -352,17 +352,17 @@
 				9B416A9A20863DCD00E65777 /* CollisionBitMask.swift */,
 				9BAD24292088BDA60087B105 /* ShotDelegate.swift */,
 				9B416A892085121A00E65777 /* EnemyController.swift */,
-				9B8D5D88208679030001DB35 /* EnemyControllerState */,
+				9B8D5D88208679030001DB35 /* Level */,
 			);
 			path = EnemyController;
 			sourceTree = "<group>";
 		};
-		9B8D5D88208679030001DB35 /* EnemyControllerState */ = {
+		9B8D5D88208679030001DB35 /* Level */ = {
 			isa = PBXGroup;
 			children = (
 				9BAD24272088BC000087B105 /* Level.swift */,
 			);
-			path = EnemyControllerState;
+			path = Level;
 			sourceTree = "<group>";
 		};
 		9B8D5D8920868AAD0001DB35 /* Utils */ = {

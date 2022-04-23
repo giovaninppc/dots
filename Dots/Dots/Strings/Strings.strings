@@ -10,7 +10,7 @@
 "Pause.continue" = "Continue";
 "Pause.exit" = "Exit";
 
-// Enemy
+// Enemies
 
 "PaperPlane.name" = "Paper plane";
 "PaperPlane.description" = "Super fragile, super slow, almost harmless.\nDangerous when in large groups.";

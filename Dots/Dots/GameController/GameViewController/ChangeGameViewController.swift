@@ -40,6 +40,7 @@ final class ChangeGameViewController: UIViewController {
         super.viewDidLoad()
 
         enemyController.scene = scene
+        enemyController.play()
         scene.configureGame()
         updateSceneState()
 
@@ -65,12 +66,9 @@ extension ChangeGameViewController {
             self?.scene.run(SKAction.speed(to: 1.0, duration: 0.5))
         }
         customView.onPause = { [weak self] in
-            self?.enemyController.pause()
             self?.showPause()
         }
-        customView.onPlay = { [weak self] in
-            self?.enemyController.play()
-        }
+        customView.onPlay = { }
     }
 }
 
