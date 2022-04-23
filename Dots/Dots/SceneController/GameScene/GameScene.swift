@@ -57,37 +57,10 @@ final class GameScene: SKScene {
     }
 
     func createLimit() {
-        // -->  SKTexture(imageNamed: "blueprintBottom")
-        let limit = SKSpriteNode(
-            texture: nil,
-            color: .clear,
-            size: CGSize(width: UIScreen.main.bounds.width, height: 50)
-        )
-
-        limit.position = CGPoint(x: 0, y: -1 * UIScreen.main.bounds.height/2 + 20)
-        let body = SKPhysicsBody(rectangleOf: CGSize(width: UIScreen.main.bounds.width, height: 10))
-        body.affectedByGravity = false
-        body.allowsRotation = false
-        body.isDynamic = false
-        body.categoryBitMask = PhysicsCategory.limit
-        limit.physicsBody = body
-        self.scene?.addChild(limit)
+        self.scene?.addChild(Limit())
     }
 
     func addTopOutOfBounds() {
-        let topOutOfBounds = SKSpriteNode(
-            texture: nil,
-            color: .clear,
-            size: CGSize(width: UIScreen.main.bounds.width, height: 50)
-        )
-
-        topOutOfBounds.position = CGPoint(x: 0, y: UIScreen.main.bounds.height/2 + 20)
-        let body = SKPhysicsBody(rectangleOf: CGSize(width: UIScreen.main.bounds.width, height: 10))
-        body.affectedByGravity = false
-        body.allowsRotation = false
-        body.isDynamic = false
-        body.categoryBitMask = PhysicsCategory.outOfBounds
-        topOutOfBounds.physicsBody = body
-        self.scene?.addChild(topOutOfBounds)
+        self.scene?.addChild(TopOutOfBounds())
     }
 }

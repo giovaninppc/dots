@@ -48,6 +48,9 @@ extension GameScene {
     private func handleEnemyEndCollision(_ contact: SKPhysicsContact) {
         let enemyBody = (contact.bodyA.node as? Enemy) ?? (contact.bodyB.node as? Enemy)
         enemyBody?.reachEnd()
+
+        let limitBody = (contact.bodyA.node as? Limit) ?? (contact.bodyB.node as? Limit)
+        limitBody?.gotHit(by: enemyBody)
     }
 
     private func handleEnemyShotCollision(_ contact: SKPhysicsContact) {

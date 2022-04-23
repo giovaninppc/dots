@@ -31,6 +31,12 @@ final class ChangeGameView: UIView {
         return gameView
     }()
 
+    let lifeOverlay: UIView = {
+        let view = UIView()
+        view.isUserInteractionEnabled = false
+        return view
+    }()
+
     private let pauseButton: UIButton = {
         let button = UIButton()
         button.setImage(Asset.pause.image, for: .normal)
@@ -66,6 +72,8 @@ extension ChangeGameView {
     private func setupComponents() {
         gameView.setupForManualConstraining()
         addSubview(gameView)
+        lifeOverlay.setupForManualConstraining()
+        addSubview(lifeOverlay)
         pauseButton.setupForManualConstraining()
         addSubview(pauseButton)
         moneyLabel.setupForManualConstraining()
@@ -86,7 +94,12 @@ extension ChangeGameView {
                 pauseButton.heightAnchor.constraint(equalToConstant: 25.0),
 
                 moneyLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10.0),
-                moneyLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10.0)
+                moneyLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10.0),
+
+                lifeOverlay.topAnchor.constraint(equalTo: topAnchor),
+                lifeOverlay.leadingAnchor.constraint(equalTo: leadingAnchor),
+                lifeOverlay.trailingAnchor.constraint(equalTo: trailingAnchor),
+                lifeOverlay.bottomAnchor.constraint(equalTo: bottomAnchor)
             ]
         }
     }

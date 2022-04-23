@@ -10,7 +10,7 @@ import SpriteKit
 
 final class ChangeGameViewController: UIViewController {
     private let customView: ChangeGameView
-    private let enemyController: EnemyController = EnemyController()
+    private let enemyController: EnemyController
 
     private var gameView: SKView { customView.gameView }
     var currentState: GameStates { gameStates[currentStatus] }
@@ -21,10 +21,14 @@ final class ChangeGameViewController: UIViewController {
     var gameStates: [GameStates] = [.blueprint, .doodle, .watercolor]
     var currentStatus: Int = 0
 
-    init(gameView: ChangeGameView = .init()) {
+    init(
+        gameView: ChangeGameView,
+        enemyController: EnemyController
+    ) {
         self.customView = gameView
-        super.init(nibName: nil, bundle: nil)
+        self.enemyController = enemyController
 
+        super.init(nibName: nil, bundle: nil)
         modalPresentationStyle = .overFullScreen
     }
 
@@ -33,16 +37,11 @@ final class ChangeGameViewController: UIViewController {
     override func loadView() {
         self.view = customView
         setupViewActions()
-        scene.controllerDelegate = self
-
-        MoneyController.moneyLabel = customView.moneyLabel
-        MoneyController.set()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        enemyController.scene = scene
         enemyController.play()
         scene.configureGame()
         updateSceneState()

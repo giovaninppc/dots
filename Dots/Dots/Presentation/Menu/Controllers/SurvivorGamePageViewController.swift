@@ -26,7 +26,7 @@ final class SurvivorGamePageViewController: UIViewController {
     }
 
     func pressPlay() {
-        present(ChangeGameViewController(), animated: true)
+        present(GameConfigurator.build(), animated: true)
     }
 }
 
@@ -35,7 +35,7 @@ final class SurvivorGameMenuView: UIView {
 
     private let background: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "Blueprint")
+        view.image = Asset.blueprint.image
         view.contentMode = .scaleAspectFill
         return view
     }()

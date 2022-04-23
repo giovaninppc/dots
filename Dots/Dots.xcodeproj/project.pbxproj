@@ -36,6 +36,13 @@
 		3EC1FA30281364D600AC4556 /* Idle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA2F281364D600AC4556 /* Idle.swift */; };
 		3EC1FA3328141F2A00AC4556 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA3228141F2A00AC4556 /* Money.swift */; };
 		3EC1FA3528141F8A00AC4556 /* Pricing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA3428141F8A00AC4556 /* Pricing.swift */; };
+		3EC1FA382814432800AC4556 /* Life.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA372814432800AC4556 /* Life.swift */; };
+		3EC1FA3B281446C900AC4556 /* Limit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA3A281446C900AC4556 /* Limit.swift */; };
+		3EC1FA3D281447B200AC4556 /* TopOutOfBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA3C281447B200AC4556 /* TopOutOfBounds.swift */; };
+		3EC1FA3F28144DB900AC4556 /* GameConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA3E28144DB900AC4556 /* GameConfigurator.swift */; };
+		3EC1FA41281451FF00AC4556 /* HapticWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA40281451FF00AC4556 /* HapticWorker.swift */; };
+		3EC1FA442814533E00AC4556 /* AccessibilitySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA432814533E00AC4556 /* AccessibilitySettings.swift */; };
+		3EC1FA462814534F00AC4556 /* Stored.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA452814534F00AC4556 /* Stored.swift */; };
 		3EF956C626344FA500CF3239 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956C526344FA500CF3239 /* PauseView.swift */; };
 		3EF956D12634523B00CF3239 /* ChangeGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D02634523B00CF3239 /* ChangeGameView.swift */; };
 		3EF956D926345C1B00CF3239 /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D826345C1B00CF3239 /* GameStates.swift */; };
@@ -103,6 +110,13 @@
 		3EC1FA2F281364D600AC4556 /* Idle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idle.swift; sourceTree = "<group>"; };
 		3EC1FA3228141F2A00AC4556 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		3EC1FA3428141F8A00AC4556 /* Pricing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pricing.swift; sourceTree = "<group>"; };
+		3EC1FA372814432800AC4556 /* Life.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life.swift; sourceTree = "<group>"; };
+		3EC1FA3A281446C900AC4556 /* Limit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Limit.swift; sourceTree = "<group>"; };
+		3EC1FA3C281447B200AC4556 /* TopOutOfBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOutOfBounds.swift; sourceTree = "<group>"; };
+		3EC1FA3E28144DB900AC4556 /* GameConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfigurator.swift; sourceTree = "<group>"; };
+		3EC1FA40281451FF00AC4556 /* HapticWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticWorker.swift; sourceTree = "<group>"; };
+		3EC1FA432814533E00AC4556 /* AccessibilitySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilitySettings.swift; sourceTree = "<group>"; };
+		3EC1FA452814534F00AC4556 /* Stored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stored.swift; sourceTree = "<group>"; };
 		3EF956C526344FA500CF3239 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
 		3EF956D02634523B00CF3239 /* ChangeGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGameView.swift; sourceTree = "<group>"; };
 		3EF956D826345C1B00CF3239 /* GameStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStates.swift; sourceTree = "<group>"; };
@@ -232,6 +246,32 @@
 			path = Economy;
 			sourceTree = "<group>";
 		};
+		3EC1FA362814431E00AC4556 /* Life */ = {
+			isa = PBXGroup;
+			children = (
+				3EC1FA372814432800AC4556 /* Life.swift */,
+			);
+			path = Life;
+			sourceTree = "<group>";
+		};
+		3EC1FA39281446B200AC4556 /* Limits */ = {
+			isa = PBXGroup;
+			children = (
+				3EC1FA3A281446C900AC4556 /* Limit.swift */,
+				3EC1FA3C281447B200AC4556 /* TopOutOfBounds.swift */,
+			);
+			path = Limits;
+			sourceTree = "<group>";
+		};
+		3EC1FA422814533200AC4556 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				3EC1FA432814533E00AC4556 /* AccessibilitySettings.swift */,
+				3EC1FA452814534F00AC4556 /* Stored.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		3EF956C426344F9100CF3239 /* Pause */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +284,7 @@
 		3EF956C92634506800CF3239 /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
+				3EC1FA39281446B200AC4556 /* Limits */,
 				9B627B9F2083978200B0FBEE /* Enemies */,
 				3EB3F48326305674003AA20F /* Weapons */,
 			);
@@ -253,6 +294,7 @@
 		3EF956D4263453F900CF3239 /* GameController */ = {
 			isa = PBXGroup;
 			children = (
+				3EC1FA362814431E00AC4556 /* Life */,
 				3EC1FA3128141F0800AC4556 /* Economy */,
 				3E0FB20A2813194A002B948D /* Description */,
 				3EB9025E280C36C2003A8ED3 /* WeaponSelectorController */,
@@ -382,6 +424,7 @@
 		9B8D5D8920868AAD0001DB35 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3EC1FA422814533200AC4556 /* Storage */,
 				9B8D5D8A20868AC70001DB35 /* RandomPoint.swift */,
 				3EB3F49B2630B35C003AA20F /* SceneUpdatable.swift */,
 				3E2D3059263106FC00853550 /* Fonts.swift */,
@@ -390,6 +433,7 @@
 				3EB90274280C4FED003A8ED3 /* CodeView.swift */,
 				3EC1FA2D281364B300AC4556 /* CGPoint+Operations.swift */,
 				3EC1FA2F281364D600AC4556 /* Idle.swift */,
+				3EC1FA40281451FF00AC4556 /* HapticWorker.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -436,6 +480,7 @@
 				3EF956D02634523B00CF3239 /* ChangeGameView.swift */,
 				9B416A8F2085291100E65777 /* ChangeGameViewController.swift */,
 				3E0FB20F28131CF4002B948D /* SceneToController.swift */,
+				3EC1FA3E28144DB900AC4556 /* GameConfigurator.swift */,
 			);
 			path = GameViewController;
 			sourceTree = "<group>";
@@ -595,14 +640,17 @@
 				3EB90268280C3C87003A8ED3 /* Strings.swift in Sources */,
 				3EB3F49426306087003AA20F /* WeaponDefinition.swift in Sources */,
 				9B8D5DA420879F4D0001DB35 /* SettingsPageViewController.swift in Sources */,
+				3EC1FA3B281446C900AC4556 /* Limit.swift in Sources */,
 				9B2F50272083AD3100BD808D /* Enemy.swift in Sources */,
 				9BAD242C2088BEEC0087B105 /* BaloonBomb.swift in Sources */,
 				3EC1FA30281364D600AC4556 /* Idle.swift in Sources */,
 				3EB3F48926305C35003AA20F /* GameSceneUserInteraction.swift in Sources */,
 				9B416A902085291100E65777 /* ChangeGameViewController.swift in Sources */,
 				9B8D5D9C208790490001DB35 /* SurvivorGamePageViewController.swift in Sources */,
+				3EC1FA3D281447B200AC4556 /* TopOutOfBounds.swift in Sources */,
 				3EC1FA3328141F2A00AC4556 /* Money.swift in Sources */,
 				9B627B982083912500B0FBEE /* DoodleState.swift in Sources */,
+				3EC1FA41281451FF00AC4556 /* HapticWorker.swift in Sources */,
 				9BAD242A2088BDA60087B105 /* ShotDelegate.swift in Sources */,
 				9B8D5D9920878FF80001DB35 /* PlaneAnimation.swift in Sources */,
 				9B8D5D8D208690F20001DB35 /* BaloonEnemy.swift in Sources */,
@@ -630,13 +678,16 @@
 				3EB90275280C4FED003A8ED3 /* CodeView.swift in Sources */,
 				9B8D5D8B20868AC70001DB35 /* RandomPoint.swift in Sources */,
 				3EB90264280C37C1003A8ED3 /* PauseViewController.swift in Sources */,
+				3EC1FA3F28144DB900AC4556 /* GameConfigurator.swift in Sources */,
 				3EB3F48C26305CC3003AA20F /* Weapon.swift in Sources */,
 				3E0FB20E2813199B002B948D /* DescriptionView.swift in Sources */,
 				9B416A962086275600E65777 /* PlaneEnemy.swift in Sources */,
 				9B627B96208390FD00B0FBEE /* BlueprintState.swift in Sources */,
+				3EC1FA462814534F00AC4556 /* Stored.swift in Sources */,
 				9B416A98208627A400E65777 /* EnemyDefinition.swift in Sources */,
 				9BAD24282088BC000087B105 /* Level.swift in Sources */,
 				3EB9027B280D791C003A8ED3 /* CannonBall.swift in Sources */,
+				3EC1FA442814533E00AC4556 /* AccessibilitySettings.swift in Sources */,
 				9B416A9220852A4500E65777 /* GameScene.swift in Sources */,
 				3EB9027D280D7DE0003A8ED3 /* WeaponShot.swift in Sources */,
 				3E741BDB263442660003FBA5 /* CollectionExtensions.swift in Sources */,
@@ -644,6 +695,7 @@
 				9B6B160B20867660008E2D9F /* WatercolorState.swift in Sources */,
 				3EF956D12634523B00CF3239 /* ChangeGameView.swift in Sources */,
 				3EF956C626344FA500CF3239 /* PauseView.swift in Sources */,
+				3EC1FA382814432800AC4556 /* Life.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
