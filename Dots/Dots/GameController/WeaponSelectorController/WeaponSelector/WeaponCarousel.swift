@@ -1,18 +1,20 @@
 import UIKit
 
 final class WeaponCarousel: UIView {
-    var weapons: [String] = ["", "", ""]
+    var weapons: [String] = ["", "", "", "", "", "", ""]
 
     private let flowLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = .init(width: 160.0, height: 180.0)
+        layout.minimumLineSpacing = 20.0
+        layout.minimumInteritemSpacing = 5.0
         return layout
     }()
 
     private lazy var carousel: UICollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        collection.contentInset = .init(top: 0, left: 15.0, bottom: 0, right: 15.0)
+        collection.contentInset = .init(top: 0, left: 30.0, bottom: 0, right: 30.0)
         collection.register(WeaponSelectorCell.self)
         collection.backgroundColor = .clear
         collection.showsHorizontalScrollIndicator = false
@@ -66,8 +68,8 @@ extension WeaponCarousel: UICollectionViewDelegate, UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: WeaponSelectorCell.identifier,
-                for: indexPath
+            withReuseIdentifier: WeaponSelectorCell.identifier,
+            for: indexPath
         ) as? WeaponSelectorCell else {
             return UICollectionViewCell()
         }

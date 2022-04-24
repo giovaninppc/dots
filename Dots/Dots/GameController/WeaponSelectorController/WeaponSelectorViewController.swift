@@ -57,10 +57,19 @@ final class WeaponSelectorViewController: UIViewController {
 
 extension WeaponSelectorViewController {
     private func didDismiss() {
-        // MOCK
         addWeapon(.canon)
 
         onDismiss()
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension WeaponSelectorViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        UICollectionViewCell()
     }
 }

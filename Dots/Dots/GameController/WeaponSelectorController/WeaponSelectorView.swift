@@ -79,6 +79,12 @@ final class WeaponSelectorView: UIView {
         return button
     }()
 
+    private let weaponCarousel: WeaponCarousel = {
+        let carousel = WeaponCarousel()
+        carousel.isHidden = true
+        return carousel
+    }()
+
     init(position: CGPoint) {
         self.position = position
         super.init(frame: .zero)
@@ -99,6 +105,7 @@ extension WeaponSelectorView: CodeView {
         addSubview(attackButton)
         addSubview(defendButton)
         addSubview(itemButton)
+        addSubview(weaponCarousel)
     }
 
     func setupConstraints() {
@@ -146,7 +153,12 @@ extension WeaponSelectorView: CodeView {
                 // Aim
                 aim.centerXAnchor.constraint(equalTo: leadingAnchor, constant: position.x),
                 aim.centerYAnchor.constraint(equalTo: topAnchor, constant: position.y),
-                aim.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 2.0)
+                aim.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 2.0),
+
+                weaponCarousel.leadingAnchor.constraint(equalTo: leadingAnchor),
+                weaponCarousel.trailingAnchor.constraint(equalTo: trailingAnchor),
+                weaponCarousel.heightAnchor.constraint(equalToConstant: 400.0),
+                weaponCarousel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100.0)
             ]
         }
     }
@@ -162,21 +174,31 @@ extension WeaponSelectorView {
         onDismiss?()
     }
 
+    private var buttons: [UIButton] { [attackButton, defendButton, itemButton] }
+
     @objc private func didTouchDown(_ button: UIButton) {
         let toAnimate: [UIView] = [button, matchImage(for: button)]
+        let otherButtons = buttons.filter { !($0 === button) }
+        let toReduce: [UIView] = otherButtons + otherButtons.map { matchImage(for: $0) }
 
         UIView.animate(withDuration: 0.1) {
-            toAnimate.forEach { $0.transform = .identity.scaledBy(x: 1.15, y: 1.15) }
+            toAnimate.forEach {
+                $0.transform = .identity.scaledBy(x: 1.15, y: 1.15)
+                $0.alpha = 1.0
+            }
         }
-    }
-
-    @objc private func didTapOut(_ button: UIButton) {
-        let toAnimate: [UIView] = [button, matchImage(for: button)]
 
         UIView.animate(withDuration: 0.1) {
-            toAnimate.forEach { $0.transform = .identity }
+            toReduce.forEach {
+                $0.transform = .identity.scaledBy(x: 0.9, y: 0.9)
+                $0.alpha = 0.7
+            }
         }
+
+        weaponCarousel.isHidden = false
     }
+
+    @objc private func didTapOut(_ button: UIButton) {}
 
     private func matchImage(for button: UIButton) -> UIView {
         if button === attackButton {
