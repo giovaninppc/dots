@@ -44,6 +44,7 @@
 		3EC1FA442814533E00AC4556 /* AccessibilitySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA432814533E00AC4556 /* AccessibilitySettings.swift */; };
 		3EC1FA462814534F00AC4556 /* Stored.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA452814534F00AC4556 /* Stored.swift */; };
 		3EC1FA4928145D4E00AC4556 /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA4828145D4E00AC4556 /* SwitchView.swift */; };
+		3EC1FA4C281460F600AC4556 /* DamageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA4B281460F600AC4556 /* DamageType.swift */; };
 		3EF956C626344FA500CF3239 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956C526344FA500CF3239 /* PauseView.swift */; };
 		3EF956D12634523B00CF3239 /* ChangeGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D02634523B00CF3239 /* ChangeGameView.swift */; };
 		3EF956D926345C1B00CF3239 /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D826345C1B00CF3239 /* GameStates.swift */; };
@@ -119,6 +120,7 @@
 		3EC1FA432814533E00AC4556 /* AccessibilitySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilitySettings.swift; sourceTree = "<group>"; };
 		3EC1FA452814534F00AC4556 /* Stored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stored.swift; sourceTree = "<group>"; };
 		3EC1FA4828145D4E00AC4556 /* SwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
+		3EC1FA4B281460F600AC4556 /* DamageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageType.swift; sourceTree = "<group>"; };
 		3EF956C526344FA500CF3239 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
 		3EF956D02634523B00CF3239 /* ChangeGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGameView.swift; sourceTree = "<group>"; };
 		3EF956D826345C1B00CF3239 /* GameStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStates.swift; sourceTree = "<group>"; };
@@ -285,6 +287,14 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		3EC1FA4A281460E200AC4556 /* Damage */ = {
+			isa = PBXGroup;
+			children = (
+				3EC1FA4B281460F600AC4556 /* DamageType.swift */,
+			);
+			path = Damage;
+			sourceTree = "<group>";
+		};
 		3EF956C426344F9100CF3239 /* Pause */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +317,7 @@
 		3EF956D4263453F900CF3239 /* GameController */ = {
 			isa = PBXGroup;
 			children = (
+				3EC1FA4A281460E200AC4556 /* Damage */,
 				3EC1FA362814431E00AC4556 /* Life */,
 				3EC1FA3128141F0800AC4556 /* Economy */,
 				3E0FB20A2813194A002B948D /* Description */,
@@ -673,6 +684,7 @@
 				3EB9027F280D8E61003A8ED3 /* CollisionController.swift in Sources */,
 				3EB3F49026305D2A003AA20F /* Cannon.swift in Sources */,
 				3E741BD526343F840003FBA5 /* WeaponSelectorCell.swift in Sources */,
+				3EC1FA4C281460F600AC4556 /* DamageType.swift in Sources */,
 				3EB9026E280C3DB3003A8ED3 /* Images.swift in Sources */,
 				9B3F787B20C16EED0055FADA /* GameSceneProtocol.swift in Sources */,
 				9B416A9B20863DCD00E65777 /* CollisionBitMask.swift in Sources */,

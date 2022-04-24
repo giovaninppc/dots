@@ -18,7 +18,7 @@ extension GameScene: SKPhysicsContactDelegate {
         case .enemyGotHit:
             handleEnemyShotCollision(contact)
         case .enemyHitWeapon:
-            break
+            handleEnemyShotCollision(contact)
         case .bulletGotOutOfBounds:
             handleBulletOutOfBounds(contact)
         case .undefinedCollision:
@@ -54,11 +54,11 @@ extension GameScene {
     }
 
     private func handleEnemyShotCollision(_ contact: SKPhysicsContact) {
-        let bullet = (contact.bodyA.node as? WeaponShot) ?? (contact.bodyB.node as? WeaponShot)
-        let enemyBody = (contact.bodyA.node as? Enemy) ?? (contact.bodyB.node as? Enemy)
+        let weaponBody = (contact.bodyA.node as? WeaponProtocol) ?? (contact.bodyB.node as? WeaponProtocol)
+        let enemyBody = (contact.bodyA.node as? EnemyProtocol) ?? (contact.bodyB.node as? EnemyProtocol)
 
-        enemyBody?.gotHit(by: bullet)
-        bullet?.hitEnemy()
+        enemyBody?.gotHit(by: weaponBody)
+        weaponBody?.gotHit(by: enemyBody)
     }
 
     private func handleBulletOutOfBounds(_ contact: SKPhysicsContact) {

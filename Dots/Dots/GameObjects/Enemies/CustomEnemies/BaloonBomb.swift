@@ -12,7 +12,6 @@ import SpriteKit
 let baloonBombSpeed: Double = 6
 
 final class BaloonBomb: Enemy, EnemyProtocol {
-
     var enemySize: CGSize = CGSize(width: 15, height: 15)
 
     let stateDict: [GameStates: SKTexture] = [
@@ -61,8 +60,11 @@ final class BaloonBomb: Enemy, EnemyProtocol {
     }
 
     override func selfDestruct() {
-        // Make animation
         self.removeFromParent()
+    }
+
+    func gotHit(by weapon: WeaponProtocol?) {
+        selfDestruct()
     }
 }
 

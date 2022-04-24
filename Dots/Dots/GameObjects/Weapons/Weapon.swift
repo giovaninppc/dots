@@ -1,6 +1,5 @@
 import SpriteKit
 
-/// Base Weapon Class
 class Weapon: SKSpriteNode, SceneUpdatable {
     let stateDictInc: [GameStates: UIColor] = [
         .doodle: .red,

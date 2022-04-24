@@ -49,6 +49,10 @@ final class CannonBall: WeaponShot, WeaponProtocol {
         self.run(animation)
     }
 
+    func gotHit(by enemy: EnemyProtocol?) {
+        selfDestruct()
+    }
+
     func configureBody() {
         let body = SKPhysicsBody(rectangleOf: weaponSize)
         body.affectedByGravity = false

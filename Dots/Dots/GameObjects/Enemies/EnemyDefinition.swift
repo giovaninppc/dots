@@ -15,12 +15,19 @@ enum EnemyType {
     case none
 }
 
-// This protocol only helps to create better custom Enemy classes
-// the enemies have to extend the base Enemy class and the protocol for necessary behavior
 protocol EnemyProtocol: NSObjectProtocol {
-
     var enemySize: CGSize { get }
+    var baseDamage: Int { get }
+    var damageType: DamageType { get }
+
     init(state: GameStates)
+
     func update(for state: GameStates)
     func startAction()
+    func gotHit(by weapon: WeaponProtocol?)
+}
+
+extension EnemyProtocol {
+    var baseDamage: Int { 10 }
+    var damageType: DamageType { .physical }
 }

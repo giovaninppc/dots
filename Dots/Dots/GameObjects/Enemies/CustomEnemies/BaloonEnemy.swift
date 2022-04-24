@@ -10,6 +10,9 @@ import SpriteKit
 
 final class BaloonEnemy: Enemy, EnemyProtocol {
     let baloonHorizontalSpeed: Double = Double(Int.random(in: 4...6))
+    private var life: Int = 20 {
+        didSet { if life < 0 { selfDestruct() } }
+    }
 
     var enemySize: CGSize = CGSize(width: 75, height: 75)
 
@@ -119,8 +122,15 @@ final class BaloonEnemy: Enemy, EnemyProtocol {
     }
 
     override func selfDestruct() {
-        // Make animation
         self.removeFromParent()
+    }
+
+    func gotHit(by weapon: WeaponProtocol?) {
+        guard let weapon = weapon else { return }
+        let baseDamage = weapon.baseDamage
+
+        let multiplier: Int = weapon.damageType == .fire ? 2 : 1
+        life -= baseDamage * multiplier
     }
 }
 

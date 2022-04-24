@@ -62,6 +62,10 @@ final class CannonWeapon: Weapon, WeaponProtocol {
         body.categoryBitMask = PhysicsCategory.weapon
         self.physicsBody = body
     }
+
+    func gotHit(by enemy: EnemyProtocol?) {
+        selfDestruct()
+    }
 }
 
 extension CannonWeapon {

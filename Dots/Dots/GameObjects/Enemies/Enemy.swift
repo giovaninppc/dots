@@ -9,7 +9,11 @@
 import SpriteKit
 
 class Enemy: SKSpriteNode, SceneUpdatable {
-    var collisionBitMask: UInt32 { PhysicsCategory.limit | PhysicsCategory.playerBullet  }
+    required init(state: GameStates) {
+        super.init(texture: nil, color: .white, size: .zero)
+    }
+
+    var collisionBitMask: UInt32 { PhysicsCategory.limit | PhysicsCategory.playerBullet | PhysicsCategory.weapon }
 
     let stateDictInc: [GameStates: UIColor] = [
         .doodle: .red,
@@ -40,9 +44,5 @@ class Enemy: SKSpriteNode, SceneUpdatable {
     func selfDestruct() {
         // Make animation
         self.removeFromParent()
-    }
-
-    func gotHit(by bullet: WeaponShot?) {
-        selfDestruct()
     }
 }

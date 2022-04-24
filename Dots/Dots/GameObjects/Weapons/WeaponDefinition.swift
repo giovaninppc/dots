@@ -15,9 +15,17 @@ enum WeaponType: CaseIterable {
 
 protocol WeaponProtocol {
     var weaponSize: CGSize { get }
+    var baseDamage: Int { get }
+    var damageType: DamageType { get }
 
     func update(for state: GameStates)
     func startAction()
+    func gotHit(by enemy: EnemyProtocol?)
 
     init(state: GameStates, delegate: ShotDelegate?)
+}
+
+extension WeaponProtocol {
+    var baseDamage: Int { 10 }
+    var damageType: DamageType { .physical }
 }

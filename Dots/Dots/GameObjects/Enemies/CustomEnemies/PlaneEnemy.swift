@@ -74,10 +74,12 @@ final class PlaneEnemy: Enemy, EnemyProtocol {
     }
 
     override func selfDestruct() {
-        // Make animation
         self.removeFromParent()
     }
 
+    func gotHit(by weapon: WeaponProtocol?) {
+        selfDestruct()
+    }
 }
 
 extension PlaneEnemy: Idle {
