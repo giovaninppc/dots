@@ -25,3 +25,16 @@
 
 "Settings.title" = "Settings";
 "Settings.vibrations" = "Enable vibrations";
+
+// Weapons
+
+"Canon.name" = "Canon";
+"Canon.description" = "Attacker. Not quite fast, not quite slow, but not very strong.";
+
+"CanonBall.name" = "Canonball";
+"CanonBall.description" = "Just a canon... ball.";
+
+// Descriptions
+
+"Description.DamageType" = "Damage type";
+"Description.WeakTo" = "Weak to";

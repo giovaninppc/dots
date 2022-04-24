@@ -60,6 +60,36 @@ final class DescriptionView: UIView {
         return label
     }()
 
+    private let contentStack: UIStackView = {
+        let stack = UIStackView()
+        stack.spacing = 10.0
+        stack.alignment = .fill
+        stack.distribution = .equalSpacing
+        stack.axis = .vertical
+        stack.alpha = 0.0
+        return stack
+    }()
+
+    private let attackLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.font = .sketch(size: 20.0)
+        label.numberOfLines = 1
+        label.alpha = 1.0
+        label.text = "Damage type"
+        return label
+    }()
+
+    private let weakToLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.font = .sketch(size: 20.0)
+        label.numberOfLines = 1
+        label.alpha = 1.0
+        label.text = "Weak to"
+        return label
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -76,6 +106,10 @@ extension DescriptionView: CodeView {
         addSubview(nameLabel)
         addSubview(descriptionLabel)
         addSubview(cornerIndicator)
+        addSubview(contentStack)
+
+        contentStack.addArrangedSubview(attackLabel)
+        contentStack.addArrangedSubview(weakToLabel)
     }
 
     func setupConstraints() {
@@ -101,7 +135,11 @@ extension DescriptionView: CodeView {
 
                 descriptionLabel.leadingAnchor.constraint(equalTo: gameView.trailingAnchor, constant: 20.0),
                 descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30.0),
-                descriptionLabel.centerYAnchor.constraint(equalTo: gameView.centerYAnchor)
+                descriptionLabel.centerYAnchor.constraint(equalTo: gameView.centerYAnchor),
+
+                contentStack.topAnchor.constraint(equalTo: gameView.bottomAnchor, constant: 30.0),
+                contentStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20.0),
+                contentStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.0)
             ]
         }
     }
@@ -158,10 +196,13 @@ extension DescriptionView {
             self.descriptionLabel.alpha = 1.0
         } completion: { _ in }
 
+        UIView.transition(with: descriptionLabel, duration: 0.5, options: [.transitionCurlDown]) {
+            self.contentStack.alpha = 1.0
+        } completion: { _ in }
+
         UIView.animate(withDuration: 0.3, delay: 0.5, options: .curveEaseOut) {
             self.cornerIndicator.alpha = 1.0
         } completion: { _ in }
-
     }
 }
 

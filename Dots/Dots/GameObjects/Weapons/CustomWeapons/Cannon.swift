@@ -76,3 +76,8 @@ extension CannonWeapon {
         delegate.addWeaponShot(type: .canonBall, at: position)
     }
 }
+
+extension CannonWeapon: Describable {
+    var displayName: String { Localization.Canon.name }
+    var displayDescription: String { Localization.Canon.description }
+}

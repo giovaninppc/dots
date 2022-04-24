@@ -63,3 +63,12 @@ final class CannonBall: WeaponShot, WeaponProtocol {
         self.physicsBody = body
     }
 }
+
+extension CannonBall: Idle {
+    func idle() { removeAllActions() }
+}
+
+extension CannonBall: Describable {
+    var displayName: String { Localization.CanonBall.name }
+    var displayDescription: String { Localization.CanonBall.description }
+}

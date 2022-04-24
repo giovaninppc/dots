@@ -25,6 +25,27 @@ internal enum Localization {
     internal static let name = Localization.tr("Strings", "BaloonBomb.name")
   }
 
+  internal enum Canon {
+    /// Attacker. Not quite fast, not quite slow, but not very strong.
+    internal static let description = Localization.tr("Strings", "Canon.description")
+    /// Canon
+    internal static let name = Localization.tr("Strings", "Canon.name")
+  }
+
+  internal enum CanonBall {
+    /// Just a canon... ball.
+    internal static let description = Localization.tr("Strings", "CanonBall.description")
+    /// Canonball
+    internal static let name = Localization.tr("Strings", "CanonBall.name")
+  }
+
+  internal enum Description {
+    /// Damage type
+    internal static let damageType = Localization.tr("Strings", "Description.DamageType")
+    /// Weak to
+    internal static let weakTo = Localization.tr("Strings", "Description.WeakTo")
+  }
+
   internal enum PaperPlane {
     /// Super fragile, super slow, almost harmless.\nDangerous when in large groups.
     internal static let description = Localization.tr("Strings", "PaperPlane.description")

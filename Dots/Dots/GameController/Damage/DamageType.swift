@@ -11,6 +11,4 @@ import Foundation
 enum DamageType {
     case physical
     case fire
-    case light
-    case dark
 }
