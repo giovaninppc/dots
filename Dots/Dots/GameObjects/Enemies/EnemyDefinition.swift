@@ -19,6 +19,7 @@ protocol EnemyProtocol: NSObjectProtocol {
     var enemySize: CGSize { get }
     var baseDamage: Int { get }
     var damageType: DamageType { get }
+    var value: Int { get }
 
     init(state: GameStates)
 
@@ -30,4 +31,5 @@ protocol EnemyProtocol: NSObjectProtocol {
 extension EnemyProtocol {
     var baseDamage: Int { 10 }
     var damageType: DamageType { .physical }
+    var value: Int { 0 }
 }

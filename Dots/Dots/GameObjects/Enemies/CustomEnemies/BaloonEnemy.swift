@@ -151,4 +151,5 @@ extension BaloonEnemy: Idle {
 extension BaloonEnemy: Describable {
     var displayName: String { Localization.Baloon.name }
     var displayDescription: String { Localization.Baloon.description }
+    var value: Int { 20 }
 }

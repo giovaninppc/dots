@@ -34,7 +34,7 @@ enum Life {
 extension Life {
     private static func setHealthViewState() {
         guard let view = healthIndicator else { return }
-        let alpha: CGFloat = 0.125 + (0.125 - CGFloat(health)/800.0)
+        let alpha: CGFloat = 0.1 + (0.1 - CGFloat(health)/1000.0)
         UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseInOut]) {
             view.backgroundColor = .red.withAlphaComponent(alpha)
         } completion: { _ in }

@@ -20,6 +20,8 @@ final class ChangeGameView: UIView {
     var onPlay: (() -> Void)?
     var onWeaponSelectorDismiss: (() -> Void)?
 
+    var isFastForward: Bool = false
+
     // MARK: - Subviews
 
     let scene: GameScene = GameScene(fileNamed: "Game.sks")!
@@ -38,8 +40,18 @@ final class ChangeGameView: UIView {
 
     private let pauseButton: UIButton = {
         let button = UIButton()
-        button.setImage(Asset.pause.image, for: .normal)
+        button.setImage(Asset.pause.image.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = .white
         button.addTarget(self, action: #selector(didPause), for: .touchUpInside)
+        return button
+    }()
+
+    private let fastForwardButton: UIButton = {
+        let button = UIButton()
+        button.setImage(Asset.fastForward.image, for: .normal)
+        button.tintColor = .white
+        button.alpha = 0.7
+        button.addTarget(self, action: #selector(didFastForward), for: .touchUpInside)
         return button
     }()
 
@@ -84,6 +96,7 @@ extension ChangeGameView: CodeView {
         addSubview(gameView)
         addSubview(lifeOverlay)
         addSubview(pauseButton)
+        addSubview(fastForwardButton)
         addSubview(moneyLabel)
         addSubview(buildButton)
         addSubview(weaponStash)
@@ -101,6 +114,11 @@ extension ChangeGameView: CodeView {
                 pauseButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10.0),
                 pauseButton.widthAnchor.constraint(equalToConstant: 20.0),
                 pauseButton.heightAnchor.constraint(equalToConstant: 25.0),
+
+                fastForwardButton.topAnchor.constraint(equalTo: pauseButton.bottomAnchor, constant: 20.0),
+                fastForwardButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10.0),
+                fastForwardButton.widthAnchor.constraint(equalToConstant: 25.0),
+                fastForwardButton.heightAnchor.constraint(equalToConstant: 20.0),
 
                 moneyLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10.0),
                 moneyLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10.0),
@@ -161,6 +179,13 @@ extension ChangeGameView {
         setStash(hidden: true)
         scene.run(SKAction.speed(to: 0.0, duration: 0.3))
         onPause?()
+    }
+
+    @objc private func didFastForward() {
+        setStash(hidden: true)
+        isFastForward = !isFastForward
+        scene.run(SKAction.speed(to: isFastForward ? 2.0 : 1.0, duration: 0.3))
+        fastForwardButton.alpha = isFastForward ? 1.0 : 0.7
     }
 
     @objc private func didTap(_ gesture: UITapGestureRecognizer) {

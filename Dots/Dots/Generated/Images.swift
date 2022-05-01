@@ -44,6 +44,7 @@ public enum Asset {
   public static let pinPaper = ImageAsset(name: "pinPaper")
   public static let rippedLateralPaper = ImageAsset(name: "rippedLateralPaper")
   public static let stackedPaper = ImageAsset(name: "stackedPaper")
+  public static let fastForward = ImageAsset(name: "fastForward")
   public static let pause = ImageAsset(name: "pause")
   public static let doodlePlane = ImageAsset(name: "doodlePlane")
   public static let paperPlane = ImageAsset(name: "paperPlane")

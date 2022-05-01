@@ -104,4 +104,5 @@ extension PlaneEnemy: Idle {
 extension PlaneEnemy: Describable {
     var displayName: String { Localization.PaperPlane.name }
     var displayDescription: String { Localization.PaperPlane.description }
+    var value: Int { 10 }
 }
