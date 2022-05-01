@@ -45,20 +45,22 @@ final class WeaponStashCell: UICollectionViewCell {
 
     private let drag: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .red
+        imageView.contentMode = .scaleAspectFit
+        imageView.alpha = 0.9
         return imageView
     }()
 
     private let image: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .red
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
     private let priceTag: UILabel = {
         let label = UILabel()
         label.font = .sketch(size: 15.0)
-        label.textColor = .red
+        label.textColor = .black
+        label.textAlignment = .center
         label.text = "$ XX"
         return label
     }()
@@ -88,7 +90,7 @@ extension WeaponStashCell: CodeView {
                 priceTag.bottomAnchor.constraint(equalTo: bottomAnchor),
                 priceTag.leadingAnchor.constraint(equalTo: leadingAnchor),
                 priceTag.trailingAnchor.constraint(equalTo: trailingAnchor),
-                priceTag.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 10.0)
+                priceTag.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 2.0)
             ]
         }
     }
@@ -137,6 +139,9 @@ extension WeaponStashCell {
 
 extension WeaponStashCell {
     func configure(with display: WeaponType) {
-        self.type = display
+        type = display
+        priceTag.text = "$ \(display.price)"
+        image.image = display.icon
+        drag.image = display.icon
     }
 }

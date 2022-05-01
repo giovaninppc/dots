@@ -6,7 +6,7 @@
 //  Copyright © 2022 Giovani Nascimento Pereira. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension WeaponType {
     static var purchasable: [WeaponType] { allCases.filter { $0.price > 0 } }
@@ -17,6 +17,15 @@ extension WeaponType {
             return 100
         default:
             return -1
+        }
+    }
+
+    var icon: UIImage? {
+        switch self {
+        case .canon:
+            return Asset.resourceA.image
+        default:
+            return nil
         }
     }
 }

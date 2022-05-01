@@ -16,7 +16,6 @@ enum Swipe: Int {
 
 final class ChangeGameView: UIView {
     var onSwipe: ((Swipe) -> Void)?
-    var onLongPress: ((CGPoint) -> Void)?
     var onPause: (() -> Void)?
     var onPlay: (() -> Void)?
     var onWeaponSelectorDismiss: (() -> Void)?
@@ -54,7 +53,7 @@ final class ChangeGameView: UIView {
 
     private let layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = .init(width: 50.0, height: 60.0)
+        layout.itemSize = .init(width: 80.0, height: 80.0)
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 10.0
         return layout
@@ -137,9 +136,6 @@ extension ChangeGameView: CodeView {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(didSwipeLeft))
         swipeLeft.direction = .left
         addGestureRecognizer(swipeLeft)
-
-//        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(didLongPress))
-//        addGestureRecognizer(longPress)
     }
 
     private func setupStashOpening() {
@@ -154,11 +150,6 @@ extension ChangeGameView {
 
     @objc private func didSwipeLeft() {
         onSwipe?(.left)
-    }
-
-    @objc private func didLongPress(_ recognizer: UILongPressGestureRecognizer) {
-        scene.run(SKAction.speed(to: 0.3, duration: 0.3))
-        onLongPress?(recognizer.location(in: self))
     }
 
     @objc private func didPause() {
