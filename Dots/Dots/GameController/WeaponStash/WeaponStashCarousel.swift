@@ -11,8 +11,18 @@ import UIKit
 final class WeaponStashCarousel: UICollectionView {
     weak var weaponDelegate: WeaponBuilderDelegate?
 
-    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-        super.init(frame: frame, collectionViewLayout: layout)
+    private static let layout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = .init(width: 80.0, height: 80.0)
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 10.0
+        return layout
+    }()
+
+    var state: GameStates = .blueprint
+
+    init() {
+        super.init(frame: .zero, collectionViewLayout: WeaponStashCarousel.layout)
         setup()
     }
 
@@ -32,9 +42,7 @@ extension WeaponStashCarousel: CodeView {
         dataSource = self
         clipsToBounds = false
         layer.masksToBounds = false
-
         backgroundColor = .white
-
         contentInset = .init(top: 0.0, left: 30.0, bottom: 0.0, right: 30.0)
     }
 }
@@ -52,7 +60,7 @@ extension WeaponStashCarousel: UICollectionViewDataSource, UICollectionViewDeleg
             withReuseIdentifier: WeaponStashCell.identifier,
             for: indexPath
         ) as? WeaponStashCell else { return UICollectionViewCell() }
-        cell.configure(with: WeaponType.purchasable[indexPath.item])
+        cell.configure(with: .init(type: WeaponType.purchasable[indexPath.item], state: state))
         cell.delegate = weaponDelegate
         return cell
     }

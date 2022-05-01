@@ -22,6 +22,10 @@ final class ChangeGameView: UIView {
 
     var isFastForward: Bool = false
 
+    enum Configuration {
+        static let carouselHeight: CGFloat = 100.0
+    }
+
     // MARK: - Subviews
 
     let scene: GameScene = GameScene(fileNamed: "Game.sks")!
@@ -63,16 +67,8 @@ final class ChangeGameView: UIView {
         return label
     }()
 
-    private let layout: UICollectionViewFlowLayout = {
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = .init(width: 80.0, height: 80.0)
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 10.0
-        return layout
-    }()
-
     private var isStashOpened: Bool = false
-    private lazy var weaponStash: WeaponStashCarousel = WeaponStashCarousel(frame: .zero, collectionViewLayout: layout)
+    private lazy var weaponStash: WeaponStashCarousel = WeaponStashCarousel()
 
     private lazy var buildButton: UIButton = {
         let button = UIButton()
@@ -131,7 +127,7 @@ extension ChangeGameView: CodeView {
                 weaponStash.leadingAnchor.constraint(equalTo: leadingAnchor),
                 weaponStash.trailingAnchor.constraint(equalTo: trailingAnchor),
                 weaponStash.bottomAnchor.constraint(equalTo: bottomAnchor),
-                weaponStash.heightAnchor.constraint(equalToConstant: 100.0),
+                weaponStash.heightAnchor.constraint(equalToConstant: Configuration.carouselHeight),
 
                 buildButton.bottomAnchor.constraint(equalTo: bottomAnchor),
                 buildButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30.0),
@@ -160,7 +156,7 @@ extension ChangeGameView: CodeView {
     }
 
     private func setupStashOpening() {
-        weaponStash.transform = .identity.translatedBy(x: 0.0, y: 100.0)
+        weaponStash.transform = .identity.translatedBy(x: 0.0, y: Configuration.carouselHeight)
     }
 }
 
@@ -195,6 +191,7 @@ extension ChangeGameView {
     }
 
     @objc private func toggleStash() {
+        weaponStash.state = scene.state?.currentState ?? .blueprint
         weaponStash.reloadData()
         isStashOpened = !isStashOpened
         let button = buildButton
@@ -205,7 +202,7 @@ extension ChangeGameView {
 
         UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseInOut]) {
             button.transform = isOpen ? .identity.translatedBy(x: 0.0, y: -60.0) : .identity
-            stash.transform = isOpen ? .identity : .identity.translatedBy(x: 0.0, y: 100.0)
+            stash.transform = isOpen ? .identity : .identity.translatedBy(x: 0.0, y: Configuration.carouselHeight)
             money.transform = isOpen ? .identity.translatedBy(x: 0.0, y: -60.0) : .identity
         } completion: { _ in }
     }

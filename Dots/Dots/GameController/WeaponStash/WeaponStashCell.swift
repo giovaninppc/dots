@@ -161,20 +161,25 @@ extension WeaponStashCell {
 }
 
 extension WeaponStashCell {
-    func configure(with display: WeaponType) {
+    struct ViewModel {
+        let type: WeaponType
+        let state: GameStates
+    }
+
+    func configure(with display: ViewModel) {
         configureContent(with: display)
         configureState(with: display)
     }
 
-    private func configureContent(with display: WeaponType) {
-        type = display
-        priceTag.text = "$ \(display.price)"
-        image.image = display.icon
-        drag.image = display.icon
+    private func configureContent(with display: ViewModel) {
+        type = display.type
+        priceTag.text = "$ \(display.type.price)"
+        image.image = display.type.icon(for: display.state)
+        drag.image = display.type.icon(for: display.state)
     }
 
-    private func configureState(with display: WeaponType) {
-        canBePurchased = MoneyController.canPurchase(price: display.price)
+    private func configureState(with display: ViewModel) {
+        canBePurchased = MoneyController.canPurchase(price: display.type.price)
         image.alpha = canBePurchased ? 1.0 : 0.9
         priceTag.textColor = canBePurchased ? .black : .gray
     }
