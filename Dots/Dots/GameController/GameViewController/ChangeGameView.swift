@@ -184,7 +184,7 @@ extension ChangeGameView {
     @objc private func didFastForward() {
         setStash(hidden: true)
         isFastForward = !isFastForward
-        scene.run(SKAction.speed(to: isFastForward ? 2.0 : 1.0, duration: 0.3))
+        scene.run(SKAction.speed(to: isFastForward ? 1.5 : 1.0, duration: 0.3))
         fastForwardButton.alpha = isFastForward ? 1.0 : 0.7
     }
 

@@ -10,6 +10,7 @@ import SpriteKit
 
 protocol LevelDelegate: AnyObject {
     func addEnemy(type: EnemyType)
+    func enableEndGame()
 }
 
 final class EnemyController: LevelDelegate {
@@ -26,6 +27,10 @@ final class EnemyController: LevelDelegate {
 
     func createEnemy(type enemyType: EnemyType) -> Enemy {
         EnemyFactory.createEnemy(with: enemyType, for: (scene?.state?.currentState)!, with: self)
+    }
+
+    func enableEndGame() {
+        
     }
 }
 
