@@ -104,11 +104,7 @@ extension WeaponStashCell {
         switch gesture.state {
         case .began:
             notified = false
-            let view = (delegate as? UIViewController)?.view
-            view?.addSubview(drag)
-            let point = gesture.location(in: view)
-            drag.frame = image.frame
-            drag.center = point
+            addDragToView(from: gesture)
         case .changed:
             notifyDragIfNeeded()
             let translation = gesture.translation(in: superview ?? self)
@@ -126,6 +122,16 @@ extension WeaponStashCell {
         guard !notified else { return }
         notified = true
         delegate?.beginDrag()
+    }
+
+    private func addDragToView(from gesture: UIPanGestureRecognizer) {
+        let view = (delegate as? UIViewController)?.view
+        let point = gesture.location(in: view)
+        drag.frame = image.frame
+        drag.center = point
+        drag.alpha = 0.0
+        view?.addSubview(drag)
+        UIView.animate(withDuration: 0.3) { self.drag.alpha = 1.0 }
     }
 }
 
