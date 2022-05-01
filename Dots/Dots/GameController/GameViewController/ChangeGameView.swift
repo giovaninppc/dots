@@ -136,6 +136,9 @@ extension ChangeGameView: CodeView {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(didSwipeLeft))
         swipeLeft.direction = .left
         addGestureRecognizer(swipeLeft)
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTap(_:)))
+        addGestureRecognizer(tap)
     }
 
     private func setupStashOpening() {
@@ -145,16 +148,25 @@ extension ChangeGameView: CodeView {
 
 extension ChangeGameView {
     @objc private func didSwipeRight() {
+        setStash(hidden: true)
         onSwipe?(.right)
     }
 
     @objc private func didSwipeLeft() {
+        setStash(hidden: true)
         onSwipe?(.left)
     }
 
     @objc private func didPause() {
+        setStash(hidden: true)
         scene.run(SKAction.speed(to: 0.0, duration: 0.3))
         onPause?()
+    }
+
+    @objc private func didTap(_ gesture: UITapGestureRecognizer) {
+        let point = gesture.location(in: self)
+        guard !weaponStash.frame.contains(point) else { return }
+        setStash(hidden: true)
     }
 
     @objc private func toggleStash() {
@@ -162,12 +174,14 @@ extension ChangeGameView {
         isStashOpened = !isStashOpened
         let button = buildButton
         let stash = weaponStash
+        let money = moneyLabel
 
         let isOpen = isStashOpened
 
         UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseInOut]) {
-            button.transform = isOpen ? .identity.translatedBy(x: 0.0, y: -40.0) : .identity
+            button.transform = isOpen ? .identity.translatedBy(x: 0.0, y: -60.0) : .identity
             stash.transform = isOpen ? .identity : .identity.translatedBy(x: 0.0, y: 100.0)
+            money.transform = isOpen ? .identity.translatedBy(x: 0.0, y: -60.0) : .identity
         } completion: { _ in }
     }
 }

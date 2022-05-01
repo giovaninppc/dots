@@ -44,21 +44,27 @@ enum MoneyController {
 extension MoneyController {
     private static func animateMinus() {
         guard let label = moneyLabel else { return }
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseInOut, .autoreverse]) {
-            label.transform = .identity.scaledBy(x: 1.3, y: 1.2)
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveEaseInOut, .autoreverse]) {
+            label.transform = .identity.scaledBy(x: 1.1, y: 1.1)
             label.textColor = .red
         } completion: { _ in
-            label.transform = .identity
-            label.textColor = .white
+            self.restart()
         }
     }
 
     private static func animatePlus() {
         guard let label = moneyLabel else { return }
         UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseInOut, .autoreverse]) {
-            label.transform = .identity.scaledBy(x: 1.3, y: 1.2)
+            label.transform = .identity.scaledBy(x: 1.1, y: 1.1)
             label.textColor = .green
         } completion: { _ in
+            self.restart()
+        }
+    }
+
+    private static func restart() {
+        guard let label = moneyLabel else { return }
+        UIView.animate(withDuration: 0.2) {
             label.transform = .identity
             label.textColor = .white
         }
