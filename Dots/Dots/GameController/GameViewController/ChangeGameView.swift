@@ -158,6 +158,7 @@ extension ChangeGameView {
     }
 
     @objc private func toggleStash() {
+        weaponStash.reloadData()
         isStashOpened = !isStashOpened
         let button = buildButton
         let stash = weaponStash

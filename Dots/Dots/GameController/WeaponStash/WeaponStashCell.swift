@@ -26,6 +26,7 @@ extension ChangeGameViewController: WeaponBuilderDelegate {
             at: offsetedPoint
         )
         customView.setStash(hidden: true)
+        MoneyController.purchase(value: weapon.price)
     }
 
     func beginDrag() {
@@ -42,6 +43,7 @@ final class WeaponStashCell: UICollectionViewCell {
 
     private var type: WeaponType = .canon
     private var notified: Bool = false
+    private var canBePurchased: Bool = false
 
     private let drag: UIImageView = {
         let imageView = UIImageView()
@@ -105,16 +107,23 @@ extension WeaponStashCell {
     @objc private func didPan(_ gesture: UIPanGestureRecognizer) {
         switch gesture.state {
         case .began:
-            notified = false
-            addDragToView(from: gesture)
+            if canBePurchased {
+                notified = false
+                addDragToView(from: gesture)
+            } else {
+                shake()
+            }
         case .changed:
+            guard canBePurchased else { return }
             notifyDragIfNeeded()
             let translation = gesture.translation(in: superview ?? self)
             drag.transform = CGAffineTransform(translationX: translation.x, y: translation.y)
         case .ended:
+            guard canBePurchased else { return }
             delegate?.didDrop(weapon: type, from: gesture)
             drag.removeFromSuperview()
         default:
+            guard canBePurchased else { return }
             drag.removeFromSuperview()
             delegate?.dragCanceled()
         }
@@ -135,13 +144,38 @@ extension WeaponStashCell {
         view?.addSubview(drag)
         UIView.animate(withDuration: 0.3) { self.drag.alpha = 1.0 }
     }
+
+    private func shake() {
+        transform = CGAffineTransform(translationX: 10, y: 0)
+        HapticWorker(type: .error).fire()
+        UIView.animate(
+            withDuration: 0.2,
+            delay: 0,
+            usingSpringWithDamping: 0.2,
+            initialSpringVelocity: 1.0,
+            options: .curveEaseInOut,
+            animations: { self.transform = CGAffineTransform.identity },
+            completion: nil
+        )
+    }
 }
 
 extension WeaponStashCell {
     func configure(with display: WeaponType) {
+        configureContent(with: display)
+        configureState(with: display)
+    }
+
+    private func configureContent(with display: WeaponType) {
         type = display
         priceTag.text = "$ \(display.price)"
         image.image = display.icon
         drag.image = display.icon
+    }
+
+    private func configureState(with display: WeaponType) {
+        canBePurchased = MoneyController.canPurchase(price: display.price)
+        image.alpha = canBePurchased ? 1.0 : 0.9
+        priceTag.textColor = canBePurchased ? .black : .gray
     }
 }

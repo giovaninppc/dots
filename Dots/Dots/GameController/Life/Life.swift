@@ -43,7 +43,13 @@ extension Life {
     private static func shake() {
         guard let gameView = gameView else { return }
         gameView.transform = CGAffineTransform(translationX: 10, y: 0)
-        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
+        UIView.animate(
+            withDuration: 0.2,
+            delay: 0,
+            usingSpringWithDamping: 0.2,
+            initialSpringVelocity: 1.0,
+            options: .curveEaseInOut,
+            animations: {
             gameView.transform = CGAffineTransform.identity
         }, completion: nil)
     }
