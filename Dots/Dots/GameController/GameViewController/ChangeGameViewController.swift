@@ -9,12 +9,15 @@
 import SpriteKit
 
 final class ChangeGameViewController: UIViewController {
-    private let customView: ChangeGameView
-    private let enemyController: EnemyController
+    let customView: ChangeGameView
+    let enemyController: EnemyController
 
     private var gameView: SKView { customView.gameView }
     var currentState: GameStates { gameStates[currentStatus] }
     var scene: GameScene { customView.scene }
+
+    var draggingView: UIView?
+    var isDragginng: Bool = false
 
     // Variables
 
@@ -71,6 +74,8 @@ extension ChangeGameViewController {
             self?.showPause()
         }
         customView.onPlay = { }
+
+        customView.set(weaponDelegate: self)
     }
 }
 

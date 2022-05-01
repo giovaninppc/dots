@@ -52,6 +52,24 @@ final class ChangeGameView: UIView {
         return label
     }()
 
+    private let layout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = .init(width: 50.0, height: 60.0)
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 10.0
+        return layout
+    }()
+
+    private var isStashOpened: Bool = false
+    private lazy var weaponStash: WeaponStashCarousel = WeaponStashCarousel(frame: .zero, collectionViewLayout: layout)
+
+    private lazy var buildButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .red
+        button.addTarget(self, action: #selector(toggleStash), for: .touchUpInside)
+        return button
+    }()
+
     // MARK: - Init
 
     override init(frame: CGRect) {
@@ -62,25 +80,17 @@ final class ChangeGameView: UIView {
     required init?(coder: NSCoder) { nil }
 }
 
-extension ChangeGameView {
-    private func setup() {
-        setupComponents()
-        setupConstraints()
-        setupGestures()
-    }
-
-    private func setupComponents() {
-        gameView.setupForManualConstraining()
+extension ChangeGameView: CodeView {
+    func setupComponents() {
         addSubview(gameView)
-        lifeOverlay.setupForManualConstraining()
         addSubview(lifeOverlay)
-        pauseButton.setupForManualConstraining()
         addSubview(pauseButton)
-        moneyLabel.setupForManualConstraining()
         addSubview(moneyLabel)
+        addSubview(buildButton)
+        addSubview(weaponStash)
     }
 
-    private func setupConstraints() {
+    func setupConstraints() {
         constrain {
             [
                 gameView.topAnchor.constraint(equalTo: topAnchor),
@@ -94,14 +104,29 @@ extension ChangeGameView {
                 pauseButton.heightAnchor.constraint(equalToConstant: 25.0),
 
                 moneyLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10.0),
-                moneyLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10.0),
+                moneyLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10.0),
 
                 lifeOverlay.topAnchor.constraint(equalTo: topAnchor),
                 lifeOverlay.leadingAnchor.constraint(equalTo: leadingAnchor),
                 lifeOverlay.trailingAnchor.constraint(equalTo: trailingAnchor),
-                lifeOverlay.bottomAnchor.constraint(equalTo: bottomAnchor)
+                lifeOverlay.bottomAnchor.constraint(equalTo: bottomAnchor),
+
+                weaponStash.leadingAnchor.constraint(equalTo: leadingAnchor),
+                weaponStash.trailingAnchor.constraint(equalTo: trailingAnchor),
+                weaponStash.bottomAnchor.constraint(equalTo: bottomAnchor),
+                weaponStash.heightAnchor.constraint(equalToConstant: 100.0),
+
+                buildButton.bottomAnchor.constraint(equalTo: bottomAnchor),
+                buildButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30.0),
+                buildButton.widthAnchor.constraint(equalToConstant: 40.0),
+                buildButton.heightAnchor.constraint(equalToConstant: 80.0)
             ]
         }
+    }
+
+    func setupExtra() {
+        setupGestures()
+        setupStashOpening()
     }
 
     private func setupGestures() {
@@ -113,8 +138,12 @@ extension ChangeGameView {
         swipeLeft.direction = .left
         addGestureRecognizer(swipeLeft)
 
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(didLongPress))
-        addGestureRecognizer(longPress)
+//        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(didLongPress))
+//        addGestureRecognizer(longPress)
+    }
+
+    private func setupStashOpening() {
+        weaponStash.transform = .identity.translatedBy(x: 0.0, y: 100.0)
     }
 }
 
@@ -136,11 +165,33 @@ extension ChangeGameView {
         scene.run(SKAction.speed(to: 0.0, duration: 0.3))
         onPause?()
     }
+
+    @objc private func toggleStash() {
+        isStashOpened = !isStashOpened
+        let button = buildButton
+        let stash = weaponStash
+
+        let isOpen = isStashOpened
+
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseInOut]) {
+            button.transform = isOpen ? .identity.translatedBy(x: 0.0, y: -40.0) : .identity
+            stash.transform = isOpen ? .identity : .identity.translatedBy(x: 0.0, y: 100.0)
+        } completion: { _ in }
+    }
 }
 
 extension ChangeGameView {
     func dismissPause() {
         scene.run(SKAction.speed(to: 1.0, duration: 0.3))
         onPlay?()
+    }
+
+    func set(weaponDelegate: WeaponBuilderDelegate?) {
+        weaponStash.weaponDelegate = weaponDelegate
+    }
+
+    func setStash(hidden: Bool) {
+        isStashOpened = hidden
+        toggleStash()
     }
 }
