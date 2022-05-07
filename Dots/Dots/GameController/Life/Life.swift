@@ -24,7 +24,6 @@ enum Life {
         setHealthViewState()
         shake()
 
-        print(health)
         guard health <= 0 else { return }
         delegate?.playerDied()
     }
@@ -42,8 +41,8 @@ enum Life {
 
 extension Life {
     private static func setHealthViewState() {
-        guard let view = healthIndicator, health > -500 else { return }
-        let alpha: CGFloat = 0.125 - CGFloat(health)/800.0
+        guard let view = healthIndicator, health > -100 else { return }
+        let alpha: CGFloat = 0.250 - CGFloat(health)/400.0
         UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveEaseIn]) {
             view.backgroundColor = .red.withAlphaComponent(alpha)
         } completion: { _ in }
