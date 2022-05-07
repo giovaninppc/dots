@@ -60,7 +60,11 @@ public enum Asset {
   public static let sword = ImageAsset(name: "sword")
   public static let corner = ImageAsset(name: "corner")
   public static let onboardingArrow = ImageAsset(name: "onboarding-arrow")
-  public static let spikeBall1 = ImageAsset(name: "spikeBall1")
+  public static let spikeBallBlueprint = ImageAsset(name: "spikeBallBlueprint")
+  public static let spikeBallDoodle = ImageAsset(name: "spikeBallDoodle")
+  public static let spikeBallWatercolor1 = ImageAsset(name: "spikeBallWatercolor_1")
+  public static let spikeBallWatercolor2 = ImageAsset(name: "spikeBallWatercolor_2")
+  public static let spikeBallWatercolor3 = ImageAsset(name: "spikeBallWatercolor_3")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

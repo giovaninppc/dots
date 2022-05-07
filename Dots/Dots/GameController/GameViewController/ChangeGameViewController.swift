@@ -13,16 +13,11 @@ final class ChangeGameViewController: UIViewController {
     let enemyController: EnemyController
 
     private var gameView: SKView { customView.gameView }
-    var currentState: GameStates { gameStates[currentStatus] }
+    var currentState: GameStates { .current }
     var scene: GameScene { customView.scene }
 
     var draggingView: UIView?
     var isDragginng: Bool = false
-
-    // Variables
-
-    var gameStates: [GameStates] = [.blueprint, .doodle, .watercolor]
-    var currentStatus: Int = 0
 
     init(
         gameView: ChangeGameView,
@@ -76,35 +71,28 @@ extension ChangeGameViewController {
 
 extension ChangeGameViewController {
     private func makeTransition(_ swipe: Swipe) {
+        GameStates.update(swipe)
         switch swipe {
         case .left:
-            currentStatus += 1
-            if currentStatus == gameStates.count {
-                currentStatus = 0
-            }
             transitionLeft()
         case .right:
-            currentStatus -= 1
-            if currentStatus < 0 {
-                currentStatus = gameStates.count - 1
-            }
             transitionRight()
         }
     }
 
     private func transitionLeft() {
         updateSceneState()
-        self.scene.updateGame(for: gameStates[currentStatus])
+        self.scene.updateGame(for: currentState)
     }
 
     private func transitionRight() {
         updateSceneState()
-        self.scene.updateGame(for: gameStates[currentStatus])
+        self.scene.updateGame(for: currentState)
     }
 
     private func updateSceneState() {
-        self.scene.state = gameStates[currentStatus].buildState()
-        customView.set(state: gameStates[currentStatus])
+        self.scene.state = currentState.buildState()
+        customView.set(state: currentState)
     }
 }
 

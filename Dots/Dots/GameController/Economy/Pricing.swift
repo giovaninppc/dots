@@ -33,9 +33,9 @@ extension WeaponType {
             )
         case .spikeBall:
             return icon(
-                blueprint: Asset.spikeBall1.image,
-                doodle: Asset.spikeBall1.image,
-                watercolor: Asset.spikeBall1.image,
+                blueprint: Asset.spikeBallBlueprint.image,
+                doodle: Asset.spikeBallDoodle.image,
+                watercolor: Asset.spikeBallWatercolor1.image,
                 state: state
             )
         case .canonBall:

@@ -12,12 +12,14 @@ final class SpikeBall: Weapon, WeaponProtocol {
     var life: Int = 30
     weak var shotDelegate: ShotDelegate?
 
-    let weaponSize: CGSize = CGSize(width: 50, height: 50)
+    let weaponSize: CGSize = CGSize(width: 35, height: 35)
 
     let stateDict: [GameStates: SKTexture] = [
-        .doodle: SKTexture(imageNamed: Asset.spikeBall1.name),
-        .blueprint: SKTexture(imageNamed: Asset.spikeBall1.name),
-        .watercolor: SKTexture(imageNamed: Asset.spikeBall1.name)
+        .doodle: SKTexture(imageNamed: Asset.spikeBallDoodle.name),
+        .blueprint: SKTexture(imageNamed: Asset.spikeBallBlueprint.name),
+        .watercolor: SKTexture(
+            imageNamed: "spikeBallWatercolor_\(Int.random(in: 1...3))"
+        )
     ]
 
     var animation: SKAction = SKAction.run {}
@@ -28,6 +30,7 @@ final class SpikeBall: Weapon, WeaponProtocol {
 
         shotDelegate = delegate
         configureBody()
+        startAction()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -38,7 +41,9 @@ final class SpikeBall: Weapon, WeaponProtocol {
         self.texture = stateDict[state]
     }
 
-    func startAction() {}
+    func startAction() {
+        run(SKAction.rotate(byAngle: .random(in: 0.0...3.0), duration: 0.0))
+    }
 
     func gotHit(by enemy: EnemyProtocol?) {
         let damage = enemy?.baseDamage ?? 5
@@ -47,7 +52,7 @@ final class SpikeBall: Weapon, WeaponProtocol {
     }
 
     func configureBody() {
-        let body = SKPhysicsBody(rectangleOf: weaponSize)
+        let body = SKPhysicsBody(circleOfRadius: weaponSize.height / 1.5)
         body.affectedByGravity = false
         body.allowsRotation = false
         body.categoryBitMask = PhysicsCategory.playerBullet

@@ -23,6 +23,7 @@
 		3E987700282696EE001795BF /* GameSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9876FF282696EE001795BF /* GameSpeed.swift */; };
 		3E9877072826B0F7001795BF /* Strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E9877022826B0F7001795BF /* Strings.strings */; };
 		3E9877082826B0F7001795BF /* Strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E9877052826B0F7001795BF /* Strings.strings */; };
+		3E98770A2826F09D001795BF /* ForState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9877092826F09D001795BF /* ForState.swift */; };
 		3EB3F48926305C35003AA20F /* GameSceneUserInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F48826305C35003AA20F /* GameSceneUserInteraction.swift */; };
 		3EB3F48C26305CC3003AA20F /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F48B26305CC3003AA20F /* Weapon.swift */; };
 		3EB3F49026305D2A003AA20F /* Cannon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F48F26305D2A003AA20F /* Cannon.swift */; };
@@ -106,6 +107,7 @@
 		3E9876FF282696EE001795BF /* GameSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSpeed.swift; sourceTree = "<group>"; };
 		3E9877032826B0F7001795BF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Strings.strings; sourceTree = "<group>"; };
 		3E9877062826B0F7001795BF /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = Strings.strings; sourceTree = "<group>"; };
+		3E9877092826F09D001795BF /* ForState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForState.swift; sourceTree = "<group>"; };
 		3EB3F48826305C35003AA20F /* GameSceneUserInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneUserInteraction.swift; sourceTree = "<group>"; };
 		3EB3F48B26305CC3003AA20F /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		3EB3F48F26305D2A003AA20F /* Cannon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cannon.swift; sourceTree = "<group>"; };
@@ -240,6 +242,14 @@
 			path = "pt-BR.lproj";
 			sourceTree = "<group>";
 		};
+		3E98770B2826F0F4001795BF /* State */ = {
+			isa = PBXGroup;
+			children = (
+				3EF956D826345C1B00CF3239 /* GameStates.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
 		3EB3F48326305674003AA20F /* Weapons */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				3EC1FA3E28144DB900AC4556 /* GameConfigurator.swift */,
+				3E98770B2826F0F4001795BF /* State */,
 				3E9876FE282696E2001795BF /* GameSpeed */,
 				3ECA72F328200EAD00ED49C7 /* EndGame */,
 				3EFF2895281D852800CA4FC5 /* WeaponStash */,
@@ -394,7 +405,6 @@
 				9B627B95208390FD00B0FBEE /* BlueprintState.swift */,
 				9B627B972083912500B0FBEE /* DoodleState.swift */,
 				9B6B160A20867660008E2D9F /* WatercolorState.swift */,
-				3EF956D826345C1B00CF3239 /* GameStates.swift */,
 			);
 			path = "Scene States";
 			sourceTree = "<group>";
@@ -518,6 +528,7 @@
 				3EC1FA2F281364D600AC4556 /* Idle.swift */,
 				3EC1FA40281451FF00AC4556 /* HapticWorker.swift */,
 				3E9876FC282696C2001795BF /* CGFloat+Utils.swift */,
+				3E9877092826F09D001795BF /* ForState.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -737,6 +748,7 @@
 				3EC1FA3328141F2A00AC4556 /* Money.swift in Sources */,
 				3E58CCA2282604AB005B1715 /* WinView.swift in Sources */,
 				9B627B982083912500B0FBEE /* DoodleState.swift in Sources */,
+				3E98770A2826F09D001795BF /* ForState.swift in Sources */,
 				3EC1FA41281451FF00AC4556 /* HapticWorker.swift in Sources */,
 				3E9876FD282696C2001795BF /* CGFloat+Utils.swift in Sources */,
 				9BAD242A2088BDA60087B105 /* ShotDelegate.swift in Sources */,
