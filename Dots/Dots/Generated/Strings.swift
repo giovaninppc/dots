@@ -76,6 +76,13 @@ internal enum Localization {
     internal static let vibrations = Localization.tr("Strings", "Settings.vibrations")
   }
 
+  internal enum SpikeBall {
+    /// Defender. It's a ball... full of spikes.
+    internal static let description = Localization.tr("Strings", "SpikeBall.description")
+    /// Spike Ball
+    internal static let name = Localization.tr("Strings", "SpikeBall.name")
+  }
+
   internal enum Win {
     /// Continue
     internal static let `continue` = Localization.tr("Strings", "Win.continue")

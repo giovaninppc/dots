@@ -34,6 +34,9 @@
 "CanonBall.name" = "Canonball";
 "CanonBall.description" = "Just a canon... ball.";
 
+"SpikeBall.name" = "Spike Ball";
+"SpikeBall.description" = "Defender. It's a ball... full of spikes.";
+
 // Descriptions
 
 "Description.DamageType" = "Damage type";

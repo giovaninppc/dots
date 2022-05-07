@@ -33,7 +33,7 @@ final class Limit: SKSpriteNode {
 
 extension Limit {
     func gotHit(by enemy: Enemy?) {
-        let damage = 100
+        let damage = (enemy as? EnemyProtocol)?.baseDamage ?? 5
         Life.damage(damage)
 
         switch damage {
@@ -44,6 +44,5 @@ extension Limit {
         default:
             HapticWorker(type: .heavyImpact).fire()
         }
-
     }
 }

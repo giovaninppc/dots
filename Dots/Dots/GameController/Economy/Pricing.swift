@@ -15,6 +15,8 @@ extension WeaponType {
         switch self {
         case .canon:
             return 100
+        case .spikeBall:
+            return 50
         default:
             return -1
         }
@@ -29,7 +31,14 @@ extension WeaponType {
                 watercolor: Asset.resourceC.image,
                 state: state
             )
-        default:
+        case .spikeBall:
+            return icon(
+                blueprint: Asset.spikeBall1.image,
+                doodle: Asset.spikeBall1.image,
+                watercolor: Asset.spikeBall1.image,
+                state: state
+            )
+        case .canonBall:
             return nil
         }
     }

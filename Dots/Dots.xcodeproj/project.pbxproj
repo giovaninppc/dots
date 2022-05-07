@@ -18,6 +18,7 @@
 		3E58CCA72826086A005B1715 /* LoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E58CCA6282607BA005B1715 /* LoseViewController.swift */; };
 		3E58CCA82826086C005B1715 /* LoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E58CCA5282607BA005B1715 /* LoseView.swift */; };
 		3E741BDB263442660003FBA5 /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E741BDA263442660003FBA5 /* CollectionExtensions.swift */; };
+		3E9876FB2826887B001795BF /* SpikeBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9876FA2826887B001795BF /* SpikeBall.swift */; };
 		3EB3F48926305C35003AA20F /* GameSceneUserInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F48826305C35003AA20F /* GameSceneUserInteraction.swift */; };
 		3EB3F48C26305CC3003AA20F /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F48B26305CC3003AA20F /* Weapon.swift */; };
 		3EB3F49026305D2A003AA20F /* Cannon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F48F26305D2A003AA20F /* Cannon.swift */; };
@@ -97,6 +98,7 @@
 		3E58CCA5282607BA005B1715 /* LoseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseView.swift; sourceTree = "<group>"; };
 		3E58CCA6282607BA005B1715 /* LoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseViewController.swift; sourceTree = "<group>"; };
 		3E741BDA263442660003FBA5 /* CollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
+		3E9876FA2826887B001795BF /* SpikeBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpikeBall.swift; sourceTree = "<group>"; };
 		3EB3F48826305C35003AA20F /* GameSceneUserInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneUserInteraction.swift; sourceTree = "<group>"; };
 		3EB3F48B26305CC3003AA20F /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		3EB3F48F26305D2A003AA20F /* Cannon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cannon.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			children = (
 				3EB3F48F26305D2A003AA20F /* Cannon.swift */,
 				3EB9027A280D791B003A8ED3 /* CannonBall.swift */,
+				3E9876FA2826887B001795BF /* SpikeBall.swift */,
 			);
 			path = CustomWeapons;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				9B627B96208390FD00B0FBEE /* BlueprintState.swift in Sources */,
 				3EC1FA4928145D4E00AC4556 /* SwitchView.swift in Sources */,
 				3EC1FA462814534F00AC4556 /* Stored.swift in Sources */,
+				3E9876FB2826887B001795BF /* SpikeBall.swift in Sources */,
 				9B416A98208627A400E65777 /* EnemyDefinition.swift in Sources */,
 				9BAD24282088BC000087B105 /* Level.swift in Sources */,
 				3EB9027B280D791C003A8ED3 /* CannonBall.swift in Sources */,

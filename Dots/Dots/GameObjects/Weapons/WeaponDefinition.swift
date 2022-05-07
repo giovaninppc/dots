@@ -11,6 +11,7 @@ import SpriteKit
 enum WeaponType: CaseIterable {
     case canon
     case canonBall
+    case spikeBall
 }
 
 protocol WeaponProtocol {

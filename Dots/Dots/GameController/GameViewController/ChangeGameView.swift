@@ -54,7 +54,7 @@ final class ChangeGameView: UIView {
         let button = UIButton()
         button.setImage(Asset.fastForward.image, for: .normal)
         button.tintColor = .white
-        button.alpha = 0.7
+        button.alpha = 0.5
         button.addTarget(self, action: #selector(didFastForward), for: .touchUpInside)
         return button
     }()
@@ -181,7 +181,7 @@ extension ChangeGameView {
         setStash(hidden: true)
         isFastForward = !isFastForward
         scene.run(SKAction.speed(to: isFastForward ? 1.5 : 1.0, duration: 0.3))
-        fastForwardButton.alpha = isFastForward ? 1.0 : 0.7
+        fastForwardButton.alpha = isFastForward ? 1.0 : 0.5
     }
 
     @objc private func didTap(_ gesture: UITapGestureRecognizer) {

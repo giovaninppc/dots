@@ -19,6 +19,8 @@ enum WeaponFactory {
             return CannonWeapon(state: state, delegate: delegate)
         case .canonBall:
             return CannonBall(state: state, delegate: delegate)
+        case .spikeBall:
+            return SpikeBall(state: state, delegate: delegate)
         }
     }
 
@@ -28,6 +30,8 @@ enum WeaponFactory {
             return .canon
         case is CannonBall:
             return .canonBall
+        case is SpikeBall:
+            return .spikeBall
         default:
             return nil
         }
