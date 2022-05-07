@@ -39,6 +39,7 @@ class Enemy: SKSpriteNode, SceneUpdatable {
 
     func reachEnd() {
         self.selfDestruct()
+        EndGameController.shared.enemyDied()
     }
 
     func selfDestruct() {

@@ -123,6 +123,7 @@ final class BaloonEnemy: Enemy, EnemyProtocol {
 
     override func selfDestruct() {
         self.removeFromParent()
+        EndGameController.shared.enemyDied()
     }
 
     func gotHit(by weapon: WeaponProtocol?) {
@@ -137,7 +138,6 @@ final class BaloonEnemy: Enemy, EnemyProtocol {
         guard life <= 0 else { return }
         MoneyController.earn(value: value)
         selfDestruct()
-        EndGameController.shared.enemyDied()
     }
 }
 

@@ -61,11 +61,11 @@ final class BaloonBomb: Enemy, EnemyProtocol {
 
     override func selfDestruct() {
         self.removeFromParent()
+        EndGameController.shared.enemyDied()
     }
 
     func gotHit(by weapon: WeaponProtocol?) {
         selfDestruct()
-        EndGameController.shared.enemyDied()
     }
 }
 

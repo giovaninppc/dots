@@ -79,6 +79,7 @@ final class PlaneEnemy: Enemy, EnemyProtocol {
 
     override func selfDestruct() {
         self.removeFromParent()
+        EndGameController.shared.enemyDied()
     }
 
     func gotHit(by weapon: WeaponProtocol?) {
