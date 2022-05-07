@@ -220,4 +220,19 @@ extension ChangeGameView {
         isStashOpened = hidden
         toggleStash()
     }
+
+    func set(state: GameStates) {
+        UIView.animate(withDuration: 0.3) {
+            switch state {
+            case .watercolor, .doodle:
+                self.pauseButton.tintColor = .black
+                self.fastForwardButton.tintColor = .black
+                self.moneyLabel.textColor = .black
+            case .blueprint:
+                self.pauseButton.tintColor = .white
+                self.fastForwardButton.tintColor = .white
+                self.moneyLabel.textColor = .white
+            }
+        }
+    }
 }

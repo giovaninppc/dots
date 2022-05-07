@@ -108,6 +108,7 @@ extension ChangeGameViewController {
 
     private func updateSceneState() {
         self.scene.state = gameStates[currentStatus].buildState()
+        customView.set(state: gameStates[currentStatus])
     }
 }
 
