@@ -10,15 +10,12 @@ import SpriteKit
 
 final class GameScene: SKScene {
     var background: SKSpriteNode!
-    var enemies: [Enemy] = []
-    var weapons: [Weapon] = []
-
-    var lastTouch: CGPoint = .zero
 
     weak var controllerDelegate: SceneToControllerDelegate?
 
     // State configuration
     var state: GameSceneState?
+    private var gameEnded: Bool = false
 
     func configureGame() {
         setupBackgroundNode()
@@ -38,12 +35,10 @@ final class GameScene: SKScene {
     func addEnemy(_ enemy: Enemy, at position: CGPoint) {
         enemy.position = position
         self.scene?.addChild(enemy)
-        enemies.append(enemy)
     }
 
     func addEnemy(_ enemy: Enemy) {
         self.scene?.addChild(enemy)
-        enemies.append(enemy)
     }
 
     func cleanGame() {
@@ -53,7 +48,7 @@ final class GameScene: SKScene {
 
     func updateGame(for newState: GameStates) {
         self.state?.change(background: background)
-        state?.update(for: (self.state?.currentState)!, updatables: enemies + weapons)
+        state?.update(for: (self.state?.currentState)!, updatables: children)
     }
 
     func createLimit() {
@@ -62,5 +57,19 @@ final class GameScene: SKScene {
 
     func addTopOutOfBounds() {
         self.scene?.addChild(TopOutOfBounds())
+    }
+}
+
+extension GameScene: EndGameDelegate, LifeDelegate {
+    func enemyDied() {
+        guard !gameEnded else { return }
+        guard !children.contains(where: { $0 is EnemyProtocol }) else { return }
+        controllerDelegate?.showEndGame()
+        gameEnded = true
+    }
+
+    func playerDied() {
+        guard !gameEnded else { return }
+        controllerDelegate?.showDieScreen()
     }
 }

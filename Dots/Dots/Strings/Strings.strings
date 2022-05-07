@@ -38,3 +38,11 @@
 
 "Description.DamageType" = "Damage type";
 "Description.WeakTo" = "Weak to";
+
+// Win
+
+"Win.title" = "Victory!";
+
+// Lose
+
+"Lose.title" = "Defeat!";

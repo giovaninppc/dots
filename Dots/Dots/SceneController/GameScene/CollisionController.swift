@@ -59,9 +59,6 @@ extension GameScene {
 
         enemyBody?.gotHit(by: weaponBody)
         weaponBody?.gotHit(by: enemyBody)
-
-        guard let amount = enemyBody?.value else { return }
-        MoneyController.earn(value: amount)
     }
 
     private func handleBulletOutOfBounds(_ contact: SKPhysicsContact) {

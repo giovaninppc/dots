@@ -11,7 +11,7 @@ import SpriteKit
 final class BaloonEnemy: Enemy, EnemyProtocol {
     let baloonHorizontalSpeed: Double = Double(Int.random(in: 4...6))
     private var life: Int = 20 {
-        didSet { if life < 0 { selfDestruct() } }
+        didSet { checkDie() }
     }
 
     var enemySize: CGSize = CGSize(width: 75, height: 75)
@@ -131,6 +131,13 @@ final class BaloonEnemy: Enemy, EnemyProtocol {
 
         let multiplier: Int = weapon.damageType == .fire ? 2 : 1
         life -= baseDamage * multiplier
+    }
+
+    private func checkDie() {
+        guard life <= 0 else { return }
+        MoneyController.earn(value: value)
+        selfDestruct()
+        EndGameController.shared.enemyDied()
     }
 }
 

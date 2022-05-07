@@ -27,6 +27,9 @@ enum GameConfigurator {
         Life.gameView = view.gameView
         Life.set()
 
+        EndGameController.shared.restart()
+        EndGameController.shared.delegate = view.scene
+
         return controller
     }
 }

@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol LifeDelegate: AnyObject {
+    func playerDied()
+}
+
 enum Life {
     static weak var healthIndicator: UIView?
     static weak var gameView: UIView?
+    static weak var delegate: LifeDelegate?
 
     static var health: Int = 100
 
@@ -18,6 +23,9 @@ enum Life {
         health -= value
         setHealthViewState()
         shake()
+
+        guard health <= 0 else { return }
+        delegate?.playerDied()
     }
 
     static func cure(_ value: Int) {

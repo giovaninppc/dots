@@ -10,12 +10,12 @@ import SpriteKit
 
 protocol GameSceneState {
     var currentState: GameStates { get }
-    func update(for state: GameStates, updatables: [SceneUpdatable])
+    func update(for state: GameStates, updatables: [Any])
     func change(background: SKSpriteNode)
 }
 
 extension GameSceneState {
-    func update(for state: GameStates, updatables: [SceneUpdatable]) {
-        updatables.forEach { $0.update(for: state) }
+    func update(for state: GameStates, updatables: [Any]) {
+        updatables.forEach { ($0 as? SceneUpdatable)?.update(for: state) }
     }
 }

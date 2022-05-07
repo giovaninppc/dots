@@ -54,7 +54,7 @@ extension MoneyController {
 
     private static func animatePlus() {
         guard let label = moneyLabel else { return }
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseInOut, .autoreverse]) {
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveEaseInOut, .autoreverse]) {
             label.transform = .identity.scaledBy(x: 1.1, y: 1.1)
             label.textColor = .green
         } completion: { _ in

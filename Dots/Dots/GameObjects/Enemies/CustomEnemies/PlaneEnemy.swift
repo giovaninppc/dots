@@ -20,6 +20,10 @@ final class PlaneEnemy: Enemy, EnemyProtocol {
         .watercolor: Asset.watercolorPlane.name
     ]
 
+    var life: Int = 10 {
+        didSet { checkDie() }
+    }
+
     // This enemy proper Animation
     var planeAnimation: SKAction = SKAction.run {}
 
@@ -78,7 +82,14 @@ final class PlaneEnemy: Enemy, EnemyProtocol {
     }
 
     func gotHit(by weapon: WeaponProtocol?) {
+        life = 0
+    }
+
+    private func checkDie() {
+        guard life <= 0 else { return }
+        MoneyController.earn(value: value)
         selfDestruct()
+        EndGameController.shared.enemyDied()
     }
 }
 

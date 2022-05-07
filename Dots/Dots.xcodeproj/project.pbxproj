@@ -13,6 +13,10 @@
 		3E0FB21028131CF4002B948D /* SceneToController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FB20F28131CF4002B948D /* SceneToController.swift */; };
 		3E2D305A263106FC00853550 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2D3059263106FC00853550 /* Fonts.swift */; };
 		3E2D305D263107BF00853550 /* Constraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2D305C263107BF00853550 /* Constraining.swift */; };
+		3E58CCA2282604AB005B1715 /* WinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E58CCA1282604AB005B1715 /* WinView.swift */; };
+		3E58CCA4282604CE005B1715 /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E58CCA3282604CE005B1715 /* WinViewController.swift */; };
+		3E58CCA72826086A005B1715 /* LoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E58CCA6282607BA005B1715 /* LoseViewController.swift */; };
+		3E58CCA82826086C005B1715 /* LoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E58CCA5282607BA005B1715 /* LoseView.swift */; };
 		3E741BDB263442660003FBA5 /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E741BDA263442660003FBA5 /* CollectionExtensions.swift */; };
 		3EB3F48926305C35003AA20F /* GameSceneUserInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F48826305C35003AA20F /* GameSceneUserInteraction.swift */; };
 		3EB3F48C26305CC3003AA20F /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F48B26305CC3003AA20F /* Weapon.swift */; };
@@ -41,6 +45,7 @@
 		3EC1FA462814534F00AC4556 /* Stored.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA452814534F00AC4556 /* Stored.swift */; };
 		3EC1FA4928145D4E00AC4556 /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA4828145D4E00AC4556 /* SwitchView.swift */; };
 		3EC1FA4C281460F600AC4556 /* DamageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA4B281460F600AC4556 /* DamageType.swift */; };
+		3ECA72F528200EB800ED49C7 /* EndGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECA72F428200EB800ED49C7 /* EndGameController.swift */; };
 		3EF956C626344FA500CF3239 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956C526344FA500CF3239 /* PauseView.swift */; };
 		3EF956D12634523B00CF3239 /* ChangeGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D02634523B00CF3239 /* ChangeGameView.swift */; };
 		3EF956D926345C1B00CF3239 /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D826345C1B00CF3239 /* GameStates.swift */; };
@@ -87,6 +92,10 @@
 		3E0FB20F28131CF4002B948D /* SceneToController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneToController.swift; sourceTree = "<group>"; };
 		3E2D3059263106FC00853550 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		3E2D305C263107BF00853550 /* Constraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraining.swift; sourceTree = "<group>"; };
+		3E58CCA1282604AB005B1715 /* WinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinView.swift; sourceTree = "<group>"; };
+		3E58CCA3282604CE005B1715 /* WinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
+		3E58CCA5282607BA005B1715 /* LoseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseView.swift; sourceTree = "<group>"; };
+		3E58CCA6282607BA005B1715 /* LoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseViewController.swift; sourceTree = "<group>"; };
 		3E741BDA263442660003FBA5 /* CollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
 		3EB3F48826305C35003AA20F /* GameSceneUserInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneUserInteraction.swift; sourceTree = "<group>"; };
 		3EB3F48B26305CC3003AA20F /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
@@ -115,6 +124,7 @@
 		3EC1FA452814534F00AC4556 /* Stored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stored.swift; sourceTree = "<group>"; };
 		3EC1FA4828145D4E00AC4556 /* SwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
 		3EC1FA4B281460F600AC4556 /* DamageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageType.swift; sourceTree = "<group>"; };
+		3ECA72F428200EB800ED49C7 /* EndGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameController.swift; sourceTree = "<group>"; };
 		3EF956C526344FA500CF3239 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
 		3EF956D02634523B00CF3239 /* ChangeGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGameView.swift; sourceTree = "<group>"; };
 		3EF956D826345C1B00CF3239 /* GameStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStates.swift; sourceTree = "<group>"; };
@@ -178,6 +188,24 @@
 				3E0FB20D2813199B002B948D /* DescriptionView.swift */,
 			);
 			path = Description;
+			sourceTree = "<group>";
+		};
+		3E58CC9F2826049C005B1715 /* Win */ = {
+			isa = PBXGroup;
+			children = (
+				3E58CCA1282604AB005B1715 /* WinView.swift */,
+				3E58CCA3282604CE005B1715 /* WinViewController.swift */,
+			);
+			path = Win;
+			sourceTree = "<group>";
+		};
+		3E58CCA0282604A1005B1715 /* Lose */ = {
+			isa = PBXGroup;
+			children = (
+				3E58CCA5282607BA005B1715 /* LoseView.swift */,
+				3E58CCA6282607BA005B1715 /* LoseViewController.swift */,
+			);
+			path = Lose;
 			sourceTree = "<group>";
 		};
 		3EB3F48326305674003AA20F /* Weapons */ = {
@@ -272,6 +300,14 @@
 			path = Damage;
 			sourceTree = "<group>";
 		};
+		3ECA72F328200EAD00ED49C7 /* EndGame */ = {
+			isa = PBXGroup;
+			children = (
+				3ECA72F428200EB800ED49C7 /* EndGameController.swift */,
+			);
+			path = EndGame;
+			sourceTree = "<group>";
+		};
 		3EF956C426344F9100CF3239 /* Pause */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +330,8 @@
 		3EF956D4263453F900CF3239 /* GameController */ = {
 			isa = PBXGroup;
 			children = (
+				3EC1FA3E28144DB900AC4556 /* GameConfigurator.swift */,
+				3ECA72F328200EAD00ED49C7 /* EndGame */,
 				3EFF2895281D852800CA4FC5 /* WeaponStash */,
 				3EC1FA4A281460E200AC4556 /* Damage */,
 				3EC1FA362814431E00AC4556 /* Life */,
@@ -353,6 +391,7 @@
 				9B8D5D87208678F90001DB35 /* EnemyController */,
 				3EF956C92634506800CF3239 /* GameObjects */,
 				9B627B942083904100B0FBEE /* SceneController */,
+				9B8D5D88208679030001DB35 /* Level */,
 				9B8D5D8920868AAD0001DB35 /* Utils */,
 				9B627B8F20838B3500B0FBEE /* Assets */,
 				3EB90265280C3C6C003A8ED3 /* Strings */,
@@ -384,6 +423,8 @@
 		9B627B942083904100B0FBEE /* SceneController */ = {
 			isa = PBXGroup;
 			children = (
+				3E58CCA0282604A1005B1715 /* Lose */,
+				3E58CC9F2826049C005B1715 /* Win */,
 				9B627B9E2083977A00B0FBEE /* GameScene */,
 			);
 			path = SceneController;
@@ -418,7 +459,6 @@
 				9B416A9A20863DCD00E65777 /* CollisionBitMask.swift */,
 				9BAD24292088BDA60087B105 /* ShotDelegate.swift */,
 				9B416A892085121A00E65777 /* EnemyController.swift */,
-				9B8D5D88208679030001DB35 /* Level */,
 			);
 			path = EnemyController;
 			sourceTree = "<group>";
@@ -488,7 +528,6 @@
 				3EF956D02634523B00CF3239 /* ChangeGameView.swift */,
 				9B416A8F2085291100E65777 /* ChangeGameViewController.swift */,
 				3E0FB20F28131CF4002B948D /* SceneToController.swift */,
-				3EC1FA3E28144DB900AC4556 /* GameConfigurator.swift */,
 			);
 			path = GameViewController;
 			sourceTree = "<group>";
@@ -656,7 +695,9 @@
 				9B416A902085291100E65777 /* ChangeGameViewController.swift in Sources */,
 				9B8D5D9C208790490001DB35 /* SurvivorGamePageViewController.swift in Sources */,
 				3EC1FA3D281447B200AC4556 /* TopOutOfBounds.swift in Sources */,
+				3ECA72F528200EB800ED49C7 /* EndGameController.swift in Sources */,
 				3EC1FA3328141F2A00AC4556 /* Money.swift in Sources */,
+				3E58CCA2282604AB005B1715 /* WinView.swift in Sources */,
 				9B627B982083912500B0FBEE /* DoodleState.swift in Sources */,
 				3EC1FA41281451FF00AC4556 /* HapticWorker.swift in Sources */,
 				9BAD242A2088BDA60087B105 /* ShotDelegate.swift in Sources */,
@@ -672,6 +713,7 @@
 				3EC1FA4C281460F600AC4556 /* DamageType.swift in Sources */,
 				3EB9026E280C3DB3003A8ED3 /* Images.swift in Sources */,
 				9B3F787B20C16EED0055FADA /* GameSceneProtocol.swift in Sources */,
+				3E58CCA4282604CE005B1715 /* WinViewController.swift in Sources */,
 				9B416A9B20863DCD00E65777 /* CollisionBitMask.swift in Sources */,
 				3EFF2897281D853800CA4FC5 /* WeaponStashCarousel.swift in Sources */,
 				3E2D305D263107BF00853550 /* Constraining.swift in Sources */,
@@ -703,7 +745,9 @@
 				9B6B160B20867660008E2D9F /* WatercolorState.swift in Sources */,
 				3EF956D12634523B00CF3239 /* ChangeGameView.swift in Sources */,
 				3EF956C626344FA500CF3239 /* PauseView.swift in Sources */,
+				3E58CCA72826086A005B1715 /* LoseViewController.swift in Sources */,
 				3EC1FA382814432800AC4556 /* Life.swift in Sources */,
+				3E58CCA82826086C005B1715 /* LoseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

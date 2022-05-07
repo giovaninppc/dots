@@ -46,6 +46,11 @@ internal enum Localization {
     internal static let weakTo = Localization.tr("Strings", "Description.WeakTo")
   }
 
+  internal enum Lose {
+    /// Defeat!
+    internal static let title = Localization.tr("Strings", "Lose.title")
+  }
+
   internal enum PaperPlane {
     /// Super fragile, super slow, almost harmless.\nDangerous when in large groups.
     internal static let description = Localization.tr("Strings", "PaperPlane.description")
@@ -67,6 +72,11 @@ internal enum Localization {
     internal static let title = Localization.tr("Strings", "Settings.title")
     /// Enable vibrations
     internal static let vibrations = Localization.tr("Strings", "Settings.vibrations")
+  }
+
+  internal enum Win {
+    /// Victory!
+    internal static let title = Localization.tr("Strings", "Win.title")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

@@ -8,8 +8,6 @@ extension GameScene {
         let location = touch.location(in: self)
         let touchedNodes = nodes(at: location)
 
-        lastTouch = location
-
         if let enemy = touchedNodes.first as? Enemy {
             controllerDelegate?.show(enemy: enemy)
         } else if let weapon = touchedNodes.first as? Weapon {
@@ -22,6 +20,5 @@ extension GameScene {
     func addWeapon(_ weapon: Weapon, at position: CGPoint) {
         weapon.position = position
         self.scene?.addChild(weapon)
-        weapons.append(weapon)
     }
 }

@@ -30,7 +30,7 @@ final class EnemyController: LevelDelegate {
     }
 
     func enableEndGame() {
-        
+        EndGameController.shared.startEndGame()
     }
 }
 

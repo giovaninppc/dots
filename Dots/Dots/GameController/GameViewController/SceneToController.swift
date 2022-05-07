@@ -12,6 +12,8 @@ import UIKit
 protocol SceneToControllerDelegate: AnyObject {
     func show(enemy: Enemy)
     func show(weapon: Weapon)
+    func showEndGame()
+    func showDieScreen()
 }
 
 extension ChangeGameViewController: SceneToControllerDelegate {
@@ -29,5 +31,15 @@ extension ChangeGameViewController: SceneToControllerDelegate {
         }
         present(desc, animated: true, completion: nil)
         scene.run(.speed(to: 0.1, duration: 0.3))
+    }
+
+    func showEndGame() {
+        let win = WinViewController()
+        present(win, animated: true, completion: nil)
+    }
+
+    func showDieScreen() {
+        let lose = LoseViewController()
+        present(lose, animated: true, completion: nil)
     }
 }

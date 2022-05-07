@@ -65,6 +65,7 @@ final class BaloonBomb: Enemy, EnemyProtocol {
 
     func gotHit(by weapon: WeaponProtocol?) {
         selfDestruct()
+        EndGameController.shared.enemyDied()
     }
 }
 

@@ -63,7 +63,7 @@ final class ChangeGameView: UIView {
         let label = UILabel()
         label.textColor = .white
         label.textAlignment = .center
-        label.font = .sketch(size: 30.0)
+        label.font = .sketch(size: 25.0)
         return label
     }()
 
@@ -116,8 +116,8 @@ extension ChangeGameView: CodeView {
                 fastForwardButton.widthAnchor.constraint(equalToConstant: 25.0),
                 fastForwardButton.heightAnchor.constraint(equalToConstant: 20.0),
 
-                moneyLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10.0),
-                moneyLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10.0),
+                moneyLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10.0),
+                moneyLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10.0),
 
                 lifeOverlay.topAnchor.constraint(equalTo: topAnchor),
                 lifeOverlay.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -196,14 +196,12 @@ extension ChangeGameView {
         isStashOpened = !isStashOpened
         let button = buildButton
         let stash = weaponStash
-        let money = moneyLabel
 
         let isOpen = isStashOpened
 
         UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseInOut]) {
             button.transform = isOpen ? .identity.translatedBy(x: 0.0, y: -60.0) : .identity
             stash.transform = isOpen ? .identity : .identity.translatedBy(x: 0.0, y: Configuration.carouselHeight)
-            money.transform = isOpen ? .identity.translatedBy(x: 0.0, y: -60.0) : .identity
         } completion: { _ in }
     }
 }
