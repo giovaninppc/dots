@@ -15,9 +15,9 @@ final class BaloonBomb: Enemy, EnemyProtocol {
     var enemySize: CGSize = CGSize(width: 15, height: 15)
 
     let stateDict: [GameStates: SKTexture] = [
-        .doodle: SKTexture(imageNamed: "doodleBaloonBomb"),
-        .blueprint: SKTexture(imageNamed: "blueprintBaloonBomb"),
-        .watercolor: SKTexture(imageNamed: "watercolorBaloonBomb")
+        .doodle: SKTexture(imageNamed: Asset.doodleBaloonBomb.name),
+        .blueprint: SKTexture(imageNamed: Asset.blueprintBaloonBomb.name),
+        .watercolor: SKTexture(imageNamed: Asset.watercolorBaloonBomb.name)
     ]
 
     var baloonBombAnimation: SKAction = SKAction.run {}
