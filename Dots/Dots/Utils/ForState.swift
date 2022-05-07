@@ -9,8 +9,7 @@
 import Foundation
 
 func forState<T>(doodle: T, watercolor: T, blueprint: T) -> T {
-    let state = GameStates.blueprint
-    switch state {
+    switch GameStates.current {
     case .blueprint:
         return blueprint
     case .doodle:

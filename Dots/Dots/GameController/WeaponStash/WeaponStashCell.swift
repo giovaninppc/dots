@@ -163,7 +163,6 @@ extension WeaponStashCell {
 extension WeaponStashCell {
     struct ViewModel {
         let type: WeaponType
-        let state: GameStates
     }
 
     func configure(with display: ViewModel) {
@@ -174,8 +173,8 @@ extension WeaponStashCell {
     private func configureContent(with display: ViewModel) {
         type = display.type
         priceTag.text = "$ \(display.type.price)"
-        image.image = display.type.icon(for: display.state)
-        drag.image = display.type.icon(for: display.state)
+        image.image = display.type.icon()
+        drag.image = display.type.icon()
     }
 
     private func configureState(with display: ViewModel) {

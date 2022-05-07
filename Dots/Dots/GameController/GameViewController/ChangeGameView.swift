@@ -194,7 +194,6 @@ extension ChangeGameView {
     }
 
     @objc private func toggleStash() {
-        weaponStash.state = scene.state?.currentState ?? .blueprint
         weaponStash.reloadData()
         isStashOpened = !isStashOpened
         let button = buildButton

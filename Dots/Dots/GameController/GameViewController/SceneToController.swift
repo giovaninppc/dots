@@ -18,7 +18,7 @@ protocol SceneToControllerDelegate: AnyObject {
 
 extension ChangeGameViewController: SceneToControllerDelegate {
     func show(enemy: Enemy) {
-        let desc = DescriptionController(weapon: nil, enemy: enemy, currentState: currentState) {
+        let desc = DescriptionController(weapon: nil, enemy: enemy) {
             self.scene.setDefaultVelocity()
         }
         present(desc, animated: true, completion: nil)
@@ -26,7 +26,7 @@ extension ChangeGameViewController: SceneToControllerDelegate {
     }
 
     func show(weapon: Weapon) {
-        let desc = DescriptionController(weapon: weapon, enemy: nil, currentState: currentState) {
+        let desc = DescriptionController(weapon: weapon, enemy: nil) {
             self.scene.setDefaultVelocity()
         }
         present(desc, animated: true, completion: nil)

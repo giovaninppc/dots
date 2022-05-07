@@ -19,8 +19,6 @@ final class WeaponStashCarousel: UICollectionView {
         return layout
     }()
 
-    var state: GameStates = .blueprint
-
     init() {
         super.init(frame: .zero, collectionViewLayout: WeaponStashCarousel.layout)
         setup()
@@ -60,7 +58,7 @@ extension WeaponStashCarousel: UICollectionViewDataSource, UICollectionViewDeleg
             withReuseIdentifier: WeaponStashCell.identifier,
             for: indexPath
         ) as? WeaponStashCell else { return UICollectionViewCell() }
-        cell.configure(with: .init(type: WeaponType.purchasable[indexPath.item], state: state))
+        cell.configure(with: .init(type: WeaponType.purchasable[indexPath.item]))
         cell.delegate = weaponDelegate
         return cell
     }

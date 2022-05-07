@@ -16,16 +16,16 @@ final class DescriptionController: UIViewController {
     private let weapon: Weapon?
     private let enemy: Enemy?
 
-    init(weapon: Weapon?, enemy: Enemy?, currentState: GameStates, onDismiss: @escaping () -> Void) {
+    init(weapon: Weapon?, enemy: Enemy?, onDismiss: @escaping () -> Void) {
         self.onDismiss = onDismiss
-        self.initialState = currentState
+        self.initialState = GameStates.current
 
         if let type = WeaponFactory.reverse(weapon: weapon) {
-            self.weapon = WeaponFactory.createWeapon(with: type, for: currentState, with: nil)
+            self.weapon = WeaponFactory.createWeapon(with: type, for: GameStates.current, with: nil)
         } else { self.weapon = nil }
 
         if let type = EnemyFactory.reverse(enemy: enemy) {
-            self.enemy = EnemyFactory.createEnemy(with: type, for: currentState)
+            self.enemy = EnemyFactory.createEnemy(with: type, for: GameStates.current)
         } else { self.enemy = nil }
 
         super.init(nibName: nil, bundle: nil)

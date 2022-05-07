@@ -22,35 +22,22 @@ extension WeaponType {
         }
     }
 
-    func icon(for state: GameStates) -> UIImage? {
+    func icon() -> UIImage? {
         switch self {
         case .canon:
-            return icon(
-                blueprint: Asset.resourceB.image,
+            return forState(
                 doodle: Asset.resourceA.image,
                 watercolor: Asset.resourceC.image,
-                state: state
+                blueprint: Asset.resourceB.image
             )
         case .spikeBall:
-            return icon(
-                blueprint: Asset.spikeBallBlueprint.image,
+            return forState(
                 doodle: Asset.spikeBallDoodle.image,
                 watercolor: Asset.spikeBallWatercolor1.image,
-                state: state
+                blueprint: Asset.spikeBallBlueprint.image
             )
         case .canonBall:
             return nil
-        }
-    }
-
-    private func icon(blueprint: UIImage?, doodle: UIImage?, watercolor: UIImage?, state: GameStates) -> UIImage? {
-        switch state {
-        case .blueprint:
-            return blueprint
-        case .watercolor:
-            return watercolor
-        case .doodle:
-            return doodle
         }
     }
 }
