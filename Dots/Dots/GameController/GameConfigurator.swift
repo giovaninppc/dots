@@ -31,6 +31,8 @@ enum GameConfigurator {
         EndGameController.shared.restart()
         EndGameController.shared.delegate = view.scene
 
+        GameSpeed.shared.current = 1.0
+
         return controller
     }
 }

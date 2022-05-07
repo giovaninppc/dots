@@ -19,18 +19,18 @@ protocol SceneToControllerDelegate: AnyObject {
 extension ChangeGameViewController: SceneToControllerDelegate {
     func show(enemy: Enemy) {
         let desc = DescriptionController(weapon: nil, enemy: enemy, currentState: currentState) {
-            self.scene.run(.speed(to: 1.0, duration: 0.3))
+            self.scene.setDefaultVelocity()
         }
         present(desc, animated: true, completion: nil)
-        scene.run(.speed(to: 0.1, duration: 0.3))
+        scene.setVelocity(0.2)
     }
 
     func show(weapon: Weapon) {
         let desc = DescriptionController(weapon: weapon, enemy: nil, currentState: currentState) {
-            self.scene.run(.speed(to: 1.0, duration: 0.3))
+            self.scene.setDefaultVelocity()
         }
         present(desc, animated: true, completion: nil)
-        scene.run(.speed(to: 0.1, duration: 0.3))
+        scene.setVelocity(0.2)
     }
 
     func showEndGame() {

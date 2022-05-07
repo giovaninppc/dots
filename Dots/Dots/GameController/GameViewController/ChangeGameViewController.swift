@@ -65,7 +65,7 @@ extension ChangeGameViewController {
             self?.makeTransition(swipe)
         }
         customView.onWeaponSelectorDismiss = { [weak self] in
-            self?.scene.run(SKAction.speed(to: 1.0, duration: 0.5))
+            self?.scene.setDefaultVelocity()
         }
         customView.onPause = { [weak self] in
             self?.showPause()

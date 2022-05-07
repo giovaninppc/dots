@@ -74,3 +74,13 @@ extension GameScene: EndGameDelegate, LifeDelegate {
         gameEnded = true
     }
 }
+
+extension GameScene {
+    func setDefaultVelocity() {
+        run(.speed(to: GameSpeed.shared.current, duration: 0.3))
+    }
+
+    func setVelocity(_ value: Double) {
+        run(.speed(to: value, duration: 0.3))
+    }
+}

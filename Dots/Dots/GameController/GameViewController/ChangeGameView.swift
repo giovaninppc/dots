@@ -24,6 +24,7 @@ final class ChangeGameView: UIView {
 
     enum Configuration {
         static let carouselHeight: CGFloat = 100.0
+        static let ffButtonDisabledAlpha: CGFloat = 0.5
     }
 
     // MARK: - Subviews
@@ -54,7 +55,7 @@ final class ChangeGameView: UIView {
         let button = UIButton()
         button.setImage(Asset.fastForward.image, for: .normal)
         button.tintColor = .white
-        button.alpha = 0.5
+        button.alpha = Configuration.ffButtonDisabledAlpha
         button.addTarget(self, action: #selector(didFastForward), for: .touchUpInside)
         return button
     }()
@@ -173,15 +174,16 @@ extension ChangeGameView {
 
     @objc private func didPause() {
         setStash(hidden: true)
-        scene.run(SKAction.speed(to: 0.0, duration: 0.3))
+        scene.setVelocity(0.0)
         onPause?()
     }
 
     @objc private func didFastForward() {
         setStash(hidden: true)
         isFastForward = !isFastForward
-        scene.run(SKAction.speed(to: isFastForward ? 1.5 : 1.0, duration: 0.3))
-        fastForwardButton.alpha = isFastForward ? 1.0 : 0.5
+        GameSpeed.shared.current = isFastForward ? 1.5 : 1.0
+        scene.setDefaultVelocity()
+        fastForwardButton.alpha = isFastForward ? .one : Configuration.ffButtonDisabledAlpha
     }
 
     @objc private func didTap(_ gesture: UITapGestureRecognizer) {
@@ -208,7 +210,7 @@ extension ChangeGameView {
 
 extension ChangeGameView {
     func dismissPause() {
-        scene.run(SKAction.speed(to: 1.0, duration: 0.3))
+        scene.setDefaultVelocity()
         onPlay?()
     }
 
