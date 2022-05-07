@@ -64,13 +64,9 @@ extension ChangeGameViewController {
         customView.onSwipe = { [weak self] swipe in
             self?.makeTransition(swipe)
         }
-        customView.onWeaponSelectorDismiss = { [weak self] in
-            self?.scene.setDefaultVelocity()
-        }
         customView.onPause = { [weak self] in
             self?.showPause()
         }
-        customView.onPlay = { }
 
         customView.set(weaponDelegate: self)
     }

@@ -11,3 +11,11 @@ import UIKit
 extension CGFloat {
     static var one: CGFloat { 1.0 }
 }
+
+extension TimeInterval {
+    static var defaultAnimation: CGFloat { 0.3 }
+}
+
+extension Double {
+    static var one: Double { 1.0 }
+}

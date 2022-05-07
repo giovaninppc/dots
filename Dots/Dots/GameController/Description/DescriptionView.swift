@@ -200,7 +200,7 @@ extension DescriptionView {
             self.contentStack.alpha = 1.0
         } completion: { _ in }
 
-        UIView.animate(withDuration: 0.3, delay: 0.5, options: .curveEaseOut) {
+        UIView.animate(withDuration: .defaultAnimation, delay: 0.5, options: .curveEaseOut) {
             self.cornerIndicator.alpha = 1.0
         } completion: { _ in }
     }

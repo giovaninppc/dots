@@ -28,6 +28,9 @@ final class WinViewController: UIViewController {
     }
 
     private func onContinue() {
-        presentingViewController?.dismiss(animated: true, completion: nil)
+        let top = presentingViewController
+        dismiss(animated: false) {
+            top?.dismiss(animated: true, completion: nil)
+        }
     }
 }

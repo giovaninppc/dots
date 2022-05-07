@@ -142,7 +142,7 @@ extension WeaponStashCell {
         drag.center = point
         drag.alpha = 0.0
         view?.addSubview(drag)
-        UIView.animate(withDuration: 0.3) { self.drag.alpha = 1.0 }
+        UIView.animate(withDuration: .defaultAnimation) { self.drag.alpha = 1.0 }
     }
 
     private func shake() {

@@ -17,14 +17,15 @@ enum Swipe: Int {
 final class ChangeGameView: UIView {
     var onSwipe: ((Swipe) -> Void)?
     var onPause: (() -> Void)?
-    var onPlay: (() -> Void)?
-    var onWeaponSelectorDismiss: (() -> Void)?
 
     var isFastForward: Bool = false
 
     enum Configuration {
         static let carouselHeight: CGFloat = 100.0
+
+        // FF
         static let ffButtonDisabledAlpha: CGFloat = 0.5
+        static let fastForwardSpeed: Double = 1.5
     }
 
     // MARK: - Subviews
@@ -181,7 +182,7 @@ extension ChangeGameView {
     @objc private func didFastForward() {
         setStash(hidden: true)
         isFastForward = !isFastForward
-        GameSpeed.shared.current = isFastForward ? 1.5 : 1.0
+        GameSpeed.shared.current = isFastForward ? Configuration.fastForwardSpeed : .one
         scene.setDefaultVelocity()
         fastForwardButton.alpha = isFastForward ? .one : Configuration.ffButtonDisabledAlpha
     }
@@ -201,7 +202,7 @@ extension ChangeGameView {
 
         let isOpen = isStashOpened
 
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseInOut]) {
+        UIView.animate(withDuration: .defaultAnimation, delay: 0.0, options: [.curveEaseInOut]) {
             button.transform = isOpen ? .identity.translatedBy(x: 0.0, y: -60.0) : .identity
             stash.transform = isOpen ? .identity : .identity.translatedBy(x: 0.0, y: Configuration.carouselHeight)
         } completion: { _ in }
@@ -211,7 +212,6 @@ extension ChangeGameView {
 extension ChangeGameView {
     func dismissPause() {
         scene.setDefaultVelocity()
-        onPlay?()
     }
 
     func set(weaponDelegate: WeaponBuilderDelegate?) {
@@ -224,7 +224,7 @@ extension ChangeGameView {
     }
 
     func set(state: GameStates) {
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: .defaultAnimation) {
             switch state {
             case .watercolor, .doodle:
                 self.pauseButton.tintColor = .black

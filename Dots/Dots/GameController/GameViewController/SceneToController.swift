@@ -34,14 +34,28 @@ extension ChangeGameViewController: SceneToControllerDelegate {
     }
 
     func showEndGame() {
-        presentedViewController?.dismiss(animated: false, completion: nil)
-        let win = WinViewController()
-        present(win, animated: true, completion: nil)
+        let show: () -> Void = {
+            let win = WinViewController()
+            self.present(win, animated: true, completion: nil)
+        }
+        if let presented = presentedViewController {
+            presented.dismiss(animated: false, completion: show)
+        } else {
+            show()
+        }
+        scene.setVelocity(0.5)
     }
 
     func showDieScreen() {
-        presentedViewController?.dismiss(animated: false, completion: nil)
-        let lose = LoseViewController()
-        present(lose, animated: true, completion: nil)
+        let show: () -> Void = {
+            let lose = LoseViewController()
+            self.present(lose, animated: true, completion: nil)
+        }
+        if let presented = presentedViewController {
+            presented.dismiss(animated: false, completion: show)
+        } else {
+            show()
+        }
+        scene.setVelocity(0.5)
     }
 }

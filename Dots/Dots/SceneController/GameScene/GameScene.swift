@@ -77,10 +77,10 @@ extension GameScene: EndGameDelegate, LifeDelegate {
 
 extension GameScene {
     func setDefaultVelocity() {
-        run(.speed(to: GameSpeed.shared.current, duration: 0.3))
+        run(.speed(to: GameSpeed.shared.current, duration: .defaultAnimation))
     }
 
     func setVelocity(_ value: Double) {
-        run(.speed(to: value, duration: 0.3))
+        run(.speed(to: value, duration: .defaultAnimation))
     }
 }
