@@ -15,10 +15,18 @@ final class SpikeBall: Weapon, WeaponProtocol {
     let weaponSize: CGSize = CGSize(width: 35, height: 35)
 
     let stateDict: [GameStates: SKTexture] = [
-        .doodle: SKTexture(imageNamed: Asset.spikeBallDoodle.name),
-        .blueprint: SKTexture(imageNamed: Asset.spikeBallBlueprint.name),
+        .doodle: SKTexture(
+            imageNamed: Asset.spikeBallDoodle.name
+        ),
+        .blueprint: SKTexture(
+            imageNamed: Asset.spikeBallBlueprint.name
+        ),
         .watercolor: SKTexture(
-            imageNamed: "spikeBallWatercolor_\(Int.random(in: 1...3))"
+            imageNamed: random(
+                Asset.spikeBallWatercolor1.name,
+                Asset.spikeBallWatercolor2.name,
+                Asset.spikeBallWatercolor3.name
+            )
         )
     ]
 
