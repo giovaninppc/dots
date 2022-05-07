@@ -79,3 +79,7 @@ final class RandomPoint {
         return point
     }
 }
+
+func random<T>(_ objects: T...) -> T {
+    return objects.randomElement() ?? objects.first!
+}

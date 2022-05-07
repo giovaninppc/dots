@@ -15,12 +15,10 @@ final class CannonWeapon: Weapon, WeaponProtocol {
     let weaponSize: CGSize = CGSize(width: 50, height: 50)
     var fireDelay: TimeInterval = 3.0
 
-    // Game States and positions
-    // This enemy textures for each GameState
     let stateDict: [GameStates: SKTexture] = [
-        .doodle: SKTexture(imageNamed: "ResourceA"),
-        .blueprint: SKTexture(imageNamed: "ResourceB"),
-        .watercolor: SKTexture(imageNamed: "ResourceC")
+        .doodle: Asset.resourceA.texture,
+        .blueprint: Asset.resourceB.texture,
+        .watercolor: Asset.resourceC.texture
     ]
 
     var animation: SKAction = SKAction.run {}

@@ -16,12 +16,11 @@ final class BaloonEnemy: Enemy, EnemyProtocol {
 
     var enemySize: CGSize = CGSize(width: 75, height: 75)
 
-    // Game States and positions
-    // This enemy textures for each GameState
-    let stateDict: [GameStates: SKTexture] =
-        [.doodle: SKTexture(imageNamed: "doodleBaloon"),
-         .blueprint: SKTexture(imageNamed: "blueprintBaloon"),
-         .watercolor: SKTexture(imageNamed: "watercolorBaloon\(arc4random_uniform(2))")]
+    let stateDict: [GameStates: SKTexture] = [
+        .doodle: Asset.doodleBaloon.texture,
+        .blueprint: Asset.blueprintBaloon.texture,
+        .watercolor: random(Asset.watercolorBaloon0.texture, Asset.watercolorBaloon1.texture)
+    ]
 
     // This enemy proper Animation
     var baloonAnimation: SKAction = SKAction.run {}
@@ -29,18 +28,24 @@ final class BaloonEnemy: Enemy, EnemyProtocol {
     // Var state animation
     var stateAnimation: [GameStates: SKAction] =
         [.doodle: SKAction.repeatForever(
-            SKAction.animate(with: [SKTexture(imageNamed: "doodleBaloon-0"),
-                                    SKTexture(imageNamed: "doodleBaloon-1"),
-                                    SKTexture(imageNamed: "doodleBaloon-2"),
-                                    SKTexture(imageNamed: "doodleBaloon-3"),
-                                    SKTexture(imageNamed: "doodleBaloon-4")], timePerFrame: 0.1)),
+            SKAction.animate(with: [
+                Asset.doodleBaloon0.texture,
+                Asset.doodleBaloon1.texture,
+                Asset.doodleBaloon2.texture,
+                Asset.doodleBaloon3.texture,
+                Asset.doodleBaloon4.texture
+            ], timePerFrame: 0.1)),
          .blueprint: SKAction.repeatForever(
-            SKAction.animate(with: [SKTexture(imageNamed: "blueprintBaloon-0"),
-                                    SKTexture(imageNamed: "blueprintBaloon-1"),
-                                    SKTexture(imageNamed: "blueprintBaloon-2"),
-                                    SKTexture(imageNamed: "blueprintBaloon-3")], timePerFrame: 0.04)),
-         .watercolor: SKAction.animate(with: [SKTexture(imageNamed: "watercolorBaloon\(arc4random_uniform(2))")],
-                                       timePerFrame: 50)]
+            SKAction.animate(with: [
+                Asset.blueprintBaloon0.texture,
+                Asset.blueprintBaloon1.texture,
+                Asset.blueprintBaloon2.texture,
+                Asset.blueprintBaloon3.texture
+            ], timePerFrame: 0.04)),
+         .watercolor: SKAction.animate(with: [
+                random(Asset.watercolorBaloon0.texture, Asset.watercolorBaloon1.texture)
+            ], timePerFrame: 50)
+        ]
 
     weak var shotDelegate: ShotDelegate?
 

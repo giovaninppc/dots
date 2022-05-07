@@ -15,9 +15,9 @@ final class CannonBall: WeaponShot, WeaponProtocol {
     let weaponSize: CGSize = CGSize(width: 10, height: 10)
 
     let stateDict: [GameStates: SKTexture] = [
-        .doodle: SKTexture(imageNamed: "ResourceA"),
-        .blueprint: SKTexture(imageNamed: "ResourceB"),
-        .watercolor: SKTexture(imageNamed: "ResourceC")
+        .doodle: Asset.resourceA.texture,
+        .blueprint: Asset.resourceB.texture,
+        .watercolor: Asset.resourceC.texture
     ]
 
     var animation: SKAction = SKAction.run {}
