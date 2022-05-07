@@ -47,6 +47,8 @@ internal enum Localization {
   }
 
   internal enum Lose {
+    /// Continue
+    internal static let `continue` = Localization.tr("Strings", "Lose.continue")
     /// Defeat!
     internal static let title = Localization.tr("Strings", "Lose.title")
   }
@@ -75,6 +77,8 @@ internal enum Localization {
   }
 
   internal enum Win {
+    /// Continue
+    internal static let `continue` = Localization.tr("Strings", "Win.continue")
     /// Victory!
     internal static let title = Localization.tr("Strings", "Win.title")
   }

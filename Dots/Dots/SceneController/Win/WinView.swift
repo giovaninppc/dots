@@ -9,6 +9,7 @@
 import UIKit
 
 final class WinView: UIView {
+    var onContinue: (() -> Void)?
 
     private let dimmer: UIView = {
         let view = UIView()
@@ -25,6 +26,17 @@ final class WinView: UIView {
         return label
     }()
 
+    private lazy var continueButton: UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = 10.0
+        button.setTitleColor(.black, for: .normal)
+        button.setTitle(Localization.Win.continue, for: .normal)
+        button.backgroundColor = .white.withAlphaComponent(0.7)
+        button.addTarget(self, action: #selector(didTapContinue), for: .touchUpInside)
+        button.titleLabel?.font = .sketch(size: 30.0)
+        return button
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -38,6 +50,7 @@ extension WinView: CodeView {
     func setupComponents() {
         addSubview(dimmer)
         addSubview(titleLabel)
+        addSubview(continueButton)
     }
 
     func setupConstraints() {
@@ -50,8 +63,18 @@ extension WinView: CodeView {
 
                 titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 25.0),
                 titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-                titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
+                titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+
+                continueButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20.0),
+                continueButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+                continueButton.widthAnchor.constraint(equalToConstant: 150.0)
             ]
         }
+    }
+}
+
+extension WinView {
+    @objc private func didTapContinue() {
+        onContinue?()
     }
 }

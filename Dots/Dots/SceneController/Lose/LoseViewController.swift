@@ -22,5 +22,12 @@ final class LoseViewController: UIViewController {
 
     override func loadView() {
         view = customView
+        customView.onContinue = { [weak self] in
+            self?.onContinue()
+        }
+    }
+
+    private func onContinue() {
+        presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }

@@ -33,7 +33,7 @@ final class Limit: SKSpriteNode {
 
 extension Limit {
     func gotHit(by enemy: Enemy?) {
-        let damage = 10
+        let damage = 100
         Life.damage(damage)
 
         switch damage {

@@ -42,7 +42,9 @@
 // Win
 
 "Win.title" = "Victory!";
+"Win.continue" = "Continue";
 
 // Lose
 
 "Lose.title" = "Defeat!";
+"Lose.continue" = "Continue";
