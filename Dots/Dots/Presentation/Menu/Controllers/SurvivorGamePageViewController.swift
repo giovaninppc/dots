@@ -26,7 +26,7 @@ final class SurvivorGamePageViewController: UIViewController {
     }
 
     func pressPlay() {
-        present(GameConfigurator.build(), animated: true)
+        present(LevelSelectorViewController(), animated: true)
     }
 }
 

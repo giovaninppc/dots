@@ -9,29 +9,34 @@
 //
 import UIKit
 
-final class MenuPageViewController: UIPageViewController {
+final class LevelSelectorViewController: UIPageViewController {
     private let orderedViewControllers: [UIViewController] = [
-        SurvivorGamePageViewController(),
-        SettingsPageViewController()
+        AllLevelViewController(),
+        WorldPageViewController(model: .tutorial)
     ]
+
+    init() {
+        super.init(transitionStyle: .pageCurl, navigationOrientation: .horizontal, options: nil)
+        modalPresentationStyle = .overFullScreen
+    }
+
+    required init?(coder: NSCoder) { nil }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
 
-        if let firstViewController = orderedViewControllers.first {
-            setViewControllers(
-                [firstViewController],
-                direction: .forward,
-                animated: false,
-                completion: nil
-            )
-        }
+        guard let firstViewController = orderedViewControllers.first else { return }
+        setViewControllers(
+            [firstViewController],
+            direction: .forward,
+            animated: false,
+            completion: nil
+        )
     }
 }
 
-// MARK: UIPageViewControllerDataSource
-extension MenuPageViewController: UIPageViewControllerDataSource {
+extension LevelSelectorViewController: UIPageViewControllerDataSource {
     func pageViewController(
         _ pageViewController: UIPageViewController,
         viewControllerBefore viewController: UIViewController
@@ -39,19 +44,10 @@ extension MenuPageViewController: UIPageViewControllerDataSource {
         guard let viewControllerIndex = orderedViewControllers.firstIndex(of: viewController) else {
             return nil
         }
-
         let previousIndex = viewControllerIndex - 1
 
-        // User is on the first view controller and swiped left to loop to
-        // the last view controller.
-        guard previousIndex >= 0 else {
-            return orderedViewControllers.last
-        }
-
-        guard orderedViewControllers.count > previousIndex else {
-            return nil
-        }
-
+        guard previousIndex >= 0 else { return orderedViewControllers.last }
+        guard orderedViewControllers.count > previousIndex else { return nil }
         return orderedViewControllers[previousIndex]
     }
 
@@ -66,20 +62,12 @@ extension MenuPageViewController: UIPageViewControllerDataSource {
         let nextIndex = viewControllerIndex + 1
         let orderedViewControllersCount = orderedViewControllers.count
 
-        // User is on the last view controller and swiped right to loop to
-        // the first view controller.
-        guard orderedViewControllersCount != nextIndex else {
-            return orderedViewControllers.first
-        }
+        guard orderedViewControllersCount != nextIndex else { return orderedViewControllers.first }
 
-        guard orderedViewControllersCount > nextIndex else {
-            return nil
-        }
-
+        guard orderedViewControllersCount > nextIndex else { return nil }
         return orderedViewControllers[nextIndex]
     }
 
-    // Creating the page counter
     func presentationCount(for: UIPageViewController) -> Int {
         orderedViewControllers.count
     }

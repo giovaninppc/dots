@@ -17,7 +17,7 @@ final class EnemyController: LevelDelegate {
     private let level: Level
     weak var scene: GameScene?
 
-    init(level: Level = Level1()) {
+    init(level: Level) {
         self.level = level
     }
 

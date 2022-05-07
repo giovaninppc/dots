@@ -9,11 +9,11 @@
 import UIKit
 
 enum GameConfigurator {
-    static func build() -> UIViewController {
+    static func build(level: Level) -> UIViewController {
         GameStates.current = .blueprint
         GameStates.currentStatus = 0
 
-        let enemyController = EnemyController()
+        let enemyController = EnemyController(level: level)
         let view = ChangeGameView()
         let controller = ChangeGameViewController(
             gameView: view,

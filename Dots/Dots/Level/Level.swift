@@ -9,10 +9,13 @@
 import SpriteKit
 
 protocol Level {
+    var name: String { get }
     func buildPlayAction(delegate: LevelDelegate) -> SKAction
 }
 
 struct Level1: Level {
+    var name: String { "1" }
+
     func buildPlayAction(delegate: LevelDelegate) -> SKAction {
         SKAction.sequence([
             .wait(forDuration: 1.0),
