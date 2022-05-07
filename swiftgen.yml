@@ -9,7 +9,7 @@ xcassets:
 
 strings:
   - inputs:
-        Dots/Dots/Strings/Strings.strings
+        Dots/Dots/Strings/en.lproj/Strings.strings
     outputs:
       - templateName: structured-swift4
         params:

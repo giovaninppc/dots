@@ -1,0 +1,53 @@
+/*
+  Strings.strings
+  Dots
+
+  Created by Giovani Nascimento Pereira on 17/04/22.
+  Copyright © 2022 Giovani Nascimento Pereira. All rights reserved.
+*/
+
+"Pause.title" = "Pausado";
+"Pause.continue" = "Continuar";
+"Pause.exit" = "Sair";
+
+// Enemies
+
+"PaperPlane.name" = "Avião de papel";
+"PaperPlane.description" = "Super frágil, bem devagar, quase inofensivo.\nPerigoso em grupos grandes.";
+
+"Baloon.name" = "Blão Drone";
+"Baloon.description" = "As vezes um drone, as vezes um balão.\nLança mais inimigos se não destru;ido rápido.";
+
+"BaloonBomb.name" = "Bombinha #2";
+"BaloonBomb.description" = "Uma pequena bomba.\nSe destrói no impacto.";
+
+// Settings
+
+"Settings.title" = "Configurações";
+"Settings.vibrations" = "Habilitar vibrações";
+
+// Weapons
+
+"Canon.name" = "Canhão";
+"Canon.description" = "Ataque. Não é muito rápido, nem muito devagar, e nem muito resistente.";
+
+"CanonBall.name" = "Bola-de-canhão";
+"CanonBall.description" = "Só uma bola... de canhão.";
+
+"SpikeBall.name" = "Bola de espinhos";
+"SpikeBall.description" = "Defensor. É uma bola... cheia de espinhos.";
+
+// Descriptions
+
+"Description.DamageType" = "Tipo de dano";
+"Description.WeakTo" = "Fraquezas";
+
+// Win
+
+"Win.title" = "Vitória!";
+"Win.continue" = "Continuar";
+
+// Lose
+
+"Lose.title" = "Derrota!";
+"Lose.continue" = "Continuar";
