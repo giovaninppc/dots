@@ -16,7 +16,6 @@ enum MoneyController {
     }
 
     weak static var moneyLabel: UILabel?
-    private static var pColor: UIColor = .white
 
     static func canPurchase(price: Int) -> Bool {
         price <= current
@@ -45,7 +44,6 @@ enum MoneyController {
 extension MoneyController {
     private static func animateMinus() {
         guard let label = moneyLabel else { return }
-        pColor = label.textColor
         UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveEaseInOut, .autoreverse]) {
             label.transform = .identity.scaledBy(x: 1.1, y: 1.1)
             label.textColor = .red
@@ -56,7 +54,6 @@ extension MoneyController {
 
     private static func animatePlus() {
         guard let label = moneyLabel else { return }
-        pColor = label.textColor
         UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveEaseInOut, .autoreverse]) {
             label.transform = .identity.scaledBy(x: 1.1, y: 1.1)
             label.textColor = .green
@@ -69,7 +66,7 @@ extension MoneyController {
         guard let label = moneyLabel else { return }
         UIView.animate(withDuration: 0.2) {
             label.transform = .identity
-            label.textColor = self.pColor
+            label.textColor = forState(doodle: .black, watercolor: .black, blueprint: .white)
         }
     }
 }
