@@ -25,6 +25,7 @@ enum GameConfigurator {
 
         Life.healthIndicator = view.lifeOverlay
         Life.gameView = view.gameView
+        Life.delegate = view.scene
         Life.set()
 
         EndGameController.shared.restart()

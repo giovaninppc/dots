@@ -32,7 +32,7 @@ final class ChangeGameViewController: UIViewController {
         self.enemyController = enemyController
 
         super.init(nibName: nil, bundle: nil)
-        modalPresentationStyle = .overFullScreen
+        modalPresentationStyle = .fullScreen
     }
 
     required init?(coder: NSCoder) { nil }

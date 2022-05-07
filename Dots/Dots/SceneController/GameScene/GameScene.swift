@@ -71,5 +71,6 @@ extension GameScene: EndGameDelegate, LifeDelegate {
     func playerDied() {
         guard !gameEnded else { return }
         controllerDelegate?.showDieScreen()
+        gameEnded = true
     }
 }

@@ -14,7 +14,7 @@ final class LoseViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         modalTransitionStyle = .crossDissolve
-        modalPresentationStyle = .fullScreen
+        modalPresentationStyle = .overFullScreen
     }
 
     @available(*, unavailable)
