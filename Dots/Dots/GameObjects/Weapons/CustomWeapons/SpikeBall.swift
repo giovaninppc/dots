@@ -50,7 +50,9 @@ final class SpikeBall: Weapon, WeaponProtocol {
     func gotHit(by enemy: EnemyProtocol?) {
         let damage = enemy?.baseDamage ?? 5
         life -= damage
-        if life <= 0 { selfDestruct() }
+        if life <= 0 {
+            selfDestruct()
+        } else { run(.shake()) }
     }
 
     func configureBody() {
