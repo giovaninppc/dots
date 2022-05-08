@@ -25,7 +25,7 @@ final class DescriptionController: UIViewController {
         } else { self.weapon = nil }
 
         if let type = EnemyFactory.reverse(enemy: enemy) {
-            self.enemy = EnemyFactory.createEnemy(with: type, for: GameStates.current)
+            self.enemy = EnemyFactory.createEnemy(with: type, for: GameStates.current, with: nil)
         } else { self.enemy = nil }
 
         super.init(nibName: nil, bundle: nil)

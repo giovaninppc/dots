@@ -13,6 +13,7 @@ final class PlaneEnemy: Enemy, EnemyProtocol {
     private let planeHorizontalMove: Double = Double(Int.random(in: 40...55))
 
     var enemySize: CGSize = CGSize(width: 80, height: 80)
+    weak var shotDelegate: ShotDelegate?
 
     let stateDict: [GameStates: String] = [
         .doodle: Asset.doodlePlane.name,
@@ -27,10 +28,11 @@ final class PlaneEnemy: Enemy, EnemyProtocol {
     // This enemy proper Animation
     var planeAnimation: SKAction = SKAction.run {}
 
-    required init (state: GameStates) {
+    required init (state: GameStates, delegate: ShotDelegate?) {
         let texture = SKTexture(imageNamed: stateDict[state]!)
         super.init(texture: texture, size: enemySize)
         self.position = RandomPoint.topScreenPoint()
+        shotDelegate = delegate
         createAction()
         startAction()
         configureBody()
@@ -78,6 +80,11 @@ final class PlaneEnemy: Enemy, EnemyProtocol {
     }
 
     override func selfDestruct() {
+        if let node = PaperExplosion.build() {
+            node.position = position
+            shotDelegate?.add(node: node)
+        }
+
         self.removeFromParent()
         EndGameController.shared.enemyDied()
     }

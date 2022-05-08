@@ -22,7 +22,7 @@ final class BaloonBomb: Enemy, EnemyProtocol {
 
     var baloonBombAnimation: SKAction = SKAction.run {}
 
-    required init (state: GameStates) {
+    required init (state: GameStates, delegate: ShotDelegate?) {
         let texture = stateDict[state]!
         super.init(texture: texture, size: enemySize)
         self.position = RandomPoint.topScreenPoint()

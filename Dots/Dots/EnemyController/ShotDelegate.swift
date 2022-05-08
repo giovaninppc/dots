@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import SpriteKit
 
 protocol ShotDelegate: AnyObject {
     func addShot(type: EnemyType, at position: CGPoint)
     func addWeaponShot(type: WeaponType, at position: CGPoint)
+    func add(node: SKNode)
 }

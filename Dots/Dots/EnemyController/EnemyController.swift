@@ -26,7 +26,7 @@ final class EnemyController: LevelDelegate {
     }
 
     func createEnemy(type enemyType: EnemyType) -> Enemy {
-        EnemyFactory.createEnemy(with: enemyType, for: (scene?.state?.currentState)!, with: self)
+        EnemyFactory.createEnemy(with: enemyType, for: GameStates.current, with: self)
     }
 
     func enableEndGame() {
@@ -39,14 +39,18 @@ extension EnemyController {
 }
 
 extension EnemyController: ShotDelegate {
+    func add(node: SKNode) {
+        scene?.addChild(node)
+    }
+
     func addShot(type: EnemyType, at position: CGPoint) {
-        let shot = EnemyFactory.createEnemy(with: type, for: (scene?.state?.currentState)!)
+        let shot = EnemyFactory.createEnemy(with: type, for: GameStates.current, with: self)
         shot.position = position
         scene?.addEnemy(shot)
     }
 
     func addWeaponShot(type: WeaponType, at position: CGPoint) {
-        let shot = WeaponFactory.createWeapon(with: type, for: (scene?.state?.currentState)!, with: self)
+        let shot = WeaponFactory.createWeapon(with: type, for: GameStates.current, with: self)
         shot.position = position
         scene?.addWeapon(shot, at: position)
     }

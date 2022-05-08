@@ -21,7 +21,7 @@ protocol EnemyProtocol: NSObjectProtocol {
     var damageType: DamageType { get }
     var value: Int { get }
 
-    init(state: GameStates)
+    init(state: GameStates, delegate: ShotDelegate?)
 
     func update(for state: GameStates)
     func startAction()

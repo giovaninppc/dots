@@ -9,7 +9,7 @@
 import SpriteKit
 
 class Enemy: SKSpriteNode, SceneUpdatable {
-    required init(state: GameStates) {
+    required init(state: GameStates, delegate: ShotDelegate?) {
         super.init(texture: nil, color: .white, size: .zero)
     }
 

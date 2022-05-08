@@ -9,28 +9,14 @@
 import SpriteKit
 
 enum EnemyFactory {
-
-    static func createEnemy(with identifier: EnemyType, for state: GameStates) -> Enemy {
-        switch identifier {
-        case .plane:
-            return PlaneEnemy(state: state)
-        case .baloon:
-            return BaloonEnemy(state: state)
-        case .baloonBomb:
-            return BaloonBomb(state: state)
-        default:
-            fatalError("Undefined Enemy Type")
-        }
-    }
-
     static func createEnemy(with identifier: EnemyType, for state: GameStates, with delegate: ShotDelegate?) -> Enemy {
         switch identifier {
         case .plane:
-            return PlaneEnemy(state: state)
+            return PlaneEnemy(state: state, delegate: delegate)
         case .baloon:
             return BaloonEnemy(state: state, delegate: delegate)
         case .baloonBomb:
-            return BaloonBomb(state: state)
+            return BaloonBomb(state: state, delegate: delegate)
         default:
             fatalError("Undefined Enemy Type")
         }

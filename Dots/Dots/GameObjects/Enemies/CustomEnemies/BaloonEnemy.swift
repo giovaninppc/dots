@@ -49,17 +49,7 @@ final class BaloonEnemy: Enemy, EnemyProtocol {
 
     weak var shotDelegate: ShotDelegate?
 
-    required init(state: GameStates) {
-        let texture = stateDict[state]!
-        super.init(texture: texture, size: enemySize)
-        self.position = RandomPoint.topRightSidePoint()
-        createAction()
-        startAction()
-        configureBody()
-        runSpriteAnimaton(for: state)
-    }
-
-    init(state: GameStates, delegate: ShotDelegate?) {
+    required init(state: GameStates, delegate: ShotDelegate?) {
         let texture = stateDict[state]!
         super.init(texture: texture, size: enemySize)
         self.position = RandomPoint.topRightSidePoint()
