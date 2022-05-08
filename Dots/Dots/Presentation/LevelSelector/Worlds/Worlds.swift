@@ -15,6 +15,11 @@ struct WorldPageModel {
     let name: String
 
     static var tutorial: WorldPageModel {
-        .init(background: Asset.blueprint.image, levels: [Level1()], color: Asset.tutorialBlue.color, name: "Tutorial")
+        .init(
+            background: Asset.tutorialBackground.image,
+            levels: [Level1()],
+            color: Asset.tutorialBlue.color,
+            name: "Tutorial"
+        )
     }
 }

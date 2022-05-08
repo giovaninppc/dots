@@ -26,6 +26,7 @@ final class WorldPageViewController: UIViewController {
         customView.collection.delegate = self
         customView.collection.dataSource = self
         customView.titleLabel.text = model.name
+        customView.background.image = model.background
     }
 }
 
@@ -41,7 +42,10 @@ extension WorldPageViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorldLevelCell.identifier, for: indexPath)
 
         if let worldCell = cell as? WorldLevelCell {
-            worldCell.configure(with: .init(title: model.levels[indexPath.item].name, color: .blue))
+            worldCell.configure(with: .init(
+                title: model.levels[indexPath.item].name,
+                color: model.color
+            ))
         }
 
         return cell

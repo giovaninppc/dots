@@ -9,9 +9,8 @@
 import UIKit
 
 final class WorldPageView: UIView {
-    private let background: UIImageView = {
+    let background: UIImageView = {
         let view = UIImageView()
-        view.image = Asset.blueprint.image
         view.contentMode = .scaleAspectFill
         return view
     }()

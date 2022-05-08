@@ -8,8 +8,8 @@
 
 import UIKit
 
-final class SettingsPageViewController: UIViewController {
-    private let customView: SettingsPageMenuView
+final class SettingsPageViewController: UIViewController, PagedController {
+    let customView: SettingsPageMenuView
 
     init(view: SettingsPageMenuView = .init()) {
         self.customView = view

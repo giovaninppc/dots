@@ -11,8 +11,8 @@ import UIKit
 
 final class MenuPageViewController: UIPageViewController {
     private let orderedViewControllers: [UIViewController] = [
-        SurvivorGamePageViewController(),
-        SettingsPageViewController()
+        SurvivorGamePageViewController().set(numberOfPages: 2, position: 0, style: .light),
+        SettingsPageViewController().set(numberOfPages: 2, position: 1, style: .dark)
     ]
 
     override func viewDidLoad() {

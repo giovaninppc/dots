@@ -8,8 +8,8 @@
 
 import UIKit
 
-final class SurvivorGamePageViewController: UIViewController {
-    private let customView: SurvivorGameMenuView
+final class SurvivorGamePageViewController: UIViewController, PagedController {
+    let customView: SurvivorGameMenuView
 
     init(view: SurvivorGameMenuView = .init()) {
         self.customView = view
@@ -26,7 +26,7 @@ final class SurvivorGamePageViewController: UIViewController {
     }
 
     func pressPlay() {
-        present(LevelSelectorViewController(), animated: true)
+        present(GameConfigurator.build(level: Level1()), animated: true)
     }
 }
 
