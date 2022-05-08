@@ -137,6 +137,12 @@ final class BaloonEnemy: Enemy, EnemyProtocol {
 
         let multiplier: Int = weapon.damageType == .fire ? 2 : 1
         life -= baseDamage * multiplier
+
+        if life > 0 { shake() }
+    }
+
+    private func shake() {
+        run(SKAction.shake())
     }
 
     private func checkDie() {

@@ -33,6 +33,7 @@
 		3E98772028270791001795BF /* WorldLevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E98771F28270791001795BF /* WorldLevelCell.swift */; };
 		3E987723282709EC001795BF /* Worlds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E987722282709EC001795BF /* Worlds.swift */; };
 		3EA3A1492828062700175DE7 /* PagedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA3A1482828062700175DE7 /* PagedController.swift */; };
+		3EA3A14B28280E9C00175DE7 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA3A14A28280E9C00175DE7 /* Shake.swift */; };
 		3EB3F48926305C35003AA20F /* GameSceneUserInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F48826305C35003AA20F /* GameSceneUserInteraction.swift */; };
 		3EB3F48C26305CC3003AA20F /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F48B26305CC3003AA20F /* Weapon.swift */; };
 		3EB3F49026305D2A003AA20F /* Cannon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3F48F26305D2A003AA20F /* Cannon.swift */; };
@@ -126,6 +127,7 @@
 		3E98771F28270791001795BF /* WorldLevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldLevelCell.swift; sourceTree = "<group>"; };
 		3E987722282709EC001795BF /* Worlds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worlds.swift; sourceTree = "<group>"; };
 		3EA3A1482828062700175DE7 /* PagedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagedController.swift; sourceTree = "<group>"; };
+		3EA3A14A28280E9C00175DE7 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 		3EB3F48826305C35003AA20F /* GameSceneUserInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneUserInteraction.swift; sourceTree = "<group>"; };
 		3EB3F48B26305CC3003AA20F /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		3EB3F48F26305D2A003AA20F /* Cannon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cannon.swift; sourceTree = "<group>"; };
@@ -587,6 +589,7 @@
 				3E9876FC282696C2001795BF /* CGFloat+Utils.swift */,
 				3E9877092826F09D001795BF /* ForState.swift */,
 				3E98770E2826F839001795BF /* ImageAsset+SKTexture.swift */,
+				3EA3A14A28280E9C00175DE7 /* Shake.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -856,6 +859,7 @@
 				9B416A98208627A400E65777 /* EnemyDefinition.swift in Sources */,
 				9BAD24282088BC000087B105 /* Level.swift in Sources */,
 				3EB9027B280D791C003A8ED3 /* CannonBall.swift in Sources */,
+				3EA3A14B28280E9C00175DE7 /* Shake.swift in Sources */,
 				3E9877182827011B001795BF /* AllLevelView.swift in Sources */,
 				3E987700282696EE001795BF /* GameSpeed.swift in Sources */,
 				3EC1FA442814533E00AC4556 /* AccessibilitySettings.swift in Sources */,

@@ -10,9 +10,7 @@ import UIKit
 
 protocol PagedController: UIViewController {
     associatedtype CustomView: UIView
-
     var customView: CustomView { get }
-
     func set(numberOfPages: Int, position: Int, style: PageCountDisplay.Style) -> Self
 }
 
