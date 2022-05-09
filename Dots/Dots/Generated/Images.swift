@@ -21,8 +21,6 @@ public typealias AssetImageTypeAlias = ImageAsset.Image
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum Asset {
-  public static let aimBlack = ImageAsset(name: "aim-black")
-  public static let aimWhite = ImageAsset(name: "aim-white")
   public static let blueprint = ImageAsset(name: "Blueprint")
   public static let paper = ImageAsset(name: "Paper")
   public static let watercolor = ImageAsset(name: "Watercolor")

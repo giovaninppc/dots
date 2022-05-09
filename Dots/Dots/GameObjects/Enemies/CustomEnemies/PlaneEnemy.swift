@@ -12,7 +12,7 @@ final class PlaneEnemy: Enemy, EnemyProtocol {
     private let planeDownSpeed: Double = -Double(Int.random(in: 25...30))
     private let planeHorizontalMove: Double = Double(Int.random(in: 40...55))
 
-    var enemySize: CGSize = CGSize(width: 80, height: 80)
+    var enemySize: CGSize = CGSize(width: 60, height: 60)
     weak var shotDelegate: ShotDelegate?
 
     let stateDict: [GameStates: String] = [
@@ -64,7 +64,7 @@ final class PlaneEnemy: Enemy, EnemyProtocol {
     }
 
     func configureBody() {
-        let body = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 50))
+        let body = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 40))
         body.affectedByGravity = false
         body.allowsRotation = false
 

@@ -102,7 +102,7 @@ final class BaloonEnemy: Enemy, EnemyProtocol {
     }
 
     func configureBody() {
-        let body = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 50))
+        let body = SKPhysicsBody(circleOfRadius: 30.0)
         body.affectedByGravity = false
         body.allowsRotation = false
 

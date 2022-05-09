@@ -56,7 +56,7 @@ final class SpikeBall: Weapon, WeaponProtocol {
     }
 
     func configureBody() {
-        let body = SKPhysicsBody(circleOfRadius: weaponSize.height / 1.5)
+        let body = SKPhysicsBody(circleOfRadius: weaponSize.height / 2.3)
         body.affectedByGravity = false
         body.allowsRotation = false
         body.categoryBitMask = PhysicsCategory.playerBullet
