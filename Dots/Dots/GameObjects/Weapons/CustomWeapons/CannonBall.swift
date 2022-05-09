@@ -42,7 +42,7 @@ final class CannonBall: WeaponShot, WeaponProtocol {
     }
 
     func createAction() {
-        animation = SKAction.move(by: CGVector(dx: 0, dy: 1000.0), duration: baloonBombSpeed)
+        animation = SKAction.move(by: CGVector(dx: 0, dy: 1000.0), duration: 5.0)
     }
 
     func startAction() {

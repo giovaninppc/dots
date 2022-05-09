@@ -40,7 +40,7 @@ extension WeaponStashCarousel: CodeView {
         dataSource = self
         clipsToBounds = false
         layer.masksToBounds = false
-        backgroundColor = .white
+        backgroundColor = .clear
         contentInset = .init(top: 0.0, left: 30.0, bottom: 0.0, right: 30.0)
     }
 }

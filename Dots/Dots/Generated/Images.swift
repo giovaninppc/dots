@@ -24,6 +24,7 @@ public enum Asset {
   public static let blueprint = ImageAsset(name: "Blueprint")
   public static let paper = ImageAsset(name: "Paper")
   public static let watercolor = ImageAsset(name: "Watercolor")
+  public static let notebookPaper = ImageAsset(name: "notebookPaper")
   public static let tutorialBackground = ImageAsset(name: "tutorialBackground")
   public static let blueprintBaloon0 = ImageAsset(name: "blueprintBaloon-0")
   public static let blueprintBaloon1 = ImageAsset(name: "blueprintBaloon-1")
