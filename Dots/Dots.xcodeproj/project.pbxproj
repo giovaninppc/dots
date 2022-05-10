@@ -65,6 +65,8 @@
 		3EC1FA4928145D4E00AC4556 /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA4828145D4E00AC4556 /* SwitchView.swift */; };
 		3EC1FA4C281460F600AC4556 /* DamageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC1FA4B281460F600AC4556 /* DamageType.swift */; };
 		3ECA72F528200EB800ED49C7 /* EndGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECA72F428200EB800ED49C7 /* EndGameController.swift */; };
+		3EF87F07282B134F00E8E4D1 /* AchievementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF87F06282B134F00E8E4D1 /* AchievementController.swift */; };
+		3EF87F09282B136E00E8E4D1 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF87F08282B136E00E8E4D1 /* Achievement.swift */; };
 		3EF956C626344FA500CF3239 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956C526344FA500CF3239 /* PauseView.swift */; };
 		3EF956D12634523B00CF3239 /* ChangeGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D02634523B00CF3239 /* ChangeGameView.swift */; };
 		3EF956D926345C1B00CF3239 /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D826345C1B00CF3239 /* GameStates.swift */; };
@@ -163,6 +165,8 @@
 		3EC1FA4828145D4E00AC4556 /* SwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
 		3EC1FA4B281460F600AC4556 /* DamageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageType.swift; sourceTree = "<group>"; };
 		3ECA72F428200EB800ED49C7 /* EndGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameController.swift; sourceTree = "<group>"; };
+		3EF87F06282B134F00E8E4D1 /* AchievementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementController.swift; sourceTree = "<group>"; };
+		3EF87F08282B136E00E8E4D1 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		3EF956C526344FA500CF3239 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
 		3EF956D02634523B00CF3239 /* ChangeGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGameView.swift; sourceTree = "<group>"; };
 		3EF956D826345C1B00CF3239 /* GameStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStates.swift; sourceTree = "<group>"; };
@@ -430,6 +434,15 @@
 			path = EndGame;
 			sourceTree = "<group>";
 		};
+		3EF87F05282B133F00E8E4D1 /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				3EF87F06282B134F00E8E4D1 /* AchievementController.swift */,
+				3EF87F08282B136E00E8E4D1 /* Achievement.swift */,
+			);
+			path = Achievements;
+			sourceTree = "<group>";
+		};
 		3EF956C426344F9100CF3239 /* Pause */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				9B627B752081305400B0FBEE /* AppDelegate.swift */,
+				3EF87F05282B133F00E8E4D1 /* Achievements */,
 				9BF312E820C6F5CE00E3C4D7 /* Presentation */,
 				3EF956D4263453F900CF3239 /* GameController */,
 				9B8D5D87208678F90001DB35 /* EnemyController */,
@@ -837,6 +851,7 @@
 				3E98770A2826F09D001795BF /* ForState.swift in Sources */,
 				3EC1FA41281451FF00AC4556 /* HapticWorker.swift in Sources */,
 				3E9876FD282696C2001795BF /* CGFloat+Utils.swift in Sources */,
+				3EF87F07282B134F00E8E4D1 /* AchievementController.swift in Sources */,
 				9BAD242A2088BDA60087B105 /* ShotDelegate.swift in Sources */,
 				9B8D5D9920878FF80001DB35 /* PlaneAnimation.swift in Sources */,
 				9B8D5D8D208690F20001DB35 /* BaloonEnemy.swift in Sources */,
@@ -844,6 +859,7 @@
 				9B8D5D9720878D680001DB35 /* doodleBaloon.swift in Sources */,
 				9B416A942086273A00E65777 /* EnemyFactory.swift in Sources */,
 				9B627B762081305400B0FBEE /* AppDelegate.swift in Sources */,
+				3EF87F09282B136E00E8E4D1 /* Achievement.swift in Sources */,
 				3E98772028270791001795BF /* WorldLevelCell.swift in Sources */,
 				3EF956D926345C1B00CF3239 /* GameStates.swift in Sources */,
 				3E2D305A263106FC00853550 /* Fonts.swift in Sources */,

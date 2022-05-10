@@ -6,6 +6,7 @@
 //  Copyright © 2018 Giovani Nascimento Pereira. All rights reserved.
 //
 
+import GameKit
 import UIKit
 
 final class SurvivorGamePageViewController: UIViewController, PagedController {
@@ -25,8 +26,40 @@ final class SurvivorGamePageViewController: UIViewController, PagedController {
         }
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        AchievementController.shared.authenticatePlayer(from: self)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        addGameCenterAccessPointIfPossible()
+    }
+
     func pressPlay() {
         present(GameConfigurator.build(level: Level1()), animated: true)
+//        present(LevelSelectorViewController(), animated: true, completion: nil)
+        hideGameCenter()
+    }
+}
+
+extension SurvivorGamePageViewController {
+    private func requestGameCenterAuthenticationIfNeeded() {
+        AchievementController.shared.authenticatePlayer(from: self)
+    }
+
+    private func addGameCenterAccessPointIfPossible() {
+        if #available(iOS 14.0, *) {
+            GKAccessPoint.shared.location = .topLeading
+            GKAccessPoint.shared.showHighlights = true
+            GKAccessPoint.shared.isActive = true
+        }
+    }
+
+    private func hideGameCenter() {
+        if #available(iOS 14.0, *) {
+            GKAccessPoint.shared.isActive = false
+        }
     }
 }
 

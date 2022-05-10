@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class WorldPageViewController: UIViewController {
+final class WorldPageViewController: UIViewController, PagedController {
     private let model: WorldPageModel
-    private let customView: WorldPageView
+    let customView: WorldPageView
 
     init(model: WorldPageModel) {
         self.model = model

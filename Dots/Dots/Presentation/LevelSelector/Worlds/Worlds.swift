@@ -19,7 +19,7 @@ struct WorldPageModel {
             background: Asset.tutorialBackground.image,
             levels: [Level1()],
             color: Asset.tutorialBlue.color,
-            name: "Tutorial"
+            name: "Paper World"
         )
     }
 }

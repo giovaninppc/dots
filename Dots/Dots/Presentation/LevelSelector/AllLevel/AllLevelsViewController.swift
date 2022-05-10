@@ -8,8 +8,8 @@
 
 import UIKit
 
-final class AllLevelViewController: UIViewController {
-    private let customView = AllLevelView()
+final class AllLevelViewController: UIViewController, PagedController {
+    let customView = AllLevelView()
 
     init() {
         super.init(nibName: nil, bundle: nil)

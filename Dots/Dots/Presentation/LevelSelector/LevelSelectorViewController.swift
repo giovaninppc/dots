@@ -11,8 +11,8 @@ import UIKit
 
 final class LevelSelectorViewController: UIPageViewController {
     private let orderedViewControllers: [UIViewController] = [
-        AllLevelViewController(),
-        WorldPageViewController(model: .tutorial)
+        AllLevelViewController().set(numberOfPages: 2, position: 0, style: .light),
+        WorldPageViewController(model: .tutorial).set(numberOfPages: 2, position: 1, style: .light)
     ]
 
     init() {
