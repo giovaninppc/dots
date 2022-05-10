@@ -22,7 +22,7 @@ final class SwitchView: UIView {
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = .white
         label.text = title
         label.font = .sketch(size: 18.0)
         return label

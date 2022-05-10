@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 final class SplashController: UIViewController {
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -24,9 +23,7 @@ final class SplashController: UIViewController {
     }
 
     private func loadMenu() -> UIViewController {
-        let viewController = UIStoryboard(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: "Menu")
-
+        let viewController = SurvivorGamePageViewController()
         return viewController
     }
 }
