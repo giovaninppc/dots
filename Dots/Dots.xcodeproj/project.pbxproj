@@ -94,9 +94,6 @@
 		9B8D5D8B20868AC70001DB35 /* RandomPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D8A20868AC70001DB35 /* RandomPoint.swift */; };
 		9B8D5D8D208690F20001DB35 /* BaloonEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D8C208690F20001DB35 /* BaloonEnemy.swift */; };
 		9B8D5D912087860D0001DB35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8D5D902087860D0001DB35 /* Main.storyboard */; };
-		9B8D5D93208786550001DB35 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D92208786550001DB35 /* MenuViewController.swift */; };
-		9B8D5D9720878D680001DB35 /* doodleBaloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D9620878D680001DB35 /* doodleBaloon.swift */; };
-		9B8D5D9920878FF80001DB35 /* PlaneAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D9820878FF80001DB35 /* PlaneAnimation.swift */; };
 		9B8D5D9C208790490001DB35 /* SurvivorGamePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D5D9B208790490001DB35 /* SurvivorGamePageViewController.swift */; };
 		9B8D5D9E208795280001DB35 /* References in Resources */ = {isa = PBXBuildFile; fileRef = 9B8D5D9D208795280001DB35 /* References */; };
 		9B8D5DA020879A7A0001DB35 /* Sketch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B8D5D9F20879A7A0001DB35 /* Sketch.ttf */; };
@@ -199,9 +196,6 @@
 		9B8D5D8A20868AC70001DB35 /* RandomPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPoint.swift; sourceTree = "<group>"; };
 		9B8D5D8C208690F20001DB35 /* BaloonEnemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaloonEnemy.swift; sourceTree = "<group>"; };
 		9B8D5D902087860D0001DB35 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		9B8D5D92208786550001DB35 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		9B8D5D9620878D680001DB35 /* doodleBaloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doodleBaloon.swift; sourceTree = "<group>"; };
-		9B8D5D9820878FF80001DB35 /* PlaneAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneAnimation.swift; sourceTree = "<group>"; };
 		9B8D5D9B208790490001DB35 /* SurvivorGamePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurvivorGamePageViewController.swift; sourceTree = "<group>"; };
 		9B8D5D9D208795280001DB35 /* References */ = {isa = PBXFileReference; lastKnownFileType = text; path = References; sourceTree = "<group>"; };
 		9B8D5D9F20879A7A0001DB35 /* Sketch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sketch.ttf; sourceTree = "<group>"; };
@@ -456,6 +450,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		3EF87F0F282B220B00E8E4D1 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				3EF956E02634958700CF3239 /* SplashController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		3EF956C426344F9100CF3239 /* Pause */ = {
 			isa = PBXGroup;
 			children = (
@@ -641,15 +643,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		9B8D5D9420878D480001DB35 /* ImageAnimations */ = {
-			isa = PBXGroup;
-			children = (
-				9B8D5D9620878D680001DB35 /* doodleBaloon.swift */,
-				9B8D5D9820878FF80001DB35 /* PlaneAnimation.swift */,
-			);
-			path = ImageAnimations;
-			sourceTree = "<group>";
-		};
 		9B8D5D9A208790290001DB35 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -691,12 +684,10 @@
 		9BF312EA20C6F5F000E3C4D7 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				9B8D5D92208786550001DB35 /* MenuViewController.swift */,
 				9B8D5D902087860D0001DB35 /* Main.storyboard */,
 				3EF87F0A282B19F200E8E4D1 /* Settings */,
 				9B8D5D9A208790290001DB35 /* Main */,
-				9B8D5D9420878D480001DB35 /* ImageAnimations */,
-				3EF956E02634958700CF3239 /* SplashController.swift */,
+				3EF87F0F282B220B00E8E4D1 /* Splash */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -867,10 +858,8 @@
 				3E9876FD282696C2001795BF /* CGFloat+Utils.swift in Sources */,
 				3EF87F07282B134F00E8E4D1 /* AchievementController.swift in Sources */,
 				9BAD242A2088BDA60087B105 /* ShotDelegate.swift in Sources */,
-				9B8D5D9920878FF80001DB35 /* PlaneAnimation.swift in Sources */,
 				9B8D5D8D208690F20001DB35 /* BaloonEnemy.swift in Sources */,
 				3E987715282700C2001795BF /* AllLevelsViewController.swift in Sources */,
-				9B8D5D9720878D680001DB35 /* doodleBaloon.swift in Sources */,
 				9B416A942086273A00E65777 /* EnemyFactory.swift in Sources */,
 				9B627B762081305400B0FBEE /* AppDelegate.swift in Sources */,
 				3EF87F09282B136E00E8E4D1 /* Achievement.swift in Sources */,
@@ -890,7 +879,6 @@
 				3E2D305D263107BF00853550 /* Constraining.swift in Sources */,
 				3EF956E12634958700CF3239 /* SplashController.swift in Sources */,
 				3EC1FA3528141F8A00AC4556 /* Pricing.swift in Sources */,
-				9B8D5D93208786550001DB35 /* MenuViewController.swift in Sources */,
 				3E98771E2827076C001795BF /* WorldPageView.swift in Sources */,
 				3EC1FA2E281364B300AC4556 /* CGPoint+Operations.swift in Sources */,
 				3E0FB21028131CF4002B948D /* SceneToController.swift in Sources */,

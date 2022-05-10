@@ -47,8 +47,8 @@ final class SurvivorGamePageViewController: UIViewController, PagedController {
     }
 
     func pressPlay() {
-        present(GameConfigurator.build(level: Level1()), animated: true)
-//        present(LevelSelectorViewController(), animated: true, completion: nil)
+//        present(GameConfigurator.build(level: Level1()), animated: true)
+        present(LevelSelectorViewController(), animated: true, completion: nil)
         hideGameCenter()
     }
 

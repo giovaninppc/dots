@@ -18,7 +18,7 @@ final class WorldPageView: UIView {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .sketch(size: 40.0)
-        label.textColor = .white
+        label.textColor = .black
         label.textAlignment = .center
         label.minimumScaleFactor = 0.3
         label.adjustsFontSizeToFitWidth = true
