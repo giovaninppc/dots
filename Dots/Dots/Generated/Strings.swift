@@ -70,6 +70,8 @@ internal enum Localization {
   }
 
   internal enum Settings {
+    /// Accessibility Settings
+    internal static let accessibility = Localization.tr("Strings", "Settings.accessibility")
     /// Simplify font
     internal static let font = Localization.tr("Strings", "Settings.font")
     /// Settings

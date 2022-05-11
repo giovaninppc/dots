@@ -43,6 +43,17 @@ final class SettingsPageMenuView: UIView {
         return stack
     }()
 
+    private let accessibilitySettings: UILabel = {
+        let label = UILabel()
+        label.font = .sketch(size: 25.0)
+        let text = NSAttributedString.init(
+            string: Localization.Settings.accessibility,
+            attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue]
+        )
+        label.attributedText = text
+        return label
+    }()
+
     private lazy var vibrations: SwitchView = {
         let switchView = SwitchView(
             title: Localization.Settings.vibrations,
@@ -76,6 +87,7 @@ extension SettingsPageMenuView: CodeView {
         addSubview(contentStack)
         addSubview(closeButton)
 
+        contentStack.addArrangedSubview(accessibilitySettings)
         contentStack.addArrangedSubview(vibrations)
         contentStack.addArrangedSubview(simplifyFont)
     }
