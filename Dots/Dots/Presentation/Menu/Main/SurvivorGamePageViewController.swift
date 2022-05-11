@@ -29,6 +29,9 @@ final class SurvivorGamePageViewController: UIViewController, PagedController {
             self?.pressSettings()
             self?.hideGameCenter()
         }
+        customView.onNote = { [weak self] in
+            self?.showNotes()
+        }
     }
 
     override func viewDidLoad() {
@@ -46,16 +49,24 @@ final class SurvivorGamePageViewController: UIViewController, PagedController {
         hideGameCenter()
     }
 
-    func pressPlay() {
+    private func pressPlay() {
+        HapticWorker(type: .selection).fire()
         present(GameConfigurator.build(level: Level1()), animated: true)
 //        present(LevelSelectorViewController(), animated: true, completion: nil)
         hideGameCenter()
     }
 
-    func pressSettings() {
+    private func pressSettings() {
         HapticWorker(type: .selection).fire()
         let settings = SettingsPageViewController { self.addGameCenterAccessPointIfPossible() }
         present(settings, animated: true, completion: nil)
+    }
+
+    private func showNotes() {
+        HapticWorker(type: .selection).fire()
+        let notes = BookController { self.addGameCenterAccessPointIfPossible() }
+        present(notes, animated: true, completion: nil)
+        hideGameCenter()
     }
 }
 

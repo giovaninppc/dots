@@ -11,26 +11,53 @@ import UIKit
 protocol PagedController: UIViewController {
     associatedtype CustomView: UIView
     var customView: CustomView { get }
-    func set(numberOfPages: Int, position: Int, style: PageCountDisplay.Style) -> Self
+    func set(numberOfPages: Int, position: Int, style: PageCountDisplay.Style, place: PageCountDisplay.Position) -> Self
 }
 
 extension PagedController {
-    func set(numberOfPages: Int, position: Int, style: PageCountDisplay.Style) -> Self {
+    func set(
+        numberOfPages: Int,
+        position: Int,
+        style: PageCountDisplay.Style,
+        place: PageCountDisplay.Position = .horizontal
+    ) -> Self {
         guard !customView.subviews.contains(where: { $0 is PageCountDisplay }) else { return self }
-        addPageCounter(numberOfPages: numberOfPages, position: position, style: style)
+        addPageCounter(numberOfPages: numberOfPages, position: position, style: style, place: place)
         return self
     }
 
-    private func addPageCounter(numberOfPages: Int, position: Int, style: PageCountDisplay.Style) {
-        let display = PageCountDisplay(numberOfPages: numberOfPages, position: position, style: style)
+    private func addPageCounter(
+        numberOfPages: Int,
+        position: Int,
+        style: PageCountDisplay.Style,
+        place: PageCountDisplay.Position
+    ) {
+        let display = PageCountDisplay(numberOfPages: numberOfPages, position: position, style: style, place: place)
         customView.addSubview(display)
         display.translatesAutoresizingMaskIntoConstraints = false
-        constrain {
-            [
-                display.bottomAnchor.constraint(equalTo: customView.safeAreaLayoutGuide.bottomAnchor, constant: -10.0),
-                display.centerXAnchor.constraint(equalTo: customView.centerXAnchor),
-                display.heightAnchor.constraint(equalToConstant: 8.0)
-            ]
+        switch place {
+        case .horizontal:
+            constrain {
+                [
+                    display.bottomAnchor.constraint(
+                        equalTo: customView.safeAreaLayoutGuide.bottomAnchor,
+                        constant: -10.0
+                    ),
+                    display.centerXAnchor.constraint(equalTo: customView.centerXAnchor),
+                    display.heightAnchor.constraint(equalToConstant: 8.0)
+                ]
+            }
+        case .vertical:
+            constrain {
+                [
+                    display.trailingAnchor.constraint(
+                        equalTo: customView.safeAreaLayoutGuide.trailingAnchor,
+                        constant: -10.0
+                    ),
+                    display.centerYAnchor.constraint(equalTo: customView.centerYAnchor),
+                    display.widthAnchor.constraint(equalToConstant: 8.0)
+                ]
+            }
         }
     }
 }
@@ -58,14 +85,20 @@ final class PageCountDisplay: UIStackView {
         }
     }
 
+    enum Position {
+        case vertical, horizontal
+    }
+
     private let numberOfPages: Int
     private let position: Int
     private let style: Style
+    private let place: Position
 
-    init(numberOfPages: Int, position: Int, style: Style) {
+    init(numberOfPages: Int, position: Int, style: Style, place: Position) {
         self.numberOfPages = numberOfPages
         self.position = position
         self.style = style
+        self.place = place
         super.init(frame: .zero)
         setup()
     }
@@ -84,7 +117,7 @@ extension PageCountDisplay: CodeView {
     func setupConstraints() {}
 
     func setupExtra() {
-        axis = .horizontal
+        axis = place == .horizontal ? .horizontal : .vertical
         spacing = 10.0
     }
 

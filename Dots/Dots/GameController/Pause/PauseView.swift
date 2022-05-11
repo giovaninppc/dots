@@ -4,6 +4,7 @@ final class PauseView: UIView {
     var onDismiss: (() -> Void)?
     var onCloseGame: (() -> Void)?
     var onSettings: (() -> Void)?
+    var onNote: (() -> Void)?
 
     private let dimmer: UIView = {
         let view = UIView()
@@ -46,6 +47,14 @@ final class PauseView: UIView {
         return button
     }()
 
+    private let notesButton: UIButton = {
+        let button = UIButton()
+        button.tintColor = .white
+        button.setImage(Asset.notes.image, for: .normal)
+        button.addTarget(self, action: #selector(didTapNotes), for: .touchUpInside)
+        return button
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -61,6 +70,7 @@ extension PauseView: CodeView {
         addSubview(continueButton)
         addSubview(endButton)
         addSubview(settingsButton)
+        addSubview(notesButton)
     }
 
     func setupConstraints() {
@@ -84,7 +94,12 @@ extension PauseView: CodeView {
                 settingsButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20.0),
                 settingsButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
                 settingsButton.heightAnchor.constraint(equalToConstant: 35.0),
-                settingsButton.widthAnchor.constraint(equalToConstant: 35.0)
+                settingsButton.widthAnchor.constraint(equalToConstant: 35.0),
+
+                notesButton.widthAnchor.constraint(equalToConstant: 35.0),
+                notesButton.heightAnchor.constraint(equalToConstant: 35.0),
+                notesButton.topAnchor.constraint(equalTo: settingsButton.bottomAnchor, constant: 20.0),
+                notesButton.centerXAnchor.constraint(equalTo: settingsButton.centerXAnchor)
             ]
         }
     }
@@ -101,5 +116,9 @@ extension PauseView {
 
     @objc private func didTapSettings() {
         onSettings?()
+    }
+
+    @objc private func didTapNotes() {
+        onNote?()
     }
 }

@@ -54,4 +54,9 @@ extension PauseViewController {
         HapticWorker(type: .selection).fire()
         present(SettingsPageViewController(), animated: true, completion: nil)
     }
+
+    private func showBook() {
+        HapticWorker(type: .selection).fire()
+        present(BookController(), animated: true, completion: nil)
+    }
 }

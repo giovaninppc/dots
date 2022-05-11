@@ -70,6 +70,11 @@
 		3EF87F0C282B1A0800E8E4D1 /* SurvivorGameMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF87F0B282B1A0800E8E4D1 /* SurvivorGameMenuView.swift */; };
 		3EF87F0E282B1AA200E8E4D1 /* SettingsPageMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF87F0D282B1AA200E8E4D1 /* SettingsPageMenuView.swift */; };
 		3EF87F12282B3A7200E8E4D1 /* GearAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF87F11282B3A7200E8E4D1 /* GearAnimation.swift */; };
+		3EF87F15282BE48700E8E4D1 /* BookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF87F14282BE48700E8E4D1 /* BookController.swift */; };
+		3EF87F17282BE69D00E8E4D1 /* EffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF87F16282BE69D00E8E4D1 /* EffectView.swift */; };
+		3EF87F19282BE82500E8E4D1 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF87F18282BE82500E8E4D1 /* BookView.swift */; };
+		3EF87F1B282BEB4700E8E4D1 /* BookPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF87F1A282BEB4700E8E4D1 /* BookPageController.swift */; };
+		3EF87F1D282BECAB00E8E4D1 /* BookCoverPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF87F1C282BECAB00E8E4D1 /* BookCoverPage.swift */; };
 		3EF956C626344FA500CF3239 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956C526344FA500CF3239 /* PauseView.swift */; };
 		3EF956D12634523B00CF3239 /* ChangeGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D02634523B00CF3239 /* ChangeGameView.swift */; };
 		3EF956D926345C1B00CF3239 /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D826345C1B00CF3239 /* GameStates.swift */; };
@@ -170,6 +175,11 @@
 		3EF87F0B282B1A0800E8E4D1 /* SurvivorGameMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurvivorGameMenuView.swift; sourceTree = "<group>"; };
 		3EF87F0D282B1AA200E8E4D1 /* SettingsPageMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageMenuView.swift; sourceTree = "<group>"; };
 		3EF87F11282B3A7200E8E4D1 /* GearAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearAnimation.swift; sourceTree = "<group>"; };
+		3EF87F14282BE48700E8E4D1 /* BookController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookController.swift; sourceTree = "<group>"; };
+		3EF87F16282BE69D00E8E4D1 /* EffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectView.swift; sourceTree = "<group>"; };
+		3EF87F18282BE82500E8E4D1 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
+		3EF87F1A282BEB4700E8E4D1 /* BookPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPageController.swift; sourceTree = "<group>"; };
+		3EF87F1C282BECAB00E8E4D1 /* BookCoverPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverPage.swift; sourceTree = "<group>"; };
 		3EF956C526344FA500CF3239 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
 		3EF956D02634523B00CF3239 /* ChangeGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGameView.swift; sourceTree = "<group>"; };
 		3EF956D826345C1B00CF3239 /* GameStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStates.swift; sourceTree = "<group>"; };
@@ -414,6 +424,7 @@
 				3E2D305C263107BF00853550 /* Constraining.swift */,
 				3E2D3059263106FC00853550 /* Fonts.swift */,
 				3EC1FA4828145D4E00AC4556 /* SwitchView.swift */,
+				3EF87F16282BE69D00E8E4D1 /* EffectView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -466,6 +477,17 @@
 				3EF87F11282B3A7200E8E4D1 /* GearAnimation.swift */,
 			);
 			path = Animations;
+			sourceTree = "<group>";
+		};
+		3EF87F13282BE47900E8E4D1 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				3EF87F14282BE48700E8E4D1 /* BookController.swift */,
+				3EF87F18282BE82500E8E4D1 /* BookView.swift */,
+				3EF87F1A282BEB4700E8E4D1 /* BookPageController.swift */,
+				3EF87F1C282BECAB00E8E4D1 /* BookCoverPage.swift */,
+			);
+			path = Book;
 			sourceTree = "<group>";
 		};
 		3EF956C426344F9100CF3239 /* Pause */ = {
@@ -548,6 +570,7 @@
 			isa = PBXGroup;
 			children = (
 				9B627B752081305400B0FBEE /* AppDelegate.swift */,
+				3EF87F13282BE47900E8E4D1 /* Book */,
 				3EF87F05282B133F00E8E4D1 /* Achievements */,
 				9BF312E820C6F5CE00E3C4D7 /* Presentation */,
 				3EF956D4263453F900CF3239 /* GameController */,
@@ -852,6 +875,7 @@
 				3EB3F49426306087003AA20F /* WeaponDefinition.swift in Sources */,
 				9B8D5DA420879F4D0001DB35 /* SettingsPageViewController.swift in Sources */,
 				3EC1FA3B281446C900AC4556 /* Limit.swift in Sources */,
+				3EF87F15282BE48700E8E4D1 /* BookController.swift in Sources */,
 				9B2F50272083AD3100BD808D /* Enemy.swift in Sources */,
 				9BAD242C2088BEEC0087B105 /* BaloonBomb.swift in Sources */,
 				3EFF2899281D90E000CA4FC5 /* WeaponStashCell.swift in Sources */,
@@ -882,6 +906,7 @@
 				3EB3F49026305D2A003AA20F /* Cannon.swift in Sources */,
 				3EC1FA4C281460F600AC4556 /* DamageType.swift in Sources */,
 				3EB9026E280C3DB3003A8ED3 /* Images.swift in Sources */,
+				3EF87F1D282BECAB00E8E4D1 /* BookCoverPage.swift in Sources */,
 				9B3F787B20C16EED0055FADA /* GameSceneProtocol.swift in Sources */,
 				3E98771C2827065E001795BF /* WorldPageViewController.swift in Sources */,
 				3E58CCA4282604CE005B1715 /* WinViewController.swift in Sources */,
@@ -893,6 +918,7 @@
 				3E98771E2827076C001795BF /* WorldPageView.swift in Sources */,
 				3EC1FA2E281364B300AC4556 /* CGPoint+Operations.swift in Sources */,
 				3E0FB21028131CF4002B948D /* SceneToController.swift in Sources */,
+				3EF87F1B282BEB4700E8E4D1 /* BookPageController.swift in Sources */,
 				3E98770F2826F839001795BF /* ImageAsset+SKTexture.swift in Sources */,
 				3E0FB20C28131963002B948D /* DescriptionController.swift in Sources */,
 				3E9877132826FFE7001795BF /* LevelSelectorViewController.swift in Sources */,
@@ -902,6 +928,7 @@
 				3EB90264280C37C1003A8ED3 /* PauseViewController.swift in Sources */,
 				3EC1FA3F28144DB900AC4556 /* GameConfigurator.swift in Sources */,
 				3E987723282709EC001795BF /* Worlds.swift in Sources */,
+				3EF87F19282BE82500E8E4D1 /* BookView.swift in Sources */,
 				3EB3F48C26305CC3003AA20F /* Weapon.swift in Sources */,
 				3E0FB20E2813199B002B948D /* DescriptionView.swift in Sources */,
 				9B416A962086275600E65777 /* PlaneEnemy.swift in Sources */,
@@ -917,6 +944,7 @@
 				3E9877182827011B001795BF /* AllLevelView.swift in Sources */,
 				3EA3A15828283A9C00175DE7 /* PaperExplosion.swift in Sources */,
 				3E987700282696EE001795BF /* GameSpeed.swift in Sources */,
+				3EF87F17282BE69D00E8E4D1 /* EffectView.swift in Sources */,
 				3EC1FA442814533E00AC4556 /* AccessibilitySettings.swift in Sources */,
 				9B416A9220852A4500E65777 /* GameScene.swift in Sources */,
 				3EB9027D280D7DE0003A8ED3 /* WeaponShot.swift in Sources */,

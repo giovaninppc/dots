@@ -72,6 +72,15 @@ final class SettingsPageMenuView: UIView {
         return switchView
     }()
 
+    private lazy var reduceTransparency: SwitchView = {
+        let switchView = SwitchView(
+            title: Localization.Settings.transparency,
+            state: AccessibilitySettings.reduceTransparency) { newValue in
+                AccessibilitySettings.reduceTransparency = newValue
+            }
+        return switchView
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -90,6 +99,7 @@ extension SettingsPageMenuView: CodeView {
         contentStack.addArrangedSubview(accessibilitySettings)
         contentStack.addArrangedSubview(vibrations)
         contentStack.addArrangedSubview(simplifyFont)
+        contentStack.addArrangedSubview(reduceTransparency)
     }
 
     func setupConstraints() {
