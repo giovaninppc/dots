@@ -81,7 +81,8 @@ final class ChangeGameView: UIView {
 
     private lazy var buildButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .red
+        button.setImage(Asset.build.image, for: .normal)
+        button.imageView?.contentMode = .scaleToFill
         button.addTarget(self, action: #selector(toggleStash), for: .touchUpInside)
         return button
     }()
@@ -144,9 +145,9 @@ extension ChangeGameView: CodeView {
                 stashBackground.leadingAnchor.constraint(equalTo: weaponStash.leadingAnchor),
                 stashBackground.trailingAnchor.constraint(equalTo: weaponStash.trailingAnchor),
 
-                buildButton.bottomAnchor.constraint(equalTo: bottomAnchor),
+                buildButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 5.0),
                 buildButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30.0),
-                buildButton.widthAnchor.constraint(equalToConstant: 40.0),
+                buildButton.widthAnchor.constraint(equalToConstant: 50.0),
                 buildButton.heightAnchor.constraint(equalToConstant: 80.0)
             ]
         }
@@ -217,7 +218,7 @@ extension ChangeGameView {
         let isOpen = isStashOpened
 
         UIView.animate(withDuration: .defaultAnimation, delay: 0.0, options: [.curveEaseOut]) {
-            button.transform = isOpen ? .identity.translatedBy(x: 0.0, y: -60.0) : .identity
+            button.transform = isOpen ? .identity.translatedBy(x: 0.0, y: -80.0) : .identity
             stash.transform = isOpen ? .identity : .identity.translatedBy(x: 0.0, y: Configuration.carouselHeight)
             stashBG.transform = isOpen ? .identity : .identity.translatedBy(x: 0.0, y: Configuration.carouselHeight)
         } completion: { _ in }

@@ -55,6 +55,7 @@ public enum Asset {
   public static let resourceA = ImageAsset(name: "ResourceA")
   public static let resourceB = ImageAsset(name: "ResourceB")
   public static let resourceC = ImageAsset(name: "ResourceC")
+  public static let build = ImageAsset(name: "build")
   public static let corner = ImageAsset(name: "corner")
   public static let gear = ImageAsset(name: "gear")
   public static let onboardingArrow = ImageAsset(name: "onboarding-arrow")
