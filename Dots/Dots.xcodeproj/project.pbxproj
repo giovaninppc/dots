@@ -69,6 +69,7 @@
 		3EF87F09282B136E00E8E4D1 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF87F08282B136E00E8E4D1 /* Achievement.swift */; };
 		3EF87F0C282B1A0800E8E4D1 /* SurvivorGameMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF87F0B282B1A0800E8E4D1 /* SurvivorGameMenuView.swift */; };
 		3EF87F0E282B1AA200E8E4D1 /* SettingsPageMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF87F0D282B1AA200E8E4D1 /* SettingsPageMenuView.swift */; };
+		3EF87F12282B3A7200E8E4D1 /* GearAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF87F11282B3A7200E8E4D1 /* GearAnimation.swift */; };
 		3EF956C626344FA500CF3239 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956C526344FA500CF3239 /* PauseView.swift */; };
 		3EF956D12634523B00CF3239 /* ChangeGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D02634523B00CF3239 /* ChangeGameView.swift */; };
 		3EF956D926345C1B00CF3239 /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF956D826345C1B00CF3239 /* GameStates.swift */; };
@@ -168,6 +169,7 @@
 		3EF87F08282B136E00E8E4D1 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		3EF87F0B282B1A0800E8E4D1 /* SurvivorGameMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurvivorGameMenuView.swift; sourceTree = "<group>"; };
 		3EF87F0D282B1AA200E8E4D1 /* SettingsPageMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageMenuView.swift; sourceTree = "<group>"; };
+		3EF87F11282B3A7200E8E4D1 /* GearAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearAnimation.swift; sourceTree = "<group>"; };
 		3EF956C526344FA500CF3239 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
 		3EF956D02634523B00CF3239 /* ChangeGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGameView.swift; sourceTree = "<group>"; };
 		3EF956D826345C1B00CF3239 /* GameStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStates.swift; sourceTree = "<group>"; };
@@ -458,6 +460,14 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		3EF87F10282B3A6300E8E4D1 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				3EF87F11282B3A7200E8E4D1 /* GearAnimation.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		3EF956C426344F9100CF3239 /* Pause */ = {
 			isa = PBXGroup;
 			children = (
@@ -627,6 +637,7 @@
 		9B8D5D8920868AAD0001DB35 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3EF87F10282B3A6300E8E4D1 /* Animations */,
 				3EC1FA4728145D3A00AC4556 /* UI */,
 				3EC1FA422814533200AC4556 /* Storage */,
 				9B8D5D8A20868AC70001DB35 /* RandomPoint.swift */,
@@ -894,6 +905,7 @@
 				3EB3F48C26305CC3003AA20F /* Weapon.swift in Sources */,
 				3E0FB20E2813199B002B948D /* DescriptionView.swift in Sources */,
 				9B416A962086275600E65777 /* PlaneEnemy.swift in Sources */,
+				3EF87F12282B3A7200E8E4D1 /* GearAnimation.swift in Sources */,
 				9B627B96208390FD00B0FBEE /* BlueprintState.swift in Sources */,
 				3EC1FA4928145D4E00AC4556 /* SwitchView.swift in Sources */,
 				3EC1FA462814534F00AC4556 /* Stored.swift in Sources */,

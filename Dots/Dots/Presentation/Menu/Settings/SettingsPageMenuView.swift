@@ -13,6 +13,7 @@ final class SettingsPageMenuView: UIView {
 
     private let background: UIView = {
         let view = UIVisualEffectView(effect: UIBlurEffect.init(style: .dark))
+        view.alpha = 0.7
         return view
     }()
 
@@ -37,6 +38,8 @@ final class SettingsPageMenuView: UIView {
         let stack = UIStackView()
         stack.alignment = .fill
         stack.distribution = .equalSpacing
+        stack.axis = .vertical
+        stack.spacing = 20.0
         return stack
     }()
 
@@ -45,6 +48,15 @@ final class SettingsPageMenuView: UIView {
             title: Localization.Settings.vibrations,
             state: AccessibilitySettings.vibrationsEnabled) { newValue in
                 AccessibilitySettings.vibrationsEnabled = newValue
+            }
+        return switchView
+    }()
+
+    private lazy var simplifyFont: SwitchView = {
+        let switchView = SwitchView(
+            title: Localization.Settings.font,
+            state: AccessibilitySettings.simplifyFont) { newValue in
+                AccessibilitySettings.simplifyFont = newValue
             }
         return switchView
     }()
@@ -65,6 +77,7 @@ extension SettingsPageMenuView: CodeView {
         addSubview(closeButton)
 
         contentStack.addArrangedSubview(vibrations)
+        contentStack.addArrangedSubview(simplifyFont)
     }
 
     func setupConstraints() {
@@ -83,10 +96,10 @@ extension SettingsPageMenuView: CodeView {
                 contentStack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
                 contentStack.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 50.0),
 
-                closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20.0),
-                closeButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
-                closeButton.heightAnchor.constraint(equalToConstant: 35.0),
-                closeButton.widthAnchor.constraint(equalToConstant: 35.0)
+                closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 22.5),
+                closeButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -22.5),
+                closeButton.heightAnchor.constraint(equalToConstant: 30.0),
+                closeButton.widthAnchor.constraint(equalToConstant: 30.0)
             ]
         }
     }

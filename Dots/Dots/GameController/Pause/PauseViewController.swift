@@ -31,6 +31,7 @@ final class PauseViewController: UIViewController {
         let pauseView = PauseView()
         pauseView.onDismiss = { self.dismiss() }
         pauseView.onCloseGame = { self.closeGame() }
+        pauseView.onSettings = { self.showSettings() }
         view = pauseView
     }
 }
@@ -47,5 +48,10 @@ extension PauseViewController {
         dismiss(animated: true) {
             self.onCloseGame()
         }
+    }
+
+    private func showSettings() {
+        HapticWorker(type: .selection).fire()
+        present(SettingsPageViewController(), animated: true, completion: nil)
     }
 }

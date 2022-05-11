@@ -10,6 +10,7 @@ import UIKit
 
 extension UIFont {
     static func sketch(size: CGFloat) -> UIFont {
+        guard !AccessibilitySettings.simplifyFont else { return .systemFont(ofSize: size, weight: .medium) }
         return UIFont(name: "ItsaSketch", size: size)
             ?? UIFont(descriptor: UIFontDescriptor(name: "ItsaSketch", size: size), size: size)
     }

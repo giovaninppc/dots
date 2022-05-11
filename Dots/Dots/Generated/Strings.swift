@@ -70,6 +70,8 @@ internal enum Localization {
   }
 
   internal enum Settings {
+    /// Simplify font
+    internal static let font = Localization.tr("Strings", "Settings.font")
     /// Settings
     internal static let title = Localization.tr("Strings", "Settings.title")
     /// Enable vibrations

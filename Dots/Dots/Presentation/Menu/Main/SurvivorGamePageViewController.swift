@@ -47,12 +47,13 @@ final class SurvivorGamePageViewController: UIViewController, PagedController {
     }
 
     func pressPlay() {
-//        present(GameConfigurator.build(level: Level1()), animated: true)
-        present(LevelSelectorViewController(), animated: true, completion: nil)
+        present(GameConfigurator.build(level: Level1()), animated: true)
+//        present(LevelSelectorViewController(), animated: true, completion: nil)
         hideGameCenter()
     }
 
     func pressSettings() {
+        HapticWorker(type: .selection).fire()
         let settings = SettingsPageViewController()
         present(settings, animated: true, completion: nil)
     }
@@ -65,7 +66,7 @@ extension SurvivorGamePageViewController {
 
     private func addGameCenterAccessPointIfPossible() {
         if #available(iOS 14.0, *) {
-            GKAccessPoint.shared.location = .topLeading
+            GKAccessPoint.shared.location = .bottomLeading
             GKAccessPoint.shared.showHighlights = true
             GKAccessPoint.shared.isActive = true
         }

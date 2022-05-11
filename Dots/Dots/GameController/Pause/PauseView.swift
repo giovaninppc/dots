@@ -3,6 +3,7 @@ import UIKit
 final class PauseView: UIView {
     var onDismiss: (() -> Void)?
     var onCloseGame: (() -> Void)?
+    var onSettings: (() -> Void)?
 
     private let dimmer: UIView = {
         let view = UIView()
@@ -36,6 +37,15 @@ final class PauseView: UIView {
         return button
     }()
 
+    private let settingsButton: UIButton = {
+        let button = UIButton()
+        button.tintColor = .white
+        button.setImage(Asset.gear.image, for: .normal)
+        button.addTarget(self, action: #selector(didTapSettings), for: .touchUpInside)
+        button.addGearAnimation()
+        return button
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -44,65 +54,37 @@ final class PauseView: UIView {
     required init?(coder: NSCoder) { nil }
 }
 
-extension PauseView {
-    private func setup() {
-        setupComponents()
-        setupConstraints()
-    }
-
-    private func setupComponents() {
-        dimmer.setupForManualConstraining()
+extension PauseView: CodeView {
+    func setupComponents() {
         addSubview(dimmer)
-        titleLabel.setupForManualConstraining()
         addSubview(titleLabel)
-        continueButton.setupForManualConstraining()
         addSubview(continueButton)
-        endButton.setupForManualConstraining()
         addSubview(endButton)
+        addSubview(settingsButton)
     }
 
-    private func setupConstraints() {
-        constrainDimmer()
-        constrainTitle()
-        constrainContinueButton()
-        constrainEndButton()
-    }
-
-    private func constrainDimmer() {
+    func setupConstraints() {
         constrain {
             [
                 dimmer.topAnchor.constraint(equalTo: topAnchor),
                 dimmer.bottomAnchor.constraint(equalTo: bottomAnchor),
                 dimmer.leadingAnchor.constraint(equalTo: leadingAnchor),
-                dimmer.trailingAnchor.constraint(equalTo: trailingAnchor)
-            ]
-        }
-    }
+                dimmer.trailingAnchor.constraint(equalTo: trailingAnchor),
 
-    private func constrainTitle() {
-        constrain {
-            [
                 titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 25.0),
                 titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-                titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
-            ]
-        }
-    }
+                titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
 
-    private func constrainContinueButton() {
-        constrain {
-            [
                 continueButton.bottomAnchor.constraint(equalTo: centerYAnchor, constant: -10.0),
-                continueButton.centerXAnchor.constraint(equalTo: centerXAnchor)
-            ]
-        }
-    }
+                continueButton.centerXAnchor.constraint(equalTo: centerXAnchor),
 
-    private func constrainEndButton() {
-        constrain {
-            [
                 endButton.topAnchor.constraint(equalTo: centerYAnchor, constant: 10.0),
-                endButton.centerXAnchor.constraint(equalTo: centerXAnchor)
+                endButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+
+                settingsButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20.0),
+                settingsButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
+                settingsButton.heightAnchor.constraint(equalToConstant: 35.0),
+                settingsButton.widthAnchor.constraint(equalToConstant: 35.0)
             ]
         }
     }
@@ -115,5 +97,9 @@ extension PauseView {
 
     @objc private func closeGame() {
         onCloseGame?()
+    }
+
+    @objc private func didTapSettings() {
+        onSettings?()
     }
 }

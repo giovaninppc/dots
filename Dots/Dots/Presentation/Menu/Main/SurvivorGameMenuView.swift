@@ -70,7 +70,7 @@ extension SurvivorGameMenuView: CodeView {
     }
 
     func setupExtra() {
-        addGearAnimation()
+        settingsButton.addGearAnimation()
     }
 }
 
@@ -81,20 +81,5 @@ extension SurvivorGameMenuView {
 
     @objc private func didTapSettings() {
         onSettings?()
-    }
-
-    private func addGearAnimation() {
-        let button = settingsButton
-        UIView.animate(withDuration: 0.3, delay: 1.0, options: [.allowUserInteraction]) {
-            button.transform = button.transform.rotated(by: .pi / 8)
-        } completion: { _ in
-            self.delay()
-        }
-    }
-
-    private func delay() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.addGearAnimation()
-        }
     }
 }

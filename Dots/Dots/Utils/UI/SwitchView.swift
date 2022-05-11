@@ -24,7 +24,7 @@ final class SwitchView: UIView {
         let label = UILabel()
         label.textColor = .white
         label.text = title
-        label.font = .sketch(size: 18.0)
+        label.font = .sketch(size: 20.0)
         return label
     }()
 
