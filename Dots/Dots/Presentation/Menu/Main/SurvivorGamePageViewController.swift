@@ -54,7 +54,7 @@ final class SurvivorGamePageViewController: UIViewController, PagedController {
 
     func pressSettings() {
         HapticWorker(type: .selection).fire()
-        let settings = SettingsPageViewController()
+        let settings = SettingsPageViewController { self.addGameCenterAccessPointIfPossible() }
         present(settings, animated: true, completion: nil)
     }
 }

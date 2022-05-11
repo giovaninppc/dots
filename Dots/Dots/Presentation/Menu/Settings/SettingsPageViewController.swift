@@ -10,9 +10,12 @@ import UIKit
 
 final class SettingsPageViewController: UIViewController, PagedController {
     let customView: SettingsPageMenuView
+    let onDismiss: (() -> Void)?
 
-    init(view: SettingsPageMenuView = .init()) {
+    init(view: SettingsPageMenuView = .init(), onDismiss: (() -> Void)? = nil) {
         self.customView = view
+        self.onDismiss = onDismiss
+
         super.init(nibName: nil, bundle: nil)
         modalTransitionStyle = .crossDissolve
         modalPresentationStyle = .overFullScreen
@@ -23,6 +26,7 @@ final class SettingsPageViewController: UIViewController, PagedController {
     override func loadView() {
         view = customView
         customView.onClose = { [weak self] in
+            self?.onDismiss?()
             self?.dismiss(animated: true, completion: nil)
         }
     }
