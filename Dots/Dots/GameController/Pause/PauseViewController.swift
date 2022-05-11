@@ -32,6 +32,7 @@ final class PauseViewController: UIViewController {
         pauseView.onDismiss = { self.dismiss() }
         pauseView.onCloseGame = { self.closeGame() }
         pauseView.onSettings = { self.showSettings() }
+        pauseView.onNote = { self.showBook() }
         view = pauseView
     }
 }

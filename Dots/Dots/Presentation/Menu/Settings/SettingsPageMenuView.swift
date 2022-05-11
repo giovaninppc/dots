@@ -12,8 +12,8 @@ final class SettingsPageMenuView: UIView {
     var onClose: (() -> Void)?
 
     private let background: UIView = {
-        let view = UIVisualEffectView(effect: UIBlurEffect.init(style: .dark))
-        view.alpha = 0.7
+        let view = EffectView(effect: UIBlurEffect.init(style: .dark))
+        view.alpha = AccessibilitySettings.reduceTransparency ? 1.0 : 0.7
         return view
     }()
 

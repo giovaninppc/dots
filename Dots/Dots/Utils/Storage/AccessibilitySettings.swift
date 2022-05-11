@@ -19,6 +19,6 @@ enum AccessibilitySettings {
     @Stored(key: Keys.font, default: false)
     static var simplifyFont: Bool
 
-    @Stored(key: Keys.font, default: false)
+    @Stored(key: Keys.transparency, default: false)
     static var reduceTransparency: Bool
 }

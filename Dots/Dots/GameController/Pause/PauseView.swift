@@ -8,7 +8,7 @@ final class PauseView: UIView {
 
     private let dimmer: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        view.backgroundColor = UIColor.black.withAlphaComponent(AccessibilitySettings.reduceTransparency ? 1.0 : 0.8)
         return view
     }()
 
